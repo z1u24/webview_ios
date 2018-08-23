@@ -1,0 +1,20 @@
+PODS:
+  - HMQRCodeScanner (1.0.6)
+  - TZImagePickerController (2.2.3)
+
+DEPENDENCIES:
+  - HMQRCodeScanner
+  - TZImagePickerController
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - HMQRCodeScanner
+    - TZImagePickerController
+
+SPEC CHECKSUMS:
+  HMQRCodeScanner: 8db2d317c0e5cbe3b4709fe2b9f26c107d66554e
+  TZImagePickerController: 5374a30df056b33428802c8112ed44011fe2596a
+
+PODFILE CHECKSUM: 613166aab4f66e3b6b72149ac96f58c9bb7b0ea9
+
+COCOAPODS: 1.5.3

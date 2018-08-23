@@ -8,6 +8,7 @@
 
 #import "JSBundle.h"
 #import "WebViewController.h"
+#import "BaseObject.h"
 
 @interface WebViewController () <WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler>
 
@@ -26,6 +27,7 @@ static WKWebView *wkWebView = nil;
     [super viewDidLoad];
     
     wkWebView = [self createWebview];
+    [BaseObject setVc:self];
 }
 
 
@@ -63,13 +65,13 @@ static WKWebView *wkWebView = nil;
     
     [self.view addSubview:webview];
     
-    NSString *urlPath = @"https://www.baidu.com";
-    // NSString *urlPath = @"http://192.168.33.88:8088/dst/boot/index.html";
+//    NSString *urlPath = @"https://www.baidu.com";
+     NSString *urlPath = @"http://192.168.33.93:8088/dst/boot/index.html";
     // NSString *urlPath = [NSString stringWithFormat:@"file:///%@/android_asset/index.html", [[NSBundle mainBundle] bundlePath]];
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:urlPath]];
     [webview loadRequest:request];
     // 关闭webView的拖动
-    webview.scrollView.scrollEnabled = NO;
+//    webview.scrollView.scrollEnabled = NO;
     webview.UIDelegate = self;
     webview.navigationDelegate = self;
     

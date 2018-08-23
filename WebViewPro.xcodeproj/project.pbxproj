@@ -7,22 +7,97 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186CC14E212D3D38004AC557 /* BaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC14D212D3D38004AC557 /* BaseObject.m */; };
+		186CC150212D3D5C004AC557 /* QRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC14F212D3D5C004AC557 /* QRCode.m */; };
+		186CC153212D40AF004AC557 /* ImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC152212D40AF004AC557 /* ImagePicker.m */; };
+		186CC156212D40FE004AC557 /* ImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC155212D40FE004AC557 /* ImageUtils.m */; };
+		186CC17C212D5B92004AC557 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC160212D5B92004AC557 /* MOBFoundation.framework */; };
+		186CC17D212D5B92004AC557 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC162212D5B92004AC557 /* ShareSDK.framework */; };
+		186CC17E212D5B92004AC557 /* ShareSDKConfigFile.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186CC165212D5B92004AC557 /* ShareSDKConfigFile.bundle */; };
+		186CC17F212D5B92004AC557 /* ShareSDKConfigFile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC166212D5B92004AC557 /* ShareSDKConfigFile.framework */; };
+		186CC180212D5B92004AC557 /* ShareSDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC167212D5B92004AC557 /* ShareSDKExtension.framework */; };
+		186CC181212D5B92004AC557 /* ShareSDKUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186CC168212D5B92004AC557 /* ShareSDKUI.bundle */; };
+		186CC182212D5B92004AC557 /* ShareSDKUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC169212D5B92004AC557 /* ShareSDKUI.framework */; };
+		186CC183212D5B92004AC557 /* LineConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC16B212D5B92004AC557 /* LineConnector.framework */; };
+		186CC184212D5B92004AC557 /* QQConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC16C212D5B92004AC557 /* QQConnector.framework */; };
+		186CC185212D5B92004AC557 /* WechatConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC16D212D5B92004AC557 /* WechatConnector.framework */; };
+		186CC186212D5B92004AC557 /* LineSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC170212D5B92004AC557 /* LineSDK.framework */; };
+		186CC187212D5B92004AC557 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC172212D5B92004AC557 /* TencentOpenAPI.framework */; };
+		186CC188212D5B92004AC557 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC174212D5B92004AC557 /* libWeChatSDK.a */; };
+		186CC189212D5B92004AC557 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 186CC175212D5B92004AC557 /* README.txt */; };
+		186CC18A212D5B92004AC557 /* ShareSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 186CC17A212D5B92004AC557 /* ShareSDK.bundle */; };
+		186CC18B212D5B92004AC557 /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC17B212D5B92004AC557 /* ShareSDKConnector.framework */; };
+		186CC18D212E570B004AC557 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC18C212E570B004AC557 /* libicucore.tbd */; };
+		186CC18F212E5718004AC557 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC18E212E5718004AC557 /* libz.tbd */; };
+		186CC191212E5732004AC557 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC190212E5732004AC557 /* libstdc++.tbd */; };
+		186CC193212E573E004AC557 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC192212E573E004AC557 /* JavaScriptCore.framework */; };
+		186CC195212E5756004AC557 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 186CC194212E5755004AC557 /* libsqlite3.tbd */; };
+		186CC198212E5788004AC557 /* ShareToPlatforms.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC197212E5788004AC557 /* ShareToPlatforms.m */; };
+		186CC19A212E5BC5004AC557 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 186CC199212E5BC5004AC557 /* icon.png */; };
+		186CC1AD212E5E42004AC557 /* argon2.c in Sources */ = {isa = PBXBuildFile; fileRef = 186CC19C212E5E42004AC557 /* argon2.c */; };
+		186CC1AE212E5E42004AC557 /* blake2b.c in Sources */ = {isa = PBXBuildFile; fileRef = 186CC1A0212E5E42004AC557 /* blake2b.c */; };
+		186CC1AF212E5E42004AC557 /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = 186CC1A3212E5E42004AC557 /* core.c */; };
+		186CC1B0212E5E42004AC557 /* encoding.c in Sources */ = {isa = PBXBuildFile; fileRef = 186CC1A5212E5E42004AC557 /* encoding.c */; };
+		186CC1B2212E5E42004AC557 /* ref.c in Sources */ = {isa = PBXBuildFile; fileRef = 186CC1A9212E5E42004AC557 /* ref.c */; };
+		186CC1B3212E5E42004AC557 /* thread.c in Sources */ = {isa = PBXBuildFile; fileRef = 186CC1AB212E5E42004AC557 /* thread.c */; };
+		186CC1B6212E5F12004AC557 /* Argon2Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC1B5212E5F12004AC557 /* Argon2Hash.m */; };
+		7155D5A8D28B429862CB90DB /* Pods_WebViewPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E9AC1474756A21F18A3754 /* Pods_WebViewPro.framework */; };
 		F301353D211EDA3800C309A2 /* android_asset in Resources */ = {isa = PBXBuildFile; fileRef = F301353C211EDA3800C309A2 /* android_asset */; };
 		F354AB2D2119930300A8BEA8 /* WebViewAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB2C2119930300A8BEA8 /* WebViewAppDelegate.m */; };
 		F354AB302119930300A8BEA8 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB2F2119930300A8BEA8 /* WebViewController.m */; };
 		F354AB352119930400A8BEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F354AB342119930400A8BEA8 /* Assets.xcassets */; };
 		F354AB3B2119930400A8BEA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB3A2119930400A8BEA8 /* main.m */; };
-		F3BB45D821218841006AE245 /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = F3BB45D22121883F006AE245 /* core.c */; };
-		F3BB45D921218841006AE245 /* blake2b.c in Sources */ = {isa = PBXBuildFile; fileRef = F3BB45D321218840006AE245 /* blake2b.c */; };
-		F3BB45DA21218841006AE245 /* argon2.c in Sources */ = {isa = PBXBuildFile; fileRef = F3BB45D421218840006AE245 /* argon2.c */; };
-		F3BB45DB21218841006AE245 /* encoding.c in Sources */ = {isa = PBXBuildFile; fileRef = F3BB45D521218840006AE245 /* encoding.c */; };
-		F3BB45DC21218841006AE245 /* ref.c in Sources */ = {isa = PBXBuildFile; fileRef = F3BB45D621218840006AE245 /* ref.c */; };
-		F3BB45DD21218841006AE245 /* thread.c in Sources */ = {isa = PBXBuildFile; fileRef = F3BB45D721218840006AE245 /* thread.c */; };
 		F3FC0EE9211C153300C7F566 /* JSBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FC0EE8211C153300C7F566 /* JSBundle.m */; };
 		F3FC0EF3211C71A800C7F566 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FC0EF2211C71A800C7F566 /* Test.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05E9AC1474756A21F18A3754 /* Pods_WebViewPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebViewPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1172D96F2A9AD88014270C48 /* Pods-WebViewPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebViewPro/Pods-WebViewPro.debug.xcconfig"; sourceTree = "<group>"; };
+		186CC14B212D3CBA004AC557 /* QRCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCode.h; sourceTree = "<group>"; };
+		186CC14C212D3CFC004AC557 /* BaseObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseObject.h; sourceTree = "<group>"; };
+		186CC14D212D3D38004AC557 /* BaseObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseObject.m; sourceTree = "<group>"; };
+		186CC14F212D3D5C004AC557 /* QRCode.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCode.m; sourceTree = "<group>"; };
+		186CC151212D4077004AC557 /* ImagePicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePicker.h; sourceTree = "<group>"; };
+		186CC152212D40AF004AC557 /* ImagePicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePicker.m; sourceTree = "<group>"; };
+		186CC155212D40FE004AC557 /* ImageUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageUtils.m; sourceTree = "<group>"; };
+		186CC157212D4110004AC557 /* ImageUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageUtils.h; sourceTree = "<group>"; };
+		186CC160212D5B92004AC557 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
+		186CC162212D5B92004AC557 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
+		186CC165212D5B92004AC557 /* ShareSDKConfigFile.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKConfigFile.bundle; sourceTree = "<group>"; };
+		186CC166212D5B92004AC557 /* ShareSDKConfigFile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConfigFile.framework; sourceTree = "<group>"; };
+		186CC167212D5B92004AC557 /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
+		186CC168212D5B92004AC557 /* ShareSDKUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKUI.bundle; sourceTree = "<group>"; };
+		186CC169212D5B92004AC557 /* ShareSDKUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKUI.framework; sourceTree = "<group>"; };
+		186CC16B212D5B92004AC557 /* LineConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LineConnector.framework; sourceTree = "<group>"; };
+		186CC16C212D5B92004AC557 /* QQConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = QQConnector.framework; sourceTree = "<group>"; };
+		186CC16D212D5B92004AC557 /* WechatConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WechatConnector.framework; sourceTree = "<group>"; };
+		186CC170212D5B92004AC557 /* LineSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LineSDK.framework; sourceTree = "<group>"; };
+		186CC172212D5B92004AC557 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		186CC174212D5B92004AC557 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		186CC175212D5B92004AC557 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		186CC176212D5B92004AC557 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		186CC177212D5B92004AC557 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		186CC178212D5B92004AC557 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		186CC17A212D5B92004AC557 /* ShareSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDK.bundle; sourceTree = "<group>"; };
+		186CC17B212D5B92004AC557 /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConnector.framework; sourceTree = "<group>"; };
+		186CC18C212E570B004AC557 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		186CC18E212E5718004AC557 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		186CC190212E5732004AC557 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
+		186CC192212E573E004AC557 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		186CC194212E5755004AC557 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		186CC196212E5788004AC557 /* ShareToPlatforms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareToPlatforms.h; sourceTree = "<group>"; };
+		186CC197212E5788004AC557 /* ShareToPlatforms.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareToPlatforms.m; sourceTree = "<group>"; };
+		186CC199212E5BC5004AC557 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		186CC19C212E5E42004AC557 /* argon2.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = argon2.c; sourceTree = "<group>"; };
+		186CC1A0212E5E42004AC557 /* blake2b.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = blake2b.c; sourceTree = "<group>"; };
+		186CC1A3212E5E42004AC557 /* core.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = core.c; sourceTree = "<group>"; };
+		186CC1A5212E5E42004AC557 /* encoding.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = encoding.c; sourceTree = "<group>"; };
+		186CC1A9212E5E42004AC557 /* ref.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = ref.c; sourceTree = "<group>"; };
+		186CC1AB212E5E42004AC557 /* thread.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = thread.c; sourceTree = "<group>"; };
+		186CC1B4212E5F12004AC557 /* Argon2Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argon2Hash.h; sourceTree = "<group>"; };
+		186CC1B5212E5F12004AC557 /* Argon2Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Argon2Hash.m; sourceTree = "<group>"; };
+		43C727B9AF12A0A78E5BCCF4 /* Pods-WebViewPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewPro.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebViewPro/Pods-WebViewPro.release.xcconfig"; sourceTree = "<group>"; };
 		F301353C211EDA3800C309A2 /* android_asset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = android_asset; sourceTree = "<group>"; };
 		F354AB282119930300A8BEA8 /* WebViewPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F354AB2B2119930300A8BEA8 /* WebViewAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewAppDelegate.h; sourceTree = "<group>"; };
@@ -32,12 +107,6 @@
 		F354AB342119930400A8BEA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F354AB392119930400A8BEA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F354AB3A2119930400A8BEA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F3BB45D22121883F006AE245 /* core.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = core.c; path = test/Argon2/core.c; sourceTree = "<group>"; };
-		F3BB45D321218840006AE245 /* blake2b.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = blake2b.c; path = test/Argon2/blake2b.c; sourceTree = "<group>"; };
-		F3BB45D421218840006AE245 /* argon2.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = argon2.c; path = test/Argon2/argon2.c; sourceTree = "<group>"; };
-		F3BB45D521218840006AE245 /* encoding.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = encoding.c; path = test/Argon2/encoding.c; sourceTree = "<group>"; };
-		F3BB45D621218840006AE245 /* ref.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = ref.c; path = test/Argon2/ref.c; sourceTree = "<group>"; };
-		F3BB45D721218840006AE245 /* thread.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = thread.c; path = test/Argon2/thread.c; sourceTree = "<group>"; };
 		F3FC0EE8211C153300C7F566 /* JSBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBundle.m; sourceTree = "<group>"; };
 		F3FC0EEA211C155800C7F566 /* JSBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBundle.h; sourceTree = "<group>"; };
 		F3FC0EF1211C719700C7F566 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
@@ -49,15 +118,193 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186CC195212E5756004AC557 /* libsqlite3.tbd in Frameworks */,
+				186CC193212E573E004AC557 /* JavaScriptCore.framework in Frameworks */,
+				186CC191212E5732004AC557 /* libstdc++.tbd in Frameworks */,
+				186CC18F212E5718004AC557 /* libz.tbd in Frameworks */,
+				186CC18D212E570B004AC557 /* libicucore.tbd in Frameworks */,
+				186CC17D212D5B92004AC557 /* ShareSDK.framework in Frameworks */,
+				186CC183212D5B92004AC557 /* LineConnector.framework in Frameworks */,
+				186CC188212D5B92004AC557 /* libWeChatSDK.a in Frameworks */,
+				186CC182212D5B92004AC557 /* ShareSDKUI.framework in Frameworks */,
+				186CC17C212D5B92004AC557 /* MOBFoundation.framework in Frameworks */,
+				186CC185212D5B92004AC557 /* WechatConnector.framework in Frameworks */,
+				186CC186212D5B92004AC557 /* LineSDK.framework in Frameworks */,
+				186CC180212D5B92004AC557 /* ShareSDKExtension.framework in Frameworks */,
+				7155D5A8D28B429862CB90DB /* Pods_WebViewPro.framework in Frameworks */,
+				186CC187212D5B92004AC557 /* TencentOpenAPI.framework in Frameworks */,
+				186CC184212D5B92004AC557 /* QQConnector.framework in Frameworks */,
+				186CC17F212D5B92004AC557 /* ShareSDKConfigFile.framework in Frameworks */,
+				186CC18B212D5B92004AC557 /* ShareSDKConnector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186CC14A212D3CA7004AC557 /* module */ = {
+			isa = PBXGroup;
+			children = (
+				186CC1B4212E5F12004AC557 /* Argon2Hash.h */,
+				186CC1B5212E5F12004AC557 /* Argon2Hash.m */,
+				186CC14B212D3CBA004AC557 /* QRCode.h */,
+				186CC14C212D3CFC004AC557 /* BaseObject.h */,
+				186CC196212E5788004AC557 /* ShareToPlatforms.h */,
+				186CC197212E5788004AC557 /* ShareToPlatforms.m */,
+				186CC151212D4077004AC557 /* ImagePicker.h */,
+				186CC152212D40AF004AC557 /* ImagePicker.m */,
+				186CC14D212D3D38004AC557 /* BaseObject.m */,
+				186CC14F212D3D5C004AC557 /* QRCode.m */,
+			);
+			path = module;
+			sourceTree = "<group>";
+		};
+		186CC154212D40DD004AC557 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				186CC155212D40FE004AC557 /* ImageUtils.m */,
+				186CC157212D4110004AC557 /* ImageUtils.h */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		186CC15E212D5B92004AC557 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				186CC15F212D5B92004AC557 /* Required */,
+				186CC161212D5B92004AC557 /* ShareSDK */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		186CC15F212D5B92004AC557 /* Required */ = {
+			isa = PBXGroup;
+			children = (
+				186CC160212D5B92004AC557 /* MOBFoundation.framework */,
+			);
+			path = Required;
+			sourceTree = "<group>";
+		};
+		186CC161212D5B92004AC557 /* ShareSDK */ = {
+			isa = PBXGroup;
+			children = (
+				186CC162212D5B92004AC557 /* ShareSDK.framework */,
+				186CC163212D5B92004AC557 /* Support */,
+			);
+			path = ShareSDK;
+			sourceTree = "<group>";
+		};
+		186CC163212D5B92004AC557 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				186CC164212D5B92004AC557 /* Optional */,
+				186CC16A212D5B92004AC557 /* PlatformConnector */,
+				186CC16E212D5B92004AC557 /* PlatformSDK */,
+				186CC179212D5B92004AC557 /* Required */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		186CC164212D5B92004AC557 /* Optional */ = {
+			isa = PBXGroup;
+			children = (
+				186CC165212D5B92004AC557 /* ShareSDKConfigFile.bundle */,
+				186CC166212D5B92004AC557 /* ShareSDKConfigFile.framework */,
+				186CC167212D5B92004AC557 /* ShareSDKExtension.framework */,
+				186CC168212D5B92004AC557 /* ShareSDKUI.bundle */,
+				186CC169212D5B92004AC557 /* ShareSDKUI.framework */,
+			);
+			path = Optional;
+			sourceTree = "<group>";
+		};
+		186CC16A212D5B92004AC557 /* PlatformConnector */ = {
+			isa = PBXGroup;
+			children = (
+				186CC16B212D5B92004AC557 /* LineConnector.framework */,
+				186CC16C212D5B92004AC557 /* QQConnector.framework */,
+				186CC16D212D5B92004AC557 /* WechatConnector.framework */,
+			);
+			path = PlatformConnector;
+			sourceTree = "<group>";
+		};
+		186CC16E212D5B92004AC557 /* PlatformSDK */ = {
+			isa = PBXGroup;
+			children = (
+				186CC16F212D5B92004AC557 /* LineSDK */,
+				186CC171212D5B92004AC557 /* QQSDK */,
+				186CC173212D5B92004AC557 /* WeChatSDK */,
+			);
+			path = PlatformSDK;
+			sourceTree = "<group>";
+		};
+		186CC16F212D5B92004AC557 /* LineSDK */ = {
+			isa = PBXGroup;
+			children = (
+				186CC170212D5B92004AC557 /* LineSDK.framework */,
+			);
+			path = LineSDK;
+			sourceTree = "<group>";
+		};
+		186CC171212D5B92004AC557 /* QQSDK */ = {
+			isa = PBXGroup;
+			children = (
+				186CC172212D5B92004AC557 /* TencentOpenAPI.framework */,
+			);
+			path = QQSDK;
+			sourceTree = "<group>";
+		};
+		186CC173212D5B92004AC557 /* WeChatSDK */ = {
+			isa = PBXGroup;
+			children = (
+				186CC174212D5B92004AC557 /* libWeChatSDK.a */,
+				186CC175212D5B92004AC557 /* README.txt */,
+				186CC176212D5B92004AC557 /* WechatAuthSDK.h */,
+				186CC177212D5B92004AC557 /* WXApi.h */,
+				186CC178212D5B92004AC557 /* WXApiObject.h */,
+			);
+			path = WeChatSDK;
+			sourceTree = "<group>";
+		};
+		186CC179212D5B92004AC557 /* Required */ = {
+			isa = PBXGroup;
+			children = (
+				186CC17A212D5B92004AC557 /* ShareSDK.bundle */,
+				186CC17B212D5B92004AC557 /* ShareSDKConnector.framework */,
+			);
+			path = Required;
+			sourceTree = "<group>";
+		};
+		186CC19B212E5E42004AC557 /* Argon2 */ = {
+			isa = PBXGroup;
+			children = (
+				186CC19C212E5E42004AC557 /* argon2.c */,
+				186CC1A0212E5E42004AC557 /* blake2b.c */,
+				186CC1A3212E5E42004AC557 /* core.c */,
+				186CC1A5212E5E42004AC557 /* encoding.c */,
+				186CC1A9212E5E42004AC557 /* ref.c */,
+				186CC1AB212E5E42004AC557 /* thread.c */,
+			);
+			path = Argon2;
+			sourceTree = "<group>";
+		};
+		D9867163C925FD4A8BD77FDE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1172D96F2A9AD88014270C48 /* Pods-WebViewPro.debug.xcconfig */,
+				43C727B9AF12A0A78E5BCCF4 /* Pods-WebViewPro.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F31811A521217D5F0094EF5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				186CC194212E5755004AC557 /* libsqlite3.tbd */,
+				186CC192212E573E004AC557 /* JavaScriptCore.framework */,
+				186CC190212E5732004AC557 /* libstdc++.tbd */,
+				186CC18E212E5718004AC557 /* libz.tbd */,
+				186CC18C212E570B004AC557 /* libicucore.tbd */,
+				05E9AC1474756A21F18A3754 /* Pods_WebViewPro.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -65,15 +312,13 @@
 		F354AB1F2119930300A8BEA8 = {
 			isa = PBXGroup;
 			children = (
-				F3BB45D421218840006AE245 /* argon2.c */,
-				F3BB45D321218840006AE245 /* blake2b.c */,
-				F3BB45D22121883F006AE245 /* core.c */,
-				F3BB45D521218840006AE245 /* encoding.c */,
-				F3BB45D621218840006AE245 /* ref.c */,
-				F3BB45D721218840006AE245 /* thread.c */,
+				186CC19B212E5E42004AC557 /* Argon2 */,
+				186CC199212E5BC5004AC557 /* icon.png */,
+				186CC15E212D5B92004AC557 /* SDK */,
 				F354AB2A2119930300A8BEA8 /* test */,
 				F354AB292119930300A8BEA8 /* Products */,
 				F31811A521217D5F0094EF5E /* Frameworks */,
+				D9867163C925FD4A8BD77FDE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +333,8 @@
 		F354AB2A2119930300A8BEA8 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				186CC154212D40DD004AC557 /* util */,
+				186CC14A212D3CA7004AC557 /* module */,
 				F301353C211EDA3800C309A2 /* android_asset */,
 				F3FC0EEA211C155800C7F566 /* JSBundle.h */,
 				F3FC0EE8211C153300C7F566 /* JSBundle.m */,
@@ -111,9 +358,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F354AB3E2119930400A8BEA8 /* Build configuration list for PBXNativeTarget "WebViewPro" */;
 			buildPhases = (
+				47AC85517609C197163906CA /* [CP] Check Pods Manifest.lock */,
 				F354AB242119930300A8BEA8 /* Sources */,
 				F354AB252119930300A8BEA8 /* Frameworks */,
 				F354AB262119930300A8BEA8 /* Resources */,
+				FBA01570028408A5EFA50926 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -161,29 +410,81 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186CC181212D5B92004AC557 /* ShareSDKUI.bundle in Resources */,
+				186CC19A212E5BC5004AC557 /* icon.png in Resources */,
 				F354AB352119930400A8BEA8 /* Assets.xcassets in Resources */,
 				F301353D211EDA3800C309A2 /* android_asset in Resources */,
+				186CC17E212D5B92004AC557 /* ShareSDKConfigFile.bundle in Resources */,
+				186CC18A212D5B92004AC557 /* ShareSDK.bundle in Resources */,
+				186CC189212D5B92004AC557 /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47AC85517609C197163906CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WebViewPro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FBA01570028408A5EFA50926 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WebViewPro/Pods-WebViewPro-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/HMQRCodeScanner/HMQRCodeScanner.framework",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMQRCodeScanner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WebViewPro/Pods-WebViewPro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F354AB242119930300A8BEA8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				186CC1AF212E5E42004AC557 /* core.c in Sources */,
 				F3FC0EF3211C71A800C7F566 /* Test.m in Sources */,
-				F3BB45D921218841006AE245 /* blake2b.c in Sources */,
-				F3BB45DA21218841006AE245 /* argon2.c in Sources */,
-				F3BB45DC21218841006AE245 /* ref.c in Sources */,
-				F3BB45DB21218841006AE245 /* encoding.c in Sources */,
+				186CC14E212D3D38004AC557 /* BaseObject.m in Sources */,
+				186CC156212D40FE004AC557 /* ImageUtils.m in Sources */,
+				186CC150212D3D5C004AC557 /* QRCode.m in Sources */,
+				186CC1B0212E5E42004AC557 /* encoding.c in Sources */,
+				186CC1B2212E5E42004AC557 /* ref.c in Sources */,
+				186CC1B6212E5F12004AC557 /* Argon2Hash.m in Sources */,
 				F3FC0EE9211C153300C7F566 /* JSBundle.m in Sources */,
-				F3BB45D821218841006AE245 /* core.c in Sources */,
 				F354AB302119930300A8BEA8 /* WebViewController.m in Sources */,
 				F354AB3B2119930400A8BEA8 /* main.m in Sources */,
+				186CC1AE212E5E42004AC557 /* blake2b.c in Sources */,
 				F354AB2D2119930300A8BEA8 /* WebViewAppDelegate.m in Sources */,
-				F3BB45DD21218841006AE245 /* thread.c in Sources */,
+				186CC1B3212E5E42004AC557 /* thread.c in Sources */,
+				186CC1AD212E5E42004AC557 /* argon2.c in Sources */,
+				186CC198212E5788004AC557 /* ShareToPlatforms.m in Sources */,
+				186CC153212D40AF004AC557 /* ImagePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +546,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -296,16 +598,29 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		F354AB3F2119930400A8BEA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1172D96F2A9AD88014270C48 /* Pods-WebViewPro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LU5XMC8SH3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDK/Required",
+					"$(PROJECT_DIR)/SDK/ShareSDK",
+					"$(PROJECT_DIR)/SDK/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformConnector",
+					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/LineSDK",
+					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/QQSDK",
+					"$(PROJECT_DIR)/SDK/ShareSDK/Support/Required",
+				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -314,19 +629,33 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/test",
+					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kupay.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kupay.kupay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$SRCROOT/**";
 			};
 			name = Debug;
 		};
 		F354AB402119930400A8BEA8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43C727B9AF12A0A78E5BCCF4 /* Pods-WebViewPro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LU5XMC8SH3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SDK/Required",
+					"$(PROJECT_DIR)/SDK/ShareSDK",
+					"$(PROJECT_DIR)/SDK/ShareSDK/Support/Optional",
+					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformConnector",
+					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/LineSDK",
+					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/QQSDK",
+					"$(PROJECT_DIR)/SDK/ShareSDK/Support/Required",
+				);
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -335,10 +664,12 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/test",
+					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kupay.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kupay.kupay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$SRCROOT/**";
 			};
 			name = Release;
 		};
