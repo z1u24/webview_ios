@@ -42,11 +42,13 @@
 		186CC1B3212E5E42004AC557 /* thread.c in Sources */ = {isa = PBXBuildFile; fileRef = 186CC1AB212E5E42004AC557 /* thread.c */; };
 		186CC1B6212E5F12004AC557 /* Argon2Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC1B5212E5F12004AC557 /* Argon2Hash.m */; };
 		7155D5A8D28B429862CB90DB /* Pods_WebViewPro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E9AC1474756A21F18A3754 /* Pods_WebViewPro.framework */; };
-		F301353D211EDA3800C309A2 /* android_asset in Resources */ = {isa = PBXBuildFile; fileRef = F301353C211EDA3800C309A2 /* android_asset */; };
+		F30026992140FC2400318BB7 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = F30026982140FC2400318BB7 /* assets */; };
+		F300269C2141161D00318BB7 /* JSIntercept.m in Sources */ = {isa = PBXBuildFile; fileRef = F300269B2141161D00318BB7 /* JSIntercept.m */; };
 		F354AB2D2119930300A8BEA8 /* WebViewAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB2C2119930300A8BEA8 /* WebViewAppDelegate.m */; };
 		F354AB302119930300A8BEA8 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB2F2119930300A8BEA8 /* WebViewController.m */; };
 		F354AB352119930400A8BEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F354AB342119930400A8BEA8 /* Assets.xcassets */; };
 		F354AB3B2119930400A8BEA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB3A2119930400A8BEA8 /* main.m */; };
+		F3F73DF2213FF78300187E86 /* Interceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F73DF1213FF78300187E86 /* Interceptor.m */; };
 		F3FC0EE9211C153300C7F566 /* JSBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FC0EE8211C153300C7F566 /* JSBundle.m */; };
 		F3FC0EF3211C71A800C7F566 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FC0EF2211C71A800C7F566 /* Test.m */; };
 /* End PBXBuildFile section */
@@ -98,7 +100,9 @@
 		186CC1B4212E5F12004AC557 /* Argon2Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Argon2Hash.h; sourceTree = "<group>"; };
 		186CC1B5212E5F12004AC557 /* Argon2Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Argon2Hash.m; sourceTree = "<group>"; };
 		43C727B9AF12A0A78E5BCCF4 /* Pods-WebViewPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewPro.release.xcconfig"; path = "Pods/Target Support Files/Pods-WebViewPro/Pods-WebViewPro.release.xcconfig"; sourceTree = "<group>"; };
-		F301353C211EDA3800C309A2 /* android_asset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = android_asset; sourceTree = "<group>"; };
+		F30026982140FC2400318BB7 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		F300269A214115F600318BB7 /* JSIntercept.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSIntercept.h; sourceTree = "<group>"; };
+		F300269B2141161D00318BB7 /* JSIntercept.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSIntercept.m; sourceTree = "<group>"; };
 		F354AB282119930300A8BEA8 /* WebViewPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F354AB2B2119930300A8BEA8 /* WebViewAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewAppDelegate.h; sourceTree = "<group>"; };
 		F354AB2C2119930300A8BEA8 /* WebViewAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewAppDelegate.m; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 		F354AB342119930400A8BEA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F354AB392119930400A8BEA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F354AB3A2119930400A8BEA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F3F73DF0213FF78300187E86 /* Interceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Interceptor.h; path = test/intercept/Interceptor.h; sourceTree = SOURCE_ROOT; };
+		F3F73DF1213FF78300187E86 /* Interceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Interceptor.m; path = test/intercept/Interceptor.m; sourceTree = SOURCE_ROOT; };
 		F3FC0EE8211C153300C7F566 /* JSBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBundle.m; sourceTree = "<group>"; };
 		F3FC0EEA211C155800C7F566 /* JSBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBundle.h; sourceTree = "<group>"; };
 		F3FC0EF1211C719700C7F566 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
@@ -155,6 +161,8 @@
 				186CC152212D40AF004AC557 /* ImagePicker.m */,
 				186CC14D212D3D38004AC557 /* BaseObject.m */,
 				186CC14F212D3D5C004AC557 /* QRCode.m */,
+				F300269A214115F600318BB7 /* JSIntercept.h */,
+				F300269B2141161D00318BB7 /* JSIntercept.m */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -333,9 +341,10 @@
 		F354AB2A2119930300A8BEA8 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				F30026982140FC2400318BB7 /* assets */,
+				F3F73DEF213FF75A00187E86 /* interceptor */,
 				186CC154212D40DD004AC557 /* util */,
 				186CC14A212D3CA7004AC557 /* module */,
-				F301353C211EDA3800C309A2 /* android_asset */,
 				F3FC0EEA211C155800C7F566 /* JSBundle.h */,
 				F3FC0EE8211C153300C7F566 /* JSBundle.m */,
 				F354AB2B2119930300A8BEA8 /* WebViewAppDelegate.h */,
@@ -349,6 +358,15 @@
 				F3FC0EF2211C71A800C7F566 /* Test.m */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		F3F73DEF213FF75A00187E86 /* interceptor */ = {
+			isa = PBXGroup;
+			children = (
+				F3F73DF0213FF78300187E86 /* Interceptor.h */,
+				F3F73DF1213FF78300187E86 /* Interceptor.m */,
+			);
+			path = interceptor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,8 +430,8 @@
 			files = (
 				186CC181212D5B92004AC557 /* ShareSDKUI.bundle in Resources */,
 				186CC19A212E5BC5004AC557 /* icon.png in Resources */,
+				F30026992140FC2400318BB7 /* assets in Resources */,
 				F354AB352119930400A8BEA8 /* Assets.xcassets in Resources */,
-				F301353D211EDA3800C309A2 /* android_asset in Resources */,
 				186CC17E212D5B92004AC557 /* ShareSDKConfigFile.bundle in Resources */,
 				186CC18A212D5B92004AC557 /* ShareSDK.bundle in Resources */,
 				186CC189212D5B92004AC557 /* README.txt in Resources */,
@@ -479,11 +497,13 @@
 				F3FC0EE9211C153300C7F566 /* JSBundle.m in Sources */,
 				F354AB302119930300A8BEA8 /* WebViewController.m in Sources */,
 				F354AB3B2119930400A8BEA8 /* main.m in Sources */,
+				F3F73DF2213FF78300187E86 /* Interceptor.m in Sources */,
 				186CC1AE212E5E42004AC557 /* blake2b.c in Sources */,
 				F354AB2D2119930300A8BEA8 /* WebViewAppDelegate.m in Sources */,
 				186CC1B3212E5E42004AC557 /* thread.c in Sources */,
 				186CC1AD212E5E42004AC557 /* argon2.c in Sources */,
 				186CC198212E5788004AC557 /* ShareToPlatforms.m in Sources */,
+				F300269C2141161D00318BB7 /* JSIntercept.m in Sources */,
 				186CC153212D40AF004AC557 /* ImagePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

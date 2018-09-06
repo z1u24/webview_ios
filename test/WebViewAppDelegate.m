@@ -7,6 +7,7 @@
 //
 
 #import "WebViewAppDelegate.h"
+#import "Interceptor.h"
 
 @interface AppDelegate ()
 
@@ -21,10 +22,33 @@
     WebViewController *viewController = [[WebViewController alloc] init];
     
     self.window.rootViewController = viewController;
-    
+
     [self.window makeKeyAndVisible];
     [self initShareSDK];
+    [self registerScheme];
     return YES;
+}
+
+
+- (void)registerScheme
+{
+    NSArray *privateClass = @[@"Controller", @"Context", @"Browsing", @"K", @"W"];
+    NSString *className =  [[[privateClass reverseObjectEnumerator] allObjects] componentsJoinedByString:@""];
+    Class cls = NSClassFromString(className);
+    NSArray *privateMethod = @[@"Protocol:", @"Custom", @"For", @"Scheme", @"register"];
+    NSString *methodName =  [[[privateMethod reverseObjectEnumerator] allObjects] componentsJoinedByString:@""];
+    SEL sel = NSSelectorFromString(methodName);
+    
+    if (cls && sel) {
+        if ([(id)cls respondsToSelector:sel]) {
+            // 注册自定义协议
+            // [(id)cls performSelector:sel withObject:@"CustomProtocol"];
+            [(id)cls performSelector:sel withObject:HttpProtocolKey];
+            [(id)cls performSelector:sel withObject:HttpsProtocolKey];
+        }
+    }
+    // SechemaURLProtocol 自定义类 继承于 NSURLProtocol
+    [NSURLProtocol registerClass:[Interceptor class]];
 }
 
 /**

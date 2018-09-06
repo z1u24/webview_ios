@@ -9,6 +9,7 @@
 #import "JSBundle.h"
 #import "WebViewController.h"
 #import "BaseObject.h"
+#import "JSIntercept.h"
 
 @interface WebViewController () <WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler>
 
@@ -29,7 +30,6 @@ static WKWebView *wkWebView = nil;
     wkWebView = [self createWebview];
     [BaseObject setVc:self];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -55,6 +55,7 @@ static WKWebView *wkWebView = nil;
     config.userContentController = [[WKUserContentController alloc] init];
     // 添加消息处理，注意：self指代的对象需要遵守WKScriptMessageHandler协议，结束时需要移除
     [config.userContentController addScriptMessageHandler:self name: @"Native"];
+    [config.userContentController addScriptMessageHandler:self name: @"JSIntercept"];
 
     WKWebView *webview = [[WKWebView alloc]initWithFrame:self.view.bounds configuration:config];
     
@@ -66,7 +67,7 @@ static WKWebView *wkWebView = nil;
     [self.view addSubview:webview];
     
 //    NSString *urlPath = @"https://www.baidu.com";
-     NSString *urlPath = @"http://192.168.33.93:8088/dst/boot/index.html";
+     NSString *urlPath = @"http://192.168.33.88:8088/dst/boot/index.html";
     // NSString *urlPath = [NSString stringWithFormat:@"file:///%@/android_asset/index.html", [[NSBundle mainBundle] bundlePath]];
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:urlPath]];
     [webview loadRequest:request];
@@ -90,12 +91,33 @@ static WKWebView *wkWebView = nil;
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+- (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(YES);
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        completionHandler(NO);
+    }];
+    
+    [alert addAction:okAction];
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 // 消息分发
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message
 {
     // 判断是否是调用原生的
     if ([message.name isEqualToString:@"Native"]) {
         [JSBundle sendMessage:message.body];
+    } else if ([message.name isEqualToString:@"JSIntercept"]) {
+        NSArray *params = message.body;
+        [JSIntercept safeFile:params[0] content:params[1]];
     } else {
         [JSBundle callJSError:@"None" funcName:@"None" msg:@"'Not Native Message Call'"];
     }
