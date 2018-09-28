@@ -19,8 +19,8 @@ static BOOL fetchFromMobile = YES;
     NSString *urlString = url.absoluteString;
     
     // 判断是否需要进入自定义加载器
-    if ([scheme caseInsensitiveCompare:HttpProtocolKey] != NSOrderedSame &&
-        [scheme caseInsensitiveCompare:HttpsProtocolKey] != NSOrderedSame) {
+    if ([scheme caseInsensitiveCompare:HttpProtocolKey] != NSOrderedSame) {
+//        &&[scheme caseInsensitiveCompare:HttpsProtocolKey] != NSOrderedSame) {
         return NO;
     }
     
