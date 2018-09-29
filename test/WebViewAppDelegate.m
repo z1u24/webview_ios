@@ -17,6 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // 设置userAgent
+    NSString *customizeUserAgent = @" YINENG_IOS/1.0";
+    NSString *webViewUserAgent = [[UIWebView new] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
+    customizeUserAgent = [webViewUserAgent stringByAppendingFormat:@" %@", customizeUserAgent];
+    if (customizeUserAgent) {
+        [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"UserAgent": customizeUserAgent}];
+    }
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     WebViewController *viewController = [[WebViewController alloc] init];

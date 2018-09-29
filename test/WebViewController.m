@@ -51,9 +51,10 @@ static WKWebView *wkWebView = nil;
     [config.userContentController addScriptMessageHandler:self name: @"JSIntercept"];
     WKWebView *webview = [[WKWebView alloc]initWithFrame:self.view.bounds configuration:config];
     // 获取默认User-Agent
-    [webview evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id result, NSError *error) {
-        webview.customUserAgent = [result stringByAppendingString:@" YINENG_IOS/1.0"];
-    }];
+//    [webview evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id result, NSError *error) {
+//        webview.customUserAgent = [result stringByAppendingString:@" YINENG_IOS/1.0"];
+//    }];
+    
     [self.view addSubview:webview];
 //    NSString *urlPath = @"https://www.baidu.com/";
 //     NSString *urlPath = @"http://192.168.33.183:8088/dst/boot/index.html";
