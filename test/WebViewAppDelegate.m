@@ -16,7 +16,8 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+//    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    [self setStatusBarBackgroundColor:UIColor.clearColor];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     WebViewController *viewController = [[WebViewController alloc] init];
@@ -27,6 +28,14 @@
     [self initShareSDK];
     [self registerScheme];
     return YES;
+}
+
+//设置状态栏颜色
+- (void)setStatusBarBackgroundColor:(UIColor *)color {
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = color;
+    }
 }
 
 

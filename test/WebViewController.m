@@ -54,10 +54,12 @@ static WKWebView *wkWebView = nil;
     [webview evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id result, NSError *error) {
         webview.customUserAgent = [result stringByAppendingString:@" YINENG_IOS/1.0"];
     }];
+    // 确定宽、高、X、Y坐标
+    [webview setFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     [self.view addSubview:webview];
 //    NSString *urlPath = @"https://www.baidu.com/";
 //     NSString *urlPath = @"http://192.168.33.183:8088/dst/boot/index.html";
-    NSString *urlPath = @"http://47.75.254.166:8080/wallet/app/boot/index.html";
+    NSString *urlPath = @"http://192.168.33.113:8080/wallet/app/boot/index.html";
 //     NSString *urlPath = [NSString stringWithFormat:@"file:///%@/android_asset/index.html", [[NSBundle mainBundle] bundlePath]];
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:urlPath]];
     [webview loadRequest:request];
@@ -102,5 +104,21 @@ static WKWebView *wkWebView = nil;
         [JSBundle callJSError:@"None" funcName:@"None" msg:@"'Not Native Message Call'"];
     }
 }
+
+//- (void)viewWillAppear:(BOOL)animated{
+//    [self setStatusBarBackgroundColor:UIColor.clearColor];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated{
+//    [self setStatusBarBackgroundColor:UIColor.whiteColor];
+//}
+//
+////设置状态栏颜色
+//- (void)setStatusBarBackgroundColor:(UIColor *)color {
+//    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+//    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+//        statusBar.backgroundColor = color;
+//    }
+//}
 
 @end

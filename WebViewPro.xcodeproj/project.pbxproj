@@ -36,6 +36,7 @@
 		1828D304215DED6700AEC12F /* Icon-App-83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1828D2E8215DED6700AEC12F /* Icon-App-83.5x83.5@2x.png */; };
 		1828D305215DED6700AEC12F /* ItunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1828D2E9215DED6700AEC12F /* ItunesArtwork@2x.png */; };
 		1828D33E215E01A400AEC12F /* LocationProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828D33D215E01A400AEC12F /* LocationProvider.m */; };
+		1828D344215E358500AEC12F /* DeviceIdProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828D343215E358500AEC12F /* DeviceIdProvider.m */; };
 		186CC14E212D3D38004AC557 /* BaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC14D212D3D38004AC557 /* BaseObject.m */; };
 		186CC150212D3D5C004AC557 /* QRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC14F212D3D5C004AC557 /* QRCode.m */; };
 		186CC153212D40AF004AC557 /* ImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC152212D40AF004AC557 /* ImagePicker.m */; };
@@ -114,6 +115,8 @@
 		1828D2E9215DED6700AEC12F /* ItunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ItunesArtwork@2x.png"; sourceTree = "<group>"; };
 		1828D33C215E01A400AEC12F /* LocationProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LocationProvider.h; path = ../../../../LocationProvider.h; sourceTree = "<group>"; };
 		1828D33D215E01A400AEC12F /* LocationProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LocationProvider.m; path = ../../../../LocationProvider.m; sourceTree = "<group>"; };
+		1828D342215E358500AEC12F /* DeviceIdProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceIdProvider.h; sourceTree = "<group>"; };
+		1828D343215E358500AEC12F /* DeviceIdProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceIdProvider.m; sourceTree = "<group>"; };
 		186CC14B212D3CBA004AC557 /* QRCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCode.h; sourceTree = "<group>"; };
 		186CC14C212D3CFC004AC557 /* BaseObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseObject.h; sourceTree = "<group>"; };
 		186CC14D212D3D38004AC557 /* BaseObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseObject.m; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 				186CC14B212D3CBA004AC557 /* QRCode.h */,
 				186CC14C212D3CFC004AC557 /* BaseObject.h */,
 				186CC196212E5788004AC557 /* ShareToPlatforms.h */,
+				1828D342215E358500AEC12F /* DeviceIdProvider.h */,
+				1828D343215E358500AEC12F /* DeviceIdProvider.m */,
 				186CC197212E5788004AC557 /* ShareToPlatforms.m */,
 				186CC151212D4077004AC557 /* ImagePicker.h */,
 				186CC152212D40AF004AC557 /* ImagePicker.m */,
@@ -634,6 +639,7 @@
 				186CC198212E5788004AC557 /* ShareToPlatforms.m in Sources */,
 				1828D33E215E01A400AEC12F /* LocationProvider.m in Sources */,
 				F300269C2141161D00318BB7 /* JSIntercept.m in Sources */,
+				1828D344215E358500AEC12F /* DeviceIdProvider.m in Sources */,
 				186CC153212D40AF004AC557 /* ImagePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
