@@ -54,7 +54,8 @@ bool onlyOne = false;
         if (onlyOne) {
             UIImage *image = [photos objectAtIndex:0];
             NSString *result = [ImageUtils image2base64:image];
-            [JSBundle callJS:[NSNumber numberWithInt:callbackId] code:0 params:[NSArray arrayWithObjects: result,nil]];
+            NSString *base64 = [NSString stringWithFormat:@"%s%@","data:image/png;base64,",result];
+            [JSBundle callJS:[NSNumber numberWithInt:callbackId] code:0 params:[NSArray arrayWithObjects: @"600",@"600",base64,nil]];
         }
     }
 }
