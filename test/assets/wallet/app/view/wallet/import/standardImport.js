@@ -18,6 +18,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var root_1 = require("../../../../pi/ui/root");
 var widget_1 = require("../../../../pi/widget/widget");
 var interface_1 = require("../../../store/interface");
+var tools_1 = require("../../../utils/tools");
 var home_1 = require("./home");
 
 var StandardImport = function (_widget_1$Widget) {
@@ -41,7 +42,8 @@ var StandardImport = function (_widget_1$Widget) {
             this.state = {
                 mnemonic: '',
                 psw: '',
-                pswConfirm: ''
+                pswConfirm: '',
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {
@@ -54,7 +56,7 @@ var StandardImport = function (_widget_1$Widget) {
         key: "nextClick",
         value: function nextClick(e) {
             if (this.state.mnemonic.length <= 0) {
-                root_1.popNew('app-components-message-message', { content: '请输入助记词' });
+                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips });
                 return;
             }
             var w = home_1.forelet.getWidget(home_1.WIDGET_NAME);

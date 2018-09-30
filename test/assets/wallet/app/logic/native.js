@@ -4,6 +4,7 @@ _$define("app/logic/native", function (require, exports, module){
 Object.defineProperty(exports, "__esModule", { value: true });
 var imagePicker_1 = require("../../pi/browser/imagePicker");
 var qrcode_1 = require("../../pi/browser/qrcode");
+var systemInfoProvider_1 = require("../../pi/browser/systemInfoProvider");
 var webViewHelper_1 = require("../../pi/browser/webViewHelper");
 var root_1 = require("../../pi/ui/root");
 /**
@@ -64,6 +65,21 @@ exports.openNewActivity = function (url) {
         fail: function fail(result) {},
         loadUrl: url,
         title: title
+    });
+};
+/**
+ * 获取设备信息
+ */
+exports.getDeviceInfo = function () {
+    var systemInfo = new systemInfoProvider_1.SystemInfoProvider();
+    systemInfo.init();
+    systemInfo.getDeviceInfo({
+        success: function success(result) {
+            console.log('获取设备的系统信息成功\t' + result);
+        },
+        fail: function fail(result) {
+            console.log('获取设备的系统信息失败\t' + result);
+        }
     });
 };
 })

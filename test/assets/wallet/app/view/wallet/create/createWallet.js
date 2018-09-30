@@ -80,7 +80,8 @@ var CreateWallet = function (_widget_1$Widget) {
                 walletPswAvailable: false,
                 chooseImage: false,
                 avatar: '',
-                avatarHtml: ''
+                avatarHtml: '',
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {
@@ -167,28 +168,37 @@ var CreateWallet = function (_widget_1$Widget) {
                                     break;
                                 }
 
-                                root_1.popNew('app-components-message-message', { content: '请输入1-10位钱包名' });
+                                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[0] });
                                 return _context.abrupt("return");
 
                             case 5:
-                                if (this.state.walletPswAvailable) {
+                                if (!(!this.state.walletPsw || !this.state.walletPswConfirm)) {
                                     _context.next = 8;
                                     break;
                                 }
 
-                                root_1.popNew('app-components-message-message', { content: '密码格式不正确' });
+                                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[1] });
                                 return _context.abrupt("return");
 
                             case 8:
-                                if (this.state.pswEqualed) {
+                                if (this.state.walletPswAvailable) {
                                     _context.next = 11;
                                     break;
                                 }
 
-                                root_1.popNew('app-components-message-message', { content: '两次输入密码不一致' });
+                                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[2] });
                                 return _context.abrupt("return");
 
                             case 11:
+                                if (this.state.pswEqualed) {
+                                    _context.next = 14;
+                                    break;
+                                }
+
+                                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[3] });
+                                return _context.abrupt("return");
+
+                            case 14:
                                 option = {
                                     psw: this.state.walletPsw,
                                     nickName: this.state.walletName,
@@ -207,19 +217,19 @@ var CreateWallet = function (_widget_1$Widget) {
                                     option.fragment1 = this.props.fragment1;
                                     option.fragment2 = this.props.fragment2;
                                 }
-                                _context.next = 15;
+                                store_1.updateStore('flag', { created: true });
+                                _context.next = 19;
                                 return localWallet_1.createWallet(this.state.itype, option);
 
-                            case 15:
+                            case 19:
                                 hash = _context.sent;
 
                                 if (!hash) {
-                                    tools_1.popNewMessage('创建失败');
+                                    tools_1.popNewMessage(this.state.cfgData.tips[3]);
                                 }
                                 if (this.state.avatar) {
                                     pull_1.uploadFile(this.state.avatar);
                                 }
-                                store_1.updateStore('flag', { created: true });
                                 hashMap = store_1.getBorn('hashMap');
 
                                 hashMap.set(tools_1.getFirstEthAddr(), hash);
@@ -232,22 +242,26 @@ var CreateWallet = function (_widget_1$Widget) {
                                     w.ok && w.ok();
                                 }
                                 this.ok && this.ok();
-                                root_1.popNew('app-components-modalBox-modalBox', {
-                                    title: '创建成功',
-                                    content: '记得备份，如果忘记账户就找不回来了。',
-                                    sureText: '备份',
-                                    cancelText: '暂时不'
-                                }, function () {
+                                root_1.popNew('app-components-modalBox-modalBox', this.state.cfgData.modalBox, function () {
                                     root_1.popNew('app-view-wallet-backup-index', { mnemonic: mnemonic, fragments: fragments });
                                 });
 
-                            case 28:
+                            case 31:
                             case "end":
                                 return _context.stop();
                         }
                     }
                 }, _callee, this);
             }));
+        }
+        /**
+         * 查看隐私条约
+         */
+
+    }, {
+        key: "agreementClick",
+        value: function agreementClick() {
+            root_1.popNew('app-view-mine-other-privacypolicy');
         }
     }]);
 

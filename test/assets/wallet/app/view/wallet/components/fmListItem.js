@@ -16,6 +16,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * 理财列表item
  */
 var widget_1 = require("../../../../pi/widget/widget");
+var tools_1 = require("../../../utils/tools");
 
 var FmListItem = function (_widget_1$Widget) {
     _inherits(FmListItem, _widget_1$Widget);
@@ -30,6 +31,9 @@ var FmListItem = function (_widget_1$Widget) {
         key: "setProps",
         value: function setProps(props, oldProps) {
             _get(FmListItem.prototype.__proto__ || Object.getPrototypeOf(FmListItem.prototype), "setProps", this).call(this, props, oldProps);
+            this.state = {
+                cfgData: tools_1.getLanguage(this)
+            };
             this.init();
         }
     }, {

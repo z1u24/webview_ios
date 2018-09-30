@@ -38,9 +38,11 @@ var root_1 = require("../../pi/ui/root");
 var config_1 = require("../config");
 var cipher_1 = require("../core/crypto/cipher");
 var pull_1 = require("../net/pull");
+// tslint:disable-next-line:max-line-length
 var interface_1 = require("../store/interface");
 var store_1 = require("../store/store");
 var constants_1 = require("./constants");
+var con_mgr_1 = require("../../pi/net/ui/con_mgr");
 exports.depCopy = function (v) {
     return JSON.parse(JSON.stringify(v));
 };
@@ -71,7 +73,7 @@ exports.getWalletIndexByWalletId = function (wallets, walletId) {
  * @param currencyName 货币类型
  */
 exports.getCurrentAddrInfo = function (currencyName) {
-    var addrs = store_1.find('addrs');
+    var addrs = store_1.find('addrs') || [];
     var wallet = store_1.find('curWallet');
     var currencyRecord = wallet.currencyRecords.filter(function (item) {
         return item.currencyName === currencyName;
@@ -437,7 +439,7 @@ exports.reductionCipherMnemonic = function (cipherMnemonic) {
 exports.fetchBalanceOfCurrency = function (currencyName) {
     var wallet = store_1.find('curWallet');
     if (!wallet) return 0;
-    var localAddrs = store_1.find('addrs');
+    var localAddrs = store_1.find('addrs') || [];
     var balance = 0;
     var addrs = [];
     for (var i = 0; i < wallet.currencyRecords.length; i++) {
@@ -638,7 +640,7 @@ exports.getCurrentAddrByCurrencyName = function (currencyName) {
 exports.getCurrentAddrBalanceByCurrencyName = function (currencyName) {
     var curAddr = exports.getCurrentAddrByCurrencyName(currencyName);
     console.log('curAddr', curAddr);
-    var addrs = store_1.find('addrs');
+    var addrs = store_1.find('addrs') || [];
     for (var i = 0; i < addrs.length; i++) {
         if (addrs[i].currencyName === currencyName && addrs[i].addr === curAddr) {
             return addrs[i].balance || 0;
@@ -971,6 +973,9 @@ exports.fetchCoinGain = function () {
         if (config_1.MainChainCoin.hasOwnProperty(k)) {
             var gain = Math.random();
             item.gain = gain > 0.5 ? exports.formatBalanceValue(gain) : exports.formatBalanceValue(-gain);
+            if (k === 'KT') {
+                item.gain = 0;
+            }
             coinGain.set(k, item.gain);
         }
     }
@@ -1062,6 +1067,7 @@ exports.base64ToFile = function (base64) {
  */
 exports.getUserInfo = function () {
     var userInfo = store_1.find('userInfo');
+    if (!userInfo) return;
     var nickName = userInfo.nickName;
     if (!nickName) {
         var wallet = store_1.find('curWallet');
@@ -1099,7 +1105,7 @@ exports.fetchDeviceId = function () {
     return exports.getFirstEthAddr();
 };
 /**
- * 获取语言设置
+ * 根据当前语言设置获取静态文字，对于组件模块
  */
 exports.getLanguage = function (w) {
     var lan = store_1.find('languageSet');
@@ -1107,6 +1113,16 @@ exports.getLanguage = function (w) {
         return w.config.value[lan.languageList[lan.selected]];
     }
     return w.config.value.simpleChinese;
+};
+/**
+ * 根据当前语言设置获取静态文字，对于单独的ts文件
+ */
+exports.getStaticLanguage = function () {
+    var lan = store_1.find('languageSet');
+    if (lan) {
+        return config_1.Config[lan.languageList[lan.selected]];
+    }
+    return config_1.Config.simpleChinese;
 };
 /**
  * 助记词片段分享加密
@@ -1121,13 +1137,15 @@ exports.mnemonicFragmentEncrypt = function (fragments) {
     }
     var retFragments = [];
     for (var _i3 = 0; _i3 < fragments.length; _i3++) {
-        var fragmentArr = fragments[_i3].split("");
+        var fragmentArr = fragments[_i3].split('');
         var j = 1;
+        // tslint:disable-next-line:binary-expression-operand-order
         while (2 * j <= 12) {
+            // tslint:disable-next-line:binary-expression-operand-order
             fragmentArr.splice(2 * j - 1, 0, randomArr[j - 1]);
             j++;
         }
-        retFragments.push(fragmentArr.join(""));
+        retFragments.push(fragmentArr.join(''));
     }
     return retFragments;
 };
@@ -1136,17 +1154,28 @@ exports.mnemonicFragmentEncrypt = function (fragments) {
  * 为了便于识别用户使用的是同一组密钥，会在分享出去的密钥的第2/4/6/8/10/12加上一个相同的随机数
  */
 exports.mnemonicFragmentDecrypt = function (fragment) {
-    var fragmentArr = fragment.split("");
+    var fragmentArr = fragment.split('');
     var randomArr = [];
     var j = 6;
     while (j > 0) {
+        // tslint:disable-next-line:binary-expression-operand-order
         var delRandom = fragmentArr.splice(2 * j - 1, 1);
         j--;
         randomArr.push(delRandom);
     }
     return {
-        fragment: fragmentArr.join(""),
-        randomStr: randomArr.reverse().join("")
+        fragment: fragmentArr.join(''),
+        randomStr: randomArr.reverse().join('')
     };
+};
+/**
+ * 注销账户
+ */
+exports.logoutAccount = function () {
+    store_1.updateStore('curWallet', null);
+    store_1.updateStore('userInfo', null);
+    store_1.logoutInit();
+    con_mgr_1.closeCon();
+    pull_1.openAndGetRandom();
 };
 })

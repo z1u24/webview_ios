@@ -51,17 +51,19 @@ var Home = function (_widget_1$Widget) {
     }, {
         key: "init",
         value: function init() {
+            var cfg = tools_1.getLanguage(this);
             this.state = {
                 tabs: [{
-                    tab: '推荐理财',
+                    tab: cfg.tabs[0],
                     components: 'app-view-wallet-financialManagement-recommendFM'
                 }, {
-                    tab: '我的理财',
+                    tab: cfg.tabs[1],
                     components: 'app-view-wallet-financialManagement-holdedFM'
                 }],
                 activeNum: 0,
                 avatar: '',
-                totalAsset: tools_1.formatBalanceValue(tools_1.fetchTotalAssets() + tools_1.fetchCloudTotalAssets())
+                totalAsset: tools_1.formatBalanceValue(tools_1.fetchTotalAssets() + tools_1.fetchCloudTotalAssets()),
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {

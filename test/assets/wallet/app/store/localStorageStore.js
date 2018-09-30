@@ -25,22 +25,28 @@ exports.initLocalStorageStore = function () {
         locWallets.walletList = walletList;
         localStorage.setItem('wallets', JSON.stringify(locWallets));
     });
-    store_1.register('addrs', function (addrs) {
-        localStorage.setItem('addrs', JSON.stringify(addrs));
-    });
-    store_1.register('transactions', function (transactions) {
-        localStorage.setItem('transactions', JSON.stringify(transactions));
-    });
     store_1.register('curWallet', function (curWallet) {
         var locWallets = JSON.parse(localStorage.getItem('wallets'));
-        if (!curWallet || !locWallets || locWallets.walletList.length <= 0) return;
-        locWallets.walletList = locWallets.walletList.map(function (v) {
-            if (v.walletId === curWallet.walletId) {
-                v = curWallet;
-                locWallets.curWalletId = curWallet.walletId;
+        if (!curWallet) {
+            var index = -1;
+            for (var i = 0; i < locWallets.walletList.length; i++) {
+                if (locWallets.curWalletId === locWallets.walletList[i].walletId) {
+                    index = i;
+                    break;
+                }
             }
-            return v;
-        });
+            locWallets.walletList.splice(index, 1);
+            locWallets.salt = "";
+            locWallets.curWalletId = "";
+        } else {
+            locWallets.walletList = locWallets.walletList.map(function (v) {
+                if (v.walletId === curWallet.walletId) {
+                    v = curWallet;
+                    locWallets.curWalletId = curWallet.walletId;
+                }
+                return v;
+            });
+        }
         localStorage.setItem('wallets', JSON.stringify(locWallets));
         // ===============================更新walletList
         var walletList = JSON.parse(localStorage.getItem('wallets')).walletList;
@@ -52,9 +58,19 @@ exports.initLocalStorageStore = function () {
         locWallets.salt = salt;
         localStorage.setItem('wallets', JSON.stringify(locWallets));
     });
-    // 注册是否已阅读隐私协议
-    store_1.register('readedPriAgr', function (readed) {
-        setLocalStorage('readedPriAgr', readed);
+    store_1.register('addrs', function (addrs) {
+        if (!addrs) return;
+        var firstEthAddr = tools_1.getFirstEthAddr();
+        var addrsMap = new Map(getLocalStorage('addrsMap'));
+        addrsMap.set(firstEthAddr, addrs);
+        localStorage.setItem('addrsMap', JSON.stringify(addrsMap));
+    });
+    store_1.register('transactions', function (transactions) {
+        if (!transactions) return;
+        var firstEthAddr = tools_1.getFirstEthAddr();
+        var transactionsMap = new Map(getLocalStorage('transactionsMap'));
+        transactionsMap.set(firstEthAddr, transactions);
+        localStorage.setItem('transactionsMap', JSON.stringify(transactionsMap));
     });
     // 锁屏相关
     store_1.register('lockScreen', function (ls) {
@@ -90,17 +106,9 @@ exports.initLocalStorageStore = function () {
         }
         setLocalStorage('inviteRedBagRecMap', inviteRedBagRecMap);
     });
-    // 常用联系人
-    store_1.register('TopContacts', function (TopContacts) {
-        setLocalStorage('TopContacts', TopContacts);
-    });
     // shapeshift交易记录
     store_1.register('shapeShiftTxsMap', function (shapeShiftTxsMap) {
         setLocalStorage('shapeShiftTxsMap', shapeShiftTxsMap);
-    });
-    // ERC20精度
-    store_1.register('ERC20TokenDecimals', function (ERC20TokenDecimals) {
-        setLocalStorage('ERC20TokenDecimals', ERC20TokenDecimals);
     });
     store_1.register('lastGetSmsCodeTime', function (lastGetSmsCodeTime) {
         setLocalStorage('lastGetSmsCodeTime', lastGetSmsCodeTime);
@@ -113,7 +121,7 @@ exports.initLocalStorageStore = function () {
     store_1.register('realUserMap', function (realUserMap) {
         setLocalStorage('realUserMap', realUserMap);
     });
-    // 本地realUserMap
+    // 本地token
     store_1.register('token', function (token) {
         setLocalStorage('token', token);
     });

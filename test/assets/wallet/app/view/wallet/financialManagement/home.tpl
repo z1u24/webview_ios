@@ -3,27 +3,22 @@
 	    node = void 0;_$temp = node;{
 		var _$parent = _$temp;var _node = { "attrs": {}, "tagName": "div", "sid": 0 };_node.children = [];_node.attrSize = 3;_node.attrHash = 3437572703;_node.attrs["class"] = "new-page";_node.attrs["w-class"] = "new-page";_node.attrs["ev-back-click"] = "backPrePage";_$temp = _node;{
 			var _$parent2 = _$temp;var _node2 = { "attrs": {}, "tagName": "div", "sid": 1 };_node2.children = [];_node2.attrSize = 1;_node2.attrHash = 2215604891;_node2.attrs["w-class"] = "title-container";_$temp = _node2;{
-				var _$parent3 = _$temp;var _node3 = { "attrs": {}, "tagName": "app-components1-topBar-topBar", "sid": 2 };_node3.hasChild = false;_node3.child = null;_node3.childHash = 2068421766;_node3.attrHash = 0;_$temp = _node3;{
+				var _$parent3 = _$temp;var _node3 = { "attrs": {}, "tagName": "app-components1-topBar-topBar", "sid": 2 };_node3.hasChild = false;_node3.child = null;_node3.attrHash = 0;_$temp = _node3;{
 					var _$parent4 = _$temp;var _node4 = {}; //jpair pre
 
-					{
-						var jvalue = "";
-						jvalue = "优选理财";
-						//jpair suf
-
-						_node4["title"] = jvalue;
-					}
+					_node4["title"] = it1.cfgData.topBarTitle;
+					//jpair suf
 					//jpair pre
 
 					{
-						var _jvalue = "";
-						_jvalue = "linear-gradient(to right,#38CFE7,#318DE6)";
+						var jvalue = "";
+						jvalue = "linear-gradient(to right,#38CFE7,#318DE6)";
 						//jpair suf
 
-						_node4["background"] = _jvalue;
+						_node4["background"] = jvalue;
 					}
 					_addJson(_node4, _$parent4);
-				}_$parent3.children.push(_node3);
+				}_chFunc(_node3);_$parent3.children.push(_node3);
 			}_$temp = _node2;{
 				var _$parent5 = _$temp;var _node5 = { "attrs": {}, "tagName": "div", "sid": 3 };_node5.children = [];_node5.attrSize = 1;_node5.attrHash = 4105260532;_node5.attrs["w-class"] = "nav-wrap";_$temp = _node5;{
 					var _$parent6 = _$temp;var _node6 = { "attrs": {}, "tagName": "div", "sid": 4 };_node6.children = [];_node6.attrSize = 1;_node6.attrHash = 1940417547;_node6.attrs["w-class"] = "nav";{

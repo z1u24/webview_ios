@@ -43,7 +43,8 @@ var BackupMnemonicWordConfirm = function (_widget_1$Widget) {
                 mnemonic: mnemonic,
                 nullMnemonic: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                 confirmedMnemonic: [],
-                shuffledMnemonic: shuffledMnemonic
+                shuffledMnemonic: shuffledMnemonic,
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {
@@ -78,11 +79,13 @@ var BackupMnemonicWordConfirm = function (_widget_1$Widget) {
     }, {
         key: "nextStepClick",
         value: function nextStepClick() {
-            if (!this.compareMnemonicEqualed()) {
-                tools_1.popNewMessage('助记词错误，请重新输入');
+            if (this.state.confirmedMnemonic.length === 0) {
+                tools_1.popNewMessage(this.state.cfgData.tips[0]);
+            } else if (!this.compareMnemonicEqualed()) {
+                tools_1.popNewMessage(this.state.cfgData.tips[1]);
             } else {
                 localWallet_1.deleteMnemonic();
-                tools_1.popNewMessage('备份完成');
+                tools_1.popNewMessage(this.state.cfgData.tips[2]);
                 this.ok && this.ok();
             }
         }

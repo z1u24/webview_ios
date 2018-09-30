@@ -12,28 +12,34 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var widget_1 = require("../../../../pi/widget/widget");
+/**
+ * HoldedProductItem
+ */
 var root_1 = require("../../../../pi/ui/root");
+var widget_1 = require("../../../../pi/widget/widget");
+var tools_1 = require("../../../utils/tools");
 
-var holdedProductItem = function (_widget_1$Widget) {
-    _inherits(holdedProductItem, _widget_1$Widget);
+var HoldedProductItem = function (_widget_1$Widget) {
+    _inherits(HoldedProductItem, _widget_1$Widget);
 
-    function holdedProductItem() {
-        _classCallCheck(this, holdedProductItem);
+    function HoldedProductItem() {
+        _classCallCheck(this, HoldedProductItem);
 
-        return _possibleConstructorReturn(this, (holdedProductItem.__proto__ || Object.getPrototypeOf(holdedProductItem)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (HoldedProductItem.__proto__ || Object.getPrototypeOf(HoldedProductItem)).apply(this, arguments));
     }
 
-    _createClass(holdedProductItem, [{
+    _createClass(HoldedProductItem, [{
         key: "setProps",
         value: function setProps(props, oldProps) {
-            _get(holdedProductItem.prototype.__proto__ || Object.getPrototypeOf(holdedProductItem.prototype), "setProps", this).call(this, props, oldProps);
+            _get(HoldedProductItem.prototype.__proto__ || Object.getPrototypeOf(HoldedProductItem.prototype), "setProps", this).call(this, props, oldProps);
             console.log(this.props.product);
-            var stateShow = props.product.state === 1 ? '收益中' : '已赎回';
+            var cfg = tools_1.getLanguage(this);
+            var stateShow = props.product.state === 1 ? cfg.tips[5] : cfg.tips[6];
             var stateBg = props.product.state === 1 ? '' : 'status-gray';
             this.state = {
                 stateShow: stateShow,
-                stateBg: stateBg
+                stateBg: stateBg,
+                cfgData: cfg
             };
         }
     }, {
@@ -43,8 +49,8 @@ var holdedProductItem = function (_widget_1$Widget) {
         }
     }]);
 
-    return holdedProductItem;
+    return HoldedProductItem;
 }(widget_1.Widget);
 
-exports.holdedProductItem = holdedProductItem;
+exports.HoldedProductItem = HoldedProductItem;
 })

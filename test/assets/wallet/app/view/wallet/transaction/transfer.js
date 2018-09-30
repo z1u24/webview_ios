@@ -42,13 +42,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var root_1 = require("../../../../pi/ui/root");
 var widget_1 = require("../../../../pi/widget/widget");
 var config_1 = require("../../../config");
+var native_1 = require("../../../logic/native");
 var pullWallet_1 = require("../../../net/pullWallet");
 var interface_1 = require("../../../store/interface");
 var constants_1 = require("../../../utils/constants");
 // tslint:disable-next-line:max-line-length
 var tools_1 = require("../../../utils/tools");
 var unitTools_1 = require("../../../utils/unitTools");
-var native_1 = require("../../../logic/native");
 
 var Transfer = function (_widget_1$Widget) {
     _inherits(Transfer, _widget_1$Widget);
@@ -115,7 +115,8 @@ var Transfer = function (_widget_1$Widget) {
                                     minerFeeList: list,
                                     curLevel: curLevel,
                                     minLevel: curLevel,
-                                    inputDisabled: tx ? true : false
+                                    inputDisabled: tx ? true : false,
+                                    cfgData: tools_1.getLanguage(this)
                                 };
                                 this.updateMinerFeeList();
 
@@ -177,8 +178,7 @@ var Transfer = function (_widget_1$Widget) {
     }, {
         key: "speedDescClick",
         value: function speedDescClick() {
-            var content = "到账速度受网络拥堵影响，拥堵时支付较高矿工费的交易会优先确认。我们把交易速度分为三个标准，并附上参考时间，您可以任意选择，矿工费可以激励矿工优先打包您的交易，如果矿工费过低，矿工没有动力去打包你的交易，可能会将您的交易延后处理。";
-            root_1.popNew('app-components-modalBox-modalBox1', { title: '到账速度', content: content, tips: '转账时不能全部转完，要预留出矿工费' });
+            root_1.popNew('app-components-modalBox-modalBox1', this.state.cfgData.modalBox);
         }
     }, {
         key: "chooseMinerFee",
@@ -229,7 +229,7 @@ var Transfer = function (_widget_1$Widget) {
                                     break;
                                 }
 
-                                root_1.popNew('app-components-message-message', { content: '请输入收款地址' });
+                                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[0] });
                                 return _context4.abrupt("return");
 
                             case 3:
@@ -238,7 +238,7 @@ var Transfer = function (_widget_1$Widget) {
                                     break;
                                 }
 
-                                root_1.popNew('app-components-message-message', { content: '请输入转账金额' });
+                                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[1] });
                                 return _context4.abrupt("return");
 
                             case 6:
@@ -247,7 +247,7 @@ var Transfer = function (_widget_1$Widget) {
                                     break;
                                 }
 
-                                root_1.popNew('app-components-message-message', { content: '余额不足' });
+                                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[2] });
                                 return _context4.abrupt("return");
 
                             case 9:
@@ -272,7 +272,7 @@ var Transfer = function (_widget_1$Widget) {
                             case 19:
                                 t = new Date();
                                 tx = {
-                                    hash: "",
+                                    hash: '',
                                     addr: fromAddr,
                                     txType: interface_1.TxType.TRANSFER,
                                     fromAddr: fromAddr,

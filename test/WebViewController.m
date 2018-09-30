@@ -58,8 +58,9 @@ static WKWebView *wkWebView = nil;
     [webview setFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     [self.view addSubview:webview];
 //    NSString *urlPath = @"https://www.baidu.com/";
-//     NSString *urlPath = @"http://192.168.33.183:8088/dst/boot/index.html";
-    NSString *urlPath = @"http://192.168.33.113:8080/wallet/app/boot/index.html";
+//     NSString *urlPath = @"http://192.168.33.183:8088/dst/boot/index.html";//Pi
+//    NSString *urlPath = @"http://192.168.33.113/wallet/app/boot/index.html";//余强
+    NSString *urlPath = @"http://47.75.254.166:8080/wallet/app/boot/index.html";//外网
 //     NSString *urlPath = [NSString stringWithFormat:@"file:///%@/android_asset/index.html", [[NSBundle mainBundle] bundlePath]];
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:urlPath]];
     [webview loadRequest:request];

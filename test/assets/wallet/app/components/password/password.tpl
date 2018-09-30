@@ -2,7 +2,7 @@
 	var _$temp = void 0,
 	    node = void 0;_$temp = node;{
 		var _$parent = _$temp;var _node = { "attrs": {}, "tagName": "div", "sid": 0 };_node.children = [];_node.attrHash = 0;_$temp = _node;{
-			var _$parent2 = _$temp;var _node2 = { "attrs": {}, "tagName": "div", "sid": 1 };_node2.children = [];_node2.attrSize = 3;_node2.attrHash = 1440787536;_node2.attrs["w-class"] = "pswInput";_node2.attrs["ev-input-change"] = "pswChange";_node2.attrs["ev-input-focus"] = "iconChange(1)";_$temp = _node2;{
+			var _$parent2 = _$temp;var _node2 = { "attrs": {}, "tagName": "div", "sid": 1 };_node2.children = [];_node2.attrSize = 3;_node2.attrHash = 1024234499;_node2.attrs["w-class"] = "pswInput";_node2.attrs["ev-input-change"] = "pswChange";_node2.attrs["ev-input-focus"] = "iconChange()";_$temp = _node2;{
 				var _$parent3 = _$temp;var _node3 = { "attrs": {}, "tagName": "div", "sid": 2 };_node3.children = [];_node3.attrSize = 1;_node3.attrHash = 3711312999;_node3.attrs["style"] = "flex: 1";_$temp = _node3;{
 					var _$parent4 = _$temp;var _node4 = { "attrs": {}, "tagName": "app-components1-input-input", "sid": 3 };_node4.hasChild = false;_node4.child = null;_node4.attrHash = 0;_$temp = _node4;{
 						var _$parent5 = _$temp;var _node5 = {}; //jpair pre
@@ -17,6 +17,10 @@
 						//jpair pre
 
 						_node5["placeHolder"] = it.placeHolder ? it.placeHolder : it1.cfgData.password;
+						//jpair suf
+						//jpair pre
+
+						_node5["input"] = it1.password;
 						//jpair suf
 						_addJson(_node5, _$parent5);
 					}_chFunc(_node4);_$parent4.children.push(_node4);

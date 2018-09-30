@@ -44,6 +44,7 @@ var forelet_1 = require("../../../../pi/widget/forelet");
 var widget_1 = require("../../../../pi/widget/widget");
 var pull_1 = require("../../../net/pull");
 var store_1 = require("../../../store/store");
+var constants_1 = require("../../../utils/constants");
 var tools_1 = require("../../../utils/tools");
 exports.forelet = new forelet_1.Forelet();
 exports.WIDGET_NAME = module.id.replace(/\//g, '-');
@@ -63,11 +64,12 @@ var Dividend = function (_widget_1$Widget) {
             _get(Dividend.prototype.__proto__ || Object.getPrototypeOf(Dividend.prototype), "create", this).call(this);
             this.state = {
                 data: [],
-                more: false,
-                cfgData: tools_1.getLanguage(this)
+                hasMore: false,
+                cfgData: tools_1.getLanguage(this),
+                start: '',
+                refresh: true
             };
-            pull_1.getMiningHistory();
-            // this.initData();
+            this.initData();
         }
         /**
          * 获取更新数据
@@ -77,7 +79,7 @@ var Dividend = function (_widget_1$Widget) {
         key: "initData",
         value: function initData() {
             return __awaiter(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-                var data;
+                var data, hList;
                 return regeneratorRuntime.wrap(function _callee$(_context) {
                     while (1) {
                         switch (_context.prev = _context.next) {
@@ -85,11 +87,22 @@ var Dividend = function (_widget_1$Widget) {
                                 data = store_1.find('miningHistory');
 
                                 if (data) {
-                                    this.state.data = data;
+                                    hList = data.list;
+
+                                    if (hList && hList.length > this.state.data.length) {
+                                        console.log('load more from local');
+                                    } else {
+                                        console.log('load more from server');
+                                        pull_1.getMiningHistory(this.state.start);
+                                    }
+                                } else {
+                                    console.log('load more from server');
+                                    pull_1.getMiningHistory(this.state.start);
                                 }
+                                this.loadMore();
                                 this.paint();
 
-                            case 3:
+                            case 4:
                             case "end":
                                 return _context.stop();
                         }
@@ -102,6 +115,66 @@ var Dividend = function (_widget_1$Widget) {
         value: function backPrePage() {
             this.ok && this.ok();
         }
+        /**
+         *  实际加载数据
+         */
+
+    }, {
+        key: "loadMore",
+        value: function loadMore() {
+            return __awaiter(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+                var data, hList, start;
+                return regeneratorRuntime.wrap(function _callee2$(_context2) {
+                    while (1) {
+                        switch (_context2.prev = _context2.next) {
+                            case 0:
+                                data = store_1.find('miningHistory');
+
+                                if (data) {
+                                    _context2.next = 3;
+                                    break;
+                                }
+
+                                return _context2.abrupt("return");
+
+                            case 3:
+                                hList = data.list;
+                                start = this.state.data.length;
+
+                                this.state.data = this.state.data.concat(hList.slice(start, start + constants_1.PAGELIMIT));
+                                this.state.start = data.start;
+                                this.state.hasMore = data.canLoadMore;
+                                this.paint();
+
+                            case 9:
+                            case "end":
+                                return _context2.stop();
+                        }
+                    }
+                }, _callee2, this);
+            }));
+        }
+        /**
+         * 滚动加载更多列表数据
+         */
+
+    }, {
+        key: "getMoreList",
+        value: function getMoreList() {
+            var _this2 = this;
+
+            var h1 = document.getElementById('historylist').offsetHeight;
+            var h2 = document.getElementById('history').offsetHeight;
+            var scrollTop = document.getElementById('historylist').scrollTop;
+            if (this.state.hasMore && this.state.refresh && h2 - h1 - scrollTop < 20) {
+                this.state.refresh = false;
+                console.log('加载中，请稍后~~~');
+                setTimeout(function () {
+                    _this2.loadMore();
+                    _this2.state.refresh = true;
+                }, 1000);
+            }
+        }
     }]);
 
     return Dividend;
@@ -111,7 +184,7 @@ exports.Dividend = Dividend;
 store_1.register('miningHistory', function () {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {
-        w.initData();
+        w.loadMore();
     }
 });
 })

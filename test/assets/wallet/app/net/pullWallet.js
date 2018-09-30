@@ -38,6 +38,7 @@ var api_2 = require("../core/eth/api");
 var wallet_1 = require("../core/eth/wallet");
 var globalWallet_1 = require("../core/globalWallet");
 var shapeshift_1 = require("../exchange/shapeshift/shapeshift");
+var dataCenter_1 = require("../logic/dataCenter");
 var interface_1 = require("../store/interface");
 var store_1 = require("../store/store");
 var constants_1 = require("../utils/constants");
@@ -45,7 +46,7 @@ var toolMessages_1 = require("../utils/toolMessages");
 var tools_1 = require("../utils/tools");
 var unitTools_1 = require("../utils/unitTools");
 var walletTools_1 = require("../utils/walletTools");
-var dataCenter_1 = require("../logic/dataCenter");
+// tslint:disable-next-line:max-line-length
 var pull_1 = require("./pull");
 // ===================================================== 导出
 /**
@@ -62,7 +63,7 @@ exports.transfer = function (psw, txRecord) {
                         fromAddr = txRecord.fromAddr;
                         currencyName = txRecord.currencyName;
                         ret = void 0;
-                        loading = root_1.popNew('app-components1-loading-loading', { text: '交易中...' });
+                        loading = root_1.popNew('app-components1-loading-loading', { text: tools_1.getStaticLanguage().transfer.loading });
                         _context.prev = 5;
                         addrIndex = globalWallet_1.GlobalWallet.getWltAddrIndex(wallet, fromAddr, currencyName);
 
@@ -150,7 +151,7 @@ exports.transfer = function (psw, txRecord) {
                             trans.push(tx);
                             store_1.updateStore('transactions', trans);
                             dataCenter_1.dataCenter.refreshTrans(tx.addr, tx.currencyName);
-                            root_1.popNew('app-components-message-message', { content: '转账成功' });
+                            root_1.popNew('app-components-message-message', { content: tools_1.getStaticLanguage().transfer.transSuccess });
                             root_1.popNew('app-view-wallet-transaction-transactionDetails', { hash: tx.hash });
                         }
                         return _context.abrupt("return", ret);
@@ -603,7 +604,7 @@ exports.doBtcTransfer = function (wlt, txRecord) {
                         wlt.lock();
                         // const rawHexString: string = retArr[0];
                         // console.log('rawTx',rawHexString);
-                        rawHexString = retArr['rawTx'];
+                        rawHexString = retArr.rawTx;
                         return _context9.abrupt("return", api_1.BtcApi.sendRawTransaction(rawHexString));
 
                     case 15:
@@ -1004,7 +1005,7 @@ exports.resendNormalTransfer = function (psw, txRecord) {
                 switch (_context16.prev = _context16.next) {
                     case 0:
                         console.log('----------resendNormalTransfer--------------');
-                        loading = root_1.popNew('app-components1-loading-loading', { text: '重发中...' });
+                        loading = root_1.popNew('app-components1-loading-loading', { text: tools_1.getStaticLanguage().transfer.againSend });
                         wallet = store_1.find('curWallet');
                         fromAddr = txRecord.fromAddr;
                         currencyName = txRecord.currencyName;
@@ -1124,7 +1125,7 @@ exports.resendNormalTransfer = function (psw, txRecord) {
                         store_1.updateStore('transactions', trans);
                         dataCenter_1.dataCenter.clearTimer(oldHash); // 删除定时器
                         dataCenter_1.dataCenter.refreshTrans(tx.fromAddr, tx.currencyName);
-                        root_1.popNew('app-components-message-message', { content: '重发成功' });
+                        root_1.popNew('app-components-message-message', { content: tools_1.getStaticLanguage().transfer.againSuccess });
                         root_1.popNew('app-view-wallet-transaction-transactionDetails', { hash: tx.hash });
 
                     case 60:
@@ -1149,7 +1150,7 @@ exports.resendRecharge = function (psw, txRecord) {
                 switch (_context17.prev = _context17.next) {
                     case 0:
                         console.log('----------resendRecharge--------------');
-                        loading = root_1.popNew('app-components1-loading-loading', { text: '重发中...' });
+                        loading = root_1.popNew('app-components1-loading-loading', { text: tools_1.getStaticLanguage().transfer.againSend });
                         tx = void 0;
                         _context17.prev = 3;
 
@@ -1226,7 +1227,7 @@ exports.resendRecharge = function (psw, txRecord) {
                         dataCenter_1.dataCenter.clearTimer(oldHash); // 删除定时器
                         dataCenter_1.dataCenter.refreshTrans(tx.fromAddr, tx.currencyName);
                         pull_1.getRechargeLogs(tx.currencyName);
-                        root_1.popNew('app-components-message-message', { content: '重发成功' });
+                        root_1.popNew('app-components-message-message', { content: tools_1.getStaticLanguage().transfer.againSuccess });
                         root_1.popNew('app-view-wallet-transaction-transactionDetails', { hash: tx.hash });
 
                     case 41:
@@ -1249,7 +1250,7 @@ exports.recharge = function (psw, txRecord) {
                 switch (_context18.prev = _context18.next) {
                     case 0:
                         tx = void 0;
-                        close = root_1.popNew('app-components1-loading-loading', { text: '正在充值...' });
+                        close = root_1.popNew('app-components1-loading-loading', { text: tools_1.getStaticLanguage().transfer.recharge });
 
                         if (!(txRecord.currencyName === 'BTC')) {
                             _context18.next = 8;
@@ -1274,7 +1275,7 @@ exports.recharge = function (psw, txRecord) {
                     case 11:
                         close.callback(close.widget);
                         if (tx) {
-                            root_1.popNew('app-components-message-message', { content: '充值成功' });
+                            root_1.popNew('app-components-message-message', { content: tools_1.getStaticLanguage().transfer.rechargeSuccess });
                             trans = store_1.find('transactions');
 
                             trans.push(tx);
@@ -1383,6 +1384,8 @@ exports.ethRecharge = function (psw, txRecord) {
                         }
                         // 维护本地交易记录
                         t = new Date();
+                        // tslint:disable-next-line:no-unnecessary-local-variable
+
                         record = Object.assign({}, txRecord, { nonce: nonce,
                             hash: hash,
                             toAddr: toAddr, time: t.getTime(), fee: minerFee, minerFeeLevel: minerFeeLevel });
@@ -1471,6 +1474,8 @@ exports.btcRecharge = function (psw, txRecord) {
                     case 27:
                         // 维护本地交易记录
                         t = new Date();
+                        // tslint:disable-next-line:no-unnecessary-local-variable
+
                         record = Object.assign({}, txRecord, { hash: hash,
                             toAddr: toAddr, time: t.getTime(), fee: minerFee, minerFeeLevel: minerFeeLevel });
                         return _context20.abrupt("return", record);
@@ -1526,8 +1531,8 @@ exports.resendBtcRecharge = function (psw, txRecord) {
 
                     case 14:
                         oldHash = txRecord.hash;
-                        hash = ret['newTxid'];
-                        signedTx = ret['rawTx'];
+                        hash = ret.newTxid;
+                        signedTx = ret.rawTx;
                         _context21.next = 19;
                         return pull_1.btcRechargeToServer(toAddr, hash, unitTools_1.btc2Sat(pay).toString(), minerFee, oldHash);
 
@@ -1558,6 +1563,8 @@ exports.resendBtcRecharge = function (psw, txRecord) {
                     case 27:
                         // 维护本地交易记录
                         t = new Date();
+                        // tslint:disable-next-line:no-unnecessary-local-variable
+
                         record = Object.assign({}, txRecord, { hash: hash, time: t.getTime(), fee: minerFee, minerFeeLevel: minerFeeLevel });
                         return _context21.abrupt("return", record);
 
@@ -1606,7 +1613,7 @@ exports.ethWithdraw = function (passwd, toAddr, amount) {
                 switch (_context23.prev = _context23.next) {
                     case 0:
                         wallet = store_1.find('curWallet');
-                        close = root_1.popNew('app-components1-loading-loading', { text: '正在提现...' });
+                        close = root_1.popNew('app-components1-loading-loading', { text: tools_1.getStaticLanguage().transfer.withdraw });
                         _context23.next = 4;
                         return walletTools_1.VerifyIdentidy(wallet, passwd);
 
@@ -1619,7 +1626,7 @@ exports.ethWithdraw = function (passwd, toAddr, amount) {
                         }
 
                         close.callback(close.widget);
-                        root_1.popNew('app-components-message-message', { content: '密码错误' });
+                        root_1.popNew('app-components-message-message', { content: tools_1.getStaticLanguage().transfer.wrongPsw });
                         return _context23.abrupt("return");
 
                     case 9:
@@ -1631,7 +1638,7 @@ exports.ethWithdraw = function (passwd, toAddr, amount) {
 
                         close.callback(close.widget);
                         if (hash) {
-                            root_1.popNew('app-components-message-message', { content: '提现成功' });
+                            root_1.popNew('app-components-message-message', { content: tools_1.getStaticLanguage().transfer.withdrawSuccess });
                             tx = {
                                 hash: hash,
                                 addr: toAddr,
@@ -1671,7 +1678,7 @@ exports.btcWithdraw = function (passwd, toAddr, amount) {
                 switch (_context24.prev = _context24.next) {
                     case 0:
                         wallet = store_1.find('curWallet');
-                        close = root_1.popNew('app-components1-loading-loading', { text: '正在提现...' });
+                        close = root_1.popNew('app-components1-loading-loading', { text: tools_1.getStaticLanguage().transfer.withdraw });
                         _context24.next = 4;
                         return walletTools_1.VerifyIdentidy(wallet, passwd);
 
@@ -1684,7 +1691,7 @@ exports.btcWithdraw = function (passwd, toAddr, amount) {
                         }
 
                         close.callback(close.widget);
-                        root_1.popNew('app-components-message-message', { content: '密码错误' });
+                        root_1.popNew('app-components-message-message', { content: tools_1.getStaticLanguage().transfer.wrongPsw });
                         return _context24.abrupt("return");
 
                     case 9:
@@ -1696,7 +1703,7 @@ exports.btcWithdraw = function (passwd, toAddr, amount) {
 
                         close.callback(close.widget);
                         if (hash) {
-                            root_1.popNew('app-components-message-message', { content: '提现成功' });
+                            root_1.popNew('app-components-message-message', { content: tools_1.getStaticLanguage().transfer.withdrawSuccess });
                             tx = {
                                 hash: hash,
                                 addr: toAddr,

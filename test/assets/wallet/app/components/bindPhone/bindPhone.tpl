@@ -29,6 +29,10 @@
 
 							_node9["itype"] = jvalue;
 						}
+						//jpair pre
+
+						_node9["autofocus"] = true;
+						//jpair suf
 						_addJson(_node9, _$parent10);
 					}_chFunc(_node8);_$parent9.children.push(_node8);
 				}_chFunc(_node7);_$parent8.children.push(_node7);

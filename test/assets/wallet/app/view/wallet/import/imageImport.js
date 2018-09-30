@@ -19,6 +19,7 @@ var root_1 = require("../../../../pi/ui/root");
 var widget_1 = require("../../../../pi/widget/widget");
 var native_1 = require("../../../logic/native");
 var interface_1 = require("../../../store/interface");
+var tools_1 = require("../../../utils/tools");
 var home_1 = require("./home");
 
 var ImageImport = function (_widget_1$Widget) {
@@ -44,7 +45,8 @@ var ImageImport = function (_widget_1$Widget) {
                 imageBase64: '',
                 imageHtml: '',
                 imagePsw: '',
-                imagePswAvailable: false
+                imagePswAvailable: false,
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {
@@ -81,11 +83,11 @@ var ImageImport = function (_widget_1$Widget) {
         key: "nextClick",
         value: function nextClick() {
             if (!this.state.imageBase64) {
-                root_1.popNew('app-components-message-message', { content: '请选择要导入的图片' });
+                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[0] });
                 return;
             }
             if (!this.state.imagePsw) {
-                root_1.popNew('app-components-message-message', { content: '请输入图片密码' });
+                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[1] });
                 return;
             }
             // tslint:disable-next-line:max-line-length

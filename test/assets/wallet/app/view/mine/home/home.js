@@ -220,9 +220,10 @@ var Home = function (_widget_1$Widget) {
         key: "login",
         value: function login() {
             if (this.state.hasWallet) {
-                return;
+                root_1.popNew('app-view-mine-account-home');
+            } else {
+                root_1.popNew('app-view-wallet-create-home');
             }
-            root_1.popNew('app-view-wallet-create-home');
             this.backPrePage();
         }
     }]);

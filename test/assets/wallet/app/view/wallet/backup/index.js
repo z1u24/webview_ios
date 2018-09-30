@@ -17,6 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var root_1 = require("../../../../pi/ui/root");
 var widget_1 = require("../../../../pi/widget/widget");
+var tools_1 = require("../../../utils/tools");
 
 var BackupIndex = function (_widget_1$Widget) {
     _inherits(BackupIndex, _widget_1$Widget);
@@ -36,11 +37,10 @@ var BackupIndex = function (_widget_1$Widget) {
         key: "setProps",
         value: function setProps(props, oldProps) {
             _get(BackupIndex.prototype.__proto__ || Object.getPrototypeOf(BackupIndex.prototype), "setProps", this).call(this, props, oldProps);
-            this.init();
+            this.state = {
+                cfgData: tools_1.getLanguage(this)
+            };
         }
-    }, {
-        key: "init",
-        value: function init() {}
     }, {
         key: "standardBackupClick",
         value: function standardBackupClick() {

@@ -36,34 +36,39 @@ var __awaiter = undefined && undefined.__awaiter || function (thisArg, _argument
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var widget_1 = require("../../../../pi/widget/widget");
+/**
+ * HoldedFM
+ */
+var root_1 = require("../../../../pi/ui/root");
 var forelet_1 = require("../../../../pi/widget/forelet");
+var widget_1 = require("../../../../pi/widget/widget");
 var pull_1 = require("../../../net/pull");
 var store_1 = require("../../../store/store");
-var root_1 = require("../../../../pi/ui/root");
+var tools_1 = require("../../../utils/tools");
 exports.forelet = new forelet_1.Forelet();
 exports.WIDGET_NAME = module.id.replace(/\//g, '-');
 
-var holdedFM = function (_widget_1$Widget) {
-    _inherits(holdedFM, _widget_1$Widget);
+var HoldedFM = function (_widget_1$Widget) {
+    _inherits(HoldedFM, _widget_1$Widget);
 
-    function holdedFM() {
-        _classCallCheck(this, holdedFM);
+    function HoldedFM() {
+        _classCallCheck(this, HoldedFM);
 
-        return _possibleConstructorReturn(this, (holdedFM.__proto__ || Object.getPrototypeOf(holdedFM)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (HoldedFM.__proto__ || Object.getPrototypeOf(HoldedFM)).apply(this, arguments));
     }
 
-    _createClass(holdedFM, [{
+    _createClass(HoldedFM, [{
         key: "setProps",
         value: function setProps(props, oldProps) {
-            _get(holdedFM.prototype.__proto__ || Object.getPrototypeOf(holdedFM.prototype), "setProps", this).call(this, props, oldProps);
+            _get(HoldedFM.prototype.__proto__ || Object.getPrototypeOf(HoldedFM.prototype), "setProps", this).call(this, props, oldProps);
             this.init();
         }
     }, {
         key: "init",
         value: function init() {
             this.state = {
-                purchaseRecord: []
+                purchaseRecord: [],
+                cfgData: tools_1.getLanguage(this)
             };
             if (this.props.isActive) {
                 pull_1.getPurchaseRecord();
@@ -83,10 +88,10 @@ var holdedFM = function (_widget_1$Widget) {
         }
     }]);
 
-    return holdedFM;
+    return HoldedFM;
 }(widget_1.Widget);
 
-exports.holdedFM = holdedFM;
+exports.HoldedFM = HoldedFM;
 // =====================================本地
 store_1.register('purchaseRecord', function (purchaseRecord) {
     return __awaiter(undefined, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {

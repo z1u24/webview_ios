@@ -15,12 +15,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * cloud wallet home
  */
+var root_1 = require("../../../../pi/ui/root");
+var forelet_1 = require("../../../../pi/widget/forelet");
 var widget_1 = require("../../../../pi/widget/widget");
+var interface_1 = require("../../../store/interface");
 var store_1 = require("../../../store/store");
 var tools_1 = require("../../../utils/tools");
-var root_1 = require("../../../../pi/ui/root");
-var interface_1 = require("../../../store/interface");
-var forelet_1 = require("../../../../pi/widget/forelet");
 exports.forelet = new forelet_1.Forelet();
 exports.WIDGET_NAME = module.id.replace(/\//g, '-');
 
@@ -46,22 +46,24 @@ var CloudWalletHome = function (_widget_1$Widget) {
             var rate = store_1.getBorn('exchangeRateJson').get(currencyName).CNY;
             var balance = store_1.getBorn('cloudBalance').get(interface_1.CurrencyType[currencyName]);
             var balanceValue = tools_1.formatBalanceValue(rate * balance);
+            var cfg = tools_1.getLanguage(this);
             this.state = {
                 tabs: [{
-                    tab: '其他',
+                    tab: cfg.other,
                     components: 'app-view-wallet-cloudWallet-otherRecord'
                 }, {
-                    tab: '充值',
+                    tab: cfg.recharge,
                     components: 'app-view-wallet-cloudWallet-rechargeRecord'
                 }, {
-                    tab: '提币',
+                    tab: cfg.withdraw,
                     components: 'app-view-wallet-cloudWallet-withdrawRecord'
                 }],
                 activeNum: 0,
                 gain: store_1.getBorn('coinGain').get(currencyName) || tools_1.formatBalanceValue(0),
                 rate: tools_1.formatBalanceValue(rate),
                 balance: balance,
-                balanceValue: balanceValue
+                balanceValue: balanceValue,
+                cfgData: cfg
             };
         }
     }, {
@@ -87,7 +89,7 @@ var CloudWalletHome = function (_widget_1$Widget) {
         key: "rechargeClick",
         value: function rechargeClick() {
             if (this.props.currencyName === 'KT') {
-                tools_1.popNewMessage('敬请期待');
+                tools_1.popNewMessage(this.state.cfgData.tips);
                 return;
             }
             root_1.popNew('app-view-wallet-cloudWallet-recharge', { currencyName: this.props.currencyName });
@@ -96,7 +98,7 @@ var CloudWalletHome = function (_widget_1$Widget) {
         key: "withdrawClick",
         value: function withdrawClick() {
             if (this.props.currencyName === 'KT') {
-                tools_1.popNewMessage('敬请期待');
+                tools_1.popNewMessage(this.state.cfgData.tips);
                 return;
             }
             root_1.popNew('app-view-wallet-cloudWallet-withdraw', { currencyName: this.props.currencyName });
@@ -107,8 +109,8 @@ var CloudWalletHome = function (_widget_1$Widget) {
 }(widget_1.Widget);
 
 exports.CloudWalletHome = CloudWalletHome;
-//===========================
-//余额变化
+// ===========================
+// 余额变化
 store_1.register('cloudBalance', function () {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {

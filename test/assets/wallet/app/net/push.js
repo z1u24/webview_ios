@@ -15,7 +15,7 @@ var pull_1 = require("./pull");
 // 主动推送
 exports.initPush = function () {
     con_mgr_1.setMsgHandler('event_pay_ok', function (res) {
-        tools_1.popNewMessage('充值已到账');
+        tools_1.popNewMessage(tools_1.getStaticLanguage().transfer.rechargeTips);
         var value = res.value.toJSNumber ? res.value.toJSNumber() : res.value;
         pull_1.getCloudBalance().then(function (res) {
             console.log('服务器推送成功 云端余额更新==========================', res);

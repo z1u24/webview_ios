@@ -101,7 +101,7 @@ var DataCenter = function () {
             var _this = this;
 
             // 从缓存中获取地址进行初始化
-            var addrs = store_1.find('addrs');
+            var addrs = store_1.find('addrs') || [];
             if (addrs) {
                 var wallet = store_1.find('curWallet');
                 if (!wallet) return;
@@ -255,7 +255,7 @@ var DataCenter = function () {
                                     break;
                                 }
 
-                                addrs = store_1.find('addrs');
+                                addrs = store_1.find('addrs') || [];
                                 wallet = walletList[list[0][0]];
                                 currencyRecord = wallet.currencyRecords[list[0][1]];
 
@@ -499,7 +499,7 @@ var DataCenter = function () {
     }, {
         key: "updateTransactionLocalStorage",
         value: function updateTransactionLocalStorage(tx) {
-            var trans = store_1.find('transactions');
+            var trans = store_1.find('transactions') || [];
             var index = -1;
             for (var i = 0; i < trans.length; i++) {
                 if (trans[i].hash === tx.hash) {

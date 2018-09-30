@@ -38,14 +38,13 @@
 																				}
 																}_chFunc(_node3);_$parent3.children.push(_node3);
 												}_$temp = _node2;{
-																var _$parent10 = _$temp;var _node8 = { "attrs": {}, "tagName": "div", "sid": 7 };_node8.children = [];_node8.childHash = 2934117944;_node8.attrSize = 2;_node8.attrHash = 3410850256;_node8.attrs["w-class"] = "add-addr";_node8.attrs["on-tap"] = "addAddrClick";_$temp = _node8;{
-																				var _$parent11 = _$temp;var _node9 = { "attrs": {}, "tagName": "span", "sid": 8 };_node9.children = [];_node9.childHash = 3302825673;_node9.attrHash = 0;_$temp = _node9;{
-																								var _$parent12 = _$temp;var _node10 = _installText("添加地址", 3197056612);;
-																								_$parent12.children.push(_node10);
-																				}_$parent11.children.push(_node9);
+																var _$parent10 = _$temp;var _node8 = { "attrs": {}, "tagName": "div", "sid": 7 };_node8.children = [];_node8.attrSize = 2;_node8.attrHash = 3410850256;_node8.attrs["w-class"] = "add-addr";_node8.attrs["on-tap"] = "addAddrClick";_$temp = _node8;{
+																				var _$parent11 = _$temp;var _node9 = { "attrs": {}, "tagName": "span", "sid": 8 };_node9.children = [];_node9.attrHash = 0;_$temp = _node9;{
+																								var _$parent12 = _$temp;_addText(it1.cfgData.addAddr, _$parent12);
+																				}_chFunc(_node9);_$parent11.children.push(_node9);
 																}_$temp = _node8;{
-																				var _$parent13 = _$temp;var _node11 = { "attrs": {}, "tagName": "img", "sid": 9 };_node11.children = [];_node11.childHash = 0;_node11.attrSize = 2;_node11.attrHash = 1540151181;_node11.attrs["src"] = "../../../res/image/add.png";_node11.attrs["w-class"] = "add-icon";_$parent13.children.push(_node11);
-																}_$parent10.children.push(_node8);
+																				var _$parent13 = _$temp;var _node10 = { "attrs": {}, "tagName": "img", "sid": 9 };_node10.children = [];_node10.childHash = 0;_node10.attrSize = 2;_node10.attrHash = 1540151181;_node10.attrs["src"] = "../../../res/image/add.png";_node10.attrs["w-class"] = "add-icon";_$parent13.children.push(_node10);
+																}_chFunc(_node8);_$parent10.children.push(_node8);
 												}_chFunc(_node2);_$parent2.children.push(_node2);
 								}_chFunc(_node);return _node;
 				}

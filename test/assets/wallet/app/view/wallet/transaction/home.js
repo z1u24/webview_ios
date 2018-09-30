@@ -18,11 +18,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var root_1 = require("../../../../pi/ui/root");
 var forelet_1 = require("../../../../pi/widget/forelet");
 var widget_1 = require("../../../../pi/widget/widget");
+var dataCenter_1 = require("../../../logic/dataCenter");
 var store_1 = require("../../../store/store");
 // tslint:disable-next-line:max-line-length
 var tools_1 = require("../../../utils/tools");
 var walletTools_1 = require("../../../utils/walletTools");
-var dataCenter_1 = require("../../../logic/dataCenter");
 exports.forelet = new forelet_1.Forelet();
 exports.WIDGET_NAME = module.id.replace(/\//g, '-');
 
@@ -61,7 +61,8 @@ var TransactionHome = function (_widget_1$Widget) {
                 balanceValue: tools_1.formatBalanceValue(balanceValue),
                 rate: tools_1.formatBalanceValue(rate),
                 txList: txList,
-                canConvert: canConvert
+                canConvert: canConvert,
+                cfgData: tools_1.getLanguage(this)
             };
         }
         // 解析txList
@@ -134,7 +135,7 @@ var TransactionHome = function (_widget_1$Widget) {
 
 exports.TransactionHome = TransactionHome;
 // ==========================本地
-//地址变化
+// 地址变化
 store_1.register('addrs', function (addrs) {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {
@@ -143,13 +144,13 @@ store_1.register('addrs', function (addrs) {
     }
 });
 // 汇率变化
-store_1.register('exchangeRateJson', function (exchangeRateJson) {
+store_1.register('exchangeRateJson', function () {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {
         w.updateRate();
     }
 });
-//当前钱包变化
+// 当前钱包变化
 store_1.register('curWallet', function () {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {
@@ -157,7 +158,7 @@ store_1.register('curWallet', function () {
         w.paint();
     }
 });
-//交易记录变化
+// 交易记录变化
 store_1.register('transactions', function () {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {

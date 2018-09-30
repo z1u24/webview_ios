@@ -18,12 +18,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var root_1 = require("../../../../pi/ui/root");
 var forelet_1 = require("../../../../pi/widget/forelet");
 var widget_1 = require("../../../../pi/widget/widget");
-var tools_1 = require("../../../utils/tools");
-var store_1 = require("../../../store/store");
-var walletTools_1 = require("../../../utils/walletTools");
-var interface_1 = require("../../../store/interface");
-var constants_1 = require("../../../utils/constants");
 var native_1 = require("../../../logic/native");
+var interface_1 = require("../../../store/interface");
+var store_1 = require("../../../store/store");
+var constants_1 = require("../../../utils/constants");
+// tslint:disable-next-line:max-line-length
+var tools_1 = require("../../../utils/tools");
+var walletTools_1 = require("../../../utils/walletTools");
 exports.forelet = new forelet_1.Forelet();
 exports.WIDGET_NAME = module.id.replace(/\//g, '-');
 
@@ -48,8 +49,9 @@ var TransactionDetails = function (_widget_1$Widget) {
             var tx = walletTools_1.fetchLocalTxByHash1(this.props.hash);
             console.log(tx);
             var obj = tools_1.parseStatusShow(tx);
+            var cfg = tools_1.getLanguage(this);
             var qrcodePrefix = tx.currencyName === 'BTC' ? constants_1.blockchainUrl : constants_1.etherscanUrl;
-            var webText = tx.currencyName === 'BTC' ? '打开blockchain' : "打开etherscan";
+            var webText = tx.currencyName === 'BTC' ? cfg.tips[0] : cfg.tips[1];
             this.state = {
                 tx: tx,
                 hashShow: tools_1.parseAccount(tx.hash),
@@ -59,7 +61,8 @@ var TransactionDetails = function (_widget_1$Widget) {
                 minerFeeUnit: tx.currencyName !== 'BTC' ? 'ETH' : 'BTC',
                 canResend: tools_1.canResend(tx),
                 qrcode: "" + qrcodePrefix + tx.hash,
-                webText: webText
+                webText: webText,
+                cfgData: cfg
             };
         }
     }, {
@@ -82,19 +85,19 @@ var TransactionDetails = function (_widget_1$Widget) {
         key: "copyToAddr",
         value: function copyToAddr() {
             tools_1.copyToClipboard(this.state.tx.toAddr);
-            tools_1.popNewMessage('复制成功');
+            tools_1.popNewMessage(this.state.cfgData.tips[2]);
         }
     }, {
         key: "copyFromAddr",
         value: function copyFromAddr() {
             tools_1.copyToClipboard(this.state.tx.fromAddr);
-            tools_1.popNewMessage('复制成功');
+            tools_1.popNewMessage(this.state.cfgData.tips[2]);
         }
     }, {
         key: "copyHash",
         value: function copyHash() {
             tools_1.copyToClipboard(this.state.tx.hash);
-            tools_1.popNewMessage('复制成功');
+            tools_1.popNewMessage(this.state.cfgData.tips[2]);
         }
     }, {
         key: "openNewWeb",
@@ -114,7 +117,7 @@ var TransactionDetails = function (_widget_1$Widget) {
 }(widget_1.Widget);
 
 exports.TransactionDetails = TransactionDetails;
-//交易记录变化
+// 交易记录变化
 store_1.register('transactions', function () {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {

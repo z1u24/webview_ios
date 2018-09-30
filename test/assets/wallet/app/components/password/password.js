@@ -12,6 +12,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 Object.defineProperty(exports, "__esModule", { value: true });
+var root_1 = require("../../../pi/ui/root");
 var event_1 = require("../../../pi/widget/event");
 var widget_1 = require("../../../pi/widget/widget");
 var tools_1 = require("../../utils/tools");
@@ -56,6 +57,11 @@ var ImgRankItem = function (_widget_1$Widget) {
             var secret = 0;
             var limit = this.props.limit ? this.props.limit : 1;
             var length = this.props.length ? this.props.length : 8;
+            if (!this.availableJudge(psw) && psw.length > 0) {
+                root_1.popNew('app-components-message-message', { content: this.state.cfgData.disAvailable });
+                this.paint();
+                return;
+            }
             if (psw.length < length && psw.length > 0) {
                 secret = 1;
                 this.state.showTips = true;
@@ -64,16 +70,17 @@ var ImgRankItem = function (_widget_1$Widget) {
                 secret = this.strongJudge(psw);
             }
             if (limit === 1 && psw.length >= length) {
-                // 只限制最小长度，满足条件抛出事件
+                // 符合最小长度限制
                 this.state.showTips = this.props.hideTips ? false : true;
                 this.state.isSuccess = true;
                 event_1.notify(event.node, 'ev-psw-change', { password: psw, success: true });
             } else if (limit === 2 && secret > 1) {
-                // 限制最小长度和两种数据类型，满足条件抛出事件
+                // 符合最小长度和包含两种数据类型以上限制
                 this.state.showTips = this.props.hideTips ? false : true;
                 this.state.isSuccess = true;
                 event_1.notify(event.node, 'ev-psw-change', { password: psw, success: true });
             } else {
+                // 不符合规则限制
                 event_1.notify(event.node, 'ev-psw-change', { password: psw, success: false });
             }
             this.state.secret = secret > 3 ? 3 : secret; // 只有三种强度水平显示
@@ -85,7 +92,7 @@ var ImgRankItem = function (_widget_1$Widget) {
 
     }, {
         key: "iconChange",
-        value: function iconChange(ind) {
+        value: function iconChange() {
             if (this.state.password !== '') {
                 this.state.showIcon = true;
             } else {
@@ -105,6 +112,16 @@ var ImgRankItem = function (_widget_1$Widget) {
             this.paint(true);
         }
         /**
+         * 判断输入的字符是否符合规则
+         */
+
+    }, {
+        key: "availableJudge",
+        value: function availableJudge(psw) {
+            var reg = /^[0-9a-zA-Z! “ # $ % & ‘ ( ) * + , \- . / : ; < = > ? @ \[ \] ^ _ ` { \| } ~]+$/;
+            return reg.test(psw);
+        }
+        /**
          * 判断密码强度
          * @param psw 密码
          */
@@ -115,7 +132,7 @@ var ImgRankItem = function (_widget_1$Widget) {
             var reg1 = /[0-9]+/;
             var reg2 = /[a-z]+/;
             var reg3 = /[A-Z]+/;
-            var reg4 = /[^0-9a-zA-Z]+/;
+            var reg4 = /[! “ # $ % & ‘ ( ) * + , - . / : ; < = > ? @ \[ \] ^ _ ` { \| } ~]+/; // 特殊字符集
             var num = 0;
             if (reg1.test(psw)) {
                 num++;

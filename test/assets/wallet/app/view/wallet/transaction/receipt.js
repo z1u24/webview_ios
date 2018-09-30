@@ -15,10 +15,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * receipt
  */
+var shareToPlatforms_1 = require("../../../../pi/browser/shareToPlatforms");
+var root_1 = require("../../../../pi/ui/root");
 var widget_1 = require("../../../../pi/widget/widget");
 var tools_1 = require("../../../utils/tools");
-var root_1 = require("../../../../pi/ui/root");
-var shareToPlatforms_1 = require("../../../../pi/browser/shareToPlatforms");
 
 var Receipt = function (_widget_1$Widget) {
     _inherits(Receipt, _widget_1$Widget);
@@ -44,14 +44,15 @@ var Receipt = function (_widget_1$Widget) {
         key: "init",
         value: function init() {
             this.state = {
-                fromAddr: tools_1.getCurrentAddrByCurrencyName(this.props.currencyName)
+                fromAddr: tools_1.getCurrentAddrByCurrencyName(this.props.currencyName),
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {
         key: "copyClick",
         value: function copyClick() {
             tools_1.copyToClipboard(this.state.fromAddr);
-            tools_1.popNewMessage('复制成功');
+            tools_1.popNewMessage(this.state.cfgData.tips[0]);
         }
     }, {
         key: "shareClick",
@@ -59,7 +60,7 @@ var Receipt = function (_widget_1$Widget) {
             var _this2 = this;
 
             root_1.popNew('app-components-share-share', { text: this.state.fromAddr, shareType: shareToPlatforms_1.ShareToPlatforms.TYPE_IMG }, function () {
-                tools_1.popNewMessage('分享成功');
+                tools_1.popNewMessage(_this2.state.cfgData.tips[1]);
                 _this2.ok && _this2.ok();
             });
         }

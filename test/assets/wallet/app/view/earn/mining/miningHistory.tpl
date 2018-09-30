@@ -11,7 +11,7 @@
 			}_chFunc(_node2);_$parent2.children.push(_node2);
 		}_$temp = _node;{
 			var _$parent4 = _$temp;var _node4 = { "attrs": {}, "tagName": "div", "sid": 2 };_node4.children = [];_node4.attrSize = 3;_node4.attrHash = 1828517035;_node4.attrs["w-class"] = "historylist";_node4.attrs["id"] = "historylist";_node4.attrs["on-scroll"] = "getMoreList";_$temp = _node4;{
-				var _$parent5 = _$temp;var _node5 = { "attrs": {}, "tagName": "div", "sid": 3 };_node5.children = [];_node5.attrSize = 1;_node5.attrHash = 840313844;_node5.attrs["w-class"] = "history";{
+				var _$parent5 = _$temp;var _node5 = { "attrs": {}, "tagName": "div", "sid": 3 };_node5.children = [];_node5.attrSize = 2;_node5.attrHash = 2208651128;_node5.attrs["w-class"] = "history";_node5.attrs["id"] = "history";{
 					var _$i = 0;
 					for (var _iterator = it1.data, _isArray = Array.isArray(_iterator), _i = 0, _iterator = _isArray ? _iterator : _iterator[Symbol.iterator]();;) {
 						var _ref;
@@ -48,7 +48,7 @@
 							}_chFunc(_node6);_$parent6.children.push(_node6);
 						}
 					}
-				}if (it1.data.length > 0 && !it1.more) {
+				}if (it1.data.length > 0 && !it1.hasMore) {
 					_$temp = _node5;{
 						var _$parent9 = _$temp;var _node9 = { "attrs": {}, "tagName": "div", "sid": 6 };_node9.children = [];_node9.attrSize = 1;_node9.attrHash = 3992589513;_node9.attrs["w-class"] = "endMess";_$temp = _node9;{
 							var _$parent10 = _$temp;_addText(it1.cfgData.tips[0], _$parent10);

@@ -39,14 +39,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Withdraw
  */
-var widget_1 = require("../../../../pi/widget/widget");
-var store_1 = require("../../../store/store");
 var root_1 = require("../../../../pi/ui/root");
+var widget_1 = require("../../../../pi/widget/widget");
 var config_1 = require("../../../config");
-var tools_1 = require("../../../utils/tools");
-var constants_1 = require("../../../utils/constants");
-var interface_1 = require("../../../store/interface");
 var pullWallet_1 = require("../../../net/pullWallet");
+var interface_1 = require("../../../store/interface");
+var store_1 = require("../../../store/store");
+var constants_1 = require("../../../utils/constants");
+var tools_1 = require("../../../utils/tools");
 
 var Withdraw = function (_widget_1$Widget) {
     _inherits(Withdraw, _widget_1$Widget);
@@ -74,7 +74,8 @@ var Withdraw = function (_widget_1$Widget) {
                 amount: 0,
                 minerFee: minerFee,
                 withdrawAddr: tools_1.getCurrentAddrInfo(currencyName).addr,
-                withdrawAddrInfo: this.parseAddrsInfo()
+                withdrawAddrInfo: this.parseAddrsInfo(),
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {
@@ -85,8 +86,7 @@ var Withdraw = function (_widget_1$Widget) {
     }, {
         key: "minerFeeDescClick",
         value: function minerFeeDescClick() {
-            var content = "无论单笔提币数量多少，每笔提币均会消耗固定费用，提币手续费将从提币数量中扣除，对应各币种，提现手续费不一致。BTC手续费固定0.001ETH/笔。ETH手续费固定收取0.01ETH/笔。提币到账时间以接收时间为准。";
-            root_1.popNew('app-components-modalBox-modalBox1', { title: '提币收费标准', content: content, tips: '曾经拥有1000KT才具有提现权限' });
+            root_1.popNew('app-components-modalBox-modalBox1', this.state.cfgData.modalBox);
         }
         // 提币金额变化
 
@@ -142,7 +142,7 @@ var Withdraw = function (_widget_1$Widget) {
                                     break;
                                 }
 
-                                tools_1.popNewMessage("\u6700\u5C0F\u63D0\u73B0\u91D1\u989D" + limit + currencyName);
+                                tools_1.popNewMessage(this.state.cfgData.tips[0] + limit + currencyName);
                                 return _context.abrupt("return");
 
                             case 5:
@@ -151,7 +151,7 @@ var Withdraw = function (_widget_1$Widget) {
                                     break;
                                 }
 
-                                tools_1.popNewMessage("\u4F59\u989D\u4E0D\u8DB3");
+                                tools_1.popNewMessage(this.state.cfgData.tips[1]);
                                 return _context.abrupt("return");
 
                             case 8:
@@ -162,7 +162,7 @@ var Withdraw = function (_widget_1$Widget) {
                                     break;
                                 }
 
-                                tools_1.popNewMessage('您不是真实用户,无法使用此功能');
+                                tools_1.popNewMessage(this.state.cfgData.tips[2]);
                                 return _context.abrupt("return");
 
                             case 12:

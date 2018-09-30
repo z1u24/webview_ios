@@ -40,16 +40,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * 确认购买
  */
 // ===============================================导入
-var widget_1 = require("../../../../pi/widget/widget");
-var interface_1 = require("../../../store/interface");
-var tools_1 = require("../../../utils/tools");
-var walletTools_1 = require("../../../utils/walletTools");
-var store_1 = require("../../../store/store");
-var pullWallet_1 = require("../../../net/pullWallet");
-var constants_1 = require("../../../utils/constants");
-var unitTools_1 = require("../../../utils/unitTools");
-var productDetail_1 = require("./productDetail");
 var root_1 = require("../../../../pi/ui/root");
+var widget_1 = require("../../../../pi/widget/widget");
+var pullWallet_1 = require("../../../net/pullWallet");
+var interface_1 = require("../../../store/interface");
+var store_1 = require("../../../store/store");
+var constants_1 = require("../../../utils/constants");
+// tslint:disable-next-line:max-line-length
+var tools_1 = require("../../../utils/tools");
+var unitTools_1 = require("../../../utils/unitTools");
+var walletTools_1 = require("../../../utils/walletTools");
+var productDetail_1 = require("./productDetail");
 
 var ProductDetail = function (_widget_1$Widget) {
     _inherits(ProductDetail, _widget_1$Widget);
@@ -71,12 +72,13 @@ var ProductDetail = function (_widget_1$Widget) {
         key: "init",
         value: function init() {
             var spend = tools_1.formatBalance(this.props.product.unitPrice * this.props.amount);
-            var cloudBalance = store_1.getBorn('cloudBalance').get(interface_1.CurrencyType['ETH']);
+            var cloudBalance = store_1.getBorn('cloudBalance').get(interface_1.CurrencyType.ETH);
             var localBalance = tools_1.getCurrentAddrBalanceByCurrencyName('ETH');
             this.state = {
                 spend: spend,
                 cloudBalance: cloudBalance,
-                localBalance: localBalance
+                localBalance: localBalance,
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {
@@ -137,10 +139,10 @@ var ProductDetail = function (_widget_1$Widget) {
                                 fromAddr = tools_1.getCurrentAddrByCurrencyName('ETH');
                                 pay = this.state.spend - this.state.cloudBalance;
                                 tx = {
-                                    hash: "",
+                                    hash: '',
                                     txType: interface_1.TxType.RECHARGE,
                                     fromAddr: fromAddr,
-                                    toAddr: "",
+                                    toAddr: '',
                                     pay: pay,
                                     time: new Date().getTime(),
                                     status: interface_1.TxStatus.PENDING,
@@ -168,7 +170,7 @@ var ProductDetail = function (_widget_1$Widget) {
                                 break;
 
                             case 22:
-                                tools_1.popNewMessage('余额不足');
+                                tools_1.popNewMessage(this.state.cfgData.tips);
 
                             case 23:
                                 this.ok && this.ok();

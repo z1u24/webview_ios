@@ -19,8 +19,8 @@ var root_1 = require("../../../../pi/ui/root");
 var widget_1 = require("../../../../pi/widget/widget");
 var native_1 = require("../../../logic/native");
 var interface_1 = require("../../../store/interface");
-var home_1 = require("./home");
 var tools_1 = require("../../../utils/tools");
+var home_1 = require("./home");
 
 var FragmentImport = function (_widget_1$Widget) {
     _inherits(FragmentImport, _widget_1$Widget);
@@ -42,7 +42,8 @@ var FragmentImport = function (_widget_1$Widget) {
         value: function init() {
             this.state = {
                 fragment1: '',
-                fragment2: ''
+                fragment2: '',
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {
@@ -77,15 +78,15 @@ var FragmentImport = function (_widget_1$Widget) {
         key: "nextClick",
         value: function nextClick() {
             if (!this.state.fragment1) {
-                root_1.popNew('app-components-message-message', { content: '请输入片段1' });
+                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[0] });
                 return;
             }
             if (!this.state.fragment2) {
-                root_1.popNew('app-components-message-message', { content: '请输入片段2' });
+                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[1] });
                 return;
             }
             if (this.state.fragment1 === this.state.fragment2) {
-                root_1.popNew('app-components-message-message', { content: '两次输入的片段一致' });
+                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[2] });
                 return;
             }
             var obj1 = tools_1.mnemonicFragmentDecrypt(this.state.fragment1);
@@ -95,9 +96,10 @@ var FragmentImport = function (_widget_1$Widget) {
             var decryptFragement2 = obj2.fragment;
             var random2 = obj2.randomStr;
             if (random1 !== random2) {
-                root_1.popNew('app-components-message-message', { content: '此片段不是同一组密钥' });
+                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[3] });
                 return;
             }
+            // tslint:disable-next-line:max-line-length
             root_1.popNew('app-view-wallet-create-createWallet', { itype: interface_1.CreateWalletType.FragmentImport, fragment1: decryptFragement1, fragment2: decryptFragement2 });
             var w = home_1.forelet.getWidget(home_1.WIDGET_NAME);
             if (w) {

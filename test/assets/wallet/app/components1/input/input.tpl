@@ -2,8 +2,8 @@
   var _$temp = void 0,
       node = void 0;_$temp = node;{
     var _$parent = _$temp;var _node = { "attrs": {}, "tagName": "div", "sid": 0 };_node.children = [];_node.attrSize = 2;_node.attrHash = 2983613905;_node.attrs["w-class"] = "pi-input-box";_node.attrs["class"] = "pi-input";_$temp = _node;{
-      var _$parent2 = _$temp;var _node2 = { "attrs": {}, "tagName": "input", "sid": 1 };_node2.children = [];_node2.attrSize = 13;_node2.attrHash = 1797795572;{
-        var attrvalue = "";attrvalue += it && it.disabled ? 'pi-input__inner-disabled' : 'pi-input__inner';attrvalue += " ";attrvalue += it && it.prepend ? 'pi-input_inner-prepend' : '';attrvalue += " ";attrvalue += it && it.append ? 'pi-input_inner-append' : '';attrvalue += "";_node2.attrs["w-class"] = attrvalue;
+      var _$parent2 = _$temp;var _node2 = { "attrs": {}, "tagName": "input", "sid": 1 };_node2.children = [];_node2.attrSize = 13;_node2.attrHash = 114009441;{
+        var attrvalue = "";attrvalue += it && it.disabled ? 'pi-input__inner-disabled' : 'pi-input__inner';attrvalue += "";_node2.attrs["w-class"] = attrvalue;
       }_node2.attrHash = _hash.nextHash(_node2.attrHash, _calTextHash(_node2.attrs["w-class"]));{
         var _attrvalue = "";_attrvalue += "pi-input ";_attrvalue += it && it.disabled ? 'pi-input__inner-disabled pi-input-dom' : 'pi-input__inner1 pi-input-dom';_attrvalue += "";_node2.attrs["class"] = _attrvalue;
       }_node2.attrHash = _hash.nextHash(_node2.attrHash, _calTextHash(_node2.attrs["class"]));{
@@ -17,9 +17,9 @@
       }_node2.attrHash = _hash.nextHash(_node2.attrHash, _calTextHash(_node2.attrs["value"]));{
         var _attrvalue6 = "";_attrvalue6 += it && it.maxLength ? it.maxLength : '';_attrvalue6 += "";_node2.attrs["maxlength"] = _attrvalue6;
       }_node2.attrHash = _hash.nextHash(_node2.attrHash, _calTextHash(_node2.attrs["maxlength"]));{
-        var _attrvalue7 = "";_attrvalue7 = it && it.disabled ? true : false;_node2.attrs["disabled"] = _attrvalue7;
+        var _attrvalue7 = "";_attrvalue7 = it && it.disabled ? 'disabled' : false;_node2.attrs["disabled"] = _attrvalue7;
       }_node2.attrHash = _hash.nextHash(_node2.attrHash, _calTextHash(_node2.attrs["disabled"]));{
-        var _attrvalue8 = "";_attrvalue8 = it && it.autofocus ? true : false;_node2.attrs["autofocus"] = _attrvalue8;
+        var _attrvalue8 = "";_attrvalue8 = it && it.autofocus ? 'autofocus' : false;_node2.attrs["autofocus"] = _attrvalue8;
       }_node2.attrHash = _hash.nextHash(_node2.attrHash, _calTextHash(_node2.attrs["autofocus"]));_node2.attrs["on-input"] = "change";_node2.attrs["on-blur"] = "blur";_node2.attrs["on-focus"] = "focus";_chFunc(_node2);_$parent2.children.push(_node2);
     }if (it1.showClear) {
       _$temp = _node;{

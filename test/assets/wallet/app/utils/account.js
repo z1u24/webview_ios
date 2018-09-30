@@ -24,7 +24,7 @@ var walletPswStrengthList = [{
  * @param walletName wallet name
  */
 exports.walletNameAvailable = function (walletName) {
-    return tools_1.getStrLen(walletName.trim()) >= 1 && tools_1.getStrLen(walletName.trim()) <= 10;
+    return tools_1.getStrLen(walletName.trim()) >= 1 && tools_1.getStrLen(walletName.trim()) <= 20;
 };
 /**
  * 钱包密码是否合乎规则

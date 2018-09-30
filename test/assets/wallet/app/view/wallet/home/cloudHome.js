@@ -40,11 +40,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * cloud home
  */
 var root_1 = require("../../../../pi/ui/root");
-var widget_1 = require("../../../../pi/widget/widget");
-var tools_1 = require("../../../utils/tools");
 var forelet_1 = require("../../../../pi/widget/forelet");
-var store_1 = require("../../../store/store");
+var widget_1 = require("../../../../pi/widget/widget");
 var pull_1 = require("../../../net/pull");
+var store_1 = require("../../../store/store");
+var tools_1 = require("../../../utils/tools");
 exports.forelet = new forelet_1.Forelet();
 exports.WIDGET_NAME = module.id.replace(/\//g, '-');
 
@@ -73,7 +73,8 @@ var CloudHome = function (_widget_1$Widget) {
             this.state = {
                 totalAsset: tools_1.formatBalanceValue(tools_1.fetchCloudTotalAssets()),
                 assetList: tools_1.fetchCloudWalletAssetList(),
-                productList: store_1.find("productList") || []
+                productList: store_1.find('productList') || [],
+                cfgData: tools_1.getLanguage(this)
             };
         }
         // 条目点击
@@ -138,7 +139,7 @@ store_1.register('coinGain', function () {
         w.updateBalance();
     }
 });
-//理财产品变化
+// 理财产品变化
 store_1.register('productList', function (productList) {
     return __awaiter(undefined, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
         var w;

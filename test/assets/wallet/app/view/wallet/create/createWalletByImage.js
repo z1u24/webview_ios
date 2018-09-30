@@ -20,6 +20,7 @@ var widget_1 = require("../../../../pi/widget/widget");
 var native_1 = require("../../../logic/native");
 var interface_1 = require("../../../store/interface");
 var account_1 = require("../../../utils/account");
+var tools_1 = require("../../../utils/tools");
 
 var CreateWalletByImage = function (_widget_1$Widget) {
     _inherits(CreateWalletByImage, _widget_1$Widget);
@@ -46,7 +47,8 @@ var CreateWalletByImage = function (_widget_1$Widget) {
                 imagePsw: '',
                 imagePswAvailable: false,
                 imgagePswConfirm: '',
-                pswEqualed: false
+                pswEqualed: false,
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {
@@ -91,8 +93,12 @@ var CreateWalletByImage = function (_widget_1$Widget) {
     }, {
         key: "nextClick",
         value: function nextClick() {
+            if (!this.state.chooseImage) {
+                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[0] });
+                return;
+            }
             if (!this.state.pswEqualed) {
-                root_1.popNew('app-components-message-message', { content: '两次输入密码不一致' });
+                root_1.popNew('app-components-message-message', { content: this.state.cfgData.tips[1] });
                 return;
             }
             // tslint:disable-next-line:max-line-length

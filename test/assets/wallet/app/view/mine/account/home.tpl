@@ -25,9 +25,9 @@
 						var attrvalue = "";attrvalue += it1.avatar ? it1.avatar : '../../../res/image1/default_avatar.png';attrvalue += "";_node6.attrs["src"] = attrvalue;
 					}_node6.attrHash = _hash.nextHash(_node6.attrHash, _calTextHash(_node6.attrs["src"]));_node6.attrs["on-tap"] = "uploadAvatar";_chFunc(_node6);_$parent6.children.push(_node6);
 				}_$temp = _node5;{
-					var _$parent7 = _$temp;var _node7 = { "attrs": {}, "tagName": "input", "sid": 5 };_node7.children = [];_node7.attrSize = 5;_node7.attrHash = 3424275630;_node7.attrs["id"] = "walletNameInput";_node7.attrs["w-class"] = "edit-input";{
+					var _$parent7 = _$temp;var _node7 = { "attrs": {}, "tagName": "input", "sid": 5 };_node7.children = [];_node7.attrSize = 6;_node7.attrHash = 4270878654;_node7.attrs["id"] = "walletNameInput";_node7.attrs["w-class"] = "edit-input";{
 						var _attrvalue = "";_attrvalue += it1.nickName;_attrvalue += "";_node7.attrs["value"] = _attrvalue;
-					}_node7.attrHash = _hash.nextHash(_node7.attrHash, _calTextHash(_node7.attrs["value"]));_node7.attrs["on-blur"] = "walletNameInputBlur";_node7.attrs["on-focus"] = "walletNameInputFocus";_chFunc(_node7);_$parent7.children.push(_node7);
+					}_node7.attrHash = _hash.nextHash(_node7.attrHash, _calTextHash(_node7.attrs["value"]));_node7.attrs["on-blur"] = "walletNameInputBlur";_node7.attrs["on-focus"] = "walletNameInputFocus";_node7.attrs["maxlength"] = "10";_chFunc(_node7);_$parent7.children.push(_node7);
 				}_$temp = _node5;{
 					var _$parent8 = _$temp;var _node8 = { "attrs": {}, "tagName": "img", "sid": 6 };_node8.children = [];_node8.childHash = 0;_node8.attrSize = 2;_node8.attrHash = 3013318854;_node8.attrs["src"] = "../../../res/image/edit.png";_node8.attrs["w-class"] = "edit";_$parent8.children.push(_node8);
 				}_chFunc(_node5);_$parent5.children.push(_node5);

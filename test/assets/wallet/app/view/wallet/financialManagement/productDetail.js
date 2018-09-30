@@ -39,25 +39,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 理财详情
  */
+var root_1 = require("../../../../pi/ui/root");
+var forelet_1 = require("../../../../pi/widget/forelet");
 var widget_1 = require("../../../../pi/widget/widget");
 var pull_1 = require("../../../net/pull");
-var forelet_1 = require("../../../../pi/widget/forelet");
 var store_1 = require("../../../store/store");
 var tools_1 = require("../../../utils/tools");
-var root_1 = require("../../../../pi/ui/root");
 exports.forelet = new forelet_1.Forelet();
 exports.WIDGET_NAME = module.id.replace(/\//g, '-');
 
-var productDetail = function (_widget_1$Widget) {
-    _inherits(productDetail, _widget_1$Widget);
+var ProductDetail = function (_widget_1$Widget) {
+    _inherits(ProductDetail, _widget_1$Widget);
 
-    function productDetail() {
-        _classCallCheck(this, productDetail);
+    function ProductDetail() {
+        _classCallCheck(this, ProductDetail);
 
-        return _possibleConstructorReturn(this, (productDetail.__proto__ || Object.getPrototypeOf(productDetail)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (ProductDetail.__proto__ || Object.getPrototypeOf(ProductDetail)).apply(this, arguments));
     }
 
-    _createClass(productDetail, [{
+    _createClass(ProductDetail, [{
         key: "backPrePage",
         value: function backPrePage() {
             this.ok && this.ok();
@@ -65,14 +65,14 @@ var productDetail = function (_widget_1$Widget) {
     }, {
         key: "setProps",
         value: function setProps(props, oldProps) {
-            _get(productDetail.prototype.__proto__ || Object.getPrototypeOf(productDetail.prototype), "setProps", this).call(this, props, oldProps);
+            _get(ProductDetail.prototype.__proto__ || Object.getPrototypeOf(ProductDetail.prototype), "setProps", this).call(this, props, oldProps);
             this.init();
         }
     }, {
         key: "init",
         value: function init() {
             if (store_1.find('conUid')) {
-                //获取购买记录
+                // 获取购买记录
                 pull_1.getPurchaseRecord();
             }
             var product = this.props.product;
@@ -82,7 +82,8 @@ var productDetail = function (_widget_1$Widget) {
                 holdedAmout: 0,
                 amount: 1,
                 leftPercent: res.left,
-                usePercent: res.use
+                usePercent: res.use,
+                cfgData: tools_1.getLanguage(this)
             };
             console.log(this.props.product);
         }
@@ -103,14 +104,14 @@ var productDetail = function (_widget_1$Widget) {
         key: "add",
         value: function add(e) {
             var limit = Number(this.props.product.limit);
-            //超过限购量直接返回
+            // 超过限购量直接返回
             if (this.state.amount + this.state.holdedAmout >= limit) {
                 return;
             }
             this.state.amount += 1;
             this.paint();
         }
-        //购买记录改变
+        // 购买记录改变
 
     }, {
         key: "updatePurchaseRecord",
@@ -125,10 +126,10 @@ var productDetail = function (_widget_1$Widget) {
         }
     }]);
 
-    return productDetail;
+    return ProductDetail;
 }(widget_1.Widget);
 
-exports.productDetail = productDetail;
+exports.ProductDetail = ProductDetail;
 // =====================================本地
 store_1.register('purchaseRecord', function (purchaseRecord) {
     return __awaiter(undefined, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {

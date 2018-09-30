@@ -40,34 +40,36 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * 购买的理财详情
  */
 var widget_1 = require("../../../../pi/widget/widget");
-var tools_1 = require("../../../utils/tools");
 var pull_1 = require("../../../net/pull");
-var walletTools_1 = require("../../../utils/walletTools");
 var store_1 = require("../../../store/store");
+var tools_1 = require("../../../utils/tools");
+var walletTools_1 = require("../../../utils/walletTools");
 
-var holdedFmDetail = function (_widget_1$Widget) {
-    _inherits(holdedFmDetail, _widget_1$Widget);
+var HoldedFmDetail = function (_widget_1$Widget) {
+    _inherits(HoldedFmDetail, _widget_1$Widget);
 
-    function holdedFmDetail() {
-        _classCallCheck(this, holdedFmDetail);
+    function HoldedFmDetail() {
+        _classCallCheck(this, HoldedFmDetail);
 
-        return _possibleConstructorReturn(this, (holdedFmDetail.__proto__ || Object.getPrototypeOf(holdedFmDetail)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (HoldedFmDetail.__proto__ || Object.getPrototypeOf(HoldedFmDetail)).apply(this, arguments));
     }
 
-    _createClass(holdedFmDetail, [{
+    _createClass(HoldedFmDetail, [{
         key: "setProps",
         value: function setProps(props, oldProps) {
-            _get(holdedFmDetail.prototype.__proto__ || Object.getPrototypeOf(holdedFmDetail.prototype), "setProps", this).call(this, props, oldProps);
+            _get(HoldedFmDetail.prototype.__proto__ || Object.getPrototypeOf(HoldedFmDetail.prototype), "setProps", this).call(this, props, oldProps);
             console.log(this.props.product);
-            var stateShow = props.product.state === 1 ? '收益中' : '已赎回';
+            var cfg = tools_1.getLanguage(this);
+            var stateShow = props.product.state === 1 ? cfg.phrase[0] : cfg.phrase[1];
             var stateBg = props.product.state === 1 ? '' : 'bg1';
-            var btnText = props.product.state === 1 ? '赎回' : '已赎回';
+            var btnText = props.product.state === 1 ? cfg.phrase[2] : cfg.phrase[1];
             var btnBgColor = props.product.state === 1 ? 'blue' : 'white';
             this.state = {
                 stateShow: stateShow,
                 stateBg: stateBg,
                 btnText: btnText,
-                btnBgColor: btnBgColor
+                btnBgColor: btnBgColor,
+                cfgData: cfg
             };
         }
     }, {
@@ -106,7 +108,7 @@ var holdedFmDetail = function (_widget_1$Widget) {
                                 return _context.abrupt("return");
 
                             case 7:
-                                close = tools_1.popNewLoading('赎回中...');
+                                close = tools_1.popNewLoading(this.state.cfgData.loading);
                                 _context.next = 10;
                                 return walletTools_1.VerifyIdentidy(store_1.find('curWallet'), psw);
 
@@ -118,7 +120,7 @@ var holdedFmDetail = function (_widget_1$Widget) {
                                     break;
                                 }
 
-                                tools_1.popNewMessage('密码错误');
+                                tools_1.popNewMessage(this.state.cfgData.tips[0]);
                                 close.callback(close.widget);
                                 return _context.abrupt("return");
 
@@ -131,10 +133,10 @@ var holdedFmDetail = function (_widget_1$Widget) {
 
                                 close.callback(close.widget);
                                 if (result) {
-                                    tools_1.popNewMessage('赎回成功');
+                                    tools_1.popNewMessage(this.state.cfgData.tips[1]);
                                     pull_1.getPurchaseRecord();
                                 } else {
-                                    tools_1.popNewMessage('赎回失败');
+                                    tools_1.popNewMessage(this.state.cfgData.tips[2]);
                                 }
 
                             case 20:
@@ -147,8 +149,8 @@ var holdedFmDetail = function (_widget_1$Widget) {
         }
     }]);
 
-    return holdedFmDetail;
+    return HoldedFmDetail;
 }(widget_1.Widget);
 
-exports.holdedFmDetail = holdedFmDetail;
+exports.HoldedFmDetail = HoldedFmDetail;
 })

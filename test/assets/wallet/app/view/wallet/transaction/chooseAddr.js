@@ -40,9 +40,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * choose addr
  */
 var widget_1 = require("../../../../pi/widget/widget");
-var tools_1 = require("../../../utils/tools");
 var localWallet_1 = require("../../../logic/localWallet");
 var store_1 = require("../../../store/store");
+var tools_1 = require("../../../utils/tools");
 
 var ChooseAddr = function (_widget_1$Widget) {
     _inherits(ChooseAddr, _widget_1$Widget);
@@ -63,7 +63,8 @@ var ChooseAddr = function (_widget_1$Widget) {
         key: "init",
         value: function init() {
             this.state = {
-                addrsInfo: this.parseAddrsInfo()
+                addrsInfo: this.parseAddrsInfo(),
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {

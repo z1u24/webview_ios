@@ -173,7 +173,6 @@ var Setting = function (_widget_1$Widget) {
             var _this3 = this;
 
             root_1.popNew('app-components-keyboard-keyboard', { title: this.state.cfgData.keyboardTitle[1] }, function (r) {
-                console.error(r);
                 if (_this3.state.lockScreenPsw !== r) {
                     root_1.popNew('app-components-message-message', { content: _this3.state.cfgData.tips[0] });
                     _this3.reSetLockPsw();
@@ -205,8 +204,7 @@ var Setting = function (_widget_1$Widget) {
                     var fg = walletTools_1.VerifyIdentidy(wallet, r);
                     // const fg = true;
                     if (fg) {
-                        root_1.popNew('app-components-keyboard-keyboard', { title: _this4.state.cfg.keyboardTitle[0] }, function (r) {
-                            console.error(r);
+                        root_1.popNew('app-components-keyboard-keyboard', { title: _this4.state.cfgData.keyboardTitle[0] }, function (r) {
                             _this4.state.lockScreenPsw = r;
                             _this4.reSetLockPsw();
                         }, function () {
@@ -218,7 +216,7 @@ var Setting = function (_widget_1$Widget) {
             } else {
                 root_1.popNew('app-components-keyboard-keyboard', { title: this.state.errorTips[ind] }, function (r) {
                     if (tools_1.lockScreenVerify(r)) {
-                        root_1.popNew('app-components-keyboard-keyboard', { title: _this4.state.cfg.keyboardTitle[0] }, function (r) {
+                        root_1.popNew('app-components-keyboard-keyboard', { title: _this4.state.cfgData.keyboardTitle[0] }, function (r) {
                             _this4.state.lockScreenPsw = r;
                             _this4.reSetLockPsw();
                         }, function () {
@@ -273,7 +271,7 @@ var Setting = function (_widget_1$Widget) {
             this.paint();
         }
         /**
-         * 用户名修改
+         * 监听用户名修改
          */
 
     }, {
@@ -281,8 +279,18 @@ var Setting = function (_widget_1$Widget) {
         value: function userNameChange(e) {
             if (e.value !== this.state.userName) {
                 this.state.userName = e.value;
-                var userInfo = store_1.find('userInfo');
-                userInfo.nickName = e.value;
+            }
+        }
+        /**
+         * 取消聚焦后更新用户名
+         */
+
+    }, {
+        key: "userNameConfirm",
+        value: function userNameConfirm() {
+            var userInfo = store_1.find('userInfo');
+            if (userInfo.nickName !== this.state.userName) {
+                userInfo.nickName = this.state.userName;
                 store_1.updateStore('userInfo', userInfo);
                 pull_1.setUserInfo();
             }
@@ -350,8 +358,7 @@ var Setting = function (_widget_1$Widget) {
                 console.log('备份');
             }, function () {
                 root_1.popNew('app-components-modalBox-modalBox', { title: '', content: _this6.state.cfgData.tips[2], style: 'color:#F7931A;' }, function () {
-                    store_1.updateStore('curWallet', null);
-                    store_1.updateStore('userInfo', null);
+                    tools_1.logoutAccount();
                     _this6.backPrePage();
                     console.log('注销账户');
                 });
@@ -363,7 +370,26 @@ var Setting = function (_widget_1$Widget) {
 }(widget_1.Widget);
 
 exports.Setting = Setting;
+// ================================================本地，立即执行
 store_1.register('languageSet', function () {
+    var w = exports.forelet.getWidget(exports.WIDGET_NAME);
+    if (w) {
+        w.initData();
+    }
+});
+store_1.register('userInfo', function () {
+    var w = exports.forelet.getWidget(exports.WIDGET_NAME);
+    if (w) {
+        w.initData();
+    }
+});
+store_1.register('curWallet', function () {
+    var w = exports.forelet.getWidget(exports.WIDGET_NAME);
+    if (w) {
+        w.initData();
+    }
+});
+store_1.register('lockScreen', function () {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {
         w.initData();

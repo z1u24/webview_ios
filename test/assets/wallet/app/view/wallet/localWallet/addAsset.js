@@ -16,9 +16,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * add asset
  */
 var widget_1 = require("../../../../pi/widget/widget");
-var tools_1 = require("../../../utils/tools");
-var store_1 = require("../../../store/store");
 var dataCenter_1 = require("../../../logic/dataCenter");
+var store_1 = require("../../../store/store");
+var tools_1 = require("../../../utils/tools");
 
 var AddAsset = function (_widget_1$Widget) {
     _inherits(AddAsset, _widget_1$Widget);
@@ -41,8 +41,9 @@ var AddAsset = function (_widget_1$Widget) {
             var assetList = tools_1.fetchWalletAssetListAdded();
             this.state = {
                 assetList: assetList,
-                searchText: "",
-                showAssetList: assetList
+                searchText: '',
+                showAssetList: assetList,
+                cfgData: tools_1.getLanguage(this)
             };
             console.log(this.state);
         }
@@ -83,6 +84,7 @@ var AddAsset = function (_widget_1$Widget) {
 
             this.state.searchText = e.value;
             if (this.state.searchText) {
+                // tslint:disable-next-line:max-line-length
                 this.state.showAssetList = this.state.assetList.filter(function (v) {
                     return v.currencyName.toLowerCase().indexOf(_this2.state.searchText.toLowerCase()) >= 0;
                 });

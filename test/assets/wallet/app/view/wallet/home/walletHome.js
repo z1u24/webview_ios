@@ -16,10 +16,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * wallet home
  */
 var root_1 = require("../../../../pi/ui/root");
-var widget_1 = require("../../../../pi/widget/widget");
-var tools_1 = require("../../../utils/tools");
 var forelet_1 = require("../../../../pi/widget/forelet");
+var widget_1 = require("../../../../pi/widget/widget");
 var store_1 = require("../../../store/store");
+var tools_1 = require("../../../utils/tools");
 exports.forelet = new forelet_1.Forelet();
 exports.WIDGET_NAME = module.id.replace(/\//g, '-');
 
@@ -43,7 +43,8 @@ var WalletHome = function (_widget_1$Widget) {
         value: function init() {
             this.state = {
                 totalAsset: tools_1.formatBalanceValue(tools_1.fetchTotalAssets()),
-                assetList: tools_1.fetchWalletAssetList()
+                assetList: tools_1.fetchWalletAssetList(),
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {
@@ -85,7 +86,7 @@ store_1.register('curWallet', function () {
         w.updateBalance();
     }
 });
-//地址变化
+// 地址变化
 store_1.register('addrs', function () {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {

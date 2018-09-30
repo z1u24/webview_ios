@@ -15,9 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 理财声明
  */
-var widget_1 = require("../../../../pi/widget/widget");
-var config_1 = require("../../../config");
 var root_1 = require("../../../../pi/ui/root");
+var widget_1 = require("../../../../pi/widget/widget");
+var tools_1 = require("../../../utils/tools");
 
 var ProductStatement = function (_widget_1$Widget) {
     _inherits(ProductStatement, _widget_1$Widget);
@@ -38,8 +38,9 @@ var ProductStatement = function (_widget_1$Widget) {
         key: "init",
         value: function init() {
             this.state = {
-                statement: config_1.Config.notice,
-                readed: false
+                statement: tools_1.getStaticLanguage().notice,
+                readed: false,
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {

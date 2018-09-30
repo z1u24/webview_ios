@@ -30,6 +30,10 @@
 
 						_node7["clearable"] = true;
 						//jpair suf
+						//jpair pre
+
+						_node7["autofocus"] = true;
+						//jpair suf
 						_addJson(_node7, _$parent7);
 					}_chFunc(_node6);_$parent6.children.push(_node6);
 				}_chFunc(_node5);_$parent5.children.push(_node5);
@@ -61,13 +65,8 @@
 						}
 						//jpair pre
 
-						{
-							var _jvalue2 = "";
-							_jvalue2 = "重复密码";
-							//jpair suf
-
-							_node13["placeHolder"] = _jvalue2;
-						}
+						_node13["placeHolder"] = it1.cfgData.itemTitle[2];
+						//jpair suf
 						//jpair pre
 
 						_node13["clearable"] = true;
@@ -90,20 +89,20 @@
 					//jpair pre
 
 					{
-						var _jvalue3 = "";
-						_jvalue3 = "blue";
+						var _jvalue2 = "";
+						_jvalue2 = "blue";
 						//jpair suf
 
-						_node16["color"] = _jvalue3;
+						_node16["color"] = _jvalue2;
 					}
 					//jpair pre
 
 					{
-						var _jvalue4 = "";
-						_jvalue4 = "margin:0 60px;";
+						var _jvalue3 = "";
+						_jvalue3 = "margin:0 60px;";
 						//jpair suf
 
-						_node16["style"] = _jvalue4;
+						_node16["style"] = _jvalue3;
 					}
 					_addJson(_node16, _$parent16);
 				}_chFunc(_node15);_$parent15.children.push(_node15);

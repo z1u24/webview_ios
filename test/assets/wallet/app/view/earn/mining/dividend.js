@@ -41,6 +41,7 @@ var forelet_1 = require("../../../../pi/widget/forelet");
 var widget_1 = require("../../../../pi/widget/widget");
 var pull_1 = require("../../../net/pull");
 var store_1 = require("../../../store/store");
+var constants_1 = require("../../../utils/constants");
 var tools_1 = require("../../../utils/tools");
 exports.forelet = new forelet_1.Forelet();
 exports.WIDGET_NAME = module.id.replace(/\//g, '-');
@@ -68,13 +69,16 @@ var Dividend = function (_widget_1$Widget) {
                 isAbleBtn: false,
                 miningNum: " <div class=\"miningNum\" style=\"animation:{{it1.doMining?'move 1s':''}}\">\n                <span>+{{it1.thisNum}}</span>\n            </div>",
                 scroll: false,
-                dividHistory: [// 分红历史记录
+                data: [// 分红历史记录
                     // { num:0.02,time:'04-30  14:32:00' },
                     // { num:0.02,time:'04-30  14:32:00' },
                     // { num:0.02,time:'04-30  14:32:00' }
                 ],
                 ktBalance: this.props.ktBalance,
-                cfgData: tools_1.getLanguage(this)
+                cfgData: tools_1.getLanguage(this),
+                hasMore: false,
+                refresh: true,
+                start: ''
             };
             this.initData();
             this.initEvent();
@@ -109,18 +113,80 @@ var Dividend = function (_widget_1$Widget) {
             }
             var history = store_1.find('dividHistory');
             if (history) {
-                this.state.dividHistory = history;
+                var hList = history.list;
+                if (hList && hList.length > this.state.data.length) {
+                    console.log('load more from local');
+                } else {
+                    console.log('load more from server');
+                    pull_1.getDividHistory(this.state.start);
+                }
+            } else {
+                console.log('load more from server');
+                pull_1.getDividHistory(this.state.start);
             }
+            this.loadMore();
             this.paint();
         }
         /**
-         * 页面滑动
+         *  本地实际加载数据
          */
 
     }, {
-        key: "pageScroll",
-        value: function pageScroll() {
-            if (document.getElementById('content').scrollTop > 0) {
+        key: "loadMore",
+        value: function loadMore() {
+            return __awaiter(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
+                var data, hList, start;
+                return regeneratorRuntime.wrap(function _callee$(_context) {
+                    while (1) {
+                        switch (_context.prev = _context.next) {
+                            case 0:
+                                data = store_1.find('dividHistory');
+
+                                if (data) {
+                                    _context.next = 3;
+                                    break;
+                                }
+
+                                return _context.abrupt("return");
+
+                            case 3:
+                                hList = data.list;
+                                start = this.state.data.length;
+
+                                this.state.data = this.state.data.concat(hList.slice(start, start + constants_1.PAGELIMIT));
+                                this.state.start = data.start;
+                                this.state.hasMore = data.canLoadMore;
+                                this.paint();
+
+                            case 9:
+                            case "end":
+                                return _context.stop();
+                        }
+                    }
+                }, _callee, this);
+            }));
+        }
+        /**
+         * 滚动加载更多列表数据
+         */
+
+    }, {
+        key: "getMoreList",
+        value: function getMoreList() {
+            var _this2 = this;
+
+            var h1 = document.getElementById('historylist').offsetHeight;
+            var h2 = document.getElementById('history').offsetHeight;
+            var scrollTop = document.getElementById('historylist').scrollTop;
+            if (this.state.hasMore && this.state.refresh && h2 - h1 - scrollTop < 20) {
+                this.state.refresh = false;
+                console.log('加载中，请稍后~~~');
+                setTimeout(function () {
+                    _this2.loadMore();
+                    _this2.state.refresh = true;
+                }, 1000);
+            }
+            if (scrollTop > 0) {
                 this.state.scroll = true;
                 if (this.state.scroll) {
                     this.paint();
@@ -137,13 +203,13 @@ var Dividend = function (_widget_1$Widget) {
     }, {
         key: "doMining",
         value: function doMining() {
-            return __awaiter(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-                var _this2 = this;
+            return __awaiter(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee2() {
+                var _this3 = this;
 
                 var child;
-                return regeneratorRuntime.wrap(function _callee$(_context) {
+                return regeneratorRuntime.wrap(function _callee2$(_context2) {
                     while (1) {
-                        switch (_context.prev = _context.next) {
+                        switch (_context2.prev = _context2.next) {
                             case 0:
                                 if (this.state.thisDivid > 0 && this.state.firstClick) {
                                     // 如果本次可挖大于0并且是首次点击，则需要真正的领分红操作并刷新数据
@@ -151,8 +217,8 @@ var Dividend = function (_widget_1$Widget) {
                                     this.state.firstClick = false;
                                     setTimeout(function () {
                                         pull_1.getMining();
-                                        _this2.initEvent();
-                                        _this2.paint();
+                                        _this3.initEvent();
+                                        _this3.paint();
                                     }, 500);
                                 } else {
                                     // 添加一个新的数字动画效果并移除旧的
@@ -169,16 +235,16 @@ var Dividend = function (_widget_1$Widget) {
                                 this.state.isAbleBtn = true;
                                 this.paint();
                                 setTimeout(function () {
-                                    _this2.state.isAbleBtn = false;
-                                    _this2.paint();
+                                    _this3.state.isAbleBtn = false;
+                                    _this3.paint();
                                 }, 100);
 
                             case 5:
                             case "end":
-                                return _context.stop();
+                                return _context2.stop();
                         }
                     }
-                }, _callee, this);
+                }, _callee2, this);
             }));
         }
         /**
@@ -209,7 +275,7 @@ store_1.register('dividTotal', function () {
 store_1.register('dividHistory', function () {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {
-        w.initData();
+        w.loadMore();
     }
 });
 })

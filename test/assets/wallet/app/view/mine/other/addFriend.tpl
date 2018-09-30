@@ -30,10 +30,10 @@
 					}_chFunc(_node7);_$parent7.children.push(_node7);
 				}_chFunc(_node5);_$parent5.children.push(_node5);
 			}_$temp = _node4;{
-				var _$parent9 = _$temp;var _node8 = { "attrs": {}, "tagName": "div", "sid": 6 };_node8.children = [];_node8.attrSize = 1;_node8.attrHash = 1620646998;_node8.attrs["w-class"] = "address";_$temp = _node8;{
+				var _$parent9 = _$temp;var _node8 = { "attrs": {}, "tagName": "div", "sid": 6 };_node8.children = [];_node8.attrSize = 2;_node8.attrHash = 3708489470;_node8.attrs["w-class"] = "address";_node8.attrs["on-tap"] = "copyAddr";_$temp = _node8;{
 					var _$parent10 = _$temp;_addText(it1.address, _$parent10);
 				}_$temp = _node8;{
-					var _$parent11 = _$temp;var _node9 = { "attrs": {}, "tagName": "img", "sid": 7 };_node9.children = [];_node9.childHash = 0;_node9.attrSize = 3;_node9.attrHash = 2666631559;_node9.attrs["src"] = "../../../res/image/42.png";_node9.attrs["style"] = "width: 30px;height:30px;margin-left: 15px;vertical-align: middle;";_node9.attrs["on-tap"] = "copyAddr";_$parent11.children.push(_node9);
+					var _$parent11 = _$temp;var _node9 = { "attrs": {}, "tagName": "img", "sid": 7 };_node9.children = [];_node9.childHash = 0;_node9.attrSize = 2;_node9.attrHash = 1080944863;_node9.attrs["src"] = "../../../res/image/42.png";_node9.attrs["w-class"] = "copy";_$parent11.children.push(_node9);
 				}_chFunc(_node8);_$parent9.children.push(_node8);
 			}_$temp = _node4;{
 				var _$parent12 = _$temp;var _node10 = { "attrs": {}, "tagName": "div", "sid": 8 };_node10.children = [];_node10.attrSize = 1;_node10.attrHash = 3583682907;_node10.attrs["style"] = "text-align: center;";_$temp = _node10;{

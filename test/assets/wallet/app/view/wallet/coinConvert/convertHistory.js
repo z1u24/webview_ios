@@ -75,9 +75,10 @@ var ConvertHistory = function (_widget_1$Widget) {
                         switch (_context.prev = _context.next) {
                             case 0:
                                 this.state = {
-                                    txsShow: []
+                                    txsShow: [],
+                                    cfgData: tools_1.getLanguage(this)
                                 };
-                                close = root_1.popNew('app-components1-loading-loading', { text: '加载中...' });
+                                close = root_1.popNew('app-components1-loading-loading', { text: this.state.cfgData.loading });
                                 addr = tools_1.getCurrentAddrByCurrencyName(this.props.currencyName);
                                 _context.next = 5;
                                 return pullWallet_1.getTransactionsByAddr(addr);
@@ -100,6 +101,8 @@ var ConvertHistory = function (_widget_1$Widget) {
     }, {
         key: "shapeShiftTxsUpdate",
         value: function shapeShiftTxsUpdate(shapeShiftTxsMap) {
+            var _this2 = this;
+
             var addr = tools_1.getCurrentAddrByCurrencyName(this.props.currencyName).toLowerCase();
             var shapeShiftTxs = shapeShiftTxsMap.get(addr);
             var txs = shapeShiftTxs && shapeShiftTxs.list || [];
@@ -113,13 +116,13 @@ var ConvertHistory = function (_widget_1$Widget) {
                 // tslint:disable-next-line:variable-name
                 var status_class = '';
                 if (tx.status === 'complete') {
-                    status_show = '兑换成功';
+                    status_show = _this2.state.cfgData.tips[1];
                     status_class = '';
                 } else if (tx.status === 'failed') {
-                    status_show = '兑换失败';
+                    status_show = _this2.state.cfgData.tips[2];
                     status_class = 'isActive'; // 做个标记，提醒
                 } else {
-                    status_show = '兑换中';
+                    status_show = _this2.state.cfgData.tips[3];
                     status_class = 'isActive'; // 做个标记，提醒
                 }
                 txsShow.push(Object.assign({}, tx, { inputTXID_show: tools_1.parseAccount(tx.inputTXID), outputTXID_show: tx.status === 'complete' && tools_1.parseAccount(tx.outputTXID), timestamp_show: tools_1.timestampFormat(tx.timestamp * 1000), status_show: status_show,

@@ -238,7 +238,7 @@ var PlayHome = function (_widget_1$Widget) {
             } else {
                 this.state.isAbleBtn = false;
             }
-            var rank = store_1.find('mineRank');
+            var rank = store_1.find('miningRank');
             if (rank) {
                 this.state.rankNum = rank.myRank;
             }
@@ -254,7 +254,7 @@ var PlayHome = function (_widget_1$Widget) {
             // 这里发起通信
             pull_1.getCloudBalance();
             pull_1.getMining();
-            pull_1.getMineRank(100);
+            pull_1.getMiningRank(100);
         }
     }]);
 
@@ -276,7 +276,7 @@ store_1.register('miningTotal', function () {
         w.initDate();
     }
 });
-store_1.register('mineRank', function () {
+store_1.register('miningRank', function () {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {
         w.initDate();

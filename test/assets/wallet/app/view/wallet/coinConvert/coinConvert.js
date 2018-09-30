@@ -71,9 +71,9 @@ var CoinConvert = function (_widget_1$Widget) {
         key: "rateDetail",
         value: function rateDetail() {
             // tslint:disable-next-line:prefer-template
-            var tips = '矿工费 ' + this.state.inMinerFee + ' ' + this.state.inCurrency;
+            var tips = this.state.cfgData.tips[5] + this.state.inMinerFee + ' ' + this.state.inCurrency;
             // tslint:disable-next-line:max-line-length
-            root_1.popNew('app-components-modalBox-modalBox1', { title: '汇率说明', content: '换币服务由shapeshift平台提供支持，换币汇率取决于国内外主流交易平台的实时相对价格，另外加上矿工费用及shapeshift平台收取的约0.5%服务费用。换币实际所得数量会因为实时价格有所浮动。换币矿工费会通过计算近期交易中矿工费得出', tips: tips });
+            root_1.popNew('app-components-modalBox-modalBox1', { title: this.state.cfgData.title, content: this.state.cfgData.content, tips: tips });
         }
         /**
          * 查看兑换历史
@@ -111,7 +111,8 @@ var CoinConvert = function (_widget_1$Widget) {
                 outAmount: 0,
                 receiveAmount: 0,
                 curOutAddr: '',
-                curInAddr: ''
+                curInAddr: '',
+                cfgData: tools_1.getLanguage(this)
             };
             this.init();
             this.updateMinerFee();
@@ -134,6 +135,8 @@ var CoinConvert = function (_widget_1$Widget) {
                             case 3:
                                 obj = _context.sent;
                                 gasLimit = obj.gasLimit;
+                                // tslint:disable-next-line:max-line-length
+
                                 minerFee = cn === 'ETH' ? unitTools_1.wei2Eth(gasLimit * tools_1.fetchGasPrice(interface_1.MinerFeeLevel.STANDARD)) : unitTools_1.sat2Btc(tools_1.fetchBtcMinerFee(interface_1.MinerFeeLevel.STANDARD));
 
                                 this.state.outMinerFee = minerFee;
@@ -303,7 +306,7 @@ var CoinConvert = function (_widget_1$Widget) {
                                     break;
                                 }
 
-                                tools_1.popNewMessage('输入发出数量');
+                                tools_1.popNewMessage(this.state.cfgData.messages[0]);
                                 return _context3.abrupt("return");
 
                             case 5:
@@ -312,7 +315,7 @@ var CoinConvert = function (_widget_1$Widget) {
                                     break;
                                 }
 
-                                tools_1.popNewMessage('余额不足');
+                                tools_1.popNewMessage(this.state.cfgData.messages[1]);
                                 return _context3.abrupt("return");
 
                             case 8:
@@ -321,11 +324,12 @@ var CoinConvert = function (_widget_1$Widget) {
                                     break;
                                 }
 
-                                tools_1.popNewMessage('换币数量必须在最小数量和最大数量之间');
+                                tools_1.popNewMessage(this.state.cfgData.messages[2]);
                                 return _context3.abrupt("return");
 
                             case 11:
-                                content = ["\u53D1\u51FA\uFF1A" + outAmount + outCurrency, "\u6536\u5230\uFF1A" + this.state.receiveAmount + this.state.inCurrency];
+                                // tslint:disable-next-line:max-line-length
+                                content = [this.state.cfgData.tips[6] + outAmount + outCurrency, this.state.cfgData.tips[7] + this.state.receiveAmount + this.state.inCurrency];
                                 _context3.next = 14;
                                 return tools_1.popPswBox(content);
 
@@ -347,7 +351,7 @@ var CoinConvert = function (_widget_1$Widget) {
                                 //     inAmount:outAmount * this.state.rate,
                                 //     fee
                                 // });
-                                close = root_1.popNew('app-components1-loading-loading', { text: '交易中...' });
+                                close = root_1.popNew('app-components1-loading-loading', { text: this.state.cfgData.loading });
                                 withdrawalAddress = this.state.curInAddr; // 入账币种的地址
 
                                 returnAddress = this.state.curOutAddr; // 失败后的退款地址
@@ -366,7 +370,7 @@ var CoinConvert = function (_widget_1$Widget) {
                                                             break;
                                                         }
 
-                                                        root_1.popNew('app-components-message-message', { content: '出错啦' });
+                                                        root_1.popNew('app-components-message-message', { content: this.state.cfgData.messages[3] });
                                                         close.callback(close.widget);
                                                         this.init();
                                                         this.paint();
@@ -376,7 +380,7 @@ var CoinConvert = function (_widget_1$Widget) {
                                                         depositAddress = returnData.deposit;
                                                         t = new Date();
                                                         record = {
-                                                            hash: "",
+                                                            hash: '',
                                                             txType: interface_1.TxType.EXCHANGE,
                                                             fromAddr: this.state.curOutAddr,
                                                             toAddr: depositAddress,
@@ -424,7 +428,7 @@ var CoinConvert = function (_widget_1$Widget) {
                                     }));
                                 }, function (err) {
                                     console.error(err);
-                                    tools_1.popNewMessage("出错啦");
+                                    tools_1.popNewMessage(_this4.state.cfgData.messages[3]);
                                     close.callback(close.widget);
                                     _this4.init();
                                     _this4.paint();

@@ -93,22 +93,21 @@ exports.initStore = function () {
     // 从localStorage中取wallets
     var wallets = findByLoc('wallets');
     store.walletList = wallets && wallets.walletList || [];
-    // 从localStorage中取addrs
-    store.addrs = findByLoc('addrs') || [];
-    // 从localStorage中取transactions
-    store.transactions = findByLoc('transactions') || [];
-    // 从localStorage中的wallets中初始化salt
-    store.salt = wallets && wallets.salt || math_1.cryptoRandomInt().toString();
-    // 从localStorage中的wallets中初始化curWallet
     store.curWallet = wallets && wallets.walletList.length > 0 && wallets.walletList.filter(function (v) {
         return v.walletId === wallets.curWalletId;
     })[0];
+    var firstEthAddr = tools_1.getFirstEthAddr();
+    // 从localStorage中取addrs
+    store.addrs = new Map(findByLoc('addrsMap')).get(firstEthAddr) || [];
+    // 从localStorage中取transactions
+    store.transactions = new Map(findByLoc('transactionsMap')).get(firstEthAddr) || [];
+    // 从localStorage中的wallets中初始化salt
+    store.salt = wallets && wallets.salt || math_1.cryptoRandomInt().toString();
+    // 从localStorage中的wallets中初始化curWallet
     // 从localStorage中取readedPriAgr
-    store.readedPriAgr = findByLoc('readedPriAgr');
     store.token = findByLoc('token');
     // 从localStorage中取lockScreen
     store.lockScreen = findByLoc('lockScreen') || {};
-    store.ERC20TokenDecimals = findByLoc('ERC20TokenDecimals') || {};
     // 从localStorage中取sHisRecMap
     var sHisRecMap = new Map(findByLoc('sHisRecMap'));
     store.sHisRec = sHisRecMap.get(tools_1.getFirstEthAddr());
@@ -120,8 +119,6 @@ exports.initStore = function () {
     store.inviteRedBagRec = inviteRedBagRecMap.get(tools_1.getFirstEthAddr());
     // 从localStorage中取inviteRedBagRecMap
     store.shapeShiftTxsMap = new Map(findByLoc('shapeShiftTxsMap'));
-    // 从localStorage中取常用联系人列表
-    store.TopContacts = findByLoc('TopContacts') || [];
     // 从localStorage中取nonceMap
     store.nonceMap = new Map(findByLoc('nonceMap'));
     // 从localStorage中取realUserMap
@@ -148,8 +145,7 @@ var store = {
     conUserPublicKey: '',
     conRandom: '',
     conUid: 0,
-    userInfo: {},
-    readedPriAgr: false,
+    userInfo: null,
     loginState: interface_1.LoginState.init,
     coinGain: new Map(),
     token: '',
@@ -159,7 +155,6 @@ var store = {
     addrs: [],
     transactions: [],
     exchangeRateJson: new Map(),
-    ERC20TokenDecimals: null,
     lockScreen: null,
     nonceMap: new Map(),
     gasPrice: {},
@@ -167,27 +162,27 @@ var store = {
     realUserMap: new Map(),
     // 云端数据
     cloudBalance: new Map(),
+    // tslint:disable-next-line:type-literal-delimiter
     accountDetail: new Map(),
     sHisRec: null,
     cHisRec: null,
     inviteRedBagRec: null,
     miningTotal: null,
     dividTotal: null,
-    miningHistory: [],
-    dividHistory: [],
+    miningHistory: null,
+    dividHistory: null,
     addMine: [],
     mineRank: null,
     miningRank: null,
     mineItemJump: '',
+    // tslint:disable-next-line:type-literal-delimiter
     rechargeLogs: new Map(),
+    // tslint:disable-next-line:type-literal-delimiter
     withdrawLogs: new Map(),
     // shapeshift
     shapeShiftCoins: [],
     shapeShiftMarketInfo: null,
-    shapeShiftTxs: null,
     shapeShiftTxsMap: new Map(),
-    // 地址管理
-    TopContacts: [],
     // 理财
     // 所有理财产品
     productList: [],
@@ -195,5 +190,39 @@ var store = {
     purchaseRecord: [],
     lastGetSmsCodeTime: 0,
     languageSet: null
+};
+//重置云端数据
+exports.logoutInit = function () {
+    exports.updateStore('loginState', interface_1.LoginState.init);
+    exports.updateStore('flag', {});
+    exports.updateStore('salt', "");
+    exports.updateStore('conUser', '');
+    exports.updateStore('conUserPublicKey', '');
+    exports.updateStore('conRandom', '');
+    exports.updateStore('conUid', '');
+    exports.updateStore('userInfo', null);
+    exports.updateStore('curWallet', null);
+    exports.updateStore('addrs', null);
+    exports.updateStore('transactions', null);
+    exports.updateStore('lockScreen', null);
+    exports.updateStore('sHisRec', null);
+    exports.updateStore('cHisRec', null);
+    exports.updateStore('inviteRedBagRec', null);
+    exports.updateStore('token', "");
+    exports.updateStore('cloudBalance', new Map());
+    exports.updateStore('accountDetail', new Map());
+    exports.updateStore('miningTotal', null);
+    exports.updateStore('dividTotal', null);
+    exports.updateStore('miningHistory', null);
+    exports.updateStore('dividHistory', null);
+    exports.updateStore('addMine', []);
+    exports.updateStore('mineRank', null);
+    exports.updateStore('miningRank', null);
+    exports.updateStore('mineItemJump', "");
+    exports.updateStore('rechargeLogs', new Map());
+    exports.updateStore('withdrawLogs', new Map());
+    exports.updateStore('shapeShiftTxsMap', new Map());
+    exports.updateStore('productList', []);
+    exports.updateStore('purchaseRecord', []);
 };
 })

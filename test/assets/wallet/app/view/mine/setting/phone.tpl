@@ -56,6 +56,10 @@
 
 									_node11["input"] = it1.code[ind];
 									//jpair suf
+									//jpair pre
+
+									_node11["autofocus"] = false;
+									//jpair suf
 									_addJson(_node11, _$parent12);
 								}_chFunc(_node10);_$parent11.children.push(_node10);
 							}_chFunc(_node9);_$parent10.children.push(_node9);

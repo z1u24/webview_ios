@@ -14,6 +14,7 @@ var push_1 = require("../../net/push");
 var localStorageStore_1 = require("../../store/localStorageStore");
 var store_1 = require("../../store/store");
 var tools_1 = require("../../utils/tools");
+var native_1 = require("../../logic/native");
 // import{getTransaction as Account, Transation, getTokenTransaction as Token, TokenTransations} from "../../../index/rpc_call.s";
 // import { Client } from "../../../pi/net/mqtt_c";
 // import { create } from "../../../pi/net/rpc";
@@ -43,10 +44,7 @@ exports.run = function (cb) {
     // dataCenter.init();
     root_1.popNew('app-view-base-app');
     // popNew('app-view-mine-account-home');
-    var fragments = tools_1.mnemonicFragmentEncrypt(['abcdefghklmnopqrstuvwxwz', 'abcdefghklmnopqrstuvwxwz'.toUpperCase()]);
-    console.log(fragments);
-    console.log(tools_1.mnemonicFragmentDecrypt(fragments[0]));
-    console.log(tools_1.mnemonicFragmentDecrypt(fragments[1]));
+    native_1.getDeviceInfo();
     // popNewPage();
     // 后台切前台
     // backToFront();

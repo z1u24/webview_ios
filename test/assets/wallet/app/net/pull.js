@@ -43,6 +43,7 @@ var parse_1 = require("../store/parse");
 var store_1 = require("../store/store");
 var constants_1 = require("../utils/constants");
 var toolMessages_1 = require("../utils/toolMessages");
+// tslint:disable-next-line:max-line-length
 var tools_1 = require("../utils/tools");
 var unitTools_1 = require("../utils/unitTools");
 exports.conIp = pi_modules.store.exports.severIp || '127.0.0.1';
@@ -52,7 +53,9 @@ console.log('conIp=', exports.conIp);
 console.log('conPort=', exports.conPort);
 // 分享链接前缀
 // export const sharePerUrl = `http://share.kupay.io/wallet/app/boot/share.html`;
-exports.sharePerUrl = "http://" + exports.conIp + ":" + exports.conPort + "/wallet/phoneRedEnvelope/openRedEnvelope.html";
+exports.sharePerUrl = "http://" + exports.conPort + ":" + exports.conIp + "/wallet/phoneRedEnvelope/openRedEnvelope.html";
+// 分享下载链接
+exports.shareDownload = "http://" + exports.conPort + ":" + exports.conIp + "/wallet/phoneRedEnvelope/download.html";
 // 上传图片url
 exports.uploadFileUrl = "http://" + exports.conIp + "/service/upload";
 // 上传的文件url前缀
@@ -183,7 +186,7 @@ exports.login = function (passwd) {
                         return _context3.abrupt("return");
 
                     case 2:
-                        close = root_1.popNew('app-components1-loading-loading', { text: '登录中...' });
+                        close = root_1.popNew('app-components1-loading-loading', { text: tools_1.getStaticLanguage().userInfo.loading });
                         wallet = store_1.find('curWallet');
                         GlobalWallet = pi_modules.commonjs.exports.relativeGet('app/core/globalWallet').exports.GlobalWallet;
                         sign = pi_modules.commonjs.exports.relativeGet('app/core/genmnemonic').exports.sign;
@@ -205,7 +208,7 @@ exports.login = function (passwd) {
                         close.callback(close.widget);
                         if (res.result === 1) {
                             store_1.updateStore('loginState', interface_1.LoginState.logined);
-                            root_1.popNew('app-components-message-message', { content: '登录成功' });
+                            root_1.popNew('app-components-message-message', { content: tools_1.getStaticLanguage().userInfo.loginSuccess });
                         } else {
                             store_1.updateStore('loginState', interface_1.LoginState.logerror);
                         }
@@ -452,11 +455,19 @@ exports.getRandom = function () {
             while (1) {
                 switch (_context9.prev = _context9.next) {
                     case 0:
+                        if (store_1.find('conUser')) {
+                            _context9.next = 2;
+                            break;
+                        }
+
+                        return _context9.abrupt("return");
+
+                    case 2:
                         msg = { type: 'get_random', param: { account: store_1.find('conUser').slice(2), pk: "04" + store_1.find('conUserPublicKey') } };
-                        _context9.next = 3;
+                        _context9.next = 5;
                         return exports.requestAsync(msg);
 
-                    case 3:
+                    case 5:
                         resp = _context9.sent;
 
                         store_1.updateStore('conRandom', resp.rand);
@@ -482,7 +493,7 @@ exports.getRandom = function () {
                             exports.defaultLogin(hash);
                         }
 
-                    case 14:
+                    case 16:
                     case "end":
                         return _context9.stop();
                 }
@@ -649,15 +660,8 @@ exports.getMiningHistory = function () {
                         };
 
                         exports.requestAsync(msg).then(function (data) {
-                            var list = [];
-                            for (var i = 0; i < data.value.length; i++) {
-                                list.push({
-                                    num: unitTools_1.kpt2kt(data.value[i][0]),
-                                    total: unitTools_1.kpt2kt(data.value[i][1]),
-                                    time: tools_1.transDate(new Date(data.value[i][2]))
-                                });
-                            }
-                            store_1.updateStore('miningHistory', list);
+                            var miningHistory = parse_1.parseMiningHistory(data);
+                            store_1.updateStore('miningHistory', miningHistory);
                         });
 
                     case 2:
@@ -1080,15 +1084,8 @@ exports.getDividHistory = function () {
                         };
 
                         exports.requestAsync(msg).then(function (data) {
-                            var list = [];
-                            for (var i = 0; i < data.value.length; i++) {
-                                list.push({
-                                    num: unitTools_1.wei2Eth(data.value[i][1][0]),
-                                    total: unitTools_1.wei2Eth(data.value[i][1][1]),
-                                    time: tools_1.transDate(new Date(data.value[i][0]))
-                                });
-                            }
-                            store_1.updateStore('dividHistory', list);
+                            var dividHistory = parse_1.parseDividHistory(data);
+                            store_1.updateStore('dividHistory', dividHistory);
                         });
 
                     case 2:
@@ -1151,11 +1148,19 @@ exports.setUserInfo = function () {
             while (1) {
                 switch (_context29.prev = _context29.next) {
                     case 0:
+                        if (!(store_1.find("loginState") !== interface_1.LoginState.logined)) {
+                            _context29.next = 2;
+                            break;
+                        }
+
+                        return _context29.abrupt("return");
+
+                    case 2:
                         userInfo = store_1.find('userInfo');
                         msg = { type: 'wallet/user@set_info', param: { value: JSON.stringify(userInfo) } };
                         return _context29.abrupt("return", exports.requestAsync(msg));
 
-                    case 3:
+                    case 5:
                     case "end":
                         return _context29.stop();
                 }
@@ -1430,9 +1435,10 @@ exports.regPhone = function (phone, code) {
                         msg = { type: 'wallet/user@reg_phone', param: { phone: phone, code: code } };
                         return _context37.abrupt("return", exports.requestAsync(msg).catch(function (error) {
                             if (error.type === -300) {
-                                root_1.popNew('app-components-message-message', { itype: 'error', center: true, content: "\u9A8C\u8BC1\u7801\u5DF2\u5931\u6548" });
+                                root_1.popNew('app-components-message-message', { itype: 'error', center: true, content: tools_1.getStaticLanguage().userInfo.bindPhone });
                             } else {
-                                root_1.popNew('app-components-message-message', { itype: 'error', center: true, content: "\u9519\u8BEF" + error.type });
+                                // tslint:disable-next-line:max-line-length
+                                root_1.popNew('app-components-message-message', { itype: 'error', center: true, content: tools_1.getStaticLanguage().userInfo.wrong + error.type });
                             }
                         }));
 
@@ -2219,24 +2225,32 @@ exports.fetchRealUser = function () {
                         realUserMap = store_1.getBorn('realUserMap');
                         conUser = store_1.find('conUser');
 
+                        if (conUser) {
+                            _context54.next = 9;
+                            break;
+                        }
+
+                        return _context54.abrupt("return");
+
+                    case 9:
                         realUserMap.set(conUser, res.value === 'false' ? false : true);
                         store_1.updateStore('realUserMap', realUserMap);
-                        _context54.next = 15;
+                        _context54.next = 17;
                         break;
 
-                    case 11:
-                        _context54.prev = 11;
+                    case 13:
+                        _context54.prev = 13;
                         _context54.t0 = _context54["catch"](1);
 
                         console.log('wallet/user@get_real_user--------', _context54.t0);
                         toolMessages_1.showError(_context54.t0 && (_context54.t0.result || _context54.t0.type));
 
-                    case 15:
+                    case 17:
                     case "end":
                         return _context54.stop();
                 }
             }
-        }, _callee54, this, [[1, 11]]);
+        }, _callee54, this, [[1, 13]]);
     }));
 };
 // 上传文件

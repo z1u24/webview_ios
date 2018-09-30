@@ -45,6 +45,7 @@ var widget_1 = require("../../../pi/widget/widget");
 var pull_1 = require("../../net/pull");
 var interface_1 = require("../../store/interface");
 var store_1 = require("../../store/store");
+var tools_1 = require("../../utils/tools");
 exports.forelet = new forelet_1.Forelet();
 exports.WIDGET_NAME = module.id.replace(/\//g, '-');
 
@@ -71,34 +72,36 @@ var App = function (_widget_1$Widget) {
         value: function init() {
             var isActive = 3;
             this.old[isActive] = true;
-            var loading = localStorage.getItem('level_3_page_loaded') ? false : true;
-            localStorage.removeItem('level_3_page_loaded');
+            var cfg = tools_1.getLanguage(this);
+            var loading = localStorage.getItem('level_2_page_loaded') ? false : true;
+            localStorage.removeItem('level_2_page_loaded');
             this.state = {
                 type: 2,
                 isActive: isActive,
                 old: this.old,
                 loading: loading,
                 tabBarList: [{
-                    text: '玩',
+                    text: cfg.taps[0],
                     icon: 'play.png',
                     iconActive: 'play_active.png',
                     components: 'app-view-play-home-home'
                 }, {
-                    text: '聊',
+                    text: cfg.taps[1],
                     icon: 'chat.png',
                     iconActive: 'chat_active.png',
                     components: 'app-view-chat-home-home'
                 }, {
-                    text: '赚',
+                    text: cfg.taps[2],
                     icon: 'earn.png',
                     iconActive: 'earn_active.png',
                     components: 'app-view-earn-home-home'
                 }, {
-                    text: '钱',
+                    text: cfg.taps[3],
                     icon: 'wallet.png',
                     iconActive: 'wallet_active.png',
                     components: 'app-view-wallet-home-home'
-                }]
+                }],
+                cfgData: cfg
             };
         }
     }, {
@@ -146,26 +149,24 @@ exports.App = App;
 store_1.register('level_2_page_loaded', function (loaded) {
     var dataCenter = pi_modules.commonjs.exports.relativeGet('app/logic/dataCenter').exports.dataCenter;
     dataCenter.init();
-});
-store_1.register('level_3_page_loaded', function (loaded) {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {
         w.closeLoading();
     } else {
         // 处理导航页过程中资源已经加载完毕
-        localStorage.setItem('level_3_page_loaded', '1');
+        localStorage.setItem('level_2_page_loaded', '1');
     }
 });
 // 用户信息变化
 store_1.register('userInfo', function (userInfo) {
     var conRandom = store_1.find('conRandom');
-    if (conRandom && !userInfo.fromServer) {
+    if (conRandom && (!userInfo || !userInfo.fromServer)) {
         pull_1.setUserInfo();
     }
 });
 // 连接建立 登录
 store_1.register('conRandom', function (conRandom) {
-    if (store_1.find('token')) {
+    if (conRandom && store_1.find('token')) {
         pull_1.autoLogin();
     }
     // popNew('app-components-modalBoxInput-modalBoxInput',{ itype:'password',title:'请登录',content:[] },(r) => {

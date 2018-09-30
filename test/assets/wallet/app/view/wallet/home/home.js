@@ -16,11 +16,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * wallet home
  */
 // ==============================导入
+var root_1 = require("../../../../pi/ui/root");
 var forelet_1 = require("../../../../pi/widget/forelet");
 var widget_1 = require("../../../../pi/widget/widget");
 var store_1 = require("../../../store/store");
 var tools_1 = require("../../../utils/tools");
-var root_1 = require("../../../../pi/ui/root");
 exports.forelet = new forelet_1.Forelet();
 exports.WIDGET_NAME = module.id.replace(/\//g, '-');
 
@@ -43,17 +43,19 @@ var Home = function (_widget_1$Widget) {
         key: "init",
         value: function init() {
             var userInfo = tools_1.getUserInfo();
+            var cfg = tools_1.getLanguage(this);
             this.state = {
                 tabs: [{
-                    tab: '云账户',
+                    tab: cfg.tabs[0],
                     components: 'app-view-wallet-home-cloudHome'
                 }, {
-                    tab: '本地钱包',
+                    tab: cfg.tabs[1],
                     components: 'app-view-wallet-home-walletHome'
                 }],
                 activeNum: 1,
-                avatar: userInfo.avatar,
-                totalAsset: tools_1.formatBalanceValue(tools_1.fetchTotalAssets() + tools_1.fetchCloudTotalAssets())
+                avatar: userInfo && userInfo.avatar,
+                totalAsset: tools_1.formatBalanceValue(tools_1.fetchTotalAssets() + tools_1.fetchCloudTotalAssets()),
+                cfgData: cfg
             };
         }
     }, {
@@ -66,6 +68,7 @@ var Home = function (_widget_1$Widget) {
         key: "userInfoChange",
         value: function userInfoChange() {
             var userInfo = tools_1.getUserInfo();
+            if (!userInfo) return;
             this.state.avatar = userInfo.avatar;
             this.paint();
         }

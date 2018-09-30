@@ -15,11 +15,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * other record
  */
+var forelet_1 = require("../../../../pi/widget/forelet");
 var widget_1 = require("../../../../pi/widget/widget");
 var pull_1 = require("../../../net/pull");
-var store_1 = require("../../../store/store");
-var forelet_1 = require("../../../../pi/widget/forelet");
 var interface_1 = require("../../../store/interface");
+var store_1 = require("../../../store/store");
 var tools_1 = require("../../../utils/tools");
 var walletTools_1 = require("../../../utils/walletTools");
 exports.forelet = new forelet_1.Forelet();
@@ -50,7 +50,8 @@ var WithdrawRecord = function (_widget_1$Widget) {
                 recordList: [],
                 nextStart: 0,
                 canLoadMore: false,
-                isRefreshing: false
+                isRefreshing: false,
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {
@@ -65,14 +66,18 @@ var WithdrawRecord = function (_widget_1$Widget) {
             this.state.isRefreshing = false;
             this.paint();
         }
+        // tslint:disable-next-line:typedef
+
     }, {
         key: "parseRecordList",
         value: function parseRecordList(list) {
+            var _this2 = this;
+
             list.forEach(function (item) {
                 var txDetail = walletTools_1.fetchLocalTxByHash1(item.hash);
                 var obj = tools_1.parseStatusShow(txDetail);
                 item.statusShow = obj.text;
-                item.behavior = '提币';
+                item.behavior = _this2.state.cfgData.recharge;
                 item.amountShow = "-" + item.amount;
                 item.timeShow = tools_1.timestampFormat(item.time).slice(5);
                 item.iconShow = "cloud_withdraw_icon.png";
@@ -114,14 +119,14 @@ var WithdrawRecord = function (_widget_1$Widget) {
 }(widget_1.Widget);
 
 exports.WithdrawRecord = WithdrawRecord;
-//====================================
+// ====================================
 store_1.register('withdrawLogs', function () {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {
         w.updateRecordList();
     }
 });
-//本地交易变化,更新状态
+// 本地交易变化,更新状态
 store_1.register('transactions', function () {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {

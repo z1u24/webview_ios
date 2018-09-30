@@ -53,7 +53,7 @@ exports.getNewAddrInfo = function (currencyName, wallet) {
         return v.currencyName === currencyName;
     })[0];
     if (!currencyRecord) return;
-    var addrs = store_1.find('addrs');
+    var addrs = store_1.find('addrs') || [];
     var firstAddr = addrs.filter(function (v) {
         return v.addr === currencyRecord.addrs[0];
     })[0];

@@ -17,7 +17,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var widget_1 = require("../../../../pi/widget/widget");
 var tools_1 = require("../../../utils/tools");
-var config_1 = require("../../base/config");
 
 var PrivacyPolicy = function (_widget_1$Widget) {
     _inherits(PrivacyPolicy, _widget_1$Widget);
@@ -33,7 +32,7 @@ var PrivacyPolicy = function (_widget_1$Widget) {
         value: function create() {
             _get(PrivacyPolicy.prototype.__proto__ || Object.getPrototypeOf(PrivacyPolicy.prototype), "create", this).call(this);
             this.state = {
-                privacyPolicy: config_1.Config.privacyPolicy,
+                privacyPolicy: tools_1.getStaticLanguage().privacyPolicy,
                 cfgData: tools_1.getLanguage(this)
             };
         }

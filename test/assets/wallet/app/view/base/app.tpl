@@ -119,21 +119,13 @@
 						}_node15.attrHash = _hash.nextHash(_node15.attrHash, _calTextHash(_node15.attrs["w-class"]));{
 							var _attrvalue6 = "";_attrvalue6 += "tabBarChangeListener(e,";_attrvalue6 += index;_attrvalue6 += ")";_node15.attrs["on-down"] = _attrvalue6;
 						}_node15.attrHash = _hash.nextHash(_node15.attrHash, _calTextHash(_node15.attrs["on-down"]));_$temp = _node15;{
-							var _$parent16 = _$temp;var _node16 = { "attrs": {}, "tagName": "img", "sid": 10 };_node16.children = [];_node16.attrSize = 2;_node16.attrHash = 4074416208;{
-								var _attrvalue7 = "";_attrvalue7 += "../../res/image1/";_attrvalue7 += item.iconActive;_attrvalue7 += "";_node16.attrs["src"] = _attrvalue7;
-							}_node16.attrHash = _hash.nextHash(_node16.attrHash, _calTextHash(_node16.attrs["src"]));{
-								var _attrvalue8 = "";_attrvalue8 += "ga-tab-bar-icon ";_attrvalue8 += it1.isActive == index ? '' : 'ga-tab-bar-icon-none';_attrvalue8 += "";_node16.attrs["w-class"] = _attrvalue8;
-							}_node16.attrHash = _hash.nextHash(_node16.attrHash, _calTextHash(_node16.attrs["w-class"]));_chFunc(_node16);_$parent16.children.push(_node16);
+							var _$parent16 = _$temp;var _node16 = { "attrs": {}, "tagName": "img", "sid": 10 };_node16.children = [];_node16.attrSize = 2;_node16.attrHash = 231184886;{
+								var _attrvalue7 = "";_attrvalue7 += "../../res/image1/";_attrvalue7 += it1.isActive == index ? item.iconActive : item.icon;_attrvalue7 += "";_node16.attrs["src"] = _attrvalue7;
+							}_node16.attrHash = _hash.nextHash(_node16.attrHash, _calTextHash(_node16.attrs["src"]));_node16.attrs["w-class"] = "ga-tab-bar-icon";_chFunc(_node16);_$parent16.children.push(_node16);
 						}_$temp = _node15;{
-							var _$parent17 = _$temp;var _node17 = { "attrs": {}, "tagName": "img", "sid": 11 };_node17.children = [];_node17.attrSize = 2;_node17.attrHash = 4074416208;{
-								var _attrvalue9 = "";_attrvalue9 += "../../res/image1/";_attrvalue9 += item.icon;_attrvalue9 += "";_node17.attrs["src"] = _attrvalue9;
-							}_node17.attrHash = _hash.nextHash(_node17.attrHash, _calTextHash(_node17.attrs["src"]));{
-								var _attrvalue10 = "";_attrvalue10 += "ga-tab-bar-icon ";_attrvalue10 += it1.isActive == index ? 'ga-tab-bar-icon-none' : '';_attrvalue10 += "";_node17.attrs["w-class"] = _attrvalue10;
-							}_node17.attrHash = _hash.nextHash(_node17.attrHash, _calTextHash(_node17.attrs["w-class"]));_chFunc(_node17);_$parent17.children.push(_node17);
-						}_$temp = _node15;{
-							var _$parent18 = _$temp;var _node18 = { "attrs": {}, "tagName": "span", "sid": 12 };_node18.children = [];_node18.attrSize = 1;_node18.attrHash = 1456402504;_node18.attrs["w-class"] = "ga-tab-bar-text";_$temp = _node18;{
-								var _$parent19 = _$temp;_addText(item.text, _$parent19);
-							}_chFunc(_node18);_$parent18.children.push(_node18);
+							var _$parent17 = _$temp;var _node17 = { "attrs": {}, "tagName": "span", "sid": 11 };_node17.children = [];_node17.attrSize = 1;_node17.attrHash = 1456402504;_node17.attrs["w-class"] = "ga-tab-bar-text";_$temp = _node17;{
+								var _$parent18 = _$temp;_addText(item.text, _$parent18);
+							}_chFunc(_node17);_$parent17.children.push(_node17);
 						}_chFunc(_node15);_$parent15.children.push(_node15);
 					}
 				}

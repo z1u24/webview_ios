@@ -15,28 +15,28 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * other record
  */
+var forelet_1 = require("../../../../pi/widget/forelet");
 var widget_1 = require("../../../../pi/widget/widget");
 var pull_1 = require("../../../net/pull");
-var store_1 = require("../../../store/store");
-var forelet_1 = require("../../../../pi/widget/forelet");
 var interface_1 = require("../../../store/interface");
+var store_1 = require("../../../store/store");
 var tools_1 = require("../../../utils/tools");
 exports.forelet = new forelet_1.Forelet();
 exports.WIDGET_NAME = module.id.replace(/\//g, '-');
 
-var otherRecord = function (_widget_1$Widget) {
-    _inherits(otherRecord, _widget_1$Widget);
+var OtherRecord = function (_widget_1$Widget) {
+    _inherits(OtherRecord, _widget_1$Widget);
 
-    function otherRecord() {
-        _classCallCheck(this, otherRecord);
+    function OtherRecord() {
+        _classCallCheck(this, OtherRecord);
 
-        return _possibleConstructorReturn(this, (otherRecord.__proto__ || Object.getPrototypeOf(otherRecord)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (OtherRecord.__proto__ || Object.getPrototypeOf(OtherRecord)).apply(this, arguments));
     }
 
-    _createClass(otherRecord, [{
+    _createClass(OtherRecord, [{
         key: "setProps",
         value: function setProps(props, oldProps) {
-            _get(otherRecord.prototype.__proto__ || Object.getPrototypeOf(otherRecord.prototype), "setProps", this).call(this, props, oldProps);
+            _get(OtherRecord.prototype.__proto__ || Object.getPrototypeOf(OtherRecord.prototype), "setProps", this).call(this, props, oldProps);
             this.init();
         }
     }, {
@@ -49,7 +49,8 @@ var otherRecord = function (_widget_1$Widget) {
                 recordList: [],
                 nextStart: 0,
                 canLoadMore: false,
-                isRefreshing: false
+                isRefreshing: false,
+                cfgData: tools_1.getLanguage(this)
             };
         }
     }, {
@@ -64,6 +65,8 @@ var otherRecord = function (_widget_1$Widget) {
             this.state.isRefreshing = false;
             this.paint();
         }
+        // tslint:disable-next-line:typedef
+
     }, {
         key: "parseRecordList",
         value: function parseRecordList(list) {
@@ -94,10 +97,10 @@ var otherRecord = function (_widget_1$Widget) {
         }
     }]);
 
-    return otherRecord;
+    return OtherRecord;
 }(widget_1.Widget);
 
-exports.otherRecord = otherRecord;
+exports.OtherRecord = OtherRecord;
 store_1.register('accountDetail', function () {
     var w = exports.forelet.getWidget(exports.WIDGET_NAME);
     if (w) {

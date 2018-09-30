@@ -18,7 +18,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // =============================================导入
 var widget_1 = require("../../../../pi/widget/widget");
 var tools_1 = require("../../../utils/tools");
-var config_1 = require("../../base/config");
 // ================================================导出
 
 var FAQ = function (_widget_1$Widget) {
@@ -35,7 +34,7 @@ var FAQ = function (_widget_1$Widget) {
         value: function create() {
             _get(FAQ.prototype.__proto__ || Object.getPrototypeOf(FAQ.prototype), "create", this).call(this);
             this.state = {
-                htmlStrList: config_1.Config.helpAnswer,
+                htmlStrList: tools_1.getStaticLanguage().helpAnswer,
                 cfgData: tools_1.getLanguage(this)
             };
         }

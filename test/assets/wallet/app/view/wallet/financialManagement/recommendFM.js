@@ -39,11 +39,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 推荐理财
  */
+var root_1 = require("../../../../pi/ui/root");
+var forelet_1 = require("../../../../pi/widget/forelet");
 var widget_1 = require("../../../../pi/widget/widget");
 var pull_1 = require("../../../net/pull");
-var forelet_1 = require("../../../../pi/widget/forelet");
 var store_1 = require("../../../store/store");
-var root_1 = require("../../../../pi/ui/root");
 exports.forelet = new forelet_1.Forelet();
 exports.WIDGET_NAME = module.id.replace(/\//g, '-');
 
@@ -90,7 +90,7 @@ var RecommendFM = function (_widget_1$Widget) {
 }(widget_1.Widget);
 
 exports.RecommendFM = RecommendFM;
-//理财产品变化
+// 理财产品变化
 store_1.register('productList', function (productList) {
     return __awaiter(undefined, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
         var w;

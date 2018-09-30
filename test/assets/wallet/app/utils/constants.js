@@ -77,9 +77,9 @@ exports.timeOfArrival = {
         time: '0-30分钟'
     }]
 };
-//助记词片段分享最大数
+// 助记词片段分享最大数
 exports.MAX_SHARE_LEN = 3;
-//助记词片段分享最小数
+// 助记词片段分享最小数
 exports.MIN_SHARE_LEN = 2;
 // 交易所需区块确认数
 exports.currencyConfirmBlockNumber = {

@@ -13,6 +13,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var widget_1 = require("../../../../pi/widget/widget");
+var tools_1 = require("../../../utils/tools");
 
 var ChooseWithdrawAddr = function (_widget_1$Widget) {
     _inherits(ChooseWithdrawAddr, _widget_1$Widget);
@@ -27,12 +28,11 @@ var ChooseWithdrawAddr = function (_widget_1$Widget) {
         key: "setProps",
         value: function setProps(props, oldProps) {
             _get(ChooseWithdrawAddr.prototype.__proto__ || Object.getPrototypeOf(ChooseWithdrawAddr.prototype), "setProps", this).call(this, props, oldProps);
-            this.init();
             console.log(props);
+            this.state = {
+                cfgData: tools_1.getLanguage(this)
+            };
         }
-    }, {
-        key: "init",
-        value: function init() {}
     }, {
         key: "chooseAddrClick",
         value: function chooseAddrClick(e, index) {

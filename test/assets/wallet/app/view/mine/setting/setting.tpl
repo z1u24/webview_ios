@@ -16,7 +16,7 @@
 						var attrvalue = "";attrvalue += it1.userHead;attrvalue += "";_node6.attrs["src"] = attrvalue;
 					}_node6.attrHash = _hash.nextHash(_node6.attrHash, _calTextHash(_node6.attrs["src"]));_node6.attrs["w-class"] = "headImg";_chFunc(_node6);_$parent6.children.push(_node6);
 				}_$temp = _node5;{
-					var _$parent7 = _$temp;var _node7 = { "attrs": {}, "tagName": "span", "sid": 5 };_node7.children = [];_node7.attrSize = 2;_node7.attrHash = 827016762;_node7.attrs["w-class"] = "headName";_node7.attrs["ev-input-change"] = "userNameChange";if (it1.userInput) {
+					var _$parent7 = _$temp;var _node7 = { "attrs": {}, "tagName": "span", "sid": 5 };_node7.children = [];_node7.attrSize = 3;_node7.attrHash = 1521056002;_node7.attrs["w-class"] = "headName";_node7.attrs["ev-input-change"] = "userNameChange";_node7.attrs["ev-input-blur"] = "userNameConfirm";if (it1.userInput) {
 						_$temp = _node7;{
 							var _$parent8 = _$temp;var _node8 = { "attrs": {}, "tagName": "app-components1-input-input", "sid": 6 };_node8.hasChild = false;_node8.child = null;_node8.attrHash = 0;_$temp = _node8;{
 								var _$parent9 = _$temp;var _node9 = {}; //jpair pre
@@ -36,6 +36,10 @@
 
 									_node9["autofocus"] = jvalue;
 								}
+								//jpair pre
+
+								_node9["maxLength"] = 10;
+								//jpair suf
 								_addJson(_node9, _$parent9);
 							}_chFunc(_node8);_$parent8.children.push(_node8);
 						}
@@ -45,7 +49,7 @@
 						}
 					}_chFunc(_node7);_$parent7.children.push(_node7);
 				}_$temp = _node5;{
-					var _$parent11 = _$temp;var _node10 = { "attrs": {}, "tagName": "img", "sid": 7 };_node10.children = [];_node10.childHash = 0;_node10.attrSize = 3;_node10.attrHash = 423402012;_node10.attrs["src"] = "../../../res/image/edit.png";_node10.attrs["style"] = "width: 40px;height: 40px;margin-right: 30px;";_node10.attrs["on-tap"] = "changeInput";_$parent11.children.push(_node10);
+					var _$parent11 = _$temp;var _node10 = { "attrs": {}, "tagName": "img", "sid": 7 };_node10.children = [];_node10.childHash = 0;_node10.attrSize = 3;_node10.attrHash = 2451408768;_node10.attrs["src"] = "../../../res/image/edit.png";_node10.attrs["w-class"] = "nameEdit";_node10.attrs["on-tap"] = "changeInput";_$parent11.children.push(_node10);
 				}_chFunc(_node5);_$parent5.children.push(_node5);
 			}_$temp = _node4;{
 				var _$parent12 = _$temp;var _node11 = { "attrs": {}, "tagName": "div", "sid": 8 };_node11.children = [];_node11.attrSize = 1;_node11.attrHash = 4069439927;_node11.attrs["style"] = "margin-bottom: 30px;";_$temp = _node11;{
