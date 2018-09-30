@@ -51,9 +51,9 @@ static WKWebView *wkWebView = nil;
     [config.userContentController addScriptMessageHandler:self name: @"JSIntercept"];
     WKWebView *webview = [[WKWebView alloc]initWithFrame:self.view.bounds configuration:config];
     // 获取默认User-Agent
-    [webview evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id result, NSError *error) {
-        webview.customUserAgent = [result stringByAppendingString:@" YINENG_IOS/1.0"];
-    }];
+//    [webview evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id result, NSError *error) {
+//        webview.customUserAgent = [result stringByAppendingString:@" YINENG_IOS/1.0"];
+//    }];
     // 确定宽、高、X、Y坐标
     [webview setFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     [self.view addSubview:webview];
