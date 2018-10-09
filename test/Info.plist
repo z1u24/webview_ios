@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>酷支付</string>
+	<string>酷玩</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -25,7 +25,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx82a7e354925202e6</string>
+				<string>wx3d86fc2e76c0af41</string>
 			</array>
 		</dict>
 		<dict>
@@ -62,10 +62,10 @@
 	<string>d674e27d7de5bfcfd6760bbed9cb0cf1</string>
 	<key>MOBAppkey</key>
 	<string>26dc20197b496</string>
-	<key>NSCameraUsageDescription</key>
-	<string>App需要您的同意,才能访问相机</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>App需要您的同意,才能访问相册</string>
+    <key>NSCameraUsageDescription</key>
+    <string>App拍照功能需要使用相机权限</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>App选择照片需要使用相册权限</string>
 	<key>UILaunchStoryboardName</key>
 	<string></string>
 	<key>UIMainStoryboardFile</key>
@@ -74,6 +74,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarHidden</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -87,7 +89,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>UIStatusBarHidden</key>
-	<true/>
 </dict>
 </plist>

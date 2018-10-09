@@ -73,6 +73,7 @@ const static int SHARE_TYPE_TEXT = 2;//分享的类型文本
                 break;
                 //分享失败
             case SSDKResponseStateFail:
+                NSLog(@"%@",error);
                 [JSBundle callJS:callbackId code:1 params:[NSArray arrayWithObjects:@"分享失败",nil]];
                 break;
                 //分享取消
@@ -99,6 +100,7 @@ const static int SHARE_TYPE_TEXT = 2;//分享的类型文本
                            break;
                        }
                        case SSDKResponseStateFail:{
+                           NSLog(@"%@", error);
                            [JSBundle callJS:callbackId code:1 params:[NSArray arrayWithObjects:@"failed",nil]];
                            break;
                        }
@@ -119,28 +121,39 @@ const static int SHARE_TYPE_TEXT = 2;//分享的类型文本
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     if (SHARE_TYPE_IAMGE == shareType) {
         //分享图片
-        UIImage *avatar = [UIImage imageNamed:@""];
+        UIImage *avatar = [UIImage imageNamed:@"shareImg.png"];
         [HMScannerController cardImageWithCardName:content avatar:avatar scale:0.2 completion:^(UIImage *image){
-            [shareParams SSDKSetupShareParamsByText:@""
+            [shareParams SSDKSetupShareParamsByText:@"分享内容"
                                              images:image
                                                 url:nil
-                                              title:nil
+                                              title:@"图片"
                                                type:SSDKContentTypeImage];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                SSDKPlatformType platformType = [self getSharePlatform:platform];
+                if (SSDKPlatformTypeUnknown == platformType) {
+                    [self showShareActionMenu:shareParams :callbackId];
+                }else{
+                    [self share:shareParams ToPlatform:platformType :callbackId];
+                }
+            });
         }];
     }else if (SHARE_TYPE_TEXT == shareType){
         //分享文本
         [shareParams SSDKSetupShareParamsByText:content
-                                         images:nil
+                                         images:@""
                                             url:nil
-                                          title:nil
+                                          title:@"图片"
                                            type:SSDKContentTypeText];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            SSDKPlatformType platformType = [self getSharePlatform:platform];
+            if (SSDKPlatformTypeUnknown == platformType) {
+                [self showShareActionMenu:shareParams :callbackId];
+            }else{
+                [self share:shareParams ToPlatform:platformType :callbackId];
+            }
+        });
     }
-    SSDKPlatformType platformType = [self getSharePlatform:platform];
-    if (SSDKPlatformTypeUnknown == platformType) {
-        [self showShareActionMenu:shareParams :callbackId];
-    }else{
-        [self share:shareParams ToPlatform:platformType :callbackId];
-    }
+    
 }
 
 @end

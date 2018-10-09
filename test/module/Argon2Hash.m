@@ -17,7 +17,7 @@ static char toHexChar(uint8_t num) {
     if (num >= 0 && num < 10) {
         return r + num;
     }
-
+    
     switch(num) {
         case 10:
             r = 'a';
@@ -58,10 +58,10 @@ static NSString* argon2Hash(NSNumber *iter, NSNumber *memory, NSNumber *parallel
     char *pwd = [password UTF8String];
     char *saltImpl = [salt UTF8String];
     uint8_t *hash = malloc(hashLen.intValue);
-
+    
     argon2_hash(iter.intValue, memory.intValue, parallelism.intValue,
                 pwd, strlen(pwd), saltImpl, strlen(saltImpl), hash, hashLen.intValue, NULL, 0, type.intValue, ARGON2_VERSION_NUMBER);
-
+    
     char *hexStr = convertHexString(hash, hashLen.intValue);
     NSString *r = [NSString stringWithUTF8String:hexStr];
     free(hash);
@@ -73,9 +73,9 @@ static NSString* argon2Hash(NSNumber *iter, NSNumber *memory, NSNumber *parallel
 @implementation ArgonHash
 
 - (void)getArgon2Hash:(NSArray *)array {
-
+    
     NSNumber *listenerID = [array objectAtIndex:0];
-
+    
     NSNumber *iter = [array objectAtIndex:1];
     NSNumber *memory = [array objectAtIndex:2];
     NSNumber *parallelism = [array objectAtIndex:3];
@@ -84,9 +84,12 @@ static NSString* argon2Hash(NSNumber *iter, NSNumber *memory, NSNumber *parallel
     NSNumber *type = [array objectAtIndex:6];
     NSNumber *hashLen = [array objectAtIndex:7];
 
-    NSString *hash = argon2Hash(iter, memory, parallelism, password, salt, type, hashLen);
-
-    [JSBundle callJS:listenerID code:0 params:[NSArray arrayWithObjects:hash, nil]];
+    dispatch_async(dispatch_get_global_queue(0, 0),^{
+        NSString  *result = argon2Hash(iter, memory, parallelism, password, salt, type, hashLen);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [JSBundle callJS:listenerID code:0 params:[NSArray arrayWithObjects:result, nil]];
+        });
+    });
 }
 
 @end
