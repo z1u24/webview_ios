@@ -3,6 +3,6 @@
 
 @interface JSIntercept: NSObject
 
-+ (void)safeFile:(NSString *)path content:(NSString *)base64Str;
++ (void)safeFile:(NSString *)path content:(NSString *)base64Str saveID:(NSNumber *)saveID;
 
 @end

@@ -152,8 +152,11 @@ static BOOL fetchFromMobile = YES;
         fullPath = [[NSBundle mainBundle] pathForResource:path ofType:nil];
         file = [NSFileHandle fileHandleForReadingAtPath:fullPath];
         if (file != nil) {
+            NSLog(@"file is read, %@", path);
             data = [file readDataToEndOfFile];
             [file closeFile];
+        } else {
+            NSLog(@"file isn't found: %@", path);
         }
     }
     

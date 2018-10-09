@@ -1,8 +1,9 @@
 #import "JSIntercept.h"
+#import "WebViewController.h"
 
 @implementation JSIntercept
 
-+ (void)safeFile:(NSString *)path content:(NSString *)base64Str
++ (void)safeFile:(NSString *)path content:(NSString *)base64Str saveID:(NSNumber *)saveID
 {
     // 获取Document目录
     NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
@@ -23,6 +24,7 @@
         
         NSData *data = [[NSData alloc] initWithBase64EncodedString:base64Str options:0];
         BOOL isExist = [manager fileExistsAtPath:fullPath];
+        NSLog(@"JSInterceptor, file = %@, isExist = %d", fullPath, isExist);
         if(isExist) {
             NSFileHandle *file = [NSFileHandle fileHandleForWritingAtPath:fullPath];
             if (file != nil) {
@@ -32,9 +34,17 @@
         } else {
             BOOL sucess = [manager createFileAtPath:fullPath contents:data attributes:nil];
             if (!sucess) {
-                return;
+                NSLog(@"JSInterceptor createFile failed, file = %@", fullPath);
             }
         }
+        
+        NSString *fullCode = [NSString stringWithFormat:@"window.handle_update_save('%d')", saveID.intValue];
+        WKWebView *webview = [WebViewController getWebView];
+        [webview evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {
+            if(error != nil) {
+                NSLog(@"item = %@, error = %@", object, error);
+            }
+        }];
     }
 }
 

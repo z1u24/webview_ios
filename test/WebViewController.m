@@ -58,9 +58,8 @@ static WKWebView *wkWebView = nil;
     [webview setFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     [self.view addSubview:webview];
 //    NSString *urlPath = @"https://www.baidu.com/";
-//     NSString *urlPath = @"http://192.168.33.183:8088/dst/boot/index.html";//Pi
-//    NSString *urlPath = @"http://192.168.33.113/wallet/app/boot/index.html";//余强
-    NSString *urlPath = @"http://47.75.254.166:8080/wallet/app/boot/index.html";//外网
+//     NSString *urlPath = @"http://192.168.33.183:8088/dst/boot/index.html";
+    NSString *urlPath = @"http://192.168.9.28:8088/dst/boot/index.html";
 //     NSString *urlPath = [NSString stringWithFormat:@"file:///%@/android_asset/index.html", [[NSBundle mainBundle] bundlePath]];
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:urlPath]];
     [webview loadRequest:request];
@@ -100,7 +99,7 @@ static WKWebView *wkWebView = nil;
         [JSBundle sendMessage:message.body];
     } else if ([message.name isEqualToString:@"JSIntercept"]) {
         NSArray *params = message.body;
-        [JSIntercept safeFile:params[0] content:params[1]];
+        [JSIntercept safeFile:params[0] content:params[1] saveID:params[2]];
     } else {
         [JSBundle callJSError:@"None" funcName:@"None" msg:@"'Not Native Message Call'"];
     }
