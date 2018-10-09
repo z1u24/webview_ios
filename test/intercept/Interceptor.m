@@ -3,7 +3,6 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 
 NSString *const HttpProtocolKey = @"http";
-NSString *const HttpsProtocolKey = @"https";
 
 static NSString *bootDir = nil;
 static NSArray *domains = nil;
@@ -19,10 +18,7 @@ static BOOL fetchFromMobile = YES;
     NSString *urlString = url.absoluteString;
     
     // 判断是否需要进入自定义加载器
-    if (
-        [scheme caseInsensitiveCompare:HttpProtocolKey] != NSOrderedSame&&
-        [scheme caseInsensitiveCompare:HttpsProtocolKey] != NSOrderedSame
-        ) {
+    if ([scheme caseInsensitiveCompare:HttpProtocolKey] != NSOrderedSame) {
         return NO;
     }
     

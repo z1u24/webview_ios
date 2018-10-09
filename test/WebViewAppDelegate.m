@@ -59,9 +59,7 @@
     if (cls && sel) {
         if ([(id)cls respondsToSelector:sel]) {
             // 注册自定义协议
-            // [(id)cls performSelector:sel withObject:@"CustomProtocol"];
             [(id)cls performSelector:sel withObject:HttpProtocolKey];
-            [(id)cls performSelector:sel withObject:HttpsProtocolKey];
         }
     }
     // SechemaURLProtocol 自定义类 继承于 NSURLProtocol
