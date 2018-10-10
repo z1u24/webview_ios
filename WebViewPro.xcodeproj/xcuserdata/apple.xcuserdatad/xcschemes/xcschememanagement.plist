@@ -7,7 +7,7 @@
 		<key>WebViewPro.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>3</integer>
+			<integer>4</integer>
 		</dict>
 		<key>test.xcscheme</key>
 		<dict>
@@ -20,7 +20,7 @@
 		<key>F354AB272119930300A8BEA8</key>
 		<dict>
 			<key>primary</key>
-			<true/>
+			<true />
 		</dict>
 	</dict>
 </dict>

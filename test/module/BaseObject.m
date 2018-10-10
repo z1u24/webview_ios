@@ -6,12 +6,15 @@
 //
 
 #import "BaseObject.h"
-UIViewController *controller=nil;
+
+UIViewController *controller = nil;
+
 @implementation BaseObject
-+ (void) setVc: (UIViewController *) vc{
-    controller=vc;
++ (void)setVc:(UIViewController *)vc {
+    controller = vc;
 }
-+ (UIViewController *) getVc{
+
++ (UIViewController *)getVc {
     return controller;
 }
 @end

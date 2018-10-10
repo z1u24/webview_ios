@@ -10,9 +10,11 @@
 
 #import <Foundation/Foundation.h>
 #import "BaseObject.h"
-@interface ShareToPlatforms: BaseObject
 
-- (void) shareLink: (NSArray *) array;
-- (void) shareContent: (NSArray *) array;
+@interface ShareToPlatforms : BaseObject
+
+- (void)shareLink:(NSArray *)array;
+
+- (void)shareContent:(NSArray *)array;
 
 @end

@@ -8,14 +8,15 @@
 
 #ifndef ImagePicker_h
 #define ImagePicker_h
+
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "BaseObject.h"
 #import "ImageUtils.h"
 
-@interface ImagePicker: BaseObject
+@interface ImagePicker : BaseObject
 
-- (void) chooseImage:(NSArray *) array;
+- (void)chooseImage:(NSArray *)array;
 
 @end
 

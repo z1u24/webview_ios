@@ -11,5 +11,5 @@
 #import "BaseObject.h"
 
 @interface DeviceIdProvider : BaseObject
-- (void) getUUId:(NSArray *)array;
+- (void)getUUId:(NSArray *)array;
 @end

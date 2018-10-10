@@ -9,9 +9,9 @@
 #import "DeviceIdProvider.h"
 
 @implementation DeviceIdProvider
-- (void)getUUId:(NSArray *)array{
+- (void)getUUId:(NSArray *)array {
     NSNumber *callbackId = [array objectAtIndex:0];
     NSString *UUIDString = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-    [JSBundle callJS:callbackId code:0 params:[NSArray arrayWithObjects:UUIDString,nil]];
+    [JSBundle callJS:callbackId code:0 params:[NSArray arrayWithObjects:UUIDString, nil]];
 }
 @end

@@ -8,15 +8,16 @@
 
 #ifndef QRCode_h
 #define QRCode_h
+
 #import <Foundation/Foundation.h>
 #import "HMScannerController.h"
 #import "WebViewController.h"
 #import "JSBundle.h"
 #import "BaseObject.h"
 
-@interface QRCode: BaseObject
+@interface QRCode : BaseObject
 
-- (void) scan: (NSArray *) array;
+- (void)scan:(NSArray *)array;
 
 @end
 

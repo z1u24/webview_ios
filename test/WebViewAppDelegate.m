@@ -18,18 +18,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     [self setStatusBarBackgroundColor:UIColor.clearColor];
-    
+
     // 设置userAgent
     NSString *customizeUserAgent = @" YINENG_IOS/1.0";
     NSString *webViewUserAgent = [[UIWebView new] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
     customizeUserAgent = [webViewUserAgent stringByAppendingFormat:@" %@", customizeUserAgent];
     if (customizeUserAgent) {
-        [[NSUserDefaults standardUserDefaults] registerDefaults:@{ @"UserAgent": customizeUserAgent}];
+        [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent": customizeUserAgent}];
     }
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
+
     WebViewController *viewController = [[WebViewController alloc] init];
-    
+
     self.window.rootViewController = viewController;
 
     [self.window makeKeyAndVisible];
@@ -47,19 +47,18 @@
 }
 
 
-- (void)registerScheme
-{
+- (void)registerScheme {
     NSArray *privateClass = @[@"Controller", @"Context", @"Browsing", @"K", @"W"];
-    NSString *className =  [[[privateClass reverseObjectEnumerator] allObjects] componentsJoinedByString:@""];
+    NSString *className = [[[privateClass reverseObjectEnumerator] allObjects] componentsJoinedByString:@""];
     Class cls = NSClassFromString(className);
     NSArray *privateMethod = @[@"Protocol:", @"Custom", @"For", @"Scheme", @"register"];
-    NSString *methodName =  [[[privateMethod reverseObjectEnumerator] allObjects] componentsJoinedByString:@""];
+    NSString *methodName = [[[privateMethod reverseObjectEnumerator] allObjects] componentsJoinedByString:@""];
     SEL sel = NSSelectorFromString(methodName);
-    
+
     if (cls && sel) {
-        if ([(id)cls respondsToSelector:sel]) {
+        if ([(id) cls respondsToSelector:sel]) {
             // 注册自定义协议
-            [(id)cls performSelector:sel withObject:HttpProtocolKey];
+            [(id) cls performSelector:sel withObject:HttpProtocolKey];
         }
     }
     // SechemaURLProtocol 自定义类 继承于 NSURLProtocol
@@ -72,15 +71,15 @@
  * 导入回调处理，当某个平台的功能需要依赖原平台提供的SDK支持时，需要在此方法中对原平台SDK进行导入操作
  * 配置回调处理，在此方法中根据设置的platformType来填充应用配置信息
  */
-- (void) initShareSDK{
+- (void)initShareSDK {
     [ShareSDK registerActivePlatforms:@[
-                                        @(SSDKPlatformSubTypeWechatSession),
-                                        @(SSDKPlatformSubTypeWechatTimeline),
-                                        @(SSDKPlatformSubTypeQQFriend),
-                                        @(SSDKPlatformSubTypeQZone),
-                                        ]
-                             onImport:^(SSDKPlatformType platformType){
-                                 switch (platformType){
+                    @(SSDKPlatformSubTypeWechatSession),
+                    @(SSDKPlatformSubTypeWechatTimeline),
+                    @(SSDKPlatformSubTypeQQFriend),
+                    @(SSDKPlatformSubTypeQZone),
+            ]
+                             onImport:^(SSDKPlatformType platformType) {
+                                 switch (platformType) {
                                      case SSDKPlatformTypeWechat:
                                          [ShareSDKConnector connectWeChat:[WXApi class]];
                                          break;
@@ -91,8 +90,8 @@
                                          break;
                                  }
                              }
-                      onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo){
-                          switch (platformType){
+                      onConfiguration:^(SSDKPlatformType platformType, NSMutableDictionary *appInfo) {
+                          switch (platformType) {
                               case SSDKPlatformTypeWechat:
                                   [appInfo SSDKSetupWeChatByAppId:@"wx3d86fc2e76c0af41"
                                                         appSecret:@"36fee1ab731a7bda68ae0b24b7d6bdb5"];

@@ -750,8 +750,9 @@
 			baseConfigurationReference = 1172D96F2A9AD88014270C48 /* Pods-WebViewPro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T5QKQKE7ZZ;
+				DEVELOPMENT_TEAM = LU5XMC8SH3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDK/Required",
@@ -783,6 +784,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuplay.kuplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$SRCROOT/**";
 			};
@@ -793,8 +795,9 @@
 			baseConfigurationReference = 43C727B9AF12A0A78E5BCCF4 /* Pods-WebViewPro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T5QKQKE7ZZ;
+				DEVELOPMENT_TEAM = LU5XMC8SH3;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDK/Required",
@@ -826,6 +829,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kuplay.kuplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$SRCROOT/**";
 			};

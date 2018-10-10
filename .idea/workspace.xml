@@ -1,0 +1,1427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0a00797e-5116-4492-8c38-27ddcfc4206d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/.exclude.jpeg.($webp.alpha)" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/.exclude.jpg.($webp.alpha)" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/.exclude.png.($webp.alpha)" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/.exclude.webp.not($webp.alpha)" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/boot/hotfix.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/boot/icon/128.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/boot/icon/128.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/boot/icon/64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/boot/icon/64.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/boot/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/boot/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/boot/init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/boot/next.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/basicInput/basicInput.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/basicInput/basicInput.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/basicInput/basicInput.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/basicInput/basicInput.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/basicItem/basicItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/basicItem/basicItem.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/basicItem/basicItem.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/bindPhone/bindPhone.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/bindPhone/bindPhone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/bindPhone/bindPhone.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/bindPhone/bindPhone.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/chooseCurrency/chooseCurrency.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/chooseCurrency/chooseCurrency.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/chooseCurrency/chooseCurrency.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/chooseCurrency/chooseCurrency.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/collapse/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/collapse/collapse.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/collapse/collapse.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/collapse/collapse1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/collapse/collapse1.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/collapse/collapse1.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaImgItem/fourParaImgItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaImgItem/fourParaImgItem.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaImgItem/fourParaImgItem.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaItem/fourParaItem.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaItem/fourParaItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaItem/fourParaItem.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaItem/fourParaItem.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/imgAndBtnItem/imgAndBtnItem.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/imgAndBtnItem/imgAndBtnItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/imgAndBtnItem/imgAndBtnItem.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/imgAndBtnItem/imgAndBtnItem.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/imgRankItem/imgRankItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/imgRankItem/imgRankItem.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/imgRankItem/imgRankItem.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/input/input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/input/input.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/input/input.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/input/suffixInput.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/input/suffixInput.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/input/suffixInput.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/keyboard/keyboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/keyboard/keyboard.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/keyboard/keyboard.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/message/message.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/message/message.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/message/message.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/chooseModalBox.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/chooseModalBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/chooseModalBox.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/chooseModalBox.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox1.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox1.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox2.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox2.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBoxInput/modalBoxInput.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBoxInput/modalBoxInput.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBoxInput/modalBoxInput.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBoxInput/modalBoxInput.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/password/password.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/password/password.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/password/password.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/password/password.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/qrcode/qrcode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/qrcode/qrcode.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/qrcode/qrcode_src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/radioList/radioList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/radioList/radioList.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/radioList/radioList.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/ringProgressBar/ringProgressBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/ringProgressBar/ringProgressBar.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/ringProgressBar/ringProgressBar.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/selectBox/selectBox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/selectBox/selectBox.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/selectBox/selectBox.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/share/share.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/share/share.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/share/share.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/share/share.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/switch/switch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/switch/switch.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/switch/switch.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/textarea/textarea.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/textarea/textarea.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/textarea/textarea.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/threeParaCard/threeParaCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/threeParaCard/threeParaCard.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/threeParaCard/threeParaCard.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/threeParaItem/threeParaItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/threeParaItem/threeParaItem.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components/threeParaItem/threeParaItem.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/btn/btn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/btn/btn.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/btn/btn.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/checkbox/checkbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/checkbox/checkbox.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/checkbox/checkbox.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/input/input.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/input/input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/input/input.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/input/input.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading1.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading1.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/tabs/tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/tabs/tabs.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/tabs/tabs.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/topBar/topBar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/topBar/topBar.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/topBar/topBar.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/walletAssetList/walletAssetList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/walletAssetList/walletAssetList.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/components1/walletAssetList/walletAssetList.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/btc/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/btc/wallet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/crypto/cipher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/eth/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/eth/helper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/eth/tokens.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/eth/wallet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/genmnemonic.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/globalWallet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/bip39.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/bitcore-lib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/ethereumjs-wallet-hd-0.6.0.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/sample-ecdsa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/sjcl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/web3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/wordlist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/exchange/shapeshift/shapeshift.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/logic/dataCenter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/logic/localWallet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/logic/native.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/net/pull.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/net/pullWallet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/net/push.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/css/components.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/01.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/09.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/15.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/16.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/16.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/19.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/26_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/26_white.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/30_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/30_gray.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/32_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/32_gray.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/32_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/32_white.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/33.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/33.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/40.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/40.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/41_blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/41_blue.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/41_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/41_white.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/42.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/add.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_buy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_buy.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_chat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_chat.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_create.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_create.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_share.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_share.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_store.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_store.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_verify.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_verify.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/add_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/add_gray.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/behavior1010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/behavior1010.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/behavior_manage_money_port.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/behavior_manage_money_port.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/behavior_red_bag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/behavior_red_bag.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/bg_open.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/bg_open.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/btn_back_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/btn_back_white.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/btn_img_close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/btn_img_close.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/btn_pop_close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/btn_pop_close.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/chat1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/chat1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/choose_img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/choose_img.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/close_blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/close_blue.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_charge_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_charge_icon.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_icon_cloud.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_icon_cloud.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_wallet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_wallet.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_withdraw_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_withdraw_icon.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/contact.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/contact.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/convert_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/convert_icon.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/copy.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/copy.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/AION.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/AION.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BAT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BAT.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BCH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BCH.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BNB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BNB.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BTC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BTC.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BTM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BTM.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/CNYT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/CNYT.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/DGD.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/DGD.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/EOS.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/EOS.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ETC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ETC.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ETH.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ETH.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/FUN.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/FUN.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/GNT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/GNT.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ICX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ICX.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/KIN.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/KIN.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/KNC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/KNC.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/KT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/KT.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/MANA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/MANA.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/MCO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/MCO.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/MKR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/MKR.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/OMG.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/OMG.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/POWR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/POWR.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/PPT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/PPT.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/REP.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/REP.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/SNT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/SNT.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/USDT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/USDT.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/VEN.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/VEN.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/VERI.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/VERI.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/XRP.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/XRP.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/XUC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/XUC.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/YNC.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/YNC.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ZRX.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ZRX.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/default_avater_big.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/default_avater_big.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/detailBlueIcon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/detailBlueIcon.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/dice.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/dice.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/dividend_background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/dividend_background.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/dividend_history_none.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/dividend_history_none.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/edit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/edit.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/exchangeEmpty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/exchangeEmpty.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/fail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/fail.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/fenghong_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/fenghong_icon.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/games1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/games1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/icon_right2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/icon_right2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_logo.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_qq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_qq.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_qqArea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_qqArea.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_wechat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_wechat.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_wechatArea.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_wechatArea.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/left_arrow_blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/left_arrow_blue.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/left_arrow_white.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/left_arrow_white.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/less.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/less.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/local_wallet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/local_wallet.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/location.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/location.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/number1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/number1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/number2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/number2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/number3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/number3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/openRedEnv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/openRedEnv.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/pending.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/pending.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/qrcode.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/qrcode.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/receive_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/receive_icon.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvBack.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvBack.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvDetail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvDetail.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvEmpty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvEmpty.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvtop1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvtop1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/rightArrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/rightArrow.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow2_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow2_gray.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow_blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow_blue.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow_gray.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/scan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/scan.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/search_no.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/search_no.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/sendRedEnv.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/sendRedEnv.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider4.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/transfer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/transfer.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/transfer_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/transfer_icon.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/whiteClose.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image/whiteClose.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/10.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/21.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/23.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/23.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/24.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/25_blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/25_blue.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/25_gray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/25_gray.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/28.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/28.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/41_blue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/41_blue.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/42.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/42.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/43.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/43.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/Card.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/Card.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/add.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/add.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_4.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/chat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/chat.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/chat_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/chat_active.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/default_avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/default_avatar.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/delete_lock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/delete_lock.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/earn.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/earn.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/earn_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/earn_active.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/mine_makmoney.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/mine_makmoney.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/mine_top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/mine_top.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/play.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/play_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/play_active.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/topbar_backimg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/topbar_backimg.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/wallet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/wallet.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/wallet_active.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/wallet_active.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/res/js/bignumber.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/store/interface.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/store/localStorageStore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/store/parse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/store/store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/utils/account.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/utils/ahash.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/utils/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/utils/nameWareHouse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/utils/secrets.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/utils/secretsBase.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/utils/toolMessages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/utils/tools.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/utils/unitTools.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/utils/walletTools.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/utils_pc/argon2-asm.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/utils_pc/argon2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/base/app.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/base/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/base/app.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/base/app.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/base/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/chat/home/home.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/chat/home/home.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchange.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchange.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchange.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchange.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeDetail.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeDetail.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeDetail.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeHistory.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeHistory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeHistory.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeHistory.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/openRedEnv.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/openRedEnv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/openRedEnv.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/openRedEnv.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/home/home.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/home/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/home/home.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/home/home.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/addMine.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/addMine.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/addMine.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/addMine.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividend.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividend.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividend.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividendDetail.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividendDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividendDetail.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividendDetail.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningHistory.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningHistory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningHistory.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningHistory.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningRank.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningRank.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningRank.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningRank.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/rankList.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/rankList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/rankList.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/rankList.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvDetail.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvDetail.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvDetail.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvHistory.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvHistory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvHistory.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvHistory.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/sendRedEnv.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/sendRedEnv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/sendRedEnv.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/sendRedEnv.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/writeRedEnv.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/writeRedEnv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/writeRedEnv.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/writeRedEnv.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/exportPrivateKey.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/exportPrivateKey.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/exportPrivateKey.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/exportPrivateKey.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/home.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/home.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/home.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/privateDetail.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/privateDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/privateDetail.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/privateDetail.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/home/home.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/home/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/home/home.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/home/home.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/aboutus.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/aboutus.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/aboutus.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/aboutus.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/addFriend.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/addFriend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/addFriend.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/addFriend.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/contanctUs.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/contanctUs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/contanctUs.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/contanctUs.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/help.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/help.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/help.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/help.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/privacypolicy.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/privacypolicy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/privacypolicy.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/changePsw.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/changePsw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/changePsw.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/changePsw.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/itemList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/itemList.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/itemList.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/phone.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/phone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/phone.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/phone.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/setting.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/setting.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/setting.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/play/home/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/play/home/home.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/play/home/home.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/backupMnemonicWordConfirm.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/backupMnemonicWordConfirm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/backupMnemonicWordConfirm.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/backupMnemonicWordConfirm.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/index.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/index.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/index.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/shareMnemonic.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/shareMnemonic.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/shareMnemonic.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/shareMnemonic.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/home.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/home.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/home.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/otherRecord.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/otherRecord.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/otherRecord.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/otherRecord.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/recharge.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/recharge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/recharge.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/recharge.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/rechargeRecord.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/rechargeRecord.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/rechargeRecord.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/rechargeRecord.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdraw.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdraw.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdraw.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdraw.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdrawRecord.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdrawRecord.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdrawRecord.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdrawRecord.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/coinConvert.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/coinConvert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/coinConvert.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/coinConvert.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/convertHistory.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/convertHistory.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/convertHistory.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/convertHistory.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/choosetWithdrawAddr.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/choosetWithdrawAddr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/choosetWithdrawAddr.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/choosetWithdrawAddr.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/fmListItem.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/fmListItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/fmListItem.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/fmListItem.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/holdedProductItem.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/holdedProductItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/holdedProductItem.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/holdedProductItem.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/tipsCard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/tipsCard.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/tipsCard.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWallet.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWallet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWallet.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWallet.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWalletByImage.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWalletByImage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWalletByImage.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWalletByImage.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/home.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/home.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/home.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFM.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFM.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFM.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFM.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFmDetail.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFmDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFmDetail.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFmDetail.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/home.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/home.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/home.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productDetail.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productDetail.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productDetail.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productDetail.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productStatement.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productStatement.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productStatement.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productStatement.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/purchase.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/purchase.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/purchase.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/purchase.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/recommendFM.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/recommendFM.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/recommendFM.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/cloudHome.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/cloudHome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/cloudHome.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/cloudHome.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/home.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/home.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/home.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/walletHome.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/walletHome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/walletHome.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/walletHome.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/fragmentImport.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/fragmentImport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/fragmentImport.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/fragmentImport.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/home.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/home.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/home.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/imageImport.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/imageImport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/imageImport.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/imageImport.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/standardImport.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/standardImport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/standardImport.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/standardImport.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/localWallet/addAsset.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/localWallet/addAsset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/localWallet/addAsset.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/localWallet/addAsset.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/chooseAddr.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/chooseAddr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/chooseAddr.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/chooseAddr.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/home.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/home.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/home.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/receipt.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/receipt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/receipt.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/receipt.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transactionDetails.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transactionDetails.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transactionDetails.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transactionDetails.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transfer.cfg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transfer.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transfer.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/depend" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/index/rpc_call.s.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/download.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/img_avatar1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/img_avatar1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/img_logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/img_logo.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/open.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/open.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/redEnvelopeDetail_bg.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/redEnvelopeDetail_bg.1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/redEnvelopeDetail_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/redEnvelopeDetail_bg.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/redEnvelopes2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/redEnvelopes2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/tips.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/tips.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/openRedEnvelope.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/redEnvelopeDetail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/bigint/biginteger.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/bigint/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/browser/argonHash.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/browser/exitApp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/browser/imagePicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/browser/native.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/browser/qrcode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/browser/sendMessage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/browser/shareToPlatforms.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/browser/systemInfoProvider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/browser/webViewHelper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/compile/drust.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/compile/ebnf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/compile/gendrust.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/compile/genhjson.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/compile/genvdom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/compile/hjson.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/compile/parser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/compile/reader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/compile/scanner.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/compile/vdom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/checkbox/checkbox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/checkbox/checkbox.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/checkbox/checkbox.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/checkbox/checkboxGroup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/checkbox/checkboxGroup.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/collapse/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/collapse/collapse.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/collapse/collapse.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/components.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/input/calcTextareaHeight.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/input/input.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/input/input.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/input/input.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/input_autocomplete/input_autocomplete.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/input_autocomplete/input_autocomplete.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/input_autocomplete/input_autocomplete.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/loading/loading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/loading/loading.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/loading/loading.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/message.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/message.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/message.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/messagebox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/messagebox.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/messagebox.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/notification.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/notification.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/notification.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/nav_submenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/nav_submenu.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/navmenu.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/navmenu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/navmenu.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/navmenu_item.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/navmenu_item.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/progress/progress.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/progress/progress.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/progress/progress.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/qrcode/qrcode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/qrcode/qrcode.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/qrcode/qrcode_src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/radio/radio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/radio/radio.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/radio/radio.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/radio/radioGroup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/radio/radioGroup.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/radio/radioGroup.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/selectcount/selectcount.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/selectcount/selectcount.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/selectcount/selectcount.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/slider/slider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/slider/slider.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/slider/slider.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/steps/steps.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/steps/steps.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/switch/switch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/switch/switch.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/switch/switch.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/table/table.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/table/table.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/tabs/tabs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/tabs/tabs.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/tabs/tabs.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/time_select/time_select.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/time_select/time_select.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/components/time_select/time_select.wcss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/lang/mod.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/lang/time.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/lang/type.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/mqtt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/mqtt_c.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/rpc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/rpc_r.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/rpc_r.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/rpc_r.s.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/ui/con_mgr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/ui/con_mgr.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/ui/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/connect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/erl_term.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/protocol_block.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/uint64.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/websocket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/xxtea64.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/zlib.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/polyfill/babel_polyfill.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/struct/meta_init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/struct/sinfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/struct/struct_mgr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/struct/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/ui/html.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/ui/html.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/ui/navtab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/ui/navtab.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/ui/progressive.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/ui/progressive.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/ui/root.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/ui/root.tpl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/base64.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/bin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/bon.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/canvas.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/cfg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/db.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/hash.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/heap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/html.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/img.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/log.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/match.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/math.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/md5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/res_mgr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/rsync.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/sb_tree.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/sound.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/task_mgr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/task_pool.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/tpl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/tpl_str.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/util/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/event.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/forelet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/frame_mgr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/painter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/resize/resize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/scroller/dom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/scroller/ease.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/scroller/scroller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/scroller/scroller_bk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/scroller/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/style.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/virtual_node.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/widget/widget.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/worker/client.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/worker/init.wjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/assets/wallet/pi/worker/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/apple.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/Pods/Pods.xcodeproj/xcuserdata/apple.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebViewPro.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebViewPro.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebViewPro.xcodeproj/xcuserdata/apple.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/WebViewPro.xcodeproj/xcuserdata/apple.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebViewPro.xcworkspace/xcuserdata/apple.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/WebViewPro.xcworkspace/xcuserdata/apple.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebViewPro.xcworkspace/xcuserdata/apple.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/WebViewPro.xcworkspace/xcuserdata/apple.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/test/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/WebViewAppDelegate.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/WebViewAppDelegate.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/WebViewAppDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/WebViewAppDelegate.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/WebViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/WebViewController.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/BaseObject.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/BaseObject.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/BaseObject.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/BaseObject.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/DeviceIdProvider.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/DeviceIdProvider.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/DeviceIdProvider.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/DeviceIdProvider.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/ImagePicker.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/ImagePicker.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/ImagePicker.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/ImagePicker.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/JSIntercept.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/JSIntercept.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/JSIntercept.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/JSIntercept.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/QRCode.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/QRCode.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/QRCode.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/QRCode.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/ShareToPlatforms.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/ShareToPlatforms.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/ShareToPlatforms.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/ShareToPlatforms.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/util/ImageUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/util/ImageUtils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/util/ImageUtils.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/util/ImageUtils.m" afterDir="false" />
+    </list>
+    <ignored path="$USER_HOME$/Library/Developer/Xcode/DerivedData/WebViewPro-bxpbzzpvnqdzrmdxznbsrptcmioc/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_37972c41dd310157d559baec10f64dca3e952199" />
+  <component name="FUSProjectUsageTrigger">
+    <session id="1891508426">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="h" value="65" />
+          <entry key="m" value="15" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Doxygen file" value="2" />
+          <entry key="ObjectiveC" value="78" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="h" value="12" />
+          <entry key="m" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="ObjectiveC" value="22" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.appcode.build">
+        <counts>
+          <entry key="buildservice" value="2" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/module/QRCode.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/module/ShareToPlatforms.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/WebViewController.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/WebViewController.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="244">
+              <caret line="88" column="15" selection-start-line="88" selection-start-column="15" selection-end-line="88" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/util/ImageUtils.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/util/ImageUtils.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/WebViewAppDelegate.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="674">
+              <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/WebViewAppDelegate.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/module/QRCode.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="416">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/module/JSIntercept.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/test/module/ShareToPlatforms.m" />
+        <option value="$PROJECT_DIR$/test/module/ShareToPlatforms.h" />
+        <option value="$PROJECT_DIR$/test/Info.plist" />
+        <option value="$PROJECT_DIR$/test/module/BaseObject.h" />
+        <option value="$PROJECT_DIR$/test/module/BaseObject.m" />
+        <option value="$PROJECT_DIR$/test/module/DeviceIdProvider.h" />
+        <option value="$PROJECT_DIR$/test/module/DeviceIdProvider.m" />
+        <option value="$PROJECT_DIR$/test/module/ImagePicker.h" />
+        <option value="$PROJECT_DIR$/test/module/ImagePicker.m" />
+        <option value="$PROJECT_DIR$/test/module/JSIntercept.h" />
+        <option value="$PROJECT_DIR$/test/module/JSIntercept.m" />
+        <option value="$PROJECT_DIR$/test/module/QRCode.m" />
+        <option value="$PROJECT_DIR$/test/module/QRCode.h" />
+        <option value="$PROJECT_DIR$/test/util/ImageUtils.h" />
+        <option value="$PROJECT_DIR$/test/util/ImageUtils.m" />
+        <option value="$PROJECT_DIR$/test/WebViewAppDelegate.m" />
+        <option value="$PROJECT_DIR$/test/WebViewAppDelegate.h" />
+        <option value="$PROJECT_DIR$/test/WebViewController.m" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="x" value="280" />
+    <option name="y" value="62" />
+    <option name="width" value="1400" />
+    <option name="height" value="941" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="WebViewPro" type="1d218c8b:XcodeProjectNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="WebViewPro" type="1d218c8b:XcodeProjectNode" />
+              <item name="test" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="WebViewPro" type="1d218c8b:XcodeProjectNode" />
+              <item name="test" type="fcab9f18:XcodeViewNode" />
+              <item name="module" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="WebViewPro" type="1d218c8b:XcodeProjectNode" />
+              <item name="test" type="fcab9f18:XcodeViewNode" />
+              <item name="util" type="fcab9f18:XcodeViewNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Cidr.FilesView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="WebViewPro" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WebViewPro" TARGET_NAME="WebViewPro" CONFIG_NAME="Debug" SCHEME_NAME="WebViewPro" IS_LOCATION_SIMULATION_ALLOWED="true" RUN_TARGET_PROJECT_NAME="WebViewPro" RUN_TARGET_NAME="WebViewPro" MAKE_ACTIVE="TRUE">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0a00797e-5116-4492-8c38-27ddcfc4206d" name="Default Changelist" comment="" />
+      <created>1539151283317</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1539151283317</updated>
+      <workItem from="1539151295127" duration="479000" />
+      <workItem from="1539151849443" duration="1006000" />
+      <workItem from="1539154973943" duration="222000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1707000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18477103" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27722773" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32979977" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Pods/HMQRCodeScanner/HMQRCodeScanner/QRCode/HMScanerCardViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Info.plist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/main.m">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Test.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/JSBundle.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/ShareToPlatforms.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="728">
+          <caret line="28" column="54" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/Argon2Hash.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/Argon2Hash.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/BaseObject.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/BaseObject.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/DeviceIdProvider.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/DeviceIdProvider.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/ImagePicker.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/ImagePicker.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/JSIntercept.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/JSIntercept.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/QRCode.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/QRCode.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/ShareToPlatforms.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/util/ImageUtils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/util/ImageUtils.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/WebViewAppDelegate.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/WebViewAppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="674">
+          <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/WebViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/WebViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="88" column="15" selection-start-line="88" selection-start-column="15" selection-end-line="88" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

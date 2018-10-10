@@ -9,13 +9,15 @@
 
 #ifndef BaseObject_h
 #define BaseObject_h
+
 #import <Foundation/Foundation.h>
 #import "JSBundle.h"
-@interface BaseObject:NSObject
 
-+ (void) setVc: (UIViewController *) vc;
+@interface BaseObject : NSObject
 
-+ (UIViewController *) getVc;
++ (void)setVc:(UIViewController *)vc;
+
++ (UIViewController *)getVc;
 
 @end
 
