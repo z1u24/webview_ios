@@ -10,6 +10,7 @@
 #import "WebViewController.h"
 #import "BaseObject.h"
 #import "JSIntercept.h"
+#import "ShareToPlatforms.h"
 
 @interface WebViewController () <WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler>
 
@@ -27,6 +28,28 @@ static WKWebView *wkWebView = nil;
     [super viewDidLoad];
     wkWebView = [self createWebview];
     [BaseObject setVc:self];
+//    [self addTestButton];
+}
+
+UIButton *mBtnTest;
+
+- (void)addTestButton {
+    mBtnTest = [UIButton buttonWithType:UIButtonTypeRoundedRect]; //绘制形状
+    CGRect frame;
+    frame.size.width = self.view.bounds.size.width;
+    frame.size.height = 50;
+    frame.origin.x = 0;
+    frame.origin.y = self.view.bounds.size.height - 50;
+    [mBtnTest setFrame:frame];
+    mBtnTest.tag = 10;
+    [mBtnTest setTitle:@"点击这个测试" forState:UIControlStateNormal];
+    [mBtnTest addTarget:self action:@selector(btnPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [mBtnTest setBackgroundColor:UIColor.whiteColor];
+    [self.view addSubview:mBtnTest];
+}
+
+- (void)btnPressed:(id)sender {
+    [[[ShareToPlatforms alloc] init] getScreenShot:@[@125]];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,12 +80,7 @@ static WKWebView *wkWebView = nil;
     // 确定宽、高、X、Y坐标
     [webview setFrame:CGRectMake(0, -20, self.view.bounds.size.width, self.view.bounds.size.height + 20)];
     [self.view addSubview:webview];
-//    NSString *urlPath = @"https://www.baidu.com/";
-//    NSString *urlPath = @"http://192.168.33.183:8088/dst/boot/index.html";
-//    NSString *urlPath = @"http://192.168.9.28:8088/dst/boot/index.html";
-    NSString *urlPath = @"http://47.75.254.166:8080/wallet/app/boot/index.html";
-//     NSString *urlPath = [NSString stringWithFormat:@"file:///%@/android_asset/index.html", [[NSBundle mainBundle] bundlePath]];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:urlPath]];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:URL_PATH]];
     [webview loadRequest:request];
     // 关闭webView的拖动
 //    webview.scrollView.scrollEnabled = NO;

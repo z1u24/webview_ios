@@ -16,9 +16,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [[UIApplication sharedApplication] setStatusBarHidden:YES];
-    [self setStatusBarBackgroundColor:UIColor.clearColor];
-
     // 设置userAgent
     NSString *customizeUserAgent = @" YINENG_IOS/1.0";
     NSString *webViewUserAgent = [[UIWebView new] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
@@ -38,13 +35,13 @@
     return YES;
 }
 
-//设置状态栏颜色
-- (void)setStatusBarBackgroundColor:(UIColor *)color {
-    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-        statusBar.backgroundColor = color;
-    }
-}
+////设置状态栏颜色
+//- (void)setStatusBarBackgroundColor:(UIColor *)color {
+//    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+//    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+//        statusBar.backgroundColor = color;
+//    }
+//}
 
 
 - (void)registerScheme {

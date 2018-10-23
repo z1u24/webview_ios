@@ -6,19 +6,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
 #import "Argon2Hash.h"
-#import "JSBundle.h"
-
-#import "argon2.h"
 
 static char toHexChar(uint8_t num) {
     char r = '0';
     if (num >= 0 && num < 10) {
         return r + num;
     }
-    
-    switch(num) {
+
+    switch (num) {
         case 10:
             r = 'a';
             break;
@@ -41,8 +37,7 @@ static char toHexChar(uint8_t num) {
     return r;
 }
 
-static char* convertHexString(uint8_t *data, int len)
-{
+static char *convertHexString(uint8_t *data, int len) {
     char *r = malloc(2 * len + 1);
     for (int i = 0; i < len; ++i) {
         uint8_t item = data[i];
@@ -54,14 +49,14 @@ static char* convertHexString(uint8_t *data, int len)
 }
 
 // type: d = 0, i = 1, id = 2
-static NSString* argon2Hash(NSNumber *iter, NSNumber *memory, NSNumber *parallelism, NSString *password, NSString *salt, NSNumber *type, NSNumber *hashLen) {
+static NSString *argon2Hash(NSNumber *iter, NSNumber *memory, NSNumber *parallelism, NSString *password, NSString *salt, NSNumber *type, NSNumber *hashLen) {
     char *pwd = [password UTF8String];
     char *saltImpl = [salt UTF8String];
     uint8_t *hash = malloc(hashLen.intValue);
-    
+
     argon2_hash(iter.intValue, memory.intValue, parallelism.intValue,
-                pwd, strlen(pwd), saltImpl, strlen(saltImpl), hash, hashLen.intValue, NULL, 0, type.intValue, ARGON2_VERSION_NUMBER);
-    
+            pwd, strlen(pwd), saltImpl, strlen(saltImpl), hash, hashLen.intValue, NULL, 0, type.intValue, ARGON2_VERSION_NUMBER);
+
     char *hexStr = convertHexString(hash, hashLen.intValue);
     NSString *r = [NSString stringWithUTF8String:hexStr];
     free(hash);
@@ -73,23 +68,34 @@ static NSString* argon2Hash(NSNumber *iter, NSNumber *memory, NSNumber *parallel
 @implementation ArgonHash
 
 - (void)getArgon2Hash:(NSArray *)array {
-    
-    NSNumber *listenerID = [array objectAtIndex:0];
-    
-    NSNumber *iter = [array objectAtIndex:1];
-    NSNumber *memory = [array objectAtIndex:2];
-    NSNumber *parallelism = [array objectAtIndex:3];
-    NSString *password = [array objectAtIndex:4];
-    NSString *salt = [array objectAtIndex:5];
-    NSNumber *type = [array objectAtIndex:6];
-    NSNumber *hashLen = [array objectAtIndex:7];
-
-    dispatch_async(dispatch_get_global_queue(0, 0),^{
-        NSString  *result = argon2Hash(iter, memory, parallelism, password, salt, type, hashLen);
+    NSNumber *listenerID = array[0];
+    NSNumber *iter = array[1];
+    NSNumber *memory = array[2];
+    NSNumber *parallelism = array[3];
+    NSString *password = array[4];
+    NSString *salt = array[5];
+    NSNumber *type = array[6];
+    NSNumber *hashLen = array[7];
+    [self printCurrentMillions];//打印当前时间
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSString *result = argon2Hash(iter, memory, parallelism, password, salt, type, hashLen);
         dispatch_async(dispatch_get_main_queue(), ^{
-            [JSBundle callJS:listenerID code:0 params:[NSArray arrayWithObjects:result, nil]];
+            [JSBundle callJS:listenerID code:Success params:@[result]];
+            [self printCurrentMillions];//打印当前时间
         });
     });
+}
+
+- (void)printCurrentMillions {
+    // 获取系统当前时间
+    NSDate *date = [NSDate date];
+    NSTimeInterval sec = [date timeIntervalSinceNow];
+    NSDate *currentDate = [[NSDate alloc] initWithTimeIntervalSinceNow:sec];
+    //设置时间输出格式：
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"yyyy年MM月dd日 HH小时mm分ss秒"];
+    NSString *na = [df stringFromDate:currentDate];
+    NSLog(@"系统当前时间为：%@", na);
 }
 
 @end

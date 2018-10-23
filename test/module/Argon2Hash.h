@@ -6,7 +6,9 @@
 //  Copyright © 2018年 kupay. All rights reserved.
 //
 #include "BaseObject.h"
-@interface ArgonHash: BaseObject
+#include "argon2.h"
+
+@interface ArgonHash : BaseObject
 
 - (void)getArgon2Hash:(NSArray *)array;
 

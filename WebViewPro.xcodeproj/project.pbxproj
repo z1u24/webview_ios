@@ -36,6 +36,8 @@
 		1828D304215DED6700AEC12F /* Icon-App-83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1828D2E8215DED6700AEC12F /* Icon-App-83.5x83.5@2x.png */; };
 		1828D305215DED6700AEC12F /* ItunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1828D2E9215DED6700AEC12F /* ItunesArtwork@2x.png */; };
 		1828D344215E358500AEC12F /* DeviceIdProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828D343215E358500AEC12F /* DeviceIdProvider.m */; };
+		18469D502178696300EE8D9A /* ahash.c in Sources */ = {isa = PBXBuildFile; fileRef = 18469D4E2178696300EE8D9A /* ahash.c */; };
+		18469D542178848700EE8D9A /* ImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18469D532178848600EE8D9A /* ImageController.m */; };
 		186CC14E212D3D38004AC557 /* BaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC14D212D3D38004AC557 /* BaseObject.m */; };
 		186CC150212D3D5C004AC557 /* QRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC14F212D3D5C004AC557 /* QRCode.m */; };
 		186CC153212D40AF004AC557 /* ImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC152212D40AF004AC557 /* ImagePicker.m */; };
@@ -114,6 +116,10 @@
 		1828D2E9215DED6700AEC12F /* ItunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ItunesArtwork@2x.png"; sourceTree = "<group>"; };
 		1828D342215E358500AEC12F /* DeviceIdProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceIdProvider.h; sourceTree = "<group>"; };
 		1828D343215E358500AEC12F /* DeviceIdProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceIdProvider.m; sourceTree = "<group>"; };
+		18469D4E2178696300EE8D9A /* ahash.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = ahash.c; sourceTree = "<group>"; };
+		18469D4F2178696300EE8D9A /* ahash.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = ahash.h; sourceTree = "<group>"; };
+		18469D522178848600EE8D9A /* ImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageController.h; sourceTree = "<group>"; };
+		18469D532178848600EE8D9A /* ImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageController.m; sourceTree = "<group>"; };
 		186CC14B212D3CBA004AC557 /* QRCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCode.h; sourceTree = "<group>"; };
 		186CC14C212D3CFC004AC557 /* BaseObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseObject.h; sourceTree = "<group>"; };
 		186CC14D212D3D38004AC557 /* BaseObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseObject.m; sourceTree = "<group>"; };
@@ -240,9 +246,19 @@
 			path = AppIcon.appiconset;
 			sourceTree = "<group>";
 		};
+		18469D512178842A00EE8D9A /* image */ = {
+			isa = PBXGroup;
+			children = (
+				18469D522178848600EE8D9A /* ImageController.h */,
+				18469D532178848600EE8D9A /* ImageController.m */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		186CC14A212D3CA7004AC557 /* module */ = {
 			isa = PBXGroup;
 			children = (
+				18469D512178842A00EE8D9A /* image */,
 				186CC1B4212E5F12004AC557 /* Argon2Hash.h */,
 				186CC1B5212E5F12004AC557 /* Argon2Hash.m */,
 				186CC14B212D3CBA004AC557 /* QRCode.h */,
@@ -379,6 +395,8 @@
 		186CC19B212E5E42004AC557 /* Argon2 */ = {
 			isa = PBXGroup;
 			children = (
+				18469D4E2178696300EE8D9A /* ahash.c */,
+				18469D4F2178696300EE8D9A /* ahash.h */,
 				186CC19C212E5E42004AC557 /* argon2.c */,
 				186CC1A0212E5E42004AC557 /* blake2b.c */,
 				186CC1A3212E5E42004AC557 /* core.c */,
@@ -492,7 +510,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0940;
-				ORGANIZATIONNAME = kupay;
+				ORGANIZATIONNAME = kuplay;
 				TargetAttributes = {
 					F354AB272119930300A8BEA8 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -610,9 +628,11 @@
 				186CC1AF212E5E42004AC557 /* core.c in Sources */,
 				F3FC0EF3211C71A800C7F566 /* Test.m in Sources */,
 				186CC14E212D3D38004AC557 /* BaseObject.m in Sources */,
+				18469D502178696300EE8D9A /* ahash.c in Sources */,
 				186CC156212D40FE004AC557 /* ImageUtils.m in Sources */,
 				186CC150212D3D5C004AC557 /* QRCode.m in Sources */,
 				186CC1B0212E5E42004AC557 /* encoding.c in Sources */,
+				18469D542178848700EE8D9A /* ImageController.m in Sources */,
 				186CC1B2212E5E42004AC557 /* ref.c in Sources */,
 				186CC1B6212E5F12004AC557 /* Argon2Hash.m in Sources */,
 				F3FC0EE9211C153300C7F566 /* JSBundle.m in Sources */,
@@ -765,6 +785,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -774,6 +795,7 @@
 					"$(PROJECT_DIR)/test",
 					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
+				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -782,7 +804,7 @@
 					"\"TZImagePickerController\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kuplay.kuplay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iqos.kuplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -810,6 +832,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -819,6 +842,7 @@
 					"$(PROJECT_DIR)/test",
 					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 				);
+				OTHER_CODE_SIGN_FLAGS = "";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-framework",
@@ -827,7 +851,7 @@
 					"\"TZImagePickerController\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kuplay.kuplay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iqos.kuplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

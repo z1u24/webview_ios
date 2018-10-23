@@ -11,6 +11,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "ImageController.h"
+#import "TZImagePickerController.h"
 #import "BaseObject.h"
 #import "ImageUtils.h"
 
