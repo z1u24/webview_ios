@@ -28,6 +28,7 @@ bool onlyOne = false;
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:maxCount delegate:self];
     imagePickerVc.allowTakePicture = 1 == useCamera;//设置是否可以拍照
     //不允许选择视频、录制视频
+    imagePickerVc.allowPickingOriginalPhoto = NO;
     imagePickerVc.allowTakeVideo = NO;
     imagePickerVc.allowPickingVideo = NO;
     imagePickerVc.allowPickingMultipleVideo = NO;
@@ -35,6 +36,14 @@ bool onlyOne = false;
 }
 
 #pragma mark - UIImagePickerController Delegate
+///
+- (BOOL)isAssetCanSelect:(id)asset{
+    PHAsset *phAsset = (PHAsset *)asset;
+    if ([[phAsset valueForKey:@"filename"] hasSuffix:@"GIF"]) {
+        return NO;
+    }
+    return YES;
+}
 
 ///拍照、选视频图片、录像 后的回调（这种方式选择视频时，会自动压缩，但是很耗时间）
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> *)info {
@@ -54,11 +63,17 @@ bool onlyOne = false;
         [JSBundle callJS:@(callbackId) code:Fail params:@[@"选择图片失败"]];
     } else {
         if (onlyOne) {
-            UIImage *image = photos[0];
+            //非原图舍弃
+//            UIImage *image = photos[0];
 //            [ImageUtils getImageColorArray:image];
-            NSString *result = [ImageUtils image2base64:image];
-            NSString *base64 = [NSString stringWithFormat:@"%s%@", "data:image/png;base64,", result];
-            [JSBundle callJS:@(callbackId) code:Success params:@[@"600", @"600", base64]];
+            
+            TZImageManager *imageManager = [TZImageManager manager];
+            [imageManager getOriginalPhotoWithAsset:assets[0] completion:^(UIImage *photo, NSDictionary *info) {
+                NSString *result = [ImageUtils image2base64:photo];
+                NSString *base64 = [NSString stringWithFormat:@"%s%@", "data:image/png;base64,", result];
+                [JSBundle callJS:@(callbackId) code:Success params:@[@"600", @"600", base64]];
+            }];
+            
         }
     }
 }
