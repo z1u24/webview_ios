@@ -15,10 +15,11 @@
 
 @interface BaseObject : NSObject
 
-+ (void)setVc:(UIViewController *)vc;
++ (void)setVc:(UINavigationController *)vc;
 
-+ (UIViewController *)getVc;
++ (UINavigationController *)getVc;
 
+//- setJSBundle 
 @end
 
 #endif /* BaseObject_h */

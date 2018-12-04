@@ -7,14 +7,15 @@
 
 #import "BaseObject.h"
 
-UIViewController *controller = nil;
+
+UINavigationController *controller = nil;
 
 @implementation BaseObject
-+ (void)setVc:(UIViewController *)vc {
++ (void)setVc:(UINavigationController *)vc {
     controller = vc;
 }
 
-+ (UIViewController *)getVc {
++ (UINavigationController *)getVc {
     return controller;
 }
 @end

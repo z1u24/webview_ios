@@ -16,16 +16,19 @@ const static int PLATFORM_LINE = 5;//分享的平台 LINE
 const static int SHARE_TYPE_IAMGE = 1;//分享的类型图片
 const static int SHARE_TYPE_TEXT = 2;//分享的类型文本
 
-@implementation ShareToPlatforms
+@implementation ShareToPlatforms{
+    JSBundle *bundel;
+}
 
 - (void)shareLink:(NSArray *)array {
     NSNumber *callbackId = array[0];
-    NSString *webName = array[1];
+    //NSString *webName = array[1];
     NSString *url = array[2];
     NSString *title = array[3];
     NSString *content = array[4];
-    NSString *comment = array[5];
+    //NSString *comment = array[5];
     int platform = [array[6] intValue];
+    bundel = array[7];
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     [shareParams SSDKSetupShareParamsByText:content
                                      images:[[NSBundle mainBundle] pathForResource:@"icon" ofType:@"png"]
@@ -71,16 +74,18 @@ const static int SHARE_TYPE_TEXT = 2;//分享的类型文本
         switch (state) {
             //分享成功
             case SSDKResponseStateSuccess:
-                [JSBundle callJS:callbackId code:Success params:@[@"分享成功"]];
+                
+                [self->bundel callJS:callbackId code:Success params:@[@"分享成功"]];
                 break;
                 //分享失败
             case SSDKResponseStateFail:
                 NSLog(@"%@", error);
-                [JSBundle callJS:callbackId code:Fail params:@[@"分享失败"]];
+                
+                [self->bundel callJS:callbackId code:Fail params:@[@"分享失败"]];
                 break;
                 //分享取消
             case SSDKResponseStateCancel:
-                [JSBundle callJS:callbackId code:Fail params:@[@"分享取消"]];
+                [self->bundel callJS:callbackId code:Fail params:@[@"分享取消"]];
                 break;
             default:
                 break;
@@ -98,12 +103,12 @@ const static int SHARE_TYPE_TEXT = 2;//分享的类型文本
                onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
                    switch (state) {
                        case SSDKResponseStateSuccess: {
-                           [JSBundle callJS:callbackId code:Success params:@[@"success"]];
+                           [self->bundel callJS:callbackId code:Success params:@[@"success"]];
                            break;
                        }
                        case SSDKResponseStateFail: {
                            NSLog(@"%@", error);
-                           [JSBundle callJS:callbackId code:Fail params:@[@"failed"]];
+                           [self->bundel callJS:callbackId code:Fail params:@[@"failed"]];
                            break;
                        }
                        default:
@@ -165,9 +170,9 @@ const static int SHARE_TYPE_TEXT = 2;//分享的类型文本
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     BOOL success = [ImageUtils saveImageIntoBox:image :@"share_screen_image.png"];
     if (success) {
-        [JSBundle callJS:callbackId code:Success params:@[@""]];
+        [bundel callJS:callbackId code:Success params:@[@""]];
     } else {
-        [JSBundle callJS:callbackId code:Fail params:@[@""]];
+        [bundel callJS:callbackId code:Fail params:@[@""]];
     }
 }
 

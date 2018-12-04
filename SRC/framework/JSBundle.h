@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 //MARK: callJS的状态
 typedef enum {
@@ -17,10 +18,15 @@ typedef enum {
 
 @interface JSBundle: NSObject
 
-+ (void)callJS:(id)identity code:(CallJSType)code params:(NSArray *)params;
+- (instancetype)initWithWebView:(WKWebView *)activeWebView webName:(NSString *)webName;
 
-+ (void)callJSError:(NSString *)arrayClassName funcName:(NSString *)funcName msg:(NSString *)msg;
+- (void)callJS:(id)identity code:(CallJSType)code params:(NSArray *)params;
 
-+ (void)sendMessage:(NSArray *)params;
+- (void)callJSError:(NSString *)arrayClassName funcName:(NSString *)funcName msg:(NSString *)msg;
 
+- (void)sendMessage:(NSArray *)params;
+
+- (NSString *)getWebName;
+
+- (WKWebView *)getWebView;
 @end

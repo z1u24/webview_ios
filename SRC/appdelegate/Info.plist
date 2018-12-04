@@ -21,6 +21,14 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleURLName</key>
+			<string>com.iqos.kupay</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kupay2018</string>
+			</array>
+		</dict>
+		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
@@ -33,7 +41,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>QQ41FC5CFE</string>
+				<string>QQ4209A7A7</string>
 			</array>
 		</dict>
 	</array>
@@ -71,8 +79,8 @@
 	<string>App拍照功能需要使用相机权限</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>App选择照片需要使用相册权限</string>
-	<key>UILaunchStoryboardName</key>
-	<string></string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>App录音功能需要使用麦克风权限</string>
 	<key>UIMainStoryboardFile</key>
 	<string></string>
 	<key>UIRequiredDeviceCapabilities</key>

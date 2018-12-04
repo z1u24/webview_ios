@@ -68,7 +68,6 @@ static NSString *argon2Hash(NSNumber *iter, NSNumber *memory, NSNumber *parallel
 @implementation ArgonHash
 
 - (void)getArgon2Hash:(NSArray *)array {
-    NSArray *barray = array;
     NSNumber *listenerID = array[0];
     NSNumber *iter = array[1];
     NSNumber *memory = array[2];
@@ -77,11 +76,12 @@ static NSString *argon2Hash(NSNumber *iter, NSNumber *memory, NSNumber *parallel
     NSString *salt = array[5];
     NSNumber *type = array[6];
     NSNumber *hashLen = array[7];
+    JSBundle *bundel = array[8];
     //[self printCurrentMillions];//打印当前时间
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSString *result = argon2Hash(iter, memory, parallelism, password, salt, type, hashLen);
         dispatch_async(dispatch_get_main_queue(), ^{
-            [JSBundle callJS:listenerID code:Success params:@[result]];
+            [bundel callJS:listenerID code:Success params:@[result]];
             //[self printCurrentMillions];//打印当前时间
         });
     });

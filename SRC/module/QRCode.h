@@ -11,8 +11,6 @@
 
 #import <Foundation/Foundation.h>
 #import "HMScannerController.h"
-#import "WebViewController.h"
-#import "JSBundle.h"
 #import "BaseObject.h"
 
 @interface QRCode : BaseObject

@@ -11,7 +11,8 @@
 @implementation DeviceIdProvider
 - (void)getUUId:(NSArray *)array {
     NSNumber *callbackId = [array objectAtIndex:0];
+    JSBundle *bundel = array[1];
     NSString *UUIDString = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-    [JSBundle callJS:callbackId code:0 params:[NSArray arrayWithObjects:UUIDString, nil]];
+    [bundel callJS:callbackId code:0 params:[NSArray arrayWithObjects:UUIDString, nil]];
 }
 @end

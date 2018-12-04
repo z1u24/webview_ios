@@ -77,10 +77,18 @@
 		F31241B421AE6E1700819868 /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = F31241AA21AE6E1600819868 /* core.c */; };
 		F31241B621AE973E00819868 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F31241B521AE973E00819868 /* icon.png */; };
 		F31241BD21AE97F800819868 /* Interceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = F31241BB21AE97F800819868 /* Interceptor.m */; };
+		F33D934521AFD1C0001E3AC8 /* YNWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D934421AFD1C0001E3AC8 /* YNWebView.m */; };
+		F33D934B21AFF3A3001E3AC8 /* WebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D934A21AFF3A3001E3AC8 /* WebViewManager.m */; };
+		F33D934F21B109FC001E3AC8 /* globolNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D934D21B109FC001E3AC8 /* globolNavigationController.m */; };
+		F33D935221B10E44001E3AC8 /* ynWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D935121B10E44001E3AC8 /* ynWebViewController.m */; };
 		F354AB2D2119930300A8BEA8 /* WebViewAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB2C2119930300A8BEA8 /* WebViewAppDelegate.m */; };
 		F354AB302119930300A8BEA8 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB2F2119930300A8BEA8 /* WebViewController.m */; };
 		F354AB352119930400A8BEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F354AB342119930400A8BEA8 /* Assets.xcassets */; };
 		F354AB3B2119930400A8BEA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB3A2119930400A8BEA8 /* main.m */; };
+		F367FC3F21B4C63F007C278A /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */; };
+		F367FC4221B51982007C278A /* VersionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F367FC4121B51982007C278A /* VersionManager.m */; };
+		F367FC4521B61258007C278A /* SpeechManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F367FC4421B61258007C278A /* SpeechManager.m */; };
+		F367FC4821B666D5007C278A /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F367FC4721B666D5007C278A /* FileManager.m */; };
 		F3FC0EE9211C153300C7F566 /* JSBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FC0EE8211C153300C7F566 /* JSBundle.m */; };
 /* End PBXBuildFile section */
 
@@ -181,6 +189,14 @@
 		F31241B521AE973E00819868 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		F31241BB21AE97F800819868 /* Interceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interceptor.m; sourceTree = "<group>"; };
 		F31241BC21AE97F800819868 /* Interceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interceptor.h; sourceTree = "<group>"; };
+		F33D934321AFD1C0001E3AC8 /* YNWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNWebView.h; sourceTree = "<group>"; };
+		F33D934421AFD1C0001E3AC8 /* YNWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNWebView.m; sourceTree = "<group>"; };
+		F33D934921AFF3A3001E3AC8 /* WebViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewManager.h; sourceTree = "<group>"; };
+		F33D934A21AFF3A3001E3AC8 /* WebViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewManager.m; sourceTree = "<group>"; };
+		F33D934D21B109FC001E3AC8 /* globolNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = globolNavigationController.m; sourceTree = "<group>"; };
+		F33D934E21B109FC001E3AC8 /* globolNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globolNavigationController.h; sourceTree = "<group>"; };
+		F33D935021B10E44001E3AC8 /* ynWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ynWebViewController.h; sourceTree = "<group>"; };
+		F33D935121B10E44001E3AC8 /* ynWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ynWebViewController.m; sourceTree = "<group>"; };
 		F354AB282119930300A8BEA8 /* WebViewPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F354AB2B2119930300A8BEA8 /* WebViewAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewAppDelegate.h; sourceTree = "<group>"; };
 		F354AB2C2119930300A8BEA8 /* WebViewAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewAppDelegate.m; sourceTree = "<group>"; };
@@ -189,6 +205,14 @@
 		F354AB342119930400A8BEA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F354AB392119930400A8BEA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F354AB3A2119930400A8BEA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F367FC3D21B4C63F007C278A /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
+		F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
+		F367FC4021B51982007C278A /* VersionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VersionManager.h; sourceTree = "<group>"; };
+		F367FC4121B51982007C278A /* VersionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VersionManager.m; sourceTree = "<group>"; };
+		F367FC4321B61258007C278A /* SpeechManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechManager.h; sourceTree = "<group>"; };
+		F367FC4421B61258007C278A /* SpeechManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechManager.m; sourceTree = "<group>"; };
+		F367FC4621B666D5007C278A /* FileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		F367FC4721B666D5007C278A /* FileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
 		F3FC0EE8211C153300C7F566 /* JSBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBundle.m; sourceTree = "<group>"; };
 		F3FC0EEA211C155800C7F566 /* JSBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBundle.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -270,21 +294,30 @@
 		186CC14A212D3CA7004AC557 /* module */ = {
 			isa = PBXGroup;
 			children = (
+				F33D934C21B0DD07001E3AC8 /* ynWebViewController */,
 				18469D512178842A00EE8D9A /* image */,
 				186CC1B4212E5F12004AC557 /* Argon2Hash.h */,
 				186CC1B5212E5F12004AC557 /* Argon2Hash.m */,
 				186CC14B212D3CBA004AC557 /* QRCode.h */,
+				186CC14F212D3D5C004AC557 /* QRCode.m */,
 				186CC14C212D3CFC004AC557 /* BaseObject.h */,
+				186CC14D212D3D38004AC557 /* BaseObject.m */,
 				186CC196212E5788004AC557 /* ShareToPlatforms.h */,
 				186CC197212E5788004AC557 /* ShareToPlatforms.m */,
 				1828D342215E358500AEC12F /* DeviceIdProvider.h */,
 				1828D343215E358500AEC12F /* DeviceIdProvider.m */,
 				186CC151212D4077004AC557 /* ImagePicker.h */,
 				186CC152212D40AF004AC557 /* ImagePicker.m */,
-				186CC14D212D3D38004AC557 /* BaseObject.m */,
-				186CC14F212D3D5C004AC557 /* QRCode.m */,
 				F300269A214115F600318BB7 /* JSIntercept.h */,
 				F300269B2141161D00318BB7 /* JSIntercept.m */,
+				F33D934921AFF3A3001E3AC8 /* WebViewManager.h */,
+				F33D934A21AFF3A3001E3AC8 /* WebViewManager.m */,
+				F367FC4021B51982007C278A /* VersionManager.h */,
+				F367FC4121B51982007C278A /* VersionManager.m */,
+				F367FC4321B61258007C278A /* SpeechManager.h */,
+				F367FC4421B61258007C278A /* SpeechManager.m */,
+				F367FC4621B666D5007C278A /* FileManager.h */,
+				F367FC4721B666D5007C278A /* FileManager.m */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -292,8 +325,14 @@
 		186CC154212D40DD004AC557 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				F33D934E21B109FC001E3AC8 /* globolNavigationController.h */,
+				F33D934D21B109FC001E3AC8 /* globolNavigationController.m */,
 				186CC155212D40FE004AC557 /* ImageUtils.m */,
 				186CC157212D4110004AC557 /* ImageUtils.h */,
+				F33D934321AFD1C0001E3AC8 /* YNWebView.h */,
+				F33D934421AFD1C0001E3AC8 /* YNWebView.m */,
+				F367FC3D21B4C63F007C278A /* UIViewController+BackButtonHandler.h */,
+				F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -475,6 +514,15 @@
 				05E9AC1474756A21F18A3754 /* Pods_WebViewPro.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F33D934C21B0DD07001E3AC8 /* ynWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F33D935021B10E44001E3AC8 /* ynWebViewController.h */,
+				F33D935121B10E44001E3AC8 /* ynWebViewController.m */,
+			);
+			path = ynWebViewController;
 			sourceTree = "<group>";
 		};
 		F354AB1F2119930300A8BEA8 = {
@@ -660,22 +708,30 @@
 				F31241AE21AE6E1700819868 /* ref.c in Sources */,
 				186CC156212D40FE004AC557 /* ImageUtils.m in Sources */,
 				186CC150212D3D5C004AC557 /* QRCode.m in Sources */,
+				F367FC4821B666D5007C278A /* FileManager.m in Sources */,
 				18469D542178848700EE8D9A /* ImageController.m in Sources */,
 				F31241B421AE6E1700819868 /* core.c in Sources */,
 				F31241B121AE6E1700819868 /* encoding.c in Sources */,
 				186CC1B6212E5F12004AC557 /* Argon2Hash.m in Sources */,
 				F3FC0EE9211C153300C7F566 /* JSBundle.m in Sources */,
+				F367FC4221B51982007C278A /* VersionManager.m in Sources */,
 				F354AB302119930300A8BEA8 /* WebViewController.m in Sources */,
 				F31241AF21AE6E1700819868 /* ahash.c in Sources */,
 				F31241BD21AE97F800819868 /* Interceptor.m in Sources */,
+				F367FC3F21B4C63F007C278A /* UIViewController+BackButtonHandler.m in Sources */,
 				F31241B221AE6E1700819868 /* thread.c in Sources */,
 				F354AB3B2119930400A8BEA8 /* main.m in Sources */,
 				F354AB2D2119930300A8BEA8 /* WebViewAppDelegate.m in Sources */,
 				186CC198212E5788004AC557 /* ShareToPlatforms.m in Sources */,
 				F31241B021AE6E1700819868 /* argon2.c in Sources */,
 				F300269C2141161D00318BB7 /* JSIntercept.m in Sources */,
+				F33D934F21B109FC001E3AC8 /* globolNavigationController.m in Sources */,
+				F33D934521AFD1C0001E3AC8 /* YNWebView.m in Sources */,
+				F33D935221B10E44001E3AC8 /* ynWebViewController.m in Sources */,
 				F31241AD21AE6E1700819868 /* blake2b.c in Sources */,
 				1828D344215E358500AEC12F /* DeviceIdProvider.m in Sources */,
+				F367FC4521B61258007C278A /* SpeechManager.m in Sources */,
+				F33D934B21AFF3A3001E3AC8 /* WebViewManager.m in Sources */,
 				186CC153212D40AF004AC557 /* ImagePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -800,6 +856,7 @@
 			baseConfigurationReference = 1172D96F2A9AD88014270C48 /* Pods-WebViewPro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LU5XMC8SH3;
@@ -815,7 +872,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = SRC/appdelegate/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -848,6 +905,7 @@
 			baseConfigurationReference = 43C727B9AF12A0A78E5BCCF4 /* Pods-WebViewPro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LU5XMC8SH3;
@@ -863,7 +921,7 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = SRC/appdelegate/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

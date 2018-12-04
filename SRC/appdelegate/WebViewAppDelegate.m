@@ -7,7 +7,9 @@
 //
 
 #import "WebViewAppDelegate.h"
+#import "globolNavigationController.h"
 #import "Interceptor.h"
+
 
 @interface AppDelegate ()
 
@@ -25,13 +27,13 @@
     }
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    WebViewController *viewController = [[WebViewController alloc] init];
-
-    self.window.rootViewController = viewController;
-
+    WebViewController *viewController = [WebViewController sharedInstence];
+    globolNavigationController *navi = [[globolNavigationController alloc] initWithRootViewController:viewController];
+    self.window.rootViewController = navi;
+    //[BaseObject setVc:navi];
     [self.window makeKeyAndVisible];
     [self initShareSDK];
-    [self registerScheme];
+    //[self registerScheme];
     return YES;
 }
 
@@ -94,8 +96,8 @@
                                                         appSecret:@"36fee1ab731a7bda68ae0b24b7d6bdb5"];
                                   break;
                               case SSDKPlatformTypeQQ:
-                                  [appInfo SSDKSetupQQByAppId:@"1107057918"
-                                                       appKey:@"ZA8TZCDkupz38eoN"
+                                  [appInfo SSDKSetupQQByAppId:@"1107928999"
+                                                       appKey:@"iXtD1x0UZ60mpnkC"
                                                      authType:SSDKAuthTypeBoth];
                                   break;
                               default:
