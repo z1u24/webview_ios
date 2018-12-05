@@ -10,4 +10,11 @@
 
 @implementation FileManager
 
++ (NSString *)getDocumentsPathWithPath:(NSString *)assetsPath fileName:(NSString *)fileName{
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    path = [path stringByAppendingString:assetsPath];
+    return path;
+}
+
+
 @end

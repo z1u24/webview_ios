@@ -18,8 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)endSpeech:(NSArray *)array;
 //丢弃录音
 - (void)dropSpeech:(NSArray *)array;
-//上传
-- (void)onloadSpeech:(NSArray *)array;
 
 @end
 

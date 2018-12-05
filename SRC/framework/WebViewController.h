@@ -20,8 +20,10 @@
 
 //#define URL_PATH @"http://192.168.9.15/wallet/app/boot/index.html"
 
-#define URL_PATH @"/dst/boot/index.html"
-
+#define URL_PATH @"/wallet/app/boot/index.html"
+//#define URL_PATH @"https://xiangyuecn.github.io/Recorder/"
+//#define URL_PATH @"http://192.168.9.28:8088/recorder/index.html"
+//#define URL_PATH @"http://yxl.github.io/opencore-amr-js/"
 @interface WebViewController : UIViewController
 +(instancetype)sharedInstence;
 @end

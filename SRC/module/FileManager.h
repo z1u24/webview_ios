@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FileManager : BaseObject
 
++ (NSString *)getDocumentsPath;
+
 + (void)saveFile:(NSString *)path content:(NSString *)base64Str;
 
 + (NSData *)getFile:(NSString *)path;

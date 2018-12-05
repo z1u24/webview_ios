@@ -20,6 +20,7 @@ YNWebView *ynWebView;
 NSString *webtitle;
 NSString *url;
 NSString *injectContent;
+JSIntercept *intercept;
 
 - (instancetype)initWithWebViewName:(NSString *)webviewName url:(NSString *)Url title:(NSString *)webTitle injectContent:(NSString *)injectcontent
 {
@@ -37,6 +38,7 @@ NSString *injectContent;
     [super viewDidLoad];
     self.title = webtitle;
     ynWebView = [[YNWebView alloc] initWithWKWebView:[self createWebviewWithInjectContent:injectContent] webName:webViewName];
+    intercept = [[JSIntercept alloc] initWithWebView:[ynWebView getWKWebView]];
 }
 
 - (WKWebView *)createWebviewWithInjectContent:(NSString *)injectContent {
@@ -105,6 +107,13 @@ NSString *injectContent;
         [[ynWebView getJSBundel] sendMessage:message.body];
     } else if ([message.name isEqualToString:@"JSIntercept"]) {
         NSArray *params = message.body;
+        if ([params[0] isEqualToString:@"saveFile"]) {
+            [intercept saveFile:params[1] content:params[2] listenID:params[3]];
+        }else if([params[0] isEqualToString:@"getBootFiles"]){
+            [intercept getBootFiles:params[1]];
+        }else if([params[0] isEqualToString:@"restartApp"]){
+            [intercept restartApp];
+        }
         //[JSIntercept safeFile:params[0] content:params[1] saveID:params[2] webView:[ynWebView getWKWebView]];
     } else {
         [[ynWebView getJSBundel] callJSError:@"None" funcName:@"None" msg:@"'Not Native Message Call'"];

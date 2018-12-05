@@ -12,6 +12,8 @@
 #import "BaseObject.h"
 #import "ynWebViewController.h"
 
+#import <AVFoundation/AVFoundation.h>
+
 @interface WebViewController () <WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler>
 
 @property (nonatomic, strong)YNWebView *ynWebView;
@@ -77,8 +79,11 @@
     config.preferences.javaScriptCanOpenWindowsAutomatically = NO;
     // 创建UserContentController（提供JavaScript向webView发送消息的方法）
     config.userContentController = [[WKUserContentController alloc] init];
-    // 添加消息处理，注意：self指代的对象需要遵守WKScriptMessageHandler协议，结束时需要移除
+    //[config.preferences setValue:@TRUE forKey:@"modernMediaControlsEnabled"];
+    [config.preferences setValue:@TRUE forKey:@"mediaDevicesEnabled"];
+    //支持文件协议跨域
     [config.preferences setValue:@TRUE forKey:@"allowFileAccessFromFileURLs"];
+    // 添加消息处理，注意：self指代的对象需要遵守WKScriptMessageHandler协议，结束时需要移除
     [config.userContentController addScriptMessageHandler:self name:@"Native"];
     [config.userContentController addScriptMessageHandler:self name:@"JSIntercept"];
     WKWebView *webview = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
@@ -154,7 +159,7 @@
 // 消息分发
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     // 判断是否是调用原生的
-    NSLog(@"%@ %@",message.name,message.body);
+    //NSLog(@"%@ %@",message.name,message.body);
     if ([message.name isEqualToString:@"Native"]) {
         [[_ynWebView getJSBundel] sendMessage:message.body];
     } else if ([message.name isEqualToString:@"JSIntercept"]) {
