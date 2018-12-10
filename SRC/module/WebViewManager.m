@@ -30,7 +30,6 @@ static NSMutableDictionary *webControlDic = nil;
     NSNumber *callbackId = array[0];
     NSString *webName = array[1];
     NSString *url = array[2];
-    //NSString *url = @"http://192.168.9.28:8088/dst/boot/index1.html";
     NSString *title = array[3];
     NSString *injectContent = array[4];
     JSBundle *bundle = array[5];
@@ -40,8 +39,6 @@ static NSMutableDictionary *webControlDic = nil;
         [self createWKWebViewWithWebName:webName url:url title:title injectContent:injectContent];
         [bundle callJS:callbackId code:0 params:@[@""]];
     }
-    
-    
 }
 
 - (void)closeWebView:(NSArray *)array{
@@ -72,9 +69,6 @@ static NSMutableDictionary *webControlDic = nil;
             [webControlDic removeObjectForKey:webName];
             [YNWebView removeWebViewWithWebName:webName];
         }
-        
-        
-        //[]
     }
     
 }
@@ -84,7 +78,6 @@ static NSMutableDictionary *webControlDic = nil;
     NSString *webName = array[1];
     NSString *message = array[2];
     JSBundle *bundle = array[3];
-    NSLog(@"12345%@",[bundle getWebName]);
     if ([YNWebView getIfWebViewWithWebName:webName]) {
         NSString *fullCode = [NSString stringWithFormat:@"window['onWebViewPostMessage']('%@', '%@')",[bundle getWebName],message];
         [[[YNWebView getYNWebViewInWebName:webName] getWKWebView] evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {
@@ -94,8 +87,7 @@ static NSMutableDictionary *webControlDic = nil;
         }];
         [bundle callJS:callbackId code:0 params:@[@""]];
     }else{
-        //[self createWKWebViewWithWebName:webName url:url title:title injectContent:injectContent];
-        [bundle callJSError:@"None" funcName:@"postWebViewMessage" msg:@"Can Not Find The WebView"];
+        [bundle callJS:callbackId code:0 params:@[@"fail"]];
     }
 }
 

@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ynWebViewController : UIViewController
 - (instancetype)initWithWebViewName:(NSString *)webViewName url:(NSString *)url title:(NSString *)webtitle injectContent:(NSString *)injectContent;
+
 @end
 
 NS_ASSUME_NONNULL_END

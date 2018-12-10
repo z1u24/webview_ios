@@ -9,7 +9,7 @@
 #import "WebViewAppDelegate.h"
 #import "globolNavigationController.h"
 #import "Interceptor.h"
-
+#import "BaseObject.h"
 
 @interface AppDelegate ()
 
@@ -30,7 +30,7 @@
     WebViewController *viewController = [WebViewController sharedInstence];
     globolNavigationController *navi = [[globolNavigationController alloc] initWithRootViewController:viewController];
     self.window.rootViewController = navi;
-    //[BaseObject setVc:navi];
+    [BaseObject setVc:navi];
     [self.window makeKeyAndVisible];
     [self initShareSDK];
     //[self registerScheme];

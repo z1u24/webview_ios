@@ -83,6 +83,18 @@
             [imageManager getOriginalPhotoWithAsset:assets[0] completion:^(UIImage *photo, NSDictionary *info) {
                 NSString *result = [ImageUtils image2base64:photo];
                 NSString *base64 = [NSString stringWithFormat:@"%s%@", "data:image/png;base64,", result];
+                //1，保存图片到内存。 Documents/selected.png
+//                NSDate *date = [NSDate date];
+//                NSTimeInterval sec = [date timeIntervalSinceNow];
+//                NSDate *currentDate = [[NSDate alloc] initWithTimeIntervalSinceNow:sec];
+//                //设置时间输出格式：
+//                NSDateFormatter *df = [[NSDateFormatter alloc] init];
+//                [df setDateFormat:@"yyyy年MM月dd日HH小时mm分ss秒"];
+//                NSString *na = [df stringFromDate:currentDate];
+//                NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//                NSString *imageName = NSString stringWithFormat:@"selecte%@.png",df
+//                docPath = [docPath stringByAppendingString:@"/selectes.png"];
+//                [UIImagePNGRepresentation(photo) writeToFile:docPath atomically:YES];
                 [self->bundel callJS:@(self->callbackId) code:Success params:@[@"600", @"600", base64]];
             }];
             

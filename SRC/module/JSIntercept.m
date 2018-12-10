@@ -6,6 +6,8 @@
 NSMutableDictionary *mBootFilePathDic = nil;
 WKWebView *webView = nil;
 
+
+
 - (instancetype)initWithWebView:(WKWebView *)webview
 {
     self = [super init];
@@ -30,14 +32,10 @@ WKWebView *webView = nil;
 
 - (void)saveFile:(NSString *)path content:(NSString *)base64Str listenID:(NSNumber *)listenID;{
     //如果path中包含.depend改为depend
-    if([path containsString:@".depend"]){
-        path = [path stringByReplacingOccurrencesOfString:@".depend" withString:@"depend.txt"];
-    }
-    
     // 获取Document目录
     NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *assetsPath = [docPath stringByAppendingString:@"/assets/"];
-    NSString *fullPath = [assetsPath stringByAppendingString:path];
+    NSString *assetsPath = [@"/assets/" stringByAppendingString:path];
+    NSString *fullPath = [docPath stringByAppendingString:assetsPath];
     NSFileManager *manager = [NSFileManager defaultManager];
     NSString *dirPath = [fullPath substringToIndex:[fullPath rangeOfString:@"/" options:NSBackwardsSearch].location];
     //判断文件夹是否存在  不存在就创建
@@ -67,7 +65,7 @@ WKWebView *webView = nil;
     }
     
     //判断
-    NSString *mBootFilePath = [assetsPath stringByAppendingString:@"bootFilePaths.plist"];
+    NSString *mBootFilePath = [docPath stringByAppendingString:@"/assets/bootFilePaths.plist"];
     BOOL isMBootFileExist = [manager fileExistsAtPath:fullPath];
     if (!isMBootFileExist) {
         BOOL sucess = [manager createFileAtPath:mBootFilePath contents:nil attributes:nil];
@@ -76,8 +74,12 @@ WKWebView *webView = nil;
         }
     }
     //获取文件名称
-    NSString *fileName = [fullPath substringFromIndex:[fullPath rangeOfString:@"/" options:NSBackwardsSearch].location + 1];
-    [mBootFilePathDic setObject:fullPath forKey:fileName];
+    if([path containsString:@".depend"]){
+        path = [path stringByReplacingOccurrencesOfString:@".depend" withString:@"depend"];
+    }
+    NSString *fileName = [path substringFromIndex:[path rangeOfString:@"/" options:NSBackwardsSearch].location + 1];
+    
+    [mBootFilePathDic setObject:assetsPath forKey:fileName];
     [mBootFilePathDic writeToFile:mBootFilePath atomically:YES];
     
     NSString *fullCode = [NSString stringWithFormat:@"window.handle_jsintercept_callback(%d, true)", [listenID intValue]];
@@ -89,30 +91,21 @@ WKWebView *webView = nil;
 }
 
 - (void)restartApp{
-    AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    UIWindow *window = app.window;
-    [UIView animateWithDuration:1.5f animations:^{
-        window.alpha = 0;
-        window.frame = CGRectMake(0, window.bounds.size.width, 0, 0);
-    } completion:^(BOOL finished) {
-        exit(0);
-    }];
+    exit(0);
 }
 
 - (void)getBootFiles:(NSNumber *)listenID{
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSMutableDictionary *fullDic = [[NSMutableDictionary alloc] initWithCapacity:0];
     NSArray *keys = [mBootFilePathDic allKeys];
     for (NSString *key in keys) {
-        NSString *value = [mBootFilePathDic objectForKey:key];
-        NSFileHandle *file = [NSFileHandle fileHandleForReadingAtPath:value];
-        NSData *data = [file readDataToEndOfFile];
-        [file closeFile];
+        NSString *value = [docPath stringByAppendingString:[mBootFilePathDic objectForKey:key]];
+        NSData *data = [[NSData alloc] initWithContentsOfFile:value];
         NSString *bs64data = [data base64EncodedStringWithOptions:0];
         [fullDic setObject:bs64data forKey:key];
     }
     NSData * jsonData = [NSJSONSerialization dataWithJSONObject:fullDic options:NSJSONWritingSortedKeys error:nil];
     NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-    
     NSString *fullCode = [NSString stringWithFormat:@"window.handle_jsintercept_callback(%d, true, '%@')", [listenID intValue],jsonString];
     [webView evaluateJavaScript:fullCode completionHandler:^(id object, NSError *error) {
         if (error != nil) {
@@ -120,6 +113,31 @@ WKWebView *webView = nil;
         }
     }];
 }
+
+//上传版本号
+- (void)getVersionId:(NSArray *)array{
+    NSNumber *listenID = [array objectAtIndex:0];
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    NSString *fullCode = [NSString stringWithFormat:@"window.handle_jsintercept_callback(%d, true, '%@')", [listenID intValue],app_Version];
+    [webView evaluateJavaScript:fullCode completionHandler:^(id object, NSError *error) {
+        if (error != nil) {
+            NSLog(@"item = %@, error = %@", object, error);
+        }
+    }];
+}
+
+//执行安装请求
+- (void)appUpdate:(NSArray *)array{
+    NSString *url = array[0];
+    if (@available(iOS 10.0, *)) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
+    } else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }
+    [self restartApp];
+}
+
 
 @end
 
