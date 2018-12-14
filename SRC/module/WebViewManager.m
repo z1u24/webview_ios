@@ -121,13 +121,8 @@ static NSMutableDictionary *webControlDic = nil;
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
     NSString *urlStr = navigationAction.request.URL.absoluteString;
-    if ([urlStr containsString:@"alipay://"] || [urlStr containsString:@"alipays://"]  || [urlStr containsString:@"weixin://"] ) {
-        NSMutableString *newUrlStr = [[NSMutableString alloc]initWithString:urlStr];
-        if([urlStr containsString:@"fromAppUrlScheme"] || [urlStr containsString:@"alipays"] ){
-            NSRange range = [newUrlStr rangeOfString:@"alipays"];
-            [newUrlStr replaceCharactersInRange:range withString:@"app.herominer.net"];
-        }
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:newUrlStr]];
+    if ([urlStr containsString:@"weixin://"]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlStr]];
         decisionHandler(WKNavigationActionPolicyCancel);
         return;
     }else{

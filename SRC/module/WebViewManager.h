@@ -38,7 +38,7 @@ typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 //删除ViewController
 + (void)removeViewControllerWithWebName:(NSString *)webName;
 
-//支付接口
+//微信支付接口
 - (void)newView:(NSString *)webName url:(NSString *)url headers:(NSString *)headers callJS:(CallJS)callJS ynWeb:(YNWebView *)ynWeb;
 
 - (void)freeView:(NSString *)webName callJS:(CallJS)callJS ynWeb:(YNWebView *)ynWeb;

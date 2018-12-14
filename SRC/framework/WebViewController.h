@@ -10,9 +10,7 @@
 #import "JSBridge.h"
 #import "YNWebView.h"
 
-
-#define URL_PATH @"/dst/boot/index.html"
-//#define URL_PATH @"/wallet/app/boot/index.html"
+#define URL_PATH @"/wallet/app/boot/index.html"
 
 
 @interface WebViewController : UIViewController

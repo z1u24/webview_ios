@@ -112,12 +112,13 @@
     // 确定宽、高、X、Y坐标
     [webview setFrame:CGRectMake(0, -20, self.view.bounds.size.width, self.view.bounds.size.height+20)];
     [self.view addSubview:webview];
-    NSString *str = [URL_PATH substringToIndex:1];
+    NSString *strUrl = URL_PATH;
+    NSString *str = [strUrl substringToIndex:1];
     if ([str isEqualToString:@"/"]) {
         NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
         NSLog(@"%@",docPath);
         NSString *path = [docPath stringByAppendingString:@"/assets"];
-        NSString *fullPath = [path stringByAppendingString:URL_PATH];
+        NSString *fullPath = [path stringByAppendingString:strUrl];
         NSFileHandle *file = [NSFileHandle fileHandleForReadingAtPath:fullPath];
         NSData *data = nil;
         if (file != nil) {
@@ -125,7 +126,7 @@
             [file closeFile];
         }
         if (data == nil) {
-            path = [@"assets" stringByAppendingString:URL_PATH];
+            path = [@"assets" stringByAppendingString:strUrl];
             fullPath = [[NSBundle mainBundle] pathForResource:path ofType:nil];
             file = [NSFileHandle fileHandleForReadingAtPath:fullPath];
             if (file != nil) {
@@ -136,18 +137,34 @@
                 NSLog(@"file isn't found: %@", path);
             }
         }
-        path = [@"assets" stringByAppendingString:URL_PATH];
+        path = [@"assets" stringByAppendingString:strUrl];
         NSString *utf = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSString *url = [@"file://" stringByAppendingString:fullPath];
         [webview loadHTMLString:utf baseURL:[NSURL URLWithString:url]];
     }else{
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:URL_PATH]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:strUrl]];
         [webview loadRequest:request];
     }
     
     webview.UIDelegate = self;
     webview.navigationDelegate = self;
     return webview;
+}
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
+    NSString *urlStr = navigationAction.request.URL.absoluteString;
+    if ([urlStr containsString:@"alipay://"] || [urlStr containsString:@"alipays://"]) {
+        NSMutableString *newUrlStr = [[NSMutableString alloc]initWithString:urlStr];
+        if([urlStr containsString:@"fromAppUrlScheme"] || [urlStr containsString:@"alipays"] ){
+            NSRange range = [newUrlStr rangeOfString:@"alipays"];
+            [newUrlStr replaceCharactersInRange:range withString:@"app.herominer.net"];
+        }
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:newUrlStr]];
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }else{
+        decisionHandler(WKNavigationActionPolicyAllow);
+    }
 }
 
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {

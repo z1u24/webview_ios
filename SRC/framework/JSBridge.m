@@ -45,13 +45,7 @@ static NSMutableDictionary *dictionary = nil;
     //判断是否有该类名
     Class clazz = NSClassFromString(className);
     if (clazz == nil) {
-        NSLog(@"JSBundle Error = className");
-        return;
-    }
-    //判断方法是否存在，获取完整方法名
-    funcName = [self getSelectorNameWithClass:clazz funcName:funcName];
-    if ([funcName isEqualToString:@"notFound"]) {
-        NSLog(@"JSBundle Error = funcName");
+        NSLog(@"JSBridge Error = className");
         return;
     }
     //判断类方法与对象方法
@@ -72,9 +66,17 @@ static NSMutableDictionary *dictionary = nil;
         }
         //其他实例方法
         //获取实例对象
+        
+        //判断方法是否存在，获取完整方法名
+        funcName = [self getSelectorNameWithClass:clazz funcName:funcName];
+        if ([funcName isEqualToString:@"notFound"]) {
+            NSLog(@"JSBridge Error = funcName");
+            return;
+        }
+        
         NSObject *object = [dictionary objectForKey:nativeID];
         if (object == nil) {
-            NSLog(@"JSBundle Error = object not found");
+            NSLog(@"JSBridge Error = object not found");
             return;
         }
         SEL sel = NSSelectorFromString(funcName);
@@ -104,6 +106,9 @@ static NSMutableDictionary *dictionary = nil;
 }
 
 - (void)callJS:(NSNumber *)listenerID code:(CallJSType)code params:(NSArray *)params {
+    if([listenerID intValue] == 0){
+        return;
+    }
     NSString *s = [NSString stringWithFormat:@"window['handle_Native_Message'](%@, %d,", listenerID, code];
     NSMutableArray *array = [NSMutableArray arrayWithObjects:s, nil];
     NSInteger count = [params count];
