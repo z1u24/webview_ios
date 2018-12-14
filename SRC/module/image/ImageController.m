@@ -47,8 +47,8 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> *)info {
     NSLog(@"调用了 didFinishPickingMediaWithInfo");
     [picker dismissViewControllerAnimated:NO completion:^{
-        UIImage *image = info[UIImagePickerControllerOriginalImage];
-        [ImageUtils getImageColorArray:image];
+        //UIImage *image = info[UIImagePickerControllerOriginalImage];
+        //[ImageUtils getImageColorArray:image];
     }];
 }
 

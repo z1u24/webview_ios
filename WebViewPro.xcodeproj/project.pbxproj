@@ -76,7 +76,8 @@
 		F31241B321AE6E1700819868 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F31241A821AE6E1600819868 /* LICENSE */; };
 		F31241B421AE6E1700819868 /* core.c in Sources */ = {isa = PBXBuildFile; fileRef = F31241AA21AE6E1600819868 /* core.c */; };
 		F31241B621AE973E00819868 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F31241B521AE973E00819868 /* icon.png */; };
-		F31241BD21AE97F800819868 /* Interceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = F31241BB21AE97F800819868 /* Interceptor.m */; };
+		F330722521C0E98D00E0B9C2 /* JSBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F330722421C0E98D00E0B9C2 /* JSBridge.m */; };
+		F3329E8E21BE899900194F23 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3329E8D21BE899900194F23 /* libmp3lame.a */; };
 		F33D934521AFD1C0001E3AC8 /* YNWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D934421AFD1C0001E3AC8 /* YNWebView.m */; };
 		F33D934B21AFF3A3001E3AC8 /* WebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D934A21AFF3A3001E3AC8 /* WebViewManager.m */; };
 		F33D934F21B109FC001E3AC8 /* globolNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D934D21B109FC001E3AC8 /* globolNavigationController.m */; };
@@ -87,8 +88,6 @@
 		F354AB3B2119930400A8BEA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB3A2119930400A8BEA8 /* main.m */; };
 		F367FC3F21B4C63F007C278A /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */; };
 		F367FC4521B61258007C278A /* SpeechManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F367FC4421B61258007C278A /* SpeechManager.m */; };
-		F367FC4821B666D5007C278A /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F367FC4721B666D5007C278A /* FileManager.m */; };
-		F3FC0EE9211C153300C7F566 /* JSBundle.m in Sources */ = {isa = PBXBuildFile; fileRef = F3FC0EE8211C153300C7F566 /* JSBundle.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,8 +185,11 @@
 		F31241AB21AE6E1600819868 /* blake2-impl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "blake2-impl.h"; sourceTree = "<group>"; };
 		F31241AC21AE6E1700819868 /* ahash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ahash.h; sourceTree = "<group>"; };
 		F31241B521AE973E00819868 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		F31241BB21AE97F800819868 /* Interceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Interceptor.m; sourceTree = "<group>"; };
-		F31241BC21AE97F800819868 /* Interceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Interceptor.h; sourceTree = "<group>"; };
+		F330722321C0E98C00E0B9C2 /* JSBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBridge.h; sourceTree = "<group>"; };
+		F330722421C0E98D00E0B9C2 /* JSBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBridge.m; sourceTree = "<group>"; };
+		F3329E8C21BE899900194F23 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
+		F3329E8D21BE899900194F23 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
+		F3329E9221BF564800194F23 /* NSObject+extend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+extend.h"; sourceTree = "<group>"; };
 		F33D934321AFD1C0001E3AC8 /* YNWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNWebView.h; sourceTree = "<group>"; };
 		F33D934421AFD1C0001E3AC8 /* YNWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNWebView.m; sourceTree = "<group>"; };
 		F33D934921AFF3A3001E3AC8 /* WebViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewManager.h; sourceTree = "<group>"; };
@@ -208,10 +210,6 @@
 		F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
 		F367FC4321B61258007C278A /* SpeechManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechManager.h; sourceTree = "<group>"; };
 		F367FC4421B61258007C278A /* SpeechManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechManager.m; sourceTree = "<group>"; };
-		F367FC4621B666D5007C278A /* FileManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
-		F367FC4721B666D5007C278A /* FileManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
-		F3FC0EE8211C153300C7F566 /* JSBundle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSBundle.m; sourceTree = "<group>"; };
-		F3FC0EEA211C155800C7F566 /* JSBundle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSBundle.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +233,7 @@
 				7155D5A8D28B429862CB90DB /* Pods_WebViewPro.framework in Frameworks */,
 				186CC187212D5B92004AC557 /* TencentOpenAPI.framework in Frameworks */,
 				186CC184212D5B92004AC557 /* QQConnector.framework in Frameworks */,
+				F3329E8E21BE899900194F23 /* libmp3lame.a in Frameworks */,
 				186CC17F212D5B92004AC557 /* ShareSDKConfigFile.framework in Frameworks */,
 				186CC18B212D5B92004AC557 /* ShareSDKConnector.framework in Frameworks */,
 			);
@@ -305,14 +304,10 @@
 				1828D343215E358500AEC12F /* DeviceIdProvider.m */,
 				186CC151212D4077004AC557 /* ImagePicker.h */,
 				186CC152212D40AF004AC557 /* ImagePicker.m */,
-				F300269A214115F600318BB7 /* JSIntercept.h */,
-				F300269B2141161D00318BB7 /* JSIntercept.m */,
 				F33D934921AFF3A3001E3AC8 /* WebViewManager.h */,
 				F33D934A21AFF3A3001E3AC8 /* WebViewManager.m */,
 				F367FC4321B61258007C278A /* SpeechManager.h */,
 				F367FC4421B61258007C278A /* SpeechManager.m */,
-				F367FC4621B666D5007C278A /* FileManager.h */,
-				F367FC4721B666D5007C278A /* FileManager.m */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -328,6 +323,7 @@
 				F33D934421AFD1C0001E3AC8 /* YNWebView.m */,
 				F367FC3D21B4C63F007C278A /* UIViewController+BackButtonHandler.h */,
 				F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */,
+				F3329E9221BF564800194F23 /* NSObject+extend.h */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -335,6 +331,7 @@
 		186CC15E212D5B92004AC557 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				F3329E8B21BE898700194F23 /* Lame */,
 				186CC19B212E5E42004AC557 /* Argon2 */,
 				186CC15F212D5B92004AC557 /* Required */,
 				186CC161212D5B92004AC557 /* ShareSDK */,
@@ -477,12 +474,12 @@
 		F31241B721AE976400819868 /* framework */ = {
 			isa = PBXGroup;
 			children = (
-				F31241BC21AE97F800819868 /* Interceptor.h */,
-				F31241BB21AE97F800819868 /* Interceptor.m */,
-				F3FC0EEA211C155800C7F566 /* JSBundle.h */,
-				F3FC0EE8211C153300C7F566 /* JSBundle.m */,
+				F300269A214115F600318BB7 /* JSIntercept.h */,
+				F300269B2141161D00318BB7 /* JSIntercept.m */,
 				F354AB2E2119930300A8BEA8 /* WebViewController.h */,
 				F354AB2F2119930300A8BEA8 /* WebViewController.m */,
+				F330722321C0E98C00E0B9C2 /* JSBridge.h */,
+				F330722421C0E98D00E0B9C2 /* JSBridge.m */,
 			);
 			path = framework;
 			sourceTree = "<group>";
@@ -509,6 +506,15 @@
 				05E9AC1474756A21F18A3754 /* Pods_WebViewPro.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3329E8B21BE898700194F23 /* Lame */ = {
+			isa = PBXGroup;
+			children = (
+				F3329E8C21BE899900194F23 /* lame.h */,
+				F3329E8D21BE899900194F23 /* libmp3lame.a */,
+			);
+			path = Lame;
 			sourceTree = "<group>";
 		};
 		F33D934C21B0DD07001E3AC8 /* ynWebViewController */ = {
@@ -703,15 +709,13 @@
 				F31241AE21AE6E1700819868 /* ref.c in Sources */,
 				186CC156212D40FE004AC557 /* ImageUtils.m in Sources */,
 				186CC150212D3D5C004AC557 /* QRCode.m in Sources */,
-				F367FC4821B666D5007C278A /* FileManager.m in Sources */,
 				18469D542178848700EE8D9A /* ImageController.m in Sources */,
 				F31241B421AE6E1700819868 /* core.c in Sources */,
 				F31241B121AE6E1700819868 /* encoding.c in Sources */,
 				186CC1B6212E5F12004AC557 /* Argon2Hash.m in Sources */,
-				F3FC0EE9211C153300C7F566 /* JSBundle.m in Sources */,
+				F330722521C0E98D00E0B9C2 /* JSBridge.m in Sources */,
 				F354AB302119930300A8BEA8 /* WebViewController.m in Sources */,
 				F31241AF21AE6E1700819868 /* ahash.c in Sources */,
-				F31241BD21AE97F800819868 /* Interceptor.m in Sources */,
 				F367FC3F21B4C63F007C278A /* UIViewController+BackButtonHandler.m in Sources */,
 				F31241B221AE6E1700819868 /* thread.c in Sources */,
 				F354AB3B2119930400A8BEA8 /* main.m in Sources */,
@@ -875,6 +879,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/test",
 					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/SDK/Lame",
 				);
 				LLVM_LTO = YES_THIN;
 				OTHER_CODE_SIGN_FLAGS = "";
@@ -924,6 +929,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/test",
 					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/SDK/Lame",
 				);
 				LLVM_LTO = YES_THIN;
 				OTHER_CODE_SIGN_FLAGS = "";

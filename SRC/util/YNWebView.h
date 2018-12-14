@@ -6,24 +6,21 @@
 //  Copyright © 2018 kuplay. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "JSBundle.h"
-
+#import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YNWebView : NSObject
 
-@property (nonatomic, strong)NSString *webName;
-@property (nonatomic, strong)WKWebView *webView;
-@property (nonatomic, strong)JSBundle *bundle;
-
-- (instancetype)initWithWKWebView:(WKWebView *)wkwebView webName:(NSString *)webName;
 + (BOOL)getIfWebViewWithWebName:(NSString *)webName;
 + (void)removeWebViewWithWebName:(NSString *)webName;
 + (YNWebView *)getYNWebViewInWebName:(NSString *)webName;
-- (WKWebView *)getWKWebView;
-- (JSBundle *)getJSBundel;
 
+
+- (instancetype)initWithWKWebView:(WKWebView *)wkwebView webName:(NSString *)webName webViewController:(UIViewController *)webViewController;
+- (NSString *)getWkWebViewName;
+- (WKWebView *)getWKWebView;
+- (UIViewController *)getViewController;
 
 
 @end

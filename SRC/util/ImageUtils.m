@@ -31,12 +31,10 @@
     return (int) image.size.height;
 }
 
-+ (void)getImageColorArray:(UIImage *)image {
++ (char *)getAhash:(UIImage *)image {
     CGImageRef cgimage = [image CGImage];
     size_t width = CGImageGetWidth(cgimage); // 图片宽度
     size_t height = CGImageGetHeight(cgimage); // 图片高度
-    NSLog(@"图片的宽度:\t%zu", width);
-    NSLog(@"图片的高度:\t%zu", height);
     unsigned char *data = calloc(width * height * 4, sizeof(unsigned char)); // 取图片首地址
     size_t bitsPerComponent = 8; // r g b a 每个component bits数目
     size_t bytesPerRow = width * 4; // 一张图片每行字节数目 (每个像素点包含r g b a 四个字节)
@@ -63,8 +61,8 @@
         }
     }
     char *result = ahashImpl(colorArray, (int) width, (int) height, 4);
-    NSLog(@"计算结果\t%s", result);
     free(colorArray);
+    return result;
 }
 
 + (BOOL)saveImageIntoBox:(UIImage *)image :(NSString *)imagePath {

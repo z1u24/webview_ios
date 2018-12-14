@@ -18,4 +18,5 @@ UINavigationController *controller = nil;
 + (UINavigationController *)getVc {
     return controller;
 }
+
 @end

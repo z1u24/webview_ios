@@ -8,6 +8,7 @@
 
 #import "ynWebViewController.h"
 #import "JSIntercept.h"
+#import "JSBridge.h"
 
 @interface ynWebViewController ()<WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler,BackButtonHandlerProtocol>
 
@@ -21,6 +22,7 @@ NSString *webtitle;
 NSString *url;
 NSString *injectContent;
 JSIntercept *intercept;
+JSBridge *bridge;
 
 - (instancetype)initWithWebViewName:(NSString *)webviewName url:(NSString *)Url title:(NSString *)webTitle injectContent:(NSString *)injectcontent
 {
@@ -37,7 +39,9 @@ JSIntercept *intercept;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = webtitle;
-    ynWebView = [[YNWebView alloc] initWithWKWebView:[self createWebviewWithInjectContent:injectContent] webName:webViewName];
+    WKWebView *webView = [self createWebviewWithInjectContent:injectContent];
+    ynWebView = [[YNWebView alloc] initWithWKWebView:webView webName:webViewName webViewController:self];
+    bridge = [[JSBridge alloc] initWithYnWebView:ynWebView];
     intercept = [[JSIntercept alloc] initWithWebView:[ynWebView getWKWebView]];
 }
 
@@ -104,7 +108,7 @@ JSIntercept *intercept;
     // 判断是否是调用原生的
     NSLog(@"%@ %@",message.name,message.body);
     if ([message.name isEqualToString:@"Native"]) {
-        [[ynWebView getJSBundel] sendMessage:message.body];
+        [bridge postMessage:message.body];
     } else if ([message.name isEqualToString:@"JSIntercept"]) {
         NSArray *params = message.body;
         if ([params[0] isEqualToString:@"saveFile"]) {
@@ -113,10 +117,14 @@ JSIntercept *intercept;
             [intercept getBootFiles:params[1]];
         }else if([params[0] isEqualToString:@"restartApp"]){
             [intercept restartApp];
+        }else if([params[0] isEqualToString:@"getAppVersion"]){
+            [intercept getAppVersion:params[1]];
+        }else if([params[0] isEqualToString:@"appUpdate"]){
+            [intercept appUpdate:params[1]];
         }
         //[JSIntercept safeFile:params[0] content:params[1] saveID:params[2] webView:[ynWebView getWKWebView]];
     } else {
-        [[ynWebView getJSBundel] callJSError:@"None" funcName:@"None" msg:@"'Not Native Message Call'"];
+        
     }
 }
 

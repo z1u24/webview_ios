@@ -11,7 +11,8 @@
 #define BaseObject_h
 
 #import <Foundation/Foundation.h>
-#import "JSBundle.h"
+#import "NSObject+extend.h"
+#import "JSBridge.h"
 
 @interface BaseObject : NSObject
 
@@ -19,7 +20,6 @@
 
 + (UINavigationController *)getVc;
 
-//- setJSBundle 
 @end
 
 #endif /* BaseObject_h */

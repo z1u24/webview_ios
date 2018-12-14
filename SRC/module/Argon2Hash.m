@@ -50,7 +50,6 @@ static char *convertHexString(uint8_t *data, int len) {
 
 // type: d = 0, i = 1, id = 2
 static NSString *argon2Hash(NSNumber *iter, NSNumber *memory, NSNumber *parallelism, NSString *password, NSString *salt, NSNumber *type, NSNumber *hashLen) {
-    NSLog(@"123");
     char *pwd = [password UTF8String];
     char *saltImpl = [salt UTF8String];
     uint8_t *hash = malloc(hashLen.intValue);
@@ -60,32 +59,23 @@ static NSString *argon2Hash(NSNumber *iter, NSNumber *memory, NSNumber *parallel
     NSString *r = [NSString stringWithUTF8String:hexStr];
     free(hash);
     free(hexStr);
-    NSLog(@"321");
     return r;
 }
 
 
 @implementation ArgonHash
 
-- (void)getArgon2Hash:(NSArray *)array {
-    NSNumber *listenerID = array[0];
-    NSNumber *iter = array[1];
-    NSNumber *memory = array[2];
-    NSNumber *parallelism = array[3];
-    NSString *password = array[4];
-    NSString *salt = array[5];
-    NSNumber *type = array[6];
-    NSNumber *hashLen = array[7];
-    JSBundle *bundel = array[8];
+- (void)getArgon2Hash:(NSNumber *)iter memory:(NSNumber *)memory parallelism:(NSNumber *)parallelism password:(NSString *)password salt:(NSString *)salt type:(NSNumber *)type hashLen:(NSNumber *)hashLen callJS:(CallJS)callJS{
     //[self printCurrentMillions];//打印当前时间
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSString *result = argon2Hash(iter, memory, parallelism, password, salt, type, hashLen);
         dispatch_async(dispatch_get_main_queue(), ^{
-            [bundel callJS:listenerID code:Success params:@[result]];
+            callJS(Success,@[result]);
             //[self printCurrentMillions];//打印当前时间
         });
     });
 }
+
 
 - (void)printCurrentMillions {
     // 获取系统当前时间

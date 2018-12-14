@@ -48,7 +48,7 @@
  * @param image 图片
  * @return 图片的颜色(ARGB)
  */
-+ (void)getImageColorArray:(UIImage *)image;
++ (char *)getAhash:(UIImage *)image;
 
 /**
  * 把图片存到沙盒当中

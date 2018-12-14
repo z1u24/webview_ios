@@ -8,7 +8,6 @@
 
 #import "WebViewAppDelegate.h"
 #import "globolNavigationController.h"
-#import "Interceptor.h"
 #import "BaseObject.h"
 
 @interface AppDelegate ()
@@ -33,38 +32,10 @@
     [BaseObject setVc:navi];
     [self.window makeKeyAndVisible];
     [self initShareSDK];
-    //[self registerScheme];
     return YES;
 }
 
-////设置状态栏颜色
-//- (void)setStatusBarBackgroundColor:(UIColor *)color {
-//    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
-//    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-//        statusBar.backgroundColor = color;
-//    }
-//}
-
-
-- (void)registerScheme {
-    NSArray *privateClass = @[@"Controller", @"Context", @"Browsing", @"K", @"W"];
-    NSString *className = [[[privateClass reverseObjectEnumerator] allObjects] componentsJoinedByString:@""];
-    Class cls = NSClassFromString(className);
-    NSArray *privateMethod = @[@"Protocol:", @"Custom", @"For", @"Scheme", @"register"];
-    NSString *methodName = [[[privateMethod reverseObjectEnumerator] allObjects] componentsJoinedByString:@""];
-    SEL sel = NSSelectorFromString(methodName);
-
-    if (cls && sel) {
-        if ([(id) cls respondsToSelector:sel]) {
-            // 注册自定义协议
-            [(id) cls performSelector:sel withObject:HttpProtocolKey];
-        }
-    }
-    // SechemaURLProtocol 自定义类 继承于 NSURLProtocol
-    [NSURLProtocol registerClass:[Interceptor class]];
-}
-
-/**
+/*
  * 初始化ShareSDK应用
  * 使用的分享平台集合
  * 导入回调处理，当某个平台的功能需要依赖原平台提供的SDK支持时，需要在此方法中对原平台SDK进行导入操作

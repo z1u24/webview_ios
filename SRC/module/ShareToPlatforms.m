@@ -16,17 +16,11 @@ const static int PLATFORM_LINE = 5;//分享的平台 LINE
 const static int SHARE_TYPE_IAMGE = 1;//分享的类型图片
 const static int SHARE_TYPE_TEXT = 2;//分享的类型文本
 
-@implementation ShareToPlatforms
-JSBundle *bundel;
-- (void)shareLink:(NSArray *)array {
-    NSNumber *callbackId = array[0];
-    //NSString *webName = array[1];
-    NSString *url = array[2];
-    NSString *title = array[3];
-    NSString *content = array[4];
-    //NSString *comment = array[5];
-    int platform = [array[6] intValue];
-    bundel = array[7];
+@implementation ShareToPlatforms{
+    CallJS selcallJS;
+}
+
+- (void)shareLink:(NSString *)url title:(NSString *)title content:(NSString *)content platform:(NSNumber *)platform callJS:(CallJS)callJS{
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     [shareParams SSDKSetupShareParamsByText:content
                                      images:[[NSBundle mainBundle] pathForResource:@"icon" ofType:@"png"]
@@ -35,11 +29,12 @@ JSBundle *bundel;
                                        type:SSDKContentTypeAuto];
     //有的平台要客户端分享需要加此方法，例如微博
     [shareParams SSDKEnableUseClientShare];
-    SSDKPlatformType type = [self getSharePlatform:platform];
+    SSDKPlatformType type = [self getSharePlatform:[platform intValue]];
+    selcallJS = callJS;
     if (SSDKPlatformTypeUnknown == type) {
-        [self showShareActionMenu:shareParams :callbackId];
+        [self showShareActionMenu:shareParams];
     } else {
-        [self share:shareParams ToPlatform:type :callbackId];
+        [self share:shareParams ToPlatform:type];
     }
 }
 
@@ -67,22 +62,22 @@ JSBundle *bundel;
 /**
  * 执行分享操作(分享到指定的平台)
  */
-- (void)share:(NSMutableDictionary *)shareParams ToPlatform:(SSDKPlatformType)platformType :(NSNumber *)callbackId {
+- (void)share:(NSMutableDictionary *)shareParams ToPlatform:(SSDKPlatformType)platformType{
     [ShareSDK share:platformType parameters:shareParams onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
         switch (state) {
             //分享成功
             case SSDKResponseStateSuccess:
                 NSLog(@"分享成功");
-                [bundel callJS:callbackId code:Success params:@[@"分享成功"]];
+                self->selcallJS(Success,@[@"分享成功"]);
                 break;
                 //分享失败
             case SSDKResponseStateFail:
                 NSLog(@"%@", error);
-                [bundel callJS:callbackId code:Fail params:@[@"分享失败"]];
+                self->selcallJS(Fail,@[@"分享失败"]);
                 break;
                 //分享取消
             case SSDKResponseStateCancel:
-                [bundel callJS:callbackId code:Fail params:@[@"分享取消"]];
+                self->selcallJS(Fail,@[@"分享取消"]);
                 break;
             default:
                 break;
@@ -93,19 +88,19 @@ JSBundle *bundel;
 /**
  * 执行分享操作(显示分享的菜单)
  */
-- (void)showShareActionMenu:(NSMutableDictionary *)shareParams :(NSNumber *)callbackId {
+- (void)showShareActionMenu:(NSMutableDictionary *)shareParams{
     [ShareSDK showShareActionSheet:nil
                              items:nil
                        shareParams:shareParams
                onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {
                    switch (state) {
                        case SSDKResponseStateSuccess: {
-                           [bundel callJS:callbackId code:Success params:@[@"success"]];
+                           self->selcallJS(Success,@[@"success"]);
                            break;
                        }
                        case SSDKResponseStateFail: {
                            NSLog(@"%@", error);
-                           [bundel callJS:callbackId code:Fail params:@[@"failed"]];
+                           self->selcallJS(Fail,@[@"failed"]);
                            break;
                        }
                        default:
@@ -118,14 +113,10 @@ JSBundle *bundel;
 /**
  * 分享图片或者文本
  */
-- (void)shareContent:(NSArray *)array {
-    NSNumber *callbackId = array[0];//回调id
-    NSString *content = array[1];//要分享的内容
-    int shareType = [array[2] intValue];//用于判断分享的类型(1 是图片  2是文本)
-    int platform = [array[3] intValue];//要分享到的平台
-    bundel = array[4];
+- (void)shareContent:(NSString *)content shareType:(NSNumber *)shareType platform:(NSNumber *)platform callJS:(CallJS)callJS {
+    self->selcallJS = callJS;
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-    if (SHARE_TYPE_IAMGE == shareType) {
+    if (SHARE_TYPE_IAMGE == [shareType intValue]) {
         //分享图片
         UIImage *avatar = [UIImage imageNamed:@"shareImg.png"];
         [HMScannerController cardImageWithCardName:content avatar:avatar scale:0.2 completion:^(UIImage *image) {
@@ -135,15 +126,15 @@ JSBundle *bundel;
                                               title:@"图片"
                                                type:SSDKContentTypeImage];
             dispatch_async(dispatch_get_main_queue(), ^{
-                SSDKPlatformType platformType = [self getSharePlatform:platform];
+                SSDKPlatformType platformType = [self getSharePlatform:[platform intValue]];
                 if (SSDKPlatformTypeUnknown == platformType) {
-                    [self showShareActionMenu:shareParams :callbackId];
+                    [self showShareActionMenu:shareParams];
                 } else {
-                    [self share:shareParams ToPlatform:platformType :callbackId];
+                    [self share:shareParams ToPlatform:platformType];
                 }
             });
         }];
-    } else if (SHARE_TYPE_TEXT == shareType) {
+    } else if (SHARE_TYPE_TEXT == [shareType intValue]) {
         //分享文本
         [shareParams SSDKSetupShareParamsByText:content
                                          images:@""
@@ -151,35 +142,30 @@ JSBundle *bundel;
                                           title:@"图片"
                                            type:SSDKContentTypeText];
         dispatch_async(dispatch_get_main_queue(), ^{
-            SSDKPlatformType platformType = [self getSharePlatform:platform];
+            SSDKPlatformType platformType = [self getSharePlatform:[platform intValue]];
             if (SSDKPlatformTypeUnknown == platformType) {
-                [self showShareActionMenu:shareParams :callbackId];
+                [self showShareActionMenu:shareParams];
             } else {
-                [self share:shareParams ToPlatform:platformType :callbackId];
+                [self share:shareParams ToPlatform:platformType];
             }
         });
     }
 }
 
-- (void)getScreenShot:(NSArray *)array {
-    NSNumber *callbackId = array[0];
-    bundel = array[1];
-    
+- (void)getScreenShot:(CallJS)callJS{
     UIGraphicsBeginImageContextWithOptions([BaseObject getVc].view.bounds.size, YES, 0);
     [[BaseObject getVc].view drawViewHierarchyInRect:[BaseObject getVc].view.bounds afterScreenUpdates:YES];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     BOOL success = [ImageUtils saveImageIntoBox:image :@"share_screen_image.png"];
     if (success) {
-        [bundel callJS:callbackId code:Success params:@[@""]];
+        callJS(Success,@[@""]);
     } else {
-        [bundel callJS:callbackId code:Fail params:@[@""]];
+        callJS(Fail,@[@""]);
     }
 }
 
-- (void)shareScreen:(NSArray *)array {
-    NSNumber *callbackId = array[0];
-    int platform = [array[1] intValue];
-    bundel = array[2];
+- (void)shareScreen:(NSNumber *)platform callJS:(CallJS)callJS{
+    self->selcallJS = callJS;
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     UIImage *image = [ImageUtils getDocumentImage:@"share_screen_image.png"];
     [shareParams SSDKSetupShareParamsByText:@""
@@ -187,11 +173,11 @@ JSBundle *bundel;
                                         url:nil
                                       title:@""
                                        type:SSDKContentTypeImage];
-    SSDKPlatformType platformType = [self getSharePlatform:platform];
+    SSDKPlatformType platformType = [self getSharePlatform:[platform intValue]];
     if (SSDKPlatformTypeUnknown == platformType) {
-        [self showShareActionMenu:shareParams :callbackId];
+        [self showShareActionMenu:shareParams];
     } else {
-        [self share:shareParams ToPlatform:platformType :callbackId];
+        [self share:shareParams ToPlatform:platformType];
     }
 }
 

@@ -7,14 +7,12 @@
 //
 #import <UIKit/UIKit.h>
 #import <WebKit/WebKit.h>
-#import "JSBundle.h"
+#import "JSBridge.h"
 #import "YNWebView.h"
 
 
-//#define URL_PATH @"/dst/boot/index.html"
-#define URL_PATH @"/wallet/app/boot/index.html"
-//#define URL_Referer @"http://192.168.9.28"
-//#define URL_PATH @"http://app.herominer.net/wallet/app/boot/index.html"
+#define URL_PATH @"/dst/boot/index.html"
+//#define URL_PATH @"/wallet/app/boot/index.html"
 
 
 @interface WebViewController : UIViewController

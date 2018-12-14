@@ -12,8 +12,7 @@
 @end
 
 @implementation ImagePicker{
-    int callbackId;
-    JSBundle *bundel;
+    CallJS selCallJS;
     bool onlyOne;
 }
 
@@ -26,19 +25,13 @@
     return self;
 }
 
-- (void)chooseImage:(NSArray *)array {
-//    [[[ImageController alloc] init] startSelectImage];
-//    return;
-    callbackId = [array[0] intValue];//回调的Id
-    int useCamera = [array[1] intValue];//是否启用相机
-    int single = [array[2] intValue];//是否为单选(只能选择一张)
-    int max = [array[3] intValue];//最大可选择的张数(当single为1时、此参数无效！)
-    bundel = array[4];
+- (void)chooseImage:(NSNumber *)useCamera single:(NSNumber *)single max:(NSNumber *)max callJS:(CallJS)callJS{
+    selCallJS = callJS;
     int maxCount = 1;
-    if (1 != single) maxCount = max;//设置最大可选的张数(只有当single 不等于 1 的时候才会生效)
+    if (1 != [single intValue]) maxCount = [max intValue];//设置最大可选的张数(只有当single 不等于 1 的时候才会生效)
     onlyOne = 1 == maxCount;
     TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:maxCount delegate:self];
-    imagePickerVc.allowTakePicture = 1 == useCamera;//设置是否可以拍照
+    imagePickerVc.allowTakePicture = 1 == [useCamera intValue];//设置是否可以拍照
     //不允许选择视频、录制视频
     imagePickerVc.allowPickingOriginalPhoto = NO;
     imagePickerVc.allowTakeVideo = NO;
@@ -59,7 +52,7 @@
 
 ///拍照、选视频图片、录像 后的回调（这种方式选择视频时，会自动压缩，但是很耗时间）
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> *)info {
-    [bundel callJS:@(callbackId) code:Success params:@[@"图片已经选择了"]];
+    selCallJS(Success,@[@"图片已经选择了"]);
 }
 
 // The picker should dismiss itself; when it dismissed these handle will be called.
@@ -72,7 +65,7 @@
 // photos数组里的UIImage对象，默认是828像素宽，你可以通过设置photoWidth属性的值来改变它
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
     if (nil == photos || 0 == [photos count]) {
-        [bundel callJS:@(callbackId) code:Fail params:@[@"选择图片失败"]];
+        selCallJS(Fail,@[@"选择图片失败"]);
     } else {
         if (onlyOne) {
             //非原图舍弃
@@ -81,29 +74,46 @@
             
             TZImageManager *imageManager = [TZImageManager manager];
             [imageManager getOriginalPhotoWithAsset:assets[0] completion:^(UIImage *photo, NSDictionary *info) {
+                NSString *width = [NSString stringWithFormat:@"%d",[ImageUtils getImageWidth:photo]];
+                NSString *height = [NSString stringWithFormat:@"%d",[ImageUtils getImageHeight:photo]];
                 NSString *result = [ImageUtils image2base64:photo];
                 NSString *base64 = [NSString stringWithFormat:@"%s%@", "data:image/png;base64,", result];
                 //1，保存图片到内存。 Documents/selected.png
-//                NSDate *date = [NSDate date];
-//                NSTimeInterval sec = [date timeIntervalSinceNow];
-//                NSDate *currentDate = [[NSDate alloc] initWithTimeIntervalSinceNow:sec];
-//                //设置时间输出格式：
-//                NSDateFormatter *df = [[NSDateFormatter alloc] init];
-//                [df setDateFormat:@"yyyy年MM月dd日HH小时mm分ss秒"];
-//                NSString *na = [df stringFromDate:currentDate];
-//                NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-//                NSString *imageName = NSString stringWithFormat:@"selecte%@.png",df
-//                docPath = [docPath stringByAppendingString:@"/selectes.png"];
-//                [UIImagePNGRepresentation(photo) writeToFile:docPath atomically:YES];
-                [self->bundel callJS:@(self->callbackId) code:Success params:@[@"600", @"600", base64]];
+                NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+                docPath = [docPath stringByAppendingString:@"/selectes.png"];
+                [UIImagePNGRepresentation(photo) writeToFile:docPath atomically:YES];
+                
+                self->selCallJS(Success,@[width, height, base64]);
             }];
             
         }
     }
 }
 
+
+- (void)getContent:(CallJS)callJS{
+    
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    docPath = [docPath stringByAppendingString:@"/selectes.png"];
+    UIImage *image = [UIImage imageWithContentsOfFile:docPath];
+    NSString *width = [NSString stringWithFormat:@"%d",[ImageUtils getImageWidth:image]];
+    NSString *height = [NSString stringWithFormat:@"%d",[ImageUtils getImageHeight:image]];
+    NSString *content = [ImageUtils image2base64:image];
+    NSString *base64 = [NSString stringWithFormat:@"%s%@", "data:image/png;base64,", content];
+    callJS(Success,@[width, height, base64]);
+}
+
+- (void)getAHash:(CallJS)callJS{
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    docPath = [docPath stringByAppendingString:@"/selectes.png"];
+    UIImage *image = [UIImage imageWithContentsOfFile:docPath];
+    NSString *ahash = [NSString stringWithUTF8String:[ImageUtils getAhash:image]];
+    callJS(Success,@[ahash]);
+    
+}
+
 - (void)tz_imagePickerControllerDidCancel:(TZImagePickerController *)picker {
-    [bundel callJS:@(callbackId) code:Fail params:@[@"用户选择了取消!!"]];
+    selCallJS(Fail,@[@"用户选择了取消!!"]);
 }
 
 @end

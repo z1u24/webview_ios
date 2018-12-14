@@ -16,9 +16,15 @@
 #import "BaseObject.h"
 #import "ImageUtils.h"
 
+
+
 @interface ImagePicker : BaseObject
 
-- (void)chooseImage:(NSArray *)array;
+- (void)chooseImage:(NSNumber *)useCamera single:(NSNumber *)single max:(NSNumber *)max callJS:(CallJS)callJS;
+
+- (void)getContent:(CallJS)callJS;
+
+- (void)getAHash:(CallJS)callJS;
 
 @end
 

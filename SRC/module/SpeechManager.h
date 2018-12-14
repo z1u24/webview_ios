@@ -10,14 +10,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
+
 @interface SpeechManager : BaseObject
 
 //开始录制音频
-- (void)startSpeech:(NSArray *)array;
+- (void)startSpeech:(CallJS)callJS;
 //结束录制
-- (void)endSpeech:(NSArray *)array;
+- (void)endSpeech:(CallJS)callJS;
 //丢弃录音
-- (void)dropSpeech:(NSArray *)array;
+- (void)dropSpeech:(CallJS)callJS;
 
 @end
 

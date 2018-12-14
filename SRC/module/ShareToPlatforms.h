@@ -14,29 +14,26 @@
 #import "ImageUtils.h"
 #import "BaseObject.h"
 
+typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
+
 @interface ShareToPlatforms : BaseObject
 /**
  * 分享链接
- * @param array TS传入参数
  */
-- (void)shareLink:(NSArray *)array;
+- (void)shareLink:(NSString *)url title:(NSString *)title content:(NSString *)content platform:(NSNumber *)platform callJS:(CallJS)callJS;
 
 /**
  * 分享内容
- * @param array TS传入参数
  */
-- (void)shareContent:(NSArray *)array;
+- (void)shareContent:(NSString *)content shareType:(NSNumber *)shareType platform:(NSNumber *)platform callJS:(CallJS)callJS;
 
 /**
  * 获取屏幕的截图
- * @param array TS传入参数
  */
-- (void)getScreenShot:(NSArray *)array;
+- (void)getScreenShot:(CallJS)callJS;
 
-/**
- * 分享截屏
- * @param array TS传入参数
- */
-- (void)shareScreen:(NSArray *)array;
+
+//分享截屏
+- (void)shareScreen:(NSNumber *)platform callJS:(CallJS)callJS;
 
 @end
