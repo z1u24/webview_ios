@@ -6,7 +6,7 @@
 //  Copyright © 2018年 kupay. All rights reserved.
 //
 
-
+#define KISIphoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size))
 #import "WebViewController.h"
 #import "JSIntercept.h"
 #import "BaseObject.h"
@@ -44,9 +44,20 @@
     return self;
 }
 
+- (void)startTimer{
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(keepWKWebViewActive:) userInfo:nil repeats:YES];
+}
+
+- (void)stopTimer{
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    if (!self.timer) {
+    if (self.timer) {
         [self.timer invalidate];
         self.timer = nil;
     }
@@ -54,7 +65,7 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(keepWKWebViewActive:) userInfo:nil repeats:YES];
+    
 }
 
 - (void)viewDidLoad {
@@ -63,16 +74,38 @@
 
 - (void)keepWKWebViewActive:(NSTimer*) timer{
     if ([[[BaseObject getVc] topViewController] isKindOfClass:[WebViewController class]]) {
-        if (!self.timer) {
-            [self.timer invalidate];
-            self.timer = nil;
+        if (timer) {
+            [timer invalidate];
+            timer = nil;
             return;
         }else{
             return;
         }
     }
+    if([[self.ynWebView getWKWebView] isLoading]){
+        return;
+    }
+    [[self.ynWebView getWKWebView] evaluateJavaScript:@"1+1" completionHandler:^(id object,NSError *error) {
+        NSLog(@"%@,error",[self->_ynWebView getWkWebViewName]);
+    }];
+}
+
+- (void)keepTimer:(NSTimer*) timer{
+    if ([[[BaseObject getVc] topViewController] isKindOfClass:[WebViewController class]]) {
+        if (timer) {
+            [timer invalidate];
+            timer = nil;
+            return;
+        }else{
+            return;
+        }
+    }
+    if([[_ynWebView getWKWebView] isLoading]){
+        NSLog(@"loading webView");
+        return;
+    }
     [[_ynWebView getWKWebView] evaluateJavaScript:@"1+1" completionHandler:^(id object,NSError *error) {
-        
+        NSLog(@"%@,error",[self->_ynWebView getWkWebViewName]);
     }];
 }
 
@@ -110,7 +143,13 @@
 //        webview.customUserAgent = [result stringByAppendingString:@" YINENG_IOS/1.0"];
 //    }];
     // 确定宽、高、X、Y坐标
-    [webview setFrame:CGRectMake(0, -20, self.view.bounds.size.width, self.view.bounds.size.height+20)];
+    if(KISIphoneX){
+        [webview setFrame:CGRectMake(0, -44, self.view.bounds.size.width, self.view.bounds.size.height+78)];
+    }else{
+        [webview setFrame:CGRectMake(0, -20, self.view.bounds.size.width, self.view.bounds.size.height+20)];
+    }
+    
+    
     [self.view addSubview:webview];
     NSString *strUrl = URL_PATH;
     NSString *str = [strUrl substringToIndex:1];
@@ -137,18 +176,29 @@
                 NSLog(@"file isn't found: %@", path);
             }
         }
-        path = [@"assets" stringByAppendingString:strUrl];
+        //path = [@"assets" stringByAppendingString:strUrl];
         NSString *utf = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         NSString *url = [@"file://" stringByAppendingString:fullPath];
         [webview loadHTMLString:utf baseURL:[NSURL URLWithString:url]];
+        //[webview loadFileURL:[NSURL URLWithString:url] allowingReadAccessToURL:[NSURL URLWithString:[@"file://" stringByAppendingString:path]]];
     }else{
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:strUrl]];
         [webview loadRequest:request];
     }
-    
+    webview.scrollView.bounces = false;
     webview.UIDelegate = self;
     webview.navigationDelegate = self;
     return webview;
+}
+
+
+- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView{
+    if (self.timer) {
+        [self.timer invalidate];
+        self.timer = nil;
+    }
+    //[webView reload];
+    //self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(keepTimer:) userInfo:nil repeats:YES];
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
@@ -205,8 +255,8 @@
             [self.intercept restartApp];
         }else if([params[0] isEqualToString:@"getAppVersion"]){
             [self.intercept getAppVersion:params[1]];
-        }else if([params[0] isEqualToString:@"appUpdate"]){
-            [self.intercept appUpdate:params[1]];
+        }else if([params[0] isEqualToString:@"updateApp"]){
+            [self.intercept updateApp:params[1]];
         }
         //[JSIntercept safeFile:params[0] content:params[1] saveID:params[2] webView:[_ynWebView getWKWebView]];
     } else {

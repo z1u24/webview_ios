@@ -1,38 +1,28 @@
 //
-//  SpeechManager.m
+//  AudioRecorder.m
 //  WebViewPro
 //
-//  Created by yineng on 2018/12/4.
-//  Copyright © 2018 kuplay. All rights reserved.
+//  Created by yineng on 2019/1/3.
+//  Copyright © 2019 kuplay. All rights reserved.
 //
 
-#import "SpeechManager.h"
+#import "AudioRecorder.h"
 #import <AVFoundation/AVFoundation.h>
+#import "lame.h"
 #define getVolTime 0.2
 
-@implementation SpeechManager
-
-//录音时长由高层决定
-NSTimer         *timer;            //定时器
-AVAudioSession      *session;
-AVAudioRecorder     *recorder;    //录音器
-AVAudioPlayer       *player;      //音频播放器
-NSNumber            *startListenId;
-NSString            *recordFilePath; //文件存放位置   temp/RRecord.wav
-CallJS              startCallJS;
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
+@implementation AudioRecorder{
+    NSTimer         *timer;            //定时器
+    AVAudioSession      *session;
+    AVAudioRecorder     *recorder;    //录音器
+    AVAudioPlayer       *player;      //音频播放器
+    NSNumber            *startListenId;
+    NSString            *recordFilePath; //文件存放位置   temp/RRecord.wav
+    CallJS              startCallJS;
+    CallJS              stopCallJS;
 }
 
-//开始录制音频
-- (void)startSpeech:(CallJS)callJS{
-    startCallJS = callJS;
+- (void)start:(CallJS)callJS{
     if (![self canRecord]) {
         //弹出提示框是否去打开
         [self showAlertController];
@@ -51,7 +41,7 @@ CallJS              startCallJS;
         }
         //获取文件沙盒地址
         NSString *path = NSTemporaryDirectory();
-        recordFilePath = [path stringByAppendingString:@"/RRecord.amr"];
+        recordFilePath = [path stringByAppendingString:@"/RRecord.caf"];
         NSDictionary *recordSetting = @{AVFormatIDKey: @(kAudioFormatLinearPCM),
                                         AVSampleRateKey: @8000.00f,
                                         AVNumberOfChannelsKey: @1,
@@ -67,37 +57,86 @@ CallJS              startCallJS;
     }
 }
 
-
-//结束录制
-- (void)endSpeech:(CallJS)callJS{
-    //移除定时器
+- (void)stop:(CallJS)callJS{
+    stopCallJS = callJS;
     [timer invalidate];
     timer = nil;
     if ([recorder isRecording]) {
         [recorder stop];
     }
-    //上传录音数据
-    NSData *data = [NSData dataWithContentsOfFile:recordFilePath];
-    NSString *jsonStr = [data base64EncodedStringWithOptions: NSDataBase64Encoding64CharacterLineLength];
-    callJS(Success,@[jsonStr]);
-    //删除文件
-    NSFileManager* fileManager=[NSFileManager defaultManager];
-    [fileManager removeItemAtPath:recordFilePath error:nil];
+    [self transformCAFToMP3];
 }
 
-//丢弃录音
-- (void)dropSpeech:(CallJS)callJS{
-    //移除定时器
+- (void)drop:(CallJS)callJS{
     [timer invalidate];
     timer = nil;
-    if([recorder isRecording]){
+    if ([recorder isRecording]) {
         [recorder stop];
     }
-    NSFileManager* fileManager=[NSFileManager defaultManager];
-    [fileManager removeItemAtPath:recordFilePath error:nil];
     callJS(Success,@[@""]);
 }
 
+
+//caf转mp3
+- (void)transformCAFToMP3 {
+    
+    @try {
+        int read, write;
+        
+        NSString *path = NSTemporaryDirectory();
+        NSString *mp3FilePath = [path stringByAppendingString:@"/resave.mp3"];
+        FILE *pcm = fopen([recordFilePath cStringUsingEncoding:1], "rb");  //source 被转换的音频文件位置
+        fseek(pcm, 4*1024, SEEK_CUR);                                   //skip file header
+        FILE *mp3 = fopen([mp3FilePath cStringUsingEncoding:1], "wb");  //output 输出生成的Mp3文件位置
+        
+        const int PCM_SIZE = 8192;
+        const int MP3_SIZE = 8192;
+        short int pcm_buffer[PCM_SIZE*2];
+        unsigned char mp3_buffer[MP3_SIZE];
+        
+        lame_t lame = lame_init();
+        lame_set_num_channels(lame,1);
+        lame_set_in_samplerate(lame, 4000.00);
+        lame_set_out_samplerate(lame, 4000.00);
+        lame_set_brate(lame, 16);
+        lame_set_mode(lame, 3);
+        lame_set_quality(lame, 7); /* 2=high 5 = medium 7=low 音质*/
+        lame_init_params(lame);
+        
+        do {
+            read = (int)fread(pcm_buffer, sizeof(short int), PCM_SIZE, pcm);
+            if (read == 0)
+                write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+            else
+                write = lame_encode_buffer(lame, pcm_buffer, pcm_buffer, read, mp3_buffer, MP3_SIZE);
+            //write = lame_encode_buffer_interleaved(lame, pcm_buffer, read, mp3_buffer, MP3_SIZE);
+            fwrite(mp3_buffer, write, 1, mp3);
+            
+        } while (read != 0);
+        
+        lame_close(lame);
+        fclose(mp3);
+        fclose(pcm);
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@",[exception description]);
+        stopCallJS(Fail,@[[exception description]]);
+    }
+    @finally {
+        NSLog(@"MP3生成成功");
+        //文件转base64
+        NSData *mp3Data = [NSData dataWithContentsOfFile:[NSTemporaryDirectory() stringByAppendingString:@"/resave.mp3"]];
+        NSString *base64 = [mp3Data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        stopCallJS(Success, @[[self removeSpaceAndNewline:base64]]);
+    }
+}
+
+- (NSString *)removeSpaceAndNewline:(NSString *)str {
+    NSString *temp = [str stringByReplacingOccurrencesOfString:@" " withString:@""];
+    temp = [temp stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+    temp = [temp stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    return temp;
+}
 
 //定时器事件--->如果countDown<1时，结束录制
 - (void)timeRefreshAction{

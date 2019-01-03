@@ -65,9 +65,11 @@ static NSString *argon2Hash(NSNumber *iter, NSNumber *memory, NSNumber *parallel
 
 @implementation ArgonHash
 
-- (void)getArgon2Hash:(NSNumber *)iter memory:(NSNumber *)memory parallelism:(NSNumber *)parallelism password:(NSString *)password salt:(NSString *)salt type:(NSNumber *)type hashLen:(NSNumber *)hashLen callJS:(CallJS)callJS{
+- (void)getArgon2Hash:(NSNumber *)iter memory:(NSNumber *)memory parallelism:(NSNumber *)parallelism password:(NSString *)password salt:(NSString *)salt type:(NSNumber *)type
+              hashLen:(NSNumber *)hashLen callJS:(CallJS)callJS{
     //[self printCurrentMillions];//打印当前时间
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+    dispatch_queue_t agron2HashQueue = dispatch_queue_create("agron2HashQueue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(agron2HashQueue, ^{
         NSString *result = argon2Hash(iter, memory, parallelism, password, salt, type, hashLen);
         dispatch_async(dispatch_get_main_queue(), ^{
             callJS(Success,@[result]);

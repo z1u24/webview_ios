@@ -11,9 +11,11 @@
 #import "YNWebView.h"
 
 #define URL_PATH @"/wallet/app/boot/index.html"
-
+//#define URL_PATH @"/dst/boot/index.html"
 
 @interface WebViewController : UIViewController
 +(instancetype)sharedInstence;
+- (void)stopTimer;
+- (void)startTimer;
 @end
 

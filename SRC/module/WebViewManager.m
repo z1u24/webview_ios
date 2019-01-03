@@ -5,8 +5,9 @@
 //  Created by yineng on 2018/11/29.
 //  Copyright © 2018 kuplay. All rights reserved.
 //
-
+#define KISIphoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size))
 #import "WebViewManager.h"
+#import "WebViewController.h"
 
 static NSMutableDictionary *webControlDic = nil;
 
@@ -37,7 +38,7 @@ static NSMutableDictionary *webControlDic = nil;
         ynWebViewController *webViewController = [[ynWebViewController alloc] initWithWebViewName:webName url:url title:title injectContent:injectContent];
         [webControlDic setObject:webViewController forKey:webName];
         [[BaseObject getVc] pushViewController:webViewController animated:YES];
-        callJS(Success,@[@"123"]);
+        callJS(Success,@[@""]);
     }
 }
 
@@ -71,7 +72,17 @@ static NSMutableDictionary *webControlDic = nil;
     
 }
 
+- (void)endTimerInWebView{
+    //[WebViewController endTheNSTimer];
+}
+
 - (void)postWebViewMessage:(NSString *)webName message:(NSString *)message callJS:(CallJS)callJS ynwebView:(YNWebView *)ynwebView{
+    WebViewController *wb = [WebViewController sharedInstence];
+    if ([webName isEqualToString:@"default"]) {
+        [wb startTimer];
+    }else{
+        [wb stopTimer];
+    }
     if ([YNWebView getIfWebViewWithWebName:webName]) {
         NSString *fullCode = [NSString stringWithFormat:@"window['onWebViewPostMessage']('%@', '%@')",[ynwebView getWkWebViewName],message];
         [[[YNWebView getYNWebViewInWebName:webName] getWKWebView] evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {
@@ -96,7 +107,12 @@ static NSMutableDictionary *webControlDic = nil;
     NSData *jsonData = [headers dataUsingEncoding:NSUTF8StringEncoding];
     NSDictionary *head = [NSJSONSerialization JSONObjectWithData:jsonData options:0 error:nil];
     if ([url containsString:@"https://wx.tenpay.com/cgi-bin/mmpayweb-bin/checkmweb?"] && ![url containsString:@"redirect_url"]){
-        url = [url stringByAppendingString:@"&redirect_url=app.herominer.net://"];
+        NSString *scheme = [head objectForKey:@"Referer"];
+        if (scheme != nil) {
+            scheme = [NSString stringWithFormat:@"&redirect_url=%@://",scheme];
+            url = [url stringByAppendingString:scheme];
+        }
+        
     }
     NSMutableURLRequest *newRequest = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
     if (head != nil) {
@@ -116,6 +132,16 @@ static NSMutableDictionary *webControlDic = nil;
     [payWebView removeFromSuperview];
     payWebView = nil;
     callJS(Success,@[@"移除成功"]);
+}
+
+//状态栏适配
+- (void)getScreenModify:(CallJS)callJS{
+    if (KISIphoneX) {
+        callJS(Success,@[@88,@68]);
+    }else{
+        callJS(Success,@[@40,@0]);
+    }
+    
 }
 
 

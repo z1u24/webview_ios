@@ -43,6 +43,10 @@ typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 
 - (void)freeView:(NSString *)webName callJS:(CallJS)callJS ynWeb:(YNWebView *)ynWeb;
 
+- (void)endTimerInWebView;
+
+- (void)getScreenModify:(CallJS)callJS;
+
 @end
 
 NS_ASSUME_NONNULL_END

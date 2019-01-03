@@ -4,3 +4,4 @@ let func = (a, b) => {
 }
 
 func(1, "abcdefg");
+

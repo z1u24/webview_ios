@@ -78,16 +78,17 @@
 		F31241B621AE973E00819868 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F31241B521AE973E00819868 /* icon.png */; };
 		F330722521C0E98D00E0B9C2 /* JSBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F330722421C0E98D00E0B9C2 /* JSBridge.m */; };
 		F3329E8E21BE899900194F23 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3329E8D21BE899900194F23 /* libmp3lame.a */; };
+		F3347FE721D70855000767AA /* CameraPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F3347FE621D70855000767AA /* CameraPicker.m */; };
 		F33D934521AFD1C0001E3AC8 /* YNWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D934421AFD1C0001E3AC8 /* YNWebView.m */; };
 		F33D934B21AFF3A3001E3AC8 /* WebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D934A21AFF3A3001E3AC8 /* WebViewManager.m */; };
 		F33D934F21B109FC001E3AC8 /* globolNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D934D21B109FC001E3AC8 /* globolNavigationController.m */; };
 		F33D935221B10E44001E3AC8 /* ynWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D935121B10E44001E3AC8 /* ynWebViewController.m */; };
+		F340DD4321DDB8B800A25D50 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = F340DD4221DDB8B800A25D50 /* AudioRecorder.m */; };
 		F354AB2D2119930300A8BEA8 /* WebViewAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB2C2119930300A8BEA8 /* WebViewAppDelegate.m */; };
 		F354AB302119930300A8BEA8 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB2F2119930300A8BEA8 /* WebViewController.m */; };
 		F354AB352119930400A8BEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F354AB342119930400A8BEA8 /* Assets.xcassets */; };
 		F354AB3B2119930400A8BEA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB3A2119930400A8BEA8 /* main.m */; };
 		F367FC3F21B4C63F007C278A /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */; };
-		F367FC4521B61258007C278A /* SpeechManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F367FC4421B61258007C278A /* SpeechManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -190,6 +191,8 @@
 		F3329E8C21BE899900194F23 /* lame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lame.h; sourceTree = "<group>"; };
 		F3329E8D21BE899900194F23 /* libmp3lame.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libmp3lame.a; sourceTree = "<group>"; };
 		F3329E9221BF564800194F23 /* NSObject+extend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+extend.h"; sourceTree = "<group>"; };
+		F3347FE521D70855000767AA /* CameraPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraPicker.h; sourceTree = "<group>"; };
+		F3347FE621D70855000767AA /* CameraPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraPicker.m; sourceTree = "<group>"; };
 		F33D934321AFD1C0001E3AC8 /* YNWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNWebView.h; sourceTree = "<group>"; };
 		F33D934421AFD1C0001E3AC8 /* YNWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNWebView.m; sourceTree = "<group>"; };
 		F33D934921AFF3A3001E3AC8 /* WebViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewManager.h; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 		F33D934E21B109FC001E3AC8 /* globolNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globolNavigationController.h; sourceTree = "<group>"; };
 		F33D935021B10E44001E3AC8 /* ynWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ynWebViewController.h; sourceTree = "<group>"; };
 		F33D935121B10E44001E3AC8 /* ynWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ynWebViewController.m; sourceTree = "<group>"; };
+		F340DD4121DDB8B800A25D50 /* AudioRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
+		F340DD4221DDB8B800A25D50 /* AudioRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioRecorder.m; sourceTree = "<group>"; };
 		F354AB282119930300A8BEA8 /* WebViewPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F354AB2B2119930300A8BEA8 /* WebViewAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewAppDelegate.h; sourceTree = "<group>"; };
 		F354AB2C2119930300A8BEA8 /* WebViewAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewAppDelegate.m; sourceTree = "<group>"; };
@@ -208,8 +213,6 @@
 		F354AB3A2119930400A8BEA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F367FC3D21B4C63F007C278A /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
 		F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
-		F367FC4321B61258007C278A /* SpeechManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechManager.h; sourceTree = "<group>"; };
-		F367FC4421B61258007C278A /* SpeechManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,7 +293,6 @@
 		186CC14A212D3CA7004AC557 /* module */ = {
 			isa = PBXGroup;
 			children = (
-				F33D934C21B0DD07001E3AC8 /* ynWebViewController */,
 				18469D512178842A00EE8D9A /* image */,
 				186CC1B4212E5F12004AC557 /* Argon2Hash.h */,
 				186CC1B5212E5F12004AC557 /* Argon2Hash.m */,
@@ -306,8 +308,10 @@
 				186CC152212D40AF004AC557 /* ImagePicker.m */,
 				F33D934921AFF3A3001E3AC8 /* WebViewManager.h */,
 				F33D934A21AFF3A3001E3AC8 /* WebViewManager.m */,
-				F367FC4321B61258007C278A /* SpeechManager.h */,
-				F367FC4421B61258007C278A /* SpeechManager.m */,
+				F3347FE521D70855000767AA /* CameraPicker.h */,
+				F3347FE621D70855000767AA /* CameraPicker.m */,
+				F340DD4121DDB8B800A25D50 /* AudioRecorder.h */,
+				F340DD4221DDB8B800A25D50 /* AudioRecorder.m */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -315,15 +319,8 @@
 		186CC154212D40DD004AC557 /* util */ = {
 			isa = PBXGroup;
 			children = (
-				F33D934E21B109FC001E3AC8 /* globolNavigationController.h */,
-				F33D934D21B109FC001E3AC8 /* globolNavigationController.m */,
 				186CC155212D40FE004AC557 /* ImageUtils.m */,
 				186CC157212D4110004AC557 /* ImageUtils.h */,
-				F33D934321AFD1C0001E3AC8 /* YNWebView.h */,
-				F33D934421AFD1C0001E3AC8 /* YNWebView.m */,
-				F367FC3D21B4C63F007C278A /* UIViewController+BackButtonHandler.h */,
-				F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */,
-				F3329E9221BF564800194F23 /* NSObject+extend.h */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -474,12 +471,14 @@
 		F31241B721AE976400819868 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				F3DA513721C3AD820000B020 /* util */,
+				F33D934C21B0DD07001E3AC8 /* ynWebViewController */,
 				F300269A214115F600318BB7 /* JSIntercept.h */,
 				F300269B2141161D00318BB7 /* JSIntercept.m */,
-				F354AB2E2119930300A8BEA8 /* WebViewController.h */,
-				F354AB2F2119930300A8BEA8 /* WebViewController.m */,
 				F330722321C0E98C00E0B9C2 /* JSBridge.h */,
 				F330722421C0E98D00E0B9C2 /* JSBridge.m */,
+				F354AB2E2119930300A8BEA8 /* WebViewController.h */,
+				F354AB2F2119930300A8BEA8 /* WebViewController.m */,
 			);
 			path = framework;
 			sourceTree = "<group>";
@@ -520,6 +519,10 @@
 		F33D934C21B0DD07001E3AC8 /* ynWebViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F367FC3D21B4C63F007C278A /* UIViewController+BackButtonHandler.h */,
+				F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */,
+				F33D934E21B109FC001E3AC8 /* globolNavigationController.h */,
+				F33D934D21B109FC001E3AC8 /* globolNavigationController.m */,
 				F33D935021B10E44001E3AC8 /* ynWebViewController.h */,
 				F33D935121B10E44001E3AC8 /* ynWebViewController.m */,
 			);
@@ -557,6 +560,16 @@
 				F354AB342119930400A8BEA8 /* Assets.xcassets */,
 			);
 			path = SRC;
+			sourceTree = "<group>";
+		};
+		F3DA513721C3AD820000B020 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				F33D934321AFD1C0001E3AC8 /* YNWebView.h */,
+				F33D934421AFD1C0001E3AC8 /* YNWebView.m */,
+				F3329E9221BF564800194F23 /* NSObject+extend.h */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -717,6 +730,7 @@
 				F354AB302119930300A8BEA8 /* WebViewController.m in Sources */,
 				F31241AF21AE6E1700819868 /* ahash.c in Sources */,
 				F367FC3F21B4C63F007C278A /* UIViewController+BackButtonHandler.m in Sources */,
+				F3347FE721D70855000767AA /* CameraPicker.m in Sources */,
 				F31241B221AE6E1700819868 /* thread.c in Sources */,
 				F354AB3B2119930400A8BEA8 /* main.m in Sources */,
 				F354AB2D2119930300A8BEA8 /* WebViewAppDelegate.m in Sources */,
@@ -724,11 +738,11 @@
 				F31241B021AE6E1700819868 /* argon2.c in Sources */,
 				F300269C2141161D00318BB7 /* JSIntercept.m in Sources */,
 				F33D934F21B109FC001E3AC8 /* globolNavigationController.m in Sources */,
+				F340DD4321DDB8B800A25D50 /* AudioRecorder.m in Sources */,
 				F33D934521AFD1C0001E3AC8 /* YNWebView.m in Sources */,
 				F33D935221B10E44001E3AC8 /* ynWebViewController.m in Sources */,
 				F31241AD21AE6E1700819868 /* blake2b.c in Sources */,
 				1828D344215E358500AEC12F /* DeviceIdProvider.m in Sources */,
-				F367FC4521B61258007C278A /* SpeechManager.m in Sources */,
 				F33D934B21AFF3A3001E3AC8 /* WebViewManager.m in Sources */,
 				186CC153212D40AF004AC557 /* ImagePicker.m in Sources */,
 			);

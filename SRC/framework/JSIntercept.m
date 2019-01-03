@@ -125,13 +125,13 @@ WKWebView *webView = nil;
 }
 
 //执行安装请求
-- (void)appUpdate:(NSString *)url{
+- (void)updateApp:(NSString *)url{
     if (@available(iOS 10.0, *)) {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url] options:@{} completionHandler:nil];
     } else {
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
     }
-    [self restartApp];
+    //[self restartApp];
 }
 
 

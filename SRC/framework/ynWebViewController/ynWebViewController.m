@@ -119,8 +119,8 @@ JSBridge *bridge;
             [intercept restartApp];
         }else if([params[0] isEqualToString:@"getAppVersion"]){
             [intercept getAppVersion:params[1]];
-        }else if([params[0] isEqualToString:@"appUpdate"]){
-            [intercept appUpdate:params[1]];
+        }else if([params[0] isEqualToString:@"updateApp"]){
+            [intercept updateApp:params[1]];
         }
         //[JSIntercept safeFile:params[0] content:params[1] saveID:params[2] webView:[ynWebView getWKWebView]];
     } else {

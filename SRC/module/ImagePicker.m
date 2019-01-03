@@ -64,6 +64,7 @@
 // 你可以通过一个asset获得原图，通过这个方法：[[TZImageManager manager] getOriginalPhotoWithAsset:completion:]
 // photos数组里的UIImage对象，默认是828像素宽，你可以通过设置photoWidth属性的值来改变它
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
+    NSLog(@"123");
     if (nil == photos || 0 == [photos count]) {
         selCallJS(Fail,@[@"选择图片失败"]);
     } else {
@@ -79,10 +80,11 @@
                 NSString *result = [ImageUtils image2base64:photo];
                 NSString *base64 = [NSString stringWithFormat:@"%s%@", "data:image/png;base64,", result];
                 //1，保存图片到内存。 Documents/selected.png
+                NSLog(@"%@  %@",width,height);
                 NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
                 docPath = [docPath stringByAppendingString:@"/selectes.png"];
                 [UIImagePNGRepresentation(photo) writeToFile:docPath atomically:YES];
-                
+                docPath = [@"file://" stringByAppendingString:docPath];
                 self->selCallJS(Success,@[width, height, base64]);
             }];
             
@@ -96,11 +98,9 @@
     NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     docPath = [docPath stringByAppendingString:@"/selectes.png"];
     UIImage *image = [UIImage imageWithContentsOfFile:docPath];
-    NSString *width = [NSString stringWithFormat:@"%d",[ImageUtils getImageWidth:image]];
-    NSString *height = [NSString stringWithFormat:@"%d",[ImageUtils getImageHeight:image]];
     NSString *content = [ImageUtils image2base64:image];
-    NSString *base64 = [NSString stringWithFormat:@"%s%@", "data:image/png;base64,", content];
-    callJS(Success,@[width, height, base64]);
+    NSString *base64 = [NSString stringWithFormat:@"%@",content];
+    callJS(Success,@[base64]);
 }
 
 - (void)getAHash:(CallJS)callJS{

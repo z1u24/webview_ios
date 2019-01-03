@@ -14,5 +14,5 @@
 
 - (void)getAppVersion:(NSNumber *)listenID;
 
-- (void)appUpdate:(NSString *)url;
+- (void)updateApp:(NSString *)url;
 @end
