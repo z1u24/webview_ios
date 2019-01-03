@@ -10,6 +10,8 @@
 #import "JSIntercept.h"
 #import "JSBridge.h"
 
+
+
 @interface ynWebViewController ()<WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler,BackButtonHandlerProtocol>
 
 @end
@@ -35,6 +37,12 @@ JSBridge *bridge;
     }
     return self;
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.view.backgroundColor = UIColor.whiteColor;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -61,6 +61,7 @@
         [self.timer invalidate];
         self.timer = nil;
     }
+    self.view.backgroundColor = UIColor.whiteColor;
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -86,28 +87,10 @@
         return;
     }
     [[self.ynWebView getWKWebView] evaluateJavaScript:@"1+1" completionHandler:^(id object,NSError *error) {
-        NSLog(@"%@,error",[self->_ynWebView getWkWebViewName]);
+        
     }];
 }
 
-- (void)keepTimer:(NSTimer*) timer{
-    if ([[[BaseObject getVc] topViewController] isKindOfClass:[WebViewController class]]) {
-        if (timer) {
-            [timer invalidate];
-            timer = nil;
-            return;
-        }else{
-            return;
-        }
-    }
-    if([[_ynWebView getWKWebView] isLoading]){
-        NSLog(@"loading webView");
-        return;
-    }
-    [[_ynWebView getWKWebView] evaluateJavaScript:@"1+1" completionHandler:^(id object,NSError *error) {
-        NSLog(@"%@,error",[self->_ynWebView getWkWebViewName]);
-    }];
-}
 
 
 - (void)didReceiveMemoryWarning {
@@ -144,7 +127,7 @@
 //    }];
     // 确定宽、高、X、Y坐标
     if(KISIphoneX){
-        [webview setFrame:CGRectMake(0, -44, self.view.bounds.size.width, self.view.bounds.size.height+78)];
+        [webview setFrame:CGRectMake(0, -44, self.view.bounds.size.width, self.view.bounds.size.height+10)];
     }else{
         [webview setFrame:CGRectMake(0, -20, self.view.bounds.size.width, self.view.bounds.size.height+20)];
     }
@@ -185,6 +168,7 @@
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:strUrl]];
         [webview loadRequest:request];
     }
+    webview.backgroundColor = [UIColor whiteColor];
     webview.scrollView.bounces = false;
     webview.UIDelegate = self;
     webview.navigationDelegate = self;
