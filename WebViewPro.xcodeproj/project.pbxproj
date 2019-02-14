@@ -88,7 +88,9 @@
 		F354AB302119930300A8BEA8 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB2F2119930300A8BEA8 /* WebViewController.m */; };
 		F354AB352119930400A8BEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F354AB342119930400A8BEA8 /* Assets.xcassets */; };
 		F354AB3B2119930400A8BEA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB3A2119930400A8BEA8 /* main.m */; };
+		F362493A22150D5600A28ADE /* MessagePost.m in Sources */ = {isa = PBXBuildFile; fileRef = F362493922150D5600A28ADE /* MessagePost.m */; };
 		F367FC3F21B4C63F007C278A /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */; };
+		F392383821FAB23A005D2603 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392383721FAB23A005D2603 /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -211,8 +213,11 @@
 		F354AB342119930400A8BEA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F354AB392119930400A8BEA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F354AB3A2119930400A8BEA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F362493822150D5600A28ADE /* MessagePost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagePost.h; sourceTree = "<group>"; };
+		F362493922150D5600A28ADE /* MessagePost.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagePost.m; sourceTree = "<group>"; };
 		F367FC3D21B4C63F007C278A /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
 		F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
+		F392383721FAB23A005D2603 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F392383821FAB23A005D2603 /* CoreTelephony.framework in Frameworks */,
 				186CC195212E5756004AC557 /* libsqlite3.tbd in Frameworks */,
 				186CC193212E573E004AC557 /* JavaScriptCore.framework in Frameworks */,
 				186CC191212E5732004AC557 /* libstdc++.tbd in Frameworks */,
@@ -312,6 +318,8 @@
 				F3347FE621D70855000767AA /* CameraPicker.m */,
 				F340DD4121DDB8B800A25D50 /* AudioRecorder.h */,
 				F340DD4221DDB8B800A25D50 /* AudioRecorder.m */,
+				F362493822150D5600A28ADE /* MessagePost.h */,
+				F362493922150D5600A28ADE /* MessagePost.m */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -497,6 +505,7 @@
 		F31811A521217D5F0094EF5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F392383721FAB23A005D2603 /* CoreTelephony.framework */,
 				186CC194212E5755004AC557 /* libsqlite3.tbd */,
 				186CC192212E573E004AC557 /* JavaScriptCore.framework */,
 				186CC190212E5732004AC557 /* libstdc++.tbd */,
@@ -699,11 +708,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WebViewPro/Pods-WebViewPro-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HMQRCodeScanner/HMQRCodeScanner.framework",
+				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMQRCodeScanner.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -741,6 +752,7 @@
 				F340DD4321DDB8B800A25D50 /* AudioRecorder.m in Sources */,
 				F33D934521AFD1C0001E3AC8 /* YNWebView.m in Sources */,
 				F33D935221B10E44001E3AC8 /* ynWebViewController.m in Sources */,
+				F362493A22150D5600A28ADE /* MessagePost.m in Sources */,
 				F31241AD21AE6E1700819868 /* blake2b.c in Sources */,
 				1828D344215E358500AEC12F /* DeviceIdProvider.m in Sources */,
 				F33D934B21AFF3A3001E3AC8 /* WebViewManager.m in Sources */,
@@ -868,10 +880,10 @@
 			baseConfigurationReference = 1172D96F2A9AD88014270C48 /* Pods-WebViewPro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = kupay;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LU5XMC8SH3;
+				DEVELOPMENT_TEAM = 5N846TM2N4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDK/Required",
@@ -905,10 +917,10 @@
 					"\"TZImagePickerController\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.iqos.kuplay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yineng.kuplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$SRCROOT/**";
 			};
 			name = Debug;
@@ -918,10 +930,10 @@
 			baseConfigurationReference = 43C727B9AF12A0A78E5BCCF4 /* Pods-WebViewPro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = kupay;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LU5XMC8SH3;
+				DEVELOPMENT_TEAM = 5N846TM2N4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDK/Required",
@@ -955,10 +967,10 @@
 					"\"TZImagePickerController\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.iqos.kuplay;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yineng.kuplay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$SRCROOT/**";
 			};
 			name = Release;

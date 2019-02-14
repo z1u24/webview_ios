@@ -72,9 +72,7 @@ static NSMutableDictionary *webControlDic = nil;
     
 }
 
-- (void)endTimerInWebView{
-    //[WebViewController endTheNSTimer];
-}
+
 
 - (void)postWebViewMessage:(NSString *)webName message:(NSString *)message callJS:(CallJS)callJS ynwebView:(YNWebView *)ynwebView{
     WebViewController *wb = [WebViewController sharedInstence];
@@ -155,5 +153,8 @@ static NSMutableDictionary *webControlDic = nil;
         decisionHandler(WKNavigationActionPolicyAllow);
     }
 }
+
+
+
 
 @end

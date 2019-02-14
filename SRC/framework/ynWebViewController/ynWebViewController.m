@@ -50,7 +50,7 @@ JSBridge *bridge;
     WKWebView *webView = [self createWebviewWithInjectContent:injectContent];
     ynWebView = [[YNWebView alloc] initWithWKWebView:webView webName:webViewName webViewController:self];
     bridge = [[JSBridge alloc] initWithYnWebView:ynWebView];
-    intercept = [[JSIntercept alloc] initWithWebView:[ynWebView getWKWebView]];
+    intercept = [[JSIntercept alloc] initWithWebView:[ynWebView getWKWebView] update:0];
 }
 
 - (WKWebView *)createWebviewWithInjectContent:(NSString *)injectContent {

@@ -27,7 +27,7 @@
     if (self) {
         HMScannerViewController *scanner = [[HMScannerViewController alloc] initWithCardName:cardName avatar:avatar completion:completion];
         
-        [self setTitleColor:[UIColor whiteColor] tintColor:[UIColor greenColor]];
+        [self setTitleColor:[UIColor whiteColor] tintColor:[UIColor whiteColor]];
         
         [self pushViewController:scanner animated:NO];
     }
@@ -36,7 +36,7 @@
 
 - (void)setTitleColor:(UIColor *)titleColor tintColor:(UIColor *)tintColor {
     [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName: titleColor}];
-    self.navigationBar.tintColor = tintColor;
+    //self.navigationBar.tintColor = tintColor;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {

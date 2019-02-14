@@ -67,7 +67,7 @@
 
 + (BOOL)saveImageIntoBox:(UIImage *)image :(NSString *)imagePath {
     NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *filePath = [path[0] stringByAppendingPathComponent:[NSString stringWithFormat:imagePath]];
+    NSString *filePath = [path[0] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@", imagePath]];
     BOOL result = [UIImagePNGRepresentation(image) writeToFile:filePath atomically:YES];
     return result;
 }

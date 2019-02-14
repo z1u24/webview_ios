@@ -63,6 +63,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     
     [scannerBorder startScannerAnimating];
     [scanner startScan];
@@ -70,7 +72,9 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    
+    [self.navigationController.navigationBar setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setShadowImage:nil];
+
     [scannerBorder stopScannerAnimating];
     [scanner stopScan];
 }
@@ -163,7 +167,7 @@
     // 1> 提示标签
     tipLabel = [[UILabel alloc] init];
     
-    tipLabel.text = @"将二维码/条码放入框中，即可自动扫描";
+    tipLabel.text = @"将二维码放入框内，自动扫描";
     tipLabel.font = [UIFont systemFontOfSize:12];
     tipLabel.textColor = [UIColor whiteColor];
     tipLabel.textAlignment = NSTextAlignmentCenter;
@@ -211,11 +215,26 @@
     self.navigationController.navigationBar.shadowImage = [[UIImage alloc] init];
     
     // 2> 标题
-    self.title = @"扫一扫";
+    self.title = @"扫码";
     
     // 3> 左右按钮
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(clickCloseButton)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"相册" style:UIBarButtonItemStylePlain target:self action:@selector(clickAlbumButton)];
+    // 图像文件包
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSURL *url = [bundle URLForResource:@"HMScanner" withExtension:@"bundle"];
+    NSBundle *imageBundle = [NSBundle bundleWithURL:url];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[self imageWithName:@"QRback" bundle:imageBundle] style:UIBarButtonItemStylePlain target:self action:@selector(clickCloseButton)];
+    self.navigationItem.leftBarButtonItem.tintColor = UIColor.whiteColor;
+    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"关闭" style:UIBarButtonItemStylePlain target:self action:@selector(clickCloseButton)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[self imageWithName:@"pic" bundle:imageBundle] style:UIBarButtonItemStylePlain target:self action:@selector(clickAlbumButton)];
+    self.navigationItem.rightBarButtonItem.tintColor = UIColor.whiteColor;
+}
+
+- (UIImage *)imageWithName:(NSString *)imageName bundle:(NSBundle *)imageBundle {
+    NSString *fileName = [NSString stringWithFormat:@"%@@2x", imageName];
+    NSString *path = [imageBundle pathForResource:fileName ofType:@"png"];
+    
+    return [[UIImage imageWithContentsOfFile:path] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 }
 
 @end

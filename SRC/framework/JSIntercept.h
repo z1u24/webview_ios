@@ -4,7 +4,7 @@
 
 @interface JSIntercept : NSObject
 
-- (instancetype)initWithWebView:(WKWebView *)webview;
+- (instancetype)initWithWebView:(WKWebView *)webview update:(NSNumber *)update;
 
 - (void)saveFile:(NSString *)path content:(NSString *)base64Str listenID:(NSNumber *)listenID;
 
@@ -15,4 +15,6 @@
 - (void)getAppVersion:(NSNumber *)listenID;
 
 - (void)updateApp:(NSString *)url;
+
+
 @end

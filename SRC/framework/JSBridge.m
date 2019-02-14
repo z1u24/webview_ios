@@ -89,7 +89,7 @@ static NSMutableDictionary *dictionary = nil;
                     [weakSelf callJS:listenerID code:Success params:params];
                 }
                 else{
-                    [weakSelf callJSError:className funcName:funcName msg:params[0]];
+                    [weakSelf callJS:listenerID code:Fail params:params];
                 }
             };
             NSMutableArray *mutableParams = [[NSMutableArray alloc] initWithArray:params];

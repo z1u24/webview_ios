@@ -14,4 +14,6 @@ pod 'HMQRCodeScanner'
 
 pod 'TZImagePickerController'
 
+pod 'Reachability'
+
 end

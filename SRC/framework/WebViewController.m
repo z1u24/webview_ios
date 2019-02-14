@@ -17,7 +17,7 @@
 @property (nonatomic, strong)YNWebView *ynWebView;
 @property (nonatomic, strong)JSIntercept *intercept;
 @property (nonatomic, strong)JSBridge *bridge;
-
+@property (nonatomic, strong)NSNumber *isUpdate;
 @end
 
 @implementation WebViewController
@@ -36,10 +36,11 @@
 {
     self = [super init];
     if (self) {
+        self.isUpdate = [NSNumber numberWithInt:0];
         WKWebView *wbView = [self createWebview];
         _ynWebView = [[YNWebView alloc] initWithWKWebView:wbView webName:@"default" webViewController:self];
         _bridge = [[JSBridge alloc] initWithYnWebView:_ynWebView];
-        _intercept = [[JSIntercept alloc] initWithWebView:wbView];
+        _intercept = [[JSIntercept alloc] initWithWebView:wbView update:self.isUpdate];
     }
     return self;
 }
@@ -56,7 +57,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    
     [super viewWillAppear:animated];
+    
     if (self.timer) {
         [self.timer invalidate];
         self.timer = nil;
@@ -72,6 +75,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
+
 
 - (void)keepWKWebViewActive:(NSTimer*) timer{
     if ([[[BaseObject getVc] topViewController] isKindOfClass:[WebViewController class]]) {
@@ -98,7 +102,17 @@
     // Dispose of any resources that can be recreate©∫ƒd.
 }
 
++ (NSString *)getURLFromInfo{
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"Info" ofType:@"plist"];
+    NSMutableDictionary *infoDict = [NSMutableDictionary dictionaryWithContentsOfFile:bundlePath];
+    NSString *version = [infoDict objectForKey:@"URL_PATH"];
+    return version;
+}
+
 - (WKWebView *)createWebview {
+    
+    NSString *URL_PATH = [WebViewController getURLFromInfo];
+    
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     config.preferences = [WKPreferences new];
     // 默认为0
@@ -132,15 +146,47 @@
         [webview setFrame:CGRectMake(0, -20, self.view.bounds.size.width, self.view.bounds.size.height+20)];
     }
     
-    
     [self.view addSubview:webview];
-    NSString *strUrl = URL_PATH;
-    NSString *str = [strUrl substringToIndex:1];
-    if ([str isEqualToString:@"/"]) {
-        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    [self.view sendSubviewToBack:webview];
+    
+    //获取app版本号
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+    //获取底层版本号
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *apkPath = [docPath stringByAppendingString:@"/apkback"];
+    NSString *appversionPath = [apkPath stringByAppendingString:@"/appversion.txt"];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    BOOL isDirectory = YES;
+    //判断文件夹是否存在  不存在就创建
+    BOOL apkPathExist = [manager fileExistsAtPath:apkPath isDirectory:&isDirectory];
+    if (!apkPathExist) {
+        NSError *err = nil;
+        BOOL ok = [manager createDirectoryAtPath:apkPath withIntermediateDirectories:NO attributes:nil error:&err];
+        if (ok == NO) {
+            NSLog(@"JSInterceptor, file = %@, isCreate = %d", apkPath, ok);
+        }
+    }
+    BOOL isAppVersionExist = [manager fileExistsAtPath:appversionPath];
+    if (!isAppVersionExist) {
+        BOOL sucess = [manager createFileAtPath:appversionPath contents:nil attributes:nil];
+        if (!sucess) {
+            NSLog(@"JSInterceptor createFile failed, file = %@", appversionPath);
+        }else{
+            [app_Version writeToFile:appversionPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        }
+    }else{
+        NSString *documentsVersion = [NSString stringWithContentsOfFile:appversionPath encoding:NSUTF8StringEncoding error:nil];
+        if (![documentsVersion isEqualToString:app_Version]) {
+            [manager removeItemAtPath:[docPath stringByAppendingString:@"/assets"] error:nil];
+            [app_Version writeToFile:appversionPath atomically:NO encoding:NSUTF8StringEncoding error:nil];
+            self.isUpdate = [NSNumber numberWithInt:1];
+        }
+    }
+    if ([[URL_PATH substringToIndex:1] isEqualToString:@"/"]) {
         NSLog(@"%@",docPath);
         NSString *path = [docPath stringByAppendingString:@"/assets"];
-        NSString *fullPath = [path stringByAppendingString:strUrl];
+        NSString *fullPath = [path stringByAppendingString:URL_PATH];
         NSFileHandle *file = [NSFileHandle fileHandleForReadingAtPath:fullPath];
         NSData *data = nil;
         if (file != nil) {
@@ -148,7 +194,7 @@
             [file closeFile];
         }
         if (data == nil) {
-            path = [@"assets" stringByAppendingString:strUrl];
+            path = [@"assets" stringByAppendingString:URL_PATH];
             fullPath = [[NSBundle mainBundle] pathForResource:path ofType:nil];
             file = [NSFileHandle fileHandleForReadingAtPath:fullPath];
             if (file != nil) {
@@ -165,13 +211,14 @@
         [webview loadHTMLString:utf baseURL:[NSURL URLWithString:url]];
         //[webview loadFileURL:[NSURL URLWithString:url] allowingReadAccessToURL:[NSURL URLWithString:[@"file://" stringByAppendingString:path]]];
     }else{
-        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:strUrl]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:URL_PATH]];
         [webview loadRequest:request];
     }
     webview.backgroundColor = [UIColor whiteColor];
-    webview.scrollView.bounces = false;
+    //webview.scrollView.bounces = false;
     webview.UIDelegate = self;
     webview.navigationDelegate = self;
+    //dispatch_semaphore_wait(finishSignal, DISPATCH_TIME_FOREVER);
     return webview;
 }
 
@@ -200,6 +247,7 @@
         decisionHandler(WKNavigationActionPolicyAllow);
     }
 }
+
 
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:@"" preferredStyle:UIAlertControllerStyleAlert];
@@ -247,5 +295,8 @@
         //[[_ynWebView getJSBundel] callJSError:@"None" funcName:@"None" msg:@"'Not Native Message Call'"];
     }
 }
+
+
+
 
 @end

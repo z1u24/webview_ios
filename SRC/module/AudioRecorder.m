@@ -68,8 +68,8 @@
 }
 
 - (void)drop:(CallJS)callJS{
-    [timer invalidate];
-    timer = nil;
+    //[timer invalidate];
+    //timer = nil;
     if ([recorder isRecording]) {
         [recorder stop];
     }
@@ -96,8 +96,8 @@
         
         lame_t lame = lame_init();
         lame_set_num_channels(lame,1);
-        lame_set_in_samplerate(lame, 4000.00);
-        lame_set_out_samplerate(lame, 4000.00);
+        lame_set_in_samplerate(lame, 8000.00);
+        lame_set_out_samplerate(lame, 8000.00);
         lame_set_brate(lame, 16);
         lame_set_mode(lame, 3);
         lame_set_quality(lame, 7); /* 2=high 5 = medium 7=low 音质*/
@@ -125,7 +125,7 @@
     @finally {
         NSLog(@"MP3生成成功");
         //文件转base64
-        NSData *mp3Data = [NSData dataWithContentsOfFile:[NSTemporaryDirectory() stringByAppendingString:@"/resave.mp3"]];
+        NSData *mp3Data = [NSData dataWithContentsOfFile:[NSTemporaryDirectory() stringByAppendingPathComponent:@"resave.mp3"]];
         NSString *base64 = [mp3Data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
         stopCallJS(Success, @[[self removeSpaceAndNewline:base64]]);
     }
@@ -143,23 +143,23 @@
     [recorder updateMeters];
     double ff = [recorder averagePowerForChannel:0];
     ff = ff+60;
-    if (ff>0&&ff<=10) {
-        startCallJS(Success,@[@"0"]);
-    } else if (ff>10 && ff<20) {
-        startCallJS(Success,@[@"1"]);
-    } else if (ff >=20 &&ff<30) {
-        startCallJS(Success,@[@"2"]);
-    } else if (ff >=30 &&ff<40) {
-        startCallJS(Success,@[@"3"]);
-    } else if (ff >=40 &&ff<50) {
-        startCallJS(Success,@[@"4"]);
-    } else if (ff >= 50 && ff < 60) {
-        startCallJS(Success,@[@"5"]);
-    } else if (ff >= 60 && ff < 70) {
-        startCallJS(Success,@[@"6"]);
-    } else {
-        startCallJS(Success,@[@"7"]);
-    }
+//    if (ff>0&&ff<=10) {
+//        startCallJS(Success,@[@"0"]);
+//    } else if (ff>10 && ff<20) {
+//        startCallJS(Success,@[@"1"]);
+//    } else if (ff >=20 &&ff<30) {
+//        startCallJS(Success,@[@"2"]);
+//    } else if (ff >=30 &&ff<40) {
+//        startCallJS(Success,@[@"3"]);
+//    } else if (ff >=40 &&ff<50) {
+//        startCallJS(Success,@[@"4"]);
+//    } else if (ff >= 50 && ff < 60) {
+//        startCallJS(Success,@[@"5"]);
+//    } else if (ff >= 60 && ff < 70) {
+//        startCallJS(Success,@[@"6"]);
+//    } else {
+//        startCallJS(Success,@[@"7"]);
+//    }
 }
 
 

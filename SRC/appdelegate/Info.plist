@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>1.0.0</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -48,7 +48,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0.1</string>
+	<string>1.0.4</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>wechat</string>
@@ -78,11 +78,11 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>App拍照功能需要使用相机权限</string>
+	<string>开启相机权限，以便您拍照分享图片和上传头像，扫码添加好友</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>App录音功能需要使用麦克风权限</string>
+	<string>开启麦克风权限，以便您发送语音给好友</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>App选择照片需要使用相册权限</string>
+	<string>开启相册权限后，您可以分享图片给好友，以及上传头像图片</string>
 	<key>UIMainStoryboardFile</key>
 	<string></string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -102,5 +102,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>URL_PATH</key>
+	<string>/ios/app/boot/index.html</string>
 </dict>
 </plist>

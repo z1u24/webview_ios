@@ -196,18 +196,18 @@
 /// @param dataObject 识别到的数据对象
 - (void)drawCornersShape:(AVMetadataMachineReadableCodeObject *)dataObject {
     
-    if (dataObject.corners.count == 0) {
-        return;
-    }
-    
-    CAShapeLayer *layer = [CAShapeLayer layer];
-    
-    layer.lineWidth = 4;
-    layer.strokeColor = [UIColor greenColor].CGColor;
-    layer.fillColor = [UIColor clearColor].CGColor;
-    layer.path = [self cornersPath:dataObject.corners];
-    
-    [drawLayer addSublayer:layer];
+//    if (dataObject.corners.count == 0) {
+//        return;
+//    }
+//
+//    CAShapeLayer *layer = [CAShapeLayer layer];
+//
+//    layer.lineWidth = 4;
+//    layer.strokeColor = [UIColor greenColor].CGColor;
+//    layer.fillColor = [UIColor clearColor].CGColor;
+//    layer.path = [self cornersPath:dataObject.corners];
+//
+//    [drawLayer addSublayer:layer];
 }
 
 /// 使用 corners 数组生成绘制路径

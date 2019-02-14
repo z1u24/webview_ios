@@ -1,20 +1,25 @@
 #import "JSIntercept.h"
 #import "WebViewAppDelegate.h"
 
+
+
+
 @implementation JSIntercept
 
+NSNumber *isUpdate = 0;
 NSMutableDictionary *mBootFilePathDic = nil;
 WKWebView *webView = nil;
 
-- (instancetype)initWithWebView:(WKWebView *)webview
+- (instancetype)initWithWebView:(WKWebView *)webview update:(NSNumber *)update
 {
     self = [super init];
     if (self) {
+        isUpdate = update;
         if (mBootFilePathDic == nil) {
             //文件中读取
             NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-            NSString *assetsPath = [docPath stringByAppendingString:@"/assets/"];
-            NSString *mBootFilePath = [assetsPath stringByAppendingString:@"bootFilePaths.plist"];
+            NSString *apkPath = [docPath stringByAppendingString:@"/apkback/"];
+            NSString *mBootFilePath = [apkPath stringByAppendingString:@"bootFilePaths.plist"];
             NSFileManager *manager = [NSFileManager defaultManager];
             BOOL isMBootFileExist = [manager fileExistsAtPath:mBootFilePath];
             if (!isMBootFileExist) {
@@ -63,7 +68,19 @@ WKWebView *webView = nil;
     }
     
     //判断
-    NSString *mBootFilePath = [docPath stringByAppendingString:@"/assets/bootFilePaths.plist"];
+    NSString *mBootFilePath = [docPath stringByAppendingString:@"/apkback/bootFilePaths.plist"];
+    NSString *apkPath = [mBootFilePath substringToIndex:[fullPath rangeOfString:@"/" options:NSBackwardsSearch].location];
+    //判断文件夹是否存在  不存在就创建
+    BOOL isDirectory = YES;
+    BOOL apkPathExist = [manager fileExistsAtPath:apkPath isDirectory:&isDirectory];
+    if (!apkPathExist) {
+        NSError *err = nil;
+        BOOL ok = [manager createDirectoryAtPath:apkPath withIntermediateDirectories:NO attributes:nil error:&err];
+        if (ok == NO) {
+            NSLog(@"JSInterceptor, file = %@, isCreate = %d", dirPath, ok);
+            return;
+        }
+    }
     BOOL isMBootFileExist = [manager fileExistsAtPath:fullPath];
     if (!isMBootFileExist) {
         BOOL sucess = [manager createFileAtPath:mBootFilePath contents:nil attributes:nil];
@@ -78,7 +95,7 @@ WKWebView *webView = nil;
     NSString *fileName = [path containsString:@"/"]?[path substringFromIndex:[path rangeOfString:@"/" options:NSBackwardsSearch].location + 1] : path;
     
     [mBootFilePathDic setObject:assetsPath forKey:fileName];
-    [mBootFilePathDic writeToFile:mBootFilePath atomically:NO];
+    [mBootFilePathDic writeToFile:mBootFilePath atomically:YES];
     
     NSString *fullCode = [NSString stringWithFormat:@"window.handle_jsintercept_callback(%d, true)", [listenID intValue]];
     [webView evaluateJavaScript:fullCode completionHandler:^(id object, NSError *error) {
@@ -89,7 +106,34 @@ WKWebView *webView = nil;
 }
 
 - (void)restartApp{
-    exit(0);
+    NSString *URL_PATH = [WebViewController getURLFromInfo];
+    
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSLog(@"%@",docPath);
+    NSString *path = [docPath stringByAppendingString:@"/assets"];
+    NSString *fullPath = [path stringByAppendingString:URL_PATH];
+    NSFileHandle *file = [NSFileHandle fileHandleForReadingAtPath:fullPath];
+    NSData *data = nil;
+    if (file != nil) {
+        data = [file readDataToEndOfFile];
+        [file closeFile];
+    }
+    if (data == nil) {
+        path = [@"assets" stringByAppendingString:URL_PATH];
+        fullPath = [[NSBundle mainBundle] pathForResource:path ofType:nil];
+        file = [NSFileHandle fileHandleForReadingAtPath:fullPath];
+        if (file != nil) {
+            NSLog(@"file is read, %@", path);
+            data = [file readDataToEndOfFile];
+            [file closeFile];
+        } else {
+            NSLog(@"file isn't found: %@", path);
+        }
+    }
+    //path = [@"assets" stringByAppendingString:strUrl];
+    NSString *utf = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSString *url = [@"file://" stringByAppendingString:fullPath];
+    [webView loadHTMLString:utf baseURL:[NSURL URLWithString:url]];
 }
 
 - (void)getBootFiles:(NSNumber *)listenID{
@@ -116,8 +160,9 @@ WKWebView *webView = nil;
 - (void)getAppVersion:(NSNumber *)listenID{
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-    NSString *fullCode = [NSString stringWithFormat:@"window.handle_jsintercept_callback(%d, true, '%@')", [listenID intValue],app_Version];
+    NSString *fullCode = [NSString stringWithFormat:@"window.handle_jsintercept_callback(%d, true, '%@',%d)", [listenID intValue],app_Version,[isUpdate intValue]];
     [webView evaluateJavaScript:fullCode completionHandler:^(id object, NSError *error) {
+        isUpdate = [NSNumber numberWithInt:0];
         if (error != nil) {
             NSLog(@"item = %@, error = %@", object, error);
         }
@@ -133,6 +178,7 @@ WKWebView *webView = nil;
     }
     //[self restartApp];
 }
+
 
 
 @end
