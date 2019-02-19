@@ -1,0 +1,47 @@
+.name-info-wrap{  
+    width: 490px;
+    height: 166px;
+    display:flex;
+    align-items:center;
+    border-bottom:solid gray 1px;
+    background: #ffffff;
+}
+.avatar-wrap{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+}
+.name-card-info{
+    color: rgba(34, 34, 34, 1);
+    font-size: 32px;
+    font-weight:bold;
+    display: inline-block;
+    width: 300px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    margin-left: 30px;
+}
+.cardType{   
+    color: rgb(136, 136, 136);
+    font-size: 24px;
+    padding-left: 30px;
+    height: 44px;
+    line-height: 44px;
+    background: rgb(255, 255, 255);
+    border-radius: 0 0 12px 12px;
+}
+.redEnvTop{
+    width:490px;
+    height:166px;
+    background:rgba(235,79,79,1);
+    border-radius:12px 12px 0px 0px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+}
+.redEnvImg{
+    width: 62px;
+    height: 80px;
+    margin: 10px;
+}

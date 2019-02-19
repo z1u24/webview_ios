@@ -1,20 +1,24 @@
 PODS:
   - HMQRCodeScanner (1.0.6)
+  - Reachability (3.2)
   - TZImagePickerController (2.2.3)
 
 DEPENDENCIES:
   - HMQRCodeScanner
+  - Reachability
   - TZImagePickerController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - HMQRCodeScanner
+    - Reachability
     - TZImagePickerController
 
 SPEC CHECKSUMS:
   HMQRCodeScanner: 8db2d317c0e5cbe3b4709fe2b9f26c107d66554e
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   TZImagePickerController: 5374a30df056b33428802c8112ed44011fe2596a
 
-PODFILE CHECKSUM: 613166aab4f66e3b6b72149ac96f58c9bb7b0ea9
+PODFILE CHECKSUM: be6a11b422903c8f08a065aa6d666ff8a5409b5c
 
 COCOAPODS: 1.5.3

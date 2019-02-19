@@ -1,0 +1,40 @@
+.box{
+    width:90px;
+    height:90px;
+    background-color:rgba(255,255,255,1);
+    border-radius:18px;
+    border:2px solid rgba(204,204,204,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-size: contain;
+}
+.box-selected{
+    background-image: url(../../res/image/can_receive_bg.png);
+}
+.box-noselected{
+    background-image: none;
+}
+.select-bg{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.holded-num{
+    padding: 0 7px;
+    height:30px;
+    background:rgba(34,34,34,1);
+    border-radius:6px;
+    border:1px solid rgba(204,204,204,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 24px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}

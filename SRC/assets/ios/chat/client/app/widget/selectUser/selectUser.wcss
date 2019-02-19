@@ -1,0 +1,31 @@
+.select-user-wrap{
+    width:100%;
+    height:120px;
+}
+.slect-wrap{
+    height:100%;
+    margin: 0 10px;
+    padding: 0 20px;
+    border-bottom: 1px solid #DBDBE5;
+    display:flex;
+    align-items:center;
+}
+.avatar-wrap{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    margin-right:30px;
+}
+.avatar{
+    width:80px;
+}
+.userName{ 
+    color: rgba(34, 34, 34, 1);
+    font-size: 32px;
+    font-weight:bold;
+}
+.selectIcon{
+    width:36px;
+    margin-right:22px;
+    margin-left:auto;
+}

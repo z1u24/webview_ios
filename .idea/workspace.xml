@@ -1,0 +1,1706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZPhotoPickerController.m" line="437" mnemonic="1" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0a00797e-5116-4492-8c38-27ddcfc4206d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Argon2/ahash.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Argon2/ahash.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/module/image/ImageController.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/module/image/ImageController.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebViewPro.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebViewPro.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebViewPro.xcworkspace/xcuserdata/apple.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/WebViewPro.xcworkspace/xcuserdata/apple.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebViewPro.xcworkspace/xcuserdata/apple.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/WebViewPro.xcworkspace/xcuserdata/apple.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/test/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/WebViewAppDelegate.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/WebViewAppDelegate.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/WebViewController.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/WebViewController.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/WebViewController.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/WebViewController.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/.exclude.jpeg.($webp.alpha)" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/.exclude.jpg.($webp.alpha)" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/.exclude.png.($webp.alpha)" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/.exclude.webp.not($webp.alpha)" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/boot/hotfix.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/boot/icon/128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/boot/icon/128.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/boot/icon/64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/boot/icon/64.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/boot/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/boot/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/boot/init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/boot/next.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/basicInput/basicInput.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/basicInput/basicInput.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/basicInput/basicInput.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/basicInput/basicInput.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/basicItem/basicItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/basicItem/basicItem.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/basicItem/basicItem.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/bindPhone/bindPhone.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/bindPhone/bindPhone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/bindPhone/bindPhone.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/bindPhone/bindPhone.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/chooseCurrency/chooseCurrency.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/chooseCurrency/chooseCurrency.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/chooseCurrency/chooseCurrency.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/chooseCurrency/chooseCurrency.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/collapse/collapse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/collapse/collapse.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/collapse/collapse.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/collapse/collapse1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/collapse/collapse1.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/collapse/collapse1.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaImgItem/fourParaImgItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaImgItem/fourParaImgItem.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaImgItem/fourParaImgItem.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaItem/fourParaItem.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaItem/fourParaItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaItem/fourParaItem.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/fourParaItem/fourParaItem.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/imgAndBtnItem/imgAndBtnItem.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/imgAndBtnItem/imgAndBtnItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/imgAndBtnItem/imgAndBtnItem.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/imgAndBtnItem/imgAndBtnItem.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/imgRankItem/imgRankItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/imgRankItem/imgRankItem.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/imgRankItem/imgRankItem.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/input/input.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/input/input.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/input/input.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/input/suffixInput.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/input/suffixInput.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/input/suffixInput.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/keyboard/keyboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/keyboard/keyboard.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/keyboard/keyboard.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/message/message.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/message/message.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/message/message.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/chooseModalBox.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/chooseModalBox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/chooseModalBox.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/chooseModalBox.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox1.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox1.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox2.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBox/modalBox2.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBoxInput/modalBoxInput.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBoxInput/modalBoxInput.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBoxInput/modalBoxInput.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/modalBoxInput/modalBoxInput.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/password/password.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/password/password.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/password/password.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/password/password.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/qrcode/qrcode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/qrcode/qrcode.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/qrcode/qrcode_src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/radioList/radioList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/radioList/radioList.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/radioList/radioList.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/ringProgressBar/ringProgressBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/ringProgressBar/ringProgressBar.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/ringProgressBar/ringProgressBar.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/selectBox/selectBox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/selectBox/selectBox.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/selectBox/selectBox.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/share/share.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/share/share.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/share/share.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/share/share.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/switch/switch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/switch/switch.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/switch/switch.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/textarea/textarea.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/textarea/textarea.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/textarea/textarea.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/threeParaCard/threeParaCard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/threeParaCard/threeParaCard.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/threeParaCard/threeParaCard.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/threeParaItem/threeParaItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/threeParaItem/threeParaItem.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components/threeParaItem/threeParaItem.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/btn/btn.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/btn/btn.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/btn/btn.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/checkbox/checkbox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/checkbox/checkbox.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/checkbox/checkbox.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/input/input.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/input/input.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/input/input.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/input/input.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading1.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/loading/loading1.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/tabs/tabs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/tabs/tabs.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/tabs/tabs.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/topBar/topBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/topBar/topBar.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/topBar/topBar.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/walletAssetList/walletAssetList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/walletAssetList/walletAssetList.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/components1/walletAssetList/walletAssetList.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/btc/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/btc/wallet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/crypto/cipher.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/eth/api.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/eth/helper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/eth/tokens.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/eth/wallet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/genmnemonic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/globalWallet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/bip39.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/bitcore-lib.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/ethereumjs-wallet-hd-0.6.0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/sample-ecdsa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/sjcl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/web3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/core/thirdparty/wordlist.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/exchange/shapeshift/shapeshift.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/logic/dataCenter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/logic/localWallet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/logic/native.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/net/pull.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/net/pullWallet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/net/push.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/css/base.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/css/components.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/01.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/09.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/15.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/16.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/19.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/26_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/26_white.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/30_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/30_gray.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/32_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/32_gray.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/32_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/32_white.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/33.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/33.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/40.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/40.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/41_blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/41_blue.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/41_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/41_white.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/42.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/add.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_buy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_buy.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_chat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_chat.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_create.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_create.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_share.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_share.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_store.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_store.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_verify.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/addMine_verify.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/add_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/add_gray.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/behavior1010.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/behavior1010.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/behavior_manage_money_port.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/behavior_manage_money_port.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/behavior_red_bag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/behavior_red_bag.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/bg_open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/bg_open.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/btn_back_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/btn_back_white.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/btn_img_close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/btn_img_close.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/btn_pop_close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/btn_pop_close.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/chat1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/chat1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/choose_img.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/choose_img.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/close_blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/close_blue.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_charge_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_charge_icon.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_icon_cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_icon_cloud.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_wallet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_wallet.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_withdraw_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/cloud_withdraw_icon.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/contact.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/contact.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/convert_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/convert_icon.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/copy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/copy.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/AION.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/AION.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BAT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BAT.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BCH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BCH.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BNB.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BNB.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BTC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BTC.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BTM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/BTM.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/CNYT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/CNYT.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/DGD.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/DGD.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/EOS.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/EOS.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ETC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ETC.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ETH.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ETH.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/FUN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/FUN.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/GNT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/GNT.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ICX.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ICX.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/KIN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/KIN.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/KNC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/KNC.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/KT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/KT.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/MANA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/MANA.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/MCO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/MCO.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/MKR.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/MKR.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/OMG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/OMG.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/POWR.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/POWR.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/PPT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/PPT.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/REP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/REP.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/SNT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/SNT.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/USDT.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/USDT.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/VEN.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/VEN.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/VERI.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/VERI.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/XRP.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/XRP.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/XUC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/XUC.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/YNC.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/YNC.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ZRX.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/currency/ZRX.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/default_avater_big.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/default_avater_big.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/detailBlueIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/detailBlueIcon.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/dice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/dice.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/dividend_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/dividend_background.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/dividend_history_none.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/dividend_history_none.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/edit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/edit.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/exchangeEmpty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/exchangeEmpty.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/fail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/fail.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/fenghong_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/fenghong_icon.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/games1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/games1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/icon_right2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/icon_right2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_logo.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_qq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_qq.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_qqArea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_qqArea.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_wechat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_wechat.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_wechatArea.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/img_share_wechatArea.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/left_arrow_blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/left_arrow_blue.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/left_arrow_white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/left_arrow_white.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/less.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/less.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/local_wallet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/local_wallet.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/location.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/location.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/number1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/number1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/number2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/number2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/number3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/number3.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/openRedEnv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/openRedEnv.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/pending.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/pending.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/qrcode.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/qrcode.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/receive_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/receive_icon.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvBack.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvBack.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvDetail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvDetail.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvEmpty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvEmpty.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvtop1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/redEnvtop1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/rightArrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/rightArrow.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow2_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow2_gray.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow_blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow_blue.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/right_arrow_gray.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/scan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/scan.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/search_no.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/search_no.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/sendRedEnv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/sendRedEnv.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider3.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/slider4.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/transfer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/transfer.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/transfer_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/transfer_icon.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/whiteClose.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image/whiteClose.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/10.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/21.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/23.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/24.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/25_blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/25_blue.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/25_gray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/25_gray.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/28.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/41_blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/41_blue.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/42.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/42.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/43.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/43.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/Card.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/Card.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/add.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/add.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_3.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/btn_yun_4.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/chat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/chat.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/chat_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/chat_active.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/default_avatar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/default_avatar.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/delete_lock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/delete_lock.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/earn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/earn.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/earn_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/earn_active.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/mine_makmoney.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/mine_makmoney.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/mine_top.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/mine_top.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/play.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/play_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/play_active.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/topbar_backimg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/topbar_backimg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/wallet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/wallet.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/wallet_active.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/image1/wallet_active.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/res/js/bignumber.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/store/interface.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/store/localStorageStore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/store/parse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/store/store.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/utils/account.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/utils/ahash.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/utils/constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/utils/nameWareHouse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/utils/secrets.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/utils/secretsBase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/utils/toolMessages.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/utils/tools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/utils/unitTools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/utils/walletTools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/utils_pc/argon2-asm.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/utils_pc/argon2.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/base/app.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/base/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/base/app.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/base/app.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/base/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/chat/home/home.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/chat/home/home.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchange.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchange.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchange.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchange.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeDetail.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeDetail.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeDetail.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeHistory.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeHistory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeHistory.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/exchangeHistory.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/openRedEnv.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/openRedEnv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/openRedEnv.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/exchange/openRedEnv.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/home/home.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/home/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/home/home.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/home/home.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/addMine.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/addMine.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/addMine.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/addMine.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividend.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividend.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividend.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividend.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividendDetail.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividendDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividendDetail.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/dividendDetail.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningHistory.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningHistory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningHistory.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningHistory.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningRank.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningRank.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningRank.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/miningRank.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/rankList.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/rankList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/rankList.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/mining/rankList.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvDetail.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvDetail.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvDetail.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvHistory.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvHistory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvHistory.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/redEnvHistory.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/sendRedEnv.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/sendRedEnv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/sendRedEnv.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/sendRedEnv.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/writeRedEnv.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/writeRedEnv.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/writeRedEnv.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/earn/redEnvelope/writeRedEnv.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/exportPrivateKey.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/exportPrivateKey.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/exportPrivateKey.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/exportPrivateKey.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/home.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/home.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/home.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/privateDetail.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/privateDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/privateDetail.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/account/privateDetail.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/home/home.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/home/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/home/home.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/home/home.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/aboutus.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/aboutus.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/aboutus.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/aboutus.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/addFriend.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/addFriend.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/addFriend.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/addFriend.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/contanctUs.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/contanctUs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/contanctUs.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/contanctUs.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/help.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/help.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/help.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/help.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/privacypolicy.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/privacypolicy.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/other/privacypolicy.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/changePsw.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/changePsw.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/changePsw.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/changePsw.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/itemList.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/itemList.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/itemList.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/phone.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/phone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/phone.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/phone.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/setting.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/setting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/setting.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/mine/setting/setting.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/play/home/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/play/home/home.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/play/home/home.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/backupMnemonicWordConfirm.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/backupMnemonicWordConfirm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/backupMnemonicWordConfirm.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/backupMnemonicWordConfirm.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/index.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/index.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/index.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/shareMnemonic.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/shareMnemonic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/shareMnemonic.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/backup/shareMnemonic.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/home.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/home.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/home.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/otherRecord.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/otherRecord.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/otherRecord.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/otherRecord.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/recharge.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/recharge.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/recharge.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/recharge.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/rechargeRecord.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/rechargeRecord.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/rechargeRecord.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/rechargeRecord.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdraw.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdraw.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdraw.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdraw.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdrawRecord.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdrawRecord.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdrawRecord.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/cloudWallet/withdrawRecord.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/coinConvert.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/coinConvert.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/coinConvert.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/coinConvert.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/convertHistory.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/convertHistory.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/convertHistory.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/coinConvert/convertHistory.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/choosetWithdrawAddr.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/choosetWithdrawAddr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/choosetWithdrawAddr.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/choosetWithdrawAddr.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/fmListItem.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/fmListItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/fmListItem.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/fmListItem.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/holdedProductItem.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/holdedProductItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/holdedProductItem.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/holdedProductItem.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/tipsCard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/tipsCard.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/components/tipsCard.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWallet.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWallet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWallet.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWallet.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWalletByImage.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWalletByImage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWalletByImage.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/createWalletByImage.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/home.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/home.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/create/home.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFM.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFM.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFM.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFM.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFmDetail.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFmDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFmDetail.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/holdedFmDetail.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/home.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/home.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/home.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productDetail.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productDetail.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productDetail.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productDetail.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productStatement.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productStatement.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productStatement.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/productStatement.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/purchase.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/purchase.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/purchase.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/purchase.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/recommendFM.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/recommendFM.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/financialManagement/recommendFM.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/cloudHome.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/cloudHome.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/cloudHome.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/cloudHome.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/home.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/home.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/home.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/walletHome.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/walletHome.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/walletHome.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/home/walletHome.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/fragmentImport.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/fragmentImport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/fragmentImport.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/fragmentImport.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/home.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/home.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/home.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/imageImport.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/imageImport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/imageImport.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/imageImport.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/standardImport.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/standardImport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/standardImport.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/import/standardImport.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/localWallet/addAsset.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/localWallet/addAsset.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/localWallet/addAsset.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/localWallet/addAsset.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/chooseAddr.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/chooseAddr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/chooseAddr.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/chooseAddr.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/home.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/home.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/home.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/home.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/receipt.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/receipt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/receipt.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/receipt.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transactionDetails.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transactionDetails.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transactionDetails.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transactionDetails.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transfer.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transfer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transfer.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/app/view/wallet/transaction/transfer.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/depend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/index/rpc_call.s.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/download.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/img_avatar1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/img_avatar1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/img_logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/img_logo.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/open.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/redEnvelopeDetail_bg.1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/redEnvelopeDetail_bg.1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/redEnvelopeDetail_bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/redEnvelopeDetail_bg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/redEnvelopes2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/redEnvelopes2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/tips.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/image/tips.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/openRedEnvelope.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/phoneRedEnvelope/redEnvelopeDetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/bigint/biginteger.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/bigint/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/browser/argonHash.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/browser/exitApp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/browser/imagePicker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/browser/native.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/browser/qrcode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/browser/sendMessage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/browser/shareToPlatforms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/browser/systemInfoProvider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/browser/webViewHelper.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/compile/drust.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/compile/ebnf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/compile/gendrust.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/compile/genhjson.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/compile/genvdom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/compile/hjson.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/compile/parser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/compile/reader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/compile/scanner.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/compile/vdom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/checkbox/checkbox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/checkbox/checkbox.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/checkbox/checkbox.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/checkbox/checkboxGroup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/checkbox/checkboxGroup.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/collapse/collapse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/collapse/collapse.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/collapse/collapse.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/components.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/input/calcTextareaHeight.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/input/input.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/input/input.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/input/input.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/input_autocomplete/input_autocomplete.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/input_autocomplete/input_autocomplete.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/input_autocomplete/input_autocomplete.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/loading/loading.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/loading/loading.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/loading/loading.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/message.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/message.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/message.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/messagebox.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/messagebox.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/messagebox.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/notification.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/notification.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/message/notification.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/nav_submenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/nav_submenu.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/navmenu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/navmenu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/navmenu.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/navmenu_item.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/navmenu/navmenu_item.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/progress/progress.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/progress/progress.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/progress/progress.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/qrcode/qrcode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/qrcode/qrcode.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/qrcode/qrcode_src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/radio/radio.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/radio/radio.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/radio/radio.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/radio/radioGroup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/radio/radioGroup.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/radio/radioGroup.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/selectcount/selectcount.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/selectcount/selectcount.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/selectcount/selectcount.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/slider/slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/slider/slider.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/slider/slider.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/steps/steps.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/steps/steps.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/switch/switch.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/switch/switch.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/switch/switch.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/table/table.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/table/table.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/tabs/tabs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/tabs/tabs.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/tabs/tabs.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/time_select/time_select.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/time_select/time_select.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/components/time_select/time_select.wcss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/lang/mod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/lang/time.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/lang/type.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/mqtt.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/mqtt_c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/rpc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/rpc_r.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/rpc_r.rs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/rpc_r.s.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/ui/con_mgr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/ui/con_mgr.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/ui/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/connect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/erl_term.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/protocol_block.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/uint64.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/websocket.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/xxtea64.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/net/websocket/zlib.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/polyfill/babel_polyfill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/struct/meta_init.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/struct/sinfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/struct/struct_mgr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/struct/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/ui/html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/ui/html.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/ui/navtab.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/ui/navtab.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/ui/progressive.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/ui/progressive.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/ui/root.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/ui/root.tpl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/base64.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/bin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/bon.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/canvas.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/cfg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/db.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/event.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/hash.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/heap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/html.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/img.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/log.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/match.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/math.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/md5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/res_mgr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/rsync.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/sb_tree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/sound.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/task_mgr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/task_pool.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/tpl.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/tpl_str.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/util/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/event.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/forelet.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/frame_mgr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/painter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/resize/resize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/scroller/dom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/scroller/ease.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/scroller/scroller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/scroller/scroller_bk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/scroller/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/style.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/virtual_node.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/widget/widget.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/worker/client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/worker/init.wjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/assets/wallet/pi/worker/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/intercept/Interceptor.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/intercept/Interceptor.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/Argon2Hash.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/Argon2Hash.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/Argon2Hash.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/Argon2Hash.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/ImagePicker.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/ImagePicker.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/ImagePicker.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/ImagePicker.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/ShareToPlatforms.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/ShareToPlatforms.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/module/ShareToPlatforms.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/module/ShareToPlatforms.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/util/ImageUtils.h" beforeDir="false" afterPath="$PROJECT_DIR$/test/util/ImageUtils.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/util/ImageUtils.m" beforeDir="false" afterPath="$PROJECT_DIR$/test/util/ImageUtils.m" afterDir="false" />
+    </list>
+    <ignored path="$USER_HOME$/Library/Developer/Xcode/DerivedData/WebViewPro-bxpbzzpvnqdzrmdxznbsrptcmioc/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_37972c41dd310157d559baec10f64dca3e952199" />
+  <component name="FUSProjectUsageTrigger">
+    <session id="1891508426">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.33" value="1" />
+          <entry key="project.open.time.49" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="h" value="657" />
+          <entry key="m" value="4120" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Doxygen file" value="11" />
+          <entry key="ObjectiveC" value="4766" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="c" value="4" />
+          <entry key="h" value="66" />
+          <entry key="m" value="49" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="ObjectiveC" value="119" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.appcode.build">
+        <counts>
+          <entry key="buildservice" value="74" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/module/ShareToPlatforms.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="166" column="18" selection-start-line="166" selection-start-column="18" selection-end-line="166" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/module/ShareToPlatforms.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+              <folding>
+                <element signature="e#133#166#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/util/ImageUtils.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="326">
+              <caret line="84" selection-start-line="84" selection-end-line="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/util/ImageUtils.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="620">
+              <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+              <folding>
+                <element signature="e#170#203#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>UIImagePickerController</find>
+      <find>info</find>
+      <find>info[UIImagePickerControllerOriginalImage]</find>
+      <find>ImagePickerController</find>
+      <find>imagePickerController</find>
+      <find>didFinishPickingMediaWithInfo</find>
+      <find>delegate</find>
+      <find>压缩</find>
+      <find>82</find>
+      <find>uiimage</find>
+      <find>828</find>
+      <find>getscr</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/test/Info.plist" />
+        <option value="$PROJECT_DIR$/test/module/BaseObject.h" />
+        <option value="$PROJECT_DIR$/test/module/BaseObject.m" />
+        <option value="$PROJECT_DIR$/test/module/DeviceIdProvider.h" />
+        <option value="$PROJECT_DIR$/test/module/DeviceIdProvider.m" />
+        <option value="$PROJECT_DIR$/test/module/JSIntercept.h" />
+        <option value="$PROJECT_DIR$/test/module/JSIntercept.m" />
+        <option value="$PROJECT_DIR$/test/module/QRCode.m" />
+        <option value="$PROJECT_DIR$/test/module/QRCode.h" />
+        <option value="$PROJECT_DIR$/test/WebViewAppDelegate.h" />
+        <option value="$PROJECT_DIR$/test/module/ImagePicker.h" />
+        <option value="$PROJECT_DIR$/test/module/image/ImageController.h" />
+        <option value="$PROJECT_DIR$/test/intercept/Interceptor.m" />
+        <option value="$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZPhotoPickerController.m" />
+        <option value="$PROJECT_DIR$/test/WebViewAppDelegate.m" />
+        <option value="$PROJECT_DIR$/test/module/image/ImageController.m" />
+        <option value="$PROJECT_DIR$/test/WebViewController.h" />
+        <option value="$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m" />
+        <option value="$PROJECT_DIR$/test/module/Argon2Hash.h" />
+        <option value="$PROJECT_DIR$/test/module/Argon2Hash.m" />
+        <option value="$PROJECT_DIR$/test/WebViewController.m" />
+        <option value="$PROJECT_DIR$/test/module/ImagePicker.m" />
+        <option value="$PROJECT_DIR$/test/module/ShareToPlatforms.h" />
+        <option value="$PROJECT_DIR$/test/util/ImageUtils.h" />
+        <option value="$PROJECT_DIR$/test/module/ShareToPlatforms.m" />
+        <option value="$PROJECT_DIR$/test/util/ImageUtils.m" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="OCFindUsagesOptions" text="false" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="380" />
+    <option name="y" value="174" />
+    <option name="width" value="1400" />
+    <option name="height" value="941" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Cidr.FilesView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="WebViewPro" type="1d218c8b:XcodeProjectNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="WebViewPro" type="1d218c8b:XcodeProjectNode" />
+              <item name="Argon2" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="WebViewPro" type="1d218c8b:XcodeProjectNode" />
+              <item name="test" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="WebViewPro" type="1d218c8b:XcodeProjectNode" />
+              <item name="test" type="fcab9f18:XcodeViewNode" />
+              <item name="interceptor" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="WebViewPro" type="1d218c8b:XcodeProjectNode" />
+              <item name="test" type="fcab9f18:XcodeViewNode" />
+              <item name="module" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="WebViewPro" type="1d218c8b:XcodeProjectNode" />
+              <item name="test" type="fcab9f18:XcodeViewNode" />
+              <item name="module" type="fcab9f18:XcodeViewNode" />
+              <item name="image" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="WebViewPro" type="1d218c8b:XcodeProjectNode" />
+              <item name="test" type="fcab9f18:XcodeViewNode" />
+              <item name="util" type="fcab9f18:XcodeViewNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="WebViewPro" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="WebViewPro" TARGET_NAME="WebViewPro" CONFIG_NAME="Debug" SCHEME_NAME="WebViewPro" IS_LOCATION_SIMULATION_ALLOWED="true" RUN_TARGET_PROJECT_NAME="WebViewPro" RUN_TARGET_NAME="WebViewPro" MAKE_ACTIVE="TRUE">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0a00797e-5116-4492-8c38-27ddcfc4206d" name="Default Changelist" comment="" />
+      <created>1539151283317</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1539151283317</updated>
+      <workItem from="1539151295127" duration="479000" />
+      <workItem from="1539151849443" duration="1006000" />
+      <workItem from="1539154973943" duration="222000" />
+      <workItem from="1539826581183" duration="17608000" />
+      <workItem from="1539912504242" duration="12434000" />
+      <workItem from="1540173011235" duration="6725000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="38474000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18956336" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32970297" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946752" weight="0.20792079" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3990099" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32970297" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32970297" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32970297" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005325" side_tool="true" weight="0.25940594" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32871288" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZPhotoPickerController.m</url>
+          <line>800</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZPhotoPickerController.m</url>
+          <line>830</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZPhotoPickerController.m</url>
+          <line>881</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.h</url>
+          <line>272</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.h</url>
+          <line>273</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZPhotoPickerController.m</url>
+          <line>360</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m</url>
+          <line>156</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m</url>
+          <line>215</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m</url>
+          <line>240</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>onlyOne</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>infoArr</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>info[UIImagePickerControllerOriginalImage]</expression-string>
+        <language-id>ObjectiveC</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test/main.m">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Test.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/JSBundle.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/BaseObject.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/DeviceIdProvider.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/DeviceIdProvider.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/JSIntercept.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/QRCode.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/WebViewAppDelegate.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="18" column="60" selection-start-line="18" selection-start-column="60" selection-end-line="18" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/QRCode.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/JSIntercept.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include/sys/_types/_u_int32_t.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.1.0/include/stddef.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="61" column="8" selection-start-line="61" selection-start-column="8" selection-end-line="61" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGImage.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="214" column="14" lean-forward="true" selection-start-line="214" selection-start-column="14" selection-end-line="214" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIColor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1508">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="280" selection-start-line="280" selection-end-line="280" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSData.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="69" column="11" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIAlertController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UINavigationController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="98" column="10" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImageManager.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Headers/NSValue.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="225" column="8" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZPhotoPreviewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/WebViewAppDelegate.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="102" column="27" lean-forward="true" selection-start-line="102" selection-start-column="27" selection-end-line="102" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/intercept/Interceptor.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="633">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIImagePickerController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="113" column="28" lean-forward="true" selection-start-line="113" selection-start-column="28" selection-end-line="113" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZPhotoPickerController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/BaseObject.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/WebViewController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/image/ImageController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/image/ImageController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZPhotoPreviewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="395" selection-start-line="395" selection-end-line="395" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZPhotoPickerController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10244">
+          <caret line="394" column="11" selection-start-line="394" selection-start-column="11" selection-end-line="394" selection-end-column="11" />
+          <folding>
+            <element signature="e#146#181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImageManager.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12272">
+          <caret line="472" selection-start-line="472" selection-end-line="472" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZPhotoPreviewCell.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5096">
+          <caret line="196" selection-start-line="196" selection-end-line="196" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Argon2/ahash.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4238">
+          <caret line="163" column="6" selection-start-line="163" selection-start-column="6" selection-end-line="163" selection-end-column="6" />
+          <folding>
+            <element signature="e#41#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1586">
+          <caret line="61" column="41" selection-start-line="61" selection-start-column="41" selection-end-line="61" selection-end-column="41" />
+          <folding>
+            <element signature="e#413#436#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/Argon2Hash.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pods/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="839" column="29" selection-start-line="839" selection-start-column="29" selection-end-line="839" selection-end-column="29" />
+          <folding>
+            <element signature="e#252#287#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Argon2/ahash.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Argon2/argon2.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="95" column="4" selection-start-line="95" selection-start-column="4" selection-end-line="95" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Argon2/argon2.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="227" column="4" selection-start-line="227" selection-start-column="4" selection-end-line="227" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/Argon2Hash.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="2" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+          <folding>
+            <element signature="e#77#110#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/WebViewController.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+          <folding>
+            <element signature="e#125#145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Developer/Xcode/DerivedData/WebViewPro-bxpbzzpvnqdzrmdxznbsrptcmioc/Build/Products/Debug-iphoneos/TZImagePickerController/TZImagePickerController.framework/Headers/TZImagePickerController.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1897">
+          <caret line="131" column="125" selection-start-line="131" selection-start-column="120" selection-end-line="131" selection-end-column="125" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/ImagePicker.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/ImagePicker.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/util/ImageUtils.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="64" column="25" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
+          <folding>
+            <element signature="e#170#203#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/ShareToPlatforms.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="166" column="18" selection-start-line="166" selection-start-column="18" selection-end-line="166" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/util/ImageUtils.m">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="84" selection-start-line="84" selection-end-line="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/module/ShareToPlatforms.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="37" column="22" selection-start-line="37" selection-start-column="22" selection-end-line="37" selection-end-column="22" />
+          <folding>
+            <element signature="e#133#166#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
