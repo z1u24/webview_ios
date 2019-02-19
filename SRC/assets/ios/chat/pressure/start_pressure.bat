@@ -1,2 +1,0 @@
-node ./pressure.js
-pause
