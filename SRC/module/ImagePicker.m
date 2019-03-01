@@ -93,13 +93,13 @@
 }
 
 
-- (void)getContent:(CallJS)callJS{
+- (void)getContent:(NSNumber *)quality callJS:(CallJS)callJS{
     
     NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     docPath = [docPath stringByAppendingString:@"/selectes.png"];
     UIImage *image = [UIImage imageWithContentsOfFile:docPath];
-    NSString *content = [ImageUtils image2base64:image];
-    NSString *base64 = [NSString stringWithFormat:@"%@",content];
+    NSData *dataImage = UIImageJPEGRepresentation(image, quality.floatValue/100.00);
+    NSString *base64 = [dataImage base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
     callJS(Success,@[base64]);
 }
 

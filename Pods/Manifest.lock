@@ -1,24 +1,42 @@
 PODS:
+  - AlicloudPush (1.9.8):
+    - AlicloudUT
+    - AlicloudUtils
+  - AlicloudUT (5.2.0.5):
+    - AlicloudUTDID
+  - AlicloudUTDID (1.1.0.19)
+  - AlicloudUtils (1.3.6):
+    - AlicloudUTDID
   - HMQRCodeScanner (1.0.6)
   - Reachability (3.2)
   - TZImagePickerController (2.2.3)
 
 DEPENDENCIES:
+  - AlicloudPush
   - HMQRCodeScanner
   - Reachability
   - TZImagePickerController
 
 SPEC REPOS:
+  https://github.com/aliyun/aliyun-specs.git:
+    - AlicloudPush
+    - AlicloudUT
+    - AlicloudUTDID
+    - AlicloudUtils
   https://github.com/cocoapods/specs.git:
     - HMQRCodeScanner
     - Reachability
     - TZImagePickerController
 
 SPEC CHECKSUMS:
+  AlicloudPush: 3bdd90f69af50562275483b5157571f0a7c50a19
+  AlicloudUT: 5e6a87a56c08ca72c6711beec2449e1c254728ef
+  AlicloudUTDID: 79f509c3e997ef85fe307f8bfb2bb3be27f7e205
+  AlicloudUtils: 9047114c9c1854205ae26db58264bf1555242ffb
   HMQRCodeScanner: 8db2d317c0e5cbe3b4709fe2b9f26c107d66554e
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   TZImagePickerController: 5374a30df056b33428802c8112ed44011fe2596a
 
-PODFILE CHECKSUM: be6a11b422903c8f08a065aa6d666ff8a5409b5c
+PODFILE CHECKSUM: c19cbeff02364569fb533de30c995c27d4df12d8
 
 COCOAPODS: 1.5.3

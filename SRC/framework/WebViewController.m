@@ -57,7 +57,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
     [super viewWillAppear:animated];
     
     if (self.timer) {
