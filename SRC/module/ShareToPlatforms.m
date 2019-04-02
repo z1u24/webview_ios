@@ -20,6 +20,7 @@ const static int SHARE_TYPE_TEXT = 2;//分享的类型文本
     CallJS selcallJS;
 }
 
+//分享链接
 - (void)shareLink:(NSString *)url title:(NSString *)title content:(NSString *)content platform:(NSNumber *)platform callJS:(CallJS)callJS{
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     [shareParams SSDKSetupShareParamsByText:content
@@ -111,15 +112,15 @@ const static int SHARE_TYPE_TEXT = 2;//分享的类型文本
 }
 
 /**
- * 分享图片或者文本
+ * 分享二维码或者文本
  */
 - (void)shareContent:(NSString *)content shareType:(NSNumber *)shareType platform:(NSNumber *)platform callJS:(CallJS)callJS {
     self->selcallJS = callJS;
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     if (SHARE_TYPE_IAMGE == [shareType intValue]) {
         //分享图片
-        UIImage *avatar = [UIImage imageNamed:@"shareImg.png"];
-        [HMScannerController cardImageWithCardName:content avatar:avatar scale:0.2 completion:^(UIImage *image) {
+        //通过content生成二维码图片
+        [HMScannerController cardImageWithCardName:content avatar:nil scale:0 completion:^(UIImage *image) {
             [shareParams SSDKSetupShareParamsByText:@"分享内容"
                                              images:image
                                                 url:nil

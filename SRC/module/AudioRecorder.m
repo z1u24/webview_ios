@@ -76,7 +76,7 @@
         recorder.meteringEnabled = YES;
         [recorder prepareToRecord];
         [recorder record];
-        callJS(Success,@[@"开始录制"]);
+        callJS(Success,@[@"recorder start"]);
     }
 }
 
@@ -91,12 +91,12 @@
 }
 
 - (void)drop:(CallJS)callJS{
-    //[timer invalidate];
-    //timer = nil;
+    [timer invalidate];
+    timer = nil;
     if ([recorder isRecording]) {
         [recorder stop];
     }
-    callJS(Success,@[@""]);
+    callJS(Success,@[@"drop the recorder success"]);
 }
 
 

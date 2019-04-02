@@ -21,7 +21,7 @@
 
 - (void)chooseImage:(NSNumber *)useCamera single:(NSNumber *)single max:(NSNumber *)max callJS:(CallJS)callJS;
 
-- (void)getContent:(CallJS)callJS;
+- (void)getContent:(NSNumber *)quality callJS:(CallJS)callJS;
 
 - (void)getAHash:(CallJS)callJS;
 

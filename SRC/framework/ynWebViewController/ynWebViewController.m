@@ -5,7 +5,7 @@
 //  Created by yineng on 2018/11/30.
 //  Copyright © 2018 kuplay. All rights reserved.
 //
-
+#define KISIphoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size))
 #import "ynWebViewController.h"
 #import "JSIntercept.h"
 #import "JSBridge.h"
@@ -13,7 +13,7 @@
 
 
 @interface ynWebViewController ()<WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler,BackButtonHandlerProtocol>
-
+@property (nonatomic, strong)NSTimer *timer;
 @end
 
 @implementation ynWebViewController
@@ -26,27 +26,32 @@ NSString *injectContent;
 JSIntercept *intercept;
 JSBridge *bridge;
 
++ (instancetype)sharedInstenceWithWebViewName:(NSString *)webviewName url:(NSString *)Url title:(NSString *)webTitle injectContent:(NSString *)injectcontent{
+    static ynWebViewController *singleton = nil;
+    static dispatch_once_t onceToken;
+    // dispatch_once  无论使用多线程还是单线程，都只执行一次
+    dispatch_once(&onceToken, ^{
+        singleton = [[ynWebViewController alloc] initWithWebViewName:webviewName url:Url title:webTitle injectContent:injectcontent];
+    });
+    return singleton;
+}
+
+
 - (instancetype)initWithWebViewName:(NSString *)webviewName url:(NSString *)Url title:(NSString *)webTitle injectContent:(NSString *)injectcontent
 {
     self = [super init];
     if (self) {
+        self.view.backgroundColor = UIColor.whiteColor;
         webViewName = webviewName;
         webtitle = webTitle;
         url = Url;
         injectContent = injectcontent;
+        [self initWeb];
     }
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    self.view.backgroundColor = UIColor.whiteColor;
-}
-
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.title = webtitle;
+-(void)initWeb{
     WKWebView *webView = [self createWebviewWithInjectContent:injectContent];
     ynWebView = [[YNWebView alloc] initWithWKWebView:webView webName:webViewName webViewController:self];
     bridge = [[JSBridge alloc] initWithYnWebView:ynWebView];
@@ -56,6 +61,7 @@ JSBridge *bridge;
 - (WKWebView *)createWebviewWithInjectContent:(NSString *)injectContent {
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     config.preferences = [WKPreferences new];
+    
     // 默认为0
     // 设置minimumFontSize后，ios10+的line-height值不对，会导致页面错位
     // config.preferences.minimumFontSize = 45
@@ -73,11 +79,16 @@ JSBridge *bridge;
     [config.userContentController addUserScript:script];
     WKWebView *webview = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
     // 获取默认User-Agent
-    //    [webview evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id result, NSError *error) {
-    //        webview.customUserAgent = [result stringByAppendingString:@" YINENG_IOS/1.0"];
-    //    }];
+    [webview evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id result, NSError *error) {
+        webview.customUserAgent = [result stringByAppendingString:@" YINENG_IOS_GAME/1.0"];
+    }];
     // 确定宽、高、X、Y坐标
-    [webview setFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    if (KISIphoneX) {
+        [webview setFrame:CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height-44)];
+    }else{
+        [webview setFrame:CGRectMake(0, 20, self.view.bounds.size.width, self.view.bounds.size.height-20)];
+    }
+//    [webview setFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     [self.view addSubview:webview];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
     [webview loadRequest:request];
@@ -136,18 +147,17 @@ JSBridge *bridge;
     }
 }
 
-//页面消失注销解析器
-- (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
+
+
+- (void)removeScriptMessageHandle{
     [[ynWebView getWKWebView].configuration.userContentController removeScriptMessageHandlerForName:@"Native"];
     [[ynWebView getWKWebView].configuration.userContentController removeScriptMessageHandlerForName:@"JSIntercept"];
 }
 
+
 //回退页面时注销webView
 - (BOOL)navigationShouldPopOnBackButton{
-    [YNWebView removeWebViewWithWebName:webViewName];
-    [WebViewManager removeViewControllerWithWebName:webViewName];
-    return YES;
+    return NO;
 }
 
 

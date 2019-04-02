@@ -22,7 +22,7 @@
     selCallJS = callJS;
     BOOL isCamera = [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear] && [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront];
     if (!isCamera) {
-        NSLog(@"没有摄像头");
+        callJS(Fail,@[@"no camera"]);
         return;
     }
     UIImagePickerController *controller = [[UIImagePickerController alloc] init];
@@ -37,15 +37,15 @@
         self->image = [info objectForKey:UIImagePickerControllerOriginalImage];
         NSData *dataImage = UIImageJPEGRepresentation(self->image, 0.7);
         NSString *result = [dataImage base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
-        //NSString *base64 = [NSString stringWithFormat:@"%s%@", "data:image/png;base64,", result];
-        self->selCallJS(Success,@[result]);
+        NSString *base64 = [NSString stringWithFormat:@"%s%@", "data:image/png;base64,", result];
+        self->selCallJS(Success,@[base64]);
     }];
 }
 
 -(void)getContent:(NSNumber *)quality callJS:(CallJS)callJS{
     NSData *dataImage = UIImageJPEGRepresentation(self->image, quality.floatValue/100.00);
     NSString *base64 = [dataImage base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
-    self->selCallJS(Success,@[base64]);
+    callJS(Success,@[base64]);
 }
 
 

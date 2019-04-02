@@ -8,7 +8,7 @@
 
 #import "globolNavigationController.h"
 #import "WebViewController.h"
-
+#import "ynWebViewController.h"
 @interface globolNavigationController ()<UINavigationControllerDelegate>
 
 @end
@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = UIColor.whiteColor;
     self.delegate = self;
     self.interactivePopGestureRecognizer.enabled = NO;
 }
@@ -30,7 +31,7 @@
 }
 
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    BOOL isHideNav = ([viewController isKindOfClass:[WebViewController class]]);
+    BOOL isHideNav = ([viewController isKindOfClass:[WebViewController class]] || [viewController isKindOfClass:[ynWebViewController class]]);
     [self setNavigationBarHidden:isHideNav animated:YES];
 }
 - (void)handleNavigationTransition:(id)sender{

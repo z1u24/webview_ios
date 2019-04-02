@@ -9,11 +9,16 @@
 #import <WebKit/WebKit.h>
 #import "JSBridge.h"
 #import "YNWebView.h"
-
-//#define URL_PATH @"/ios/app/boot/index.html"
-//#define URL_PATH @"/dst/boot/index.html"
+#import "JSIntercept.h"
 
 @interface WebViewController : UIViewController
+
+@property (nonatomic, strong)NSTimer *timer;
+@property (nonatomic, strong)YNWebView *ynWebView;
+@property (nonatomic, strong)JSIntercept *intercept;
+@property (nonatomic, strong)JSBridge *bridge;
+@property (nonatomic, strong)NSNumber *isUpdate;
+
 +(instancetype)sharedInstence;
 + (NSString *)getURLFromInfo;
 - (void)stopTimer;

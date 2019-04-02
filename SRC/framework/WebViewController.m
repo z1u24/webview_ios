@@ -8,16 +8,12 @@
 
 #define KISIphoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size))
 #import "WebViewController.h"
-#import "JSIntercept.h"
+
 #import "BaseObject.h"
 
 @interface WebViewController () <WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler>
 
-@property (nonatomic, strong)NSTimer *timer;
-@property (nonatomic, strong)YNWebView *ynWebView;
-@property (nonatomic, strong)JSIntercept *intercept;
-@property (nonatomic, strong)JSBridge *bridge;
-@property (nonatomic, strong)NSNumber *isUpdate;
+
 @end
 
 @implementation WebViewController
@@ -58,6 +54,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    [_bridge sendJS:@"PI_Activity" name:@"onResumed" params:@[@"页面进入前台"]];
     [super viewWillAppear:animated];
     
     if (self.timer) {
@@ -68,8 +65,8 @@
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
+    [_bridge sendJS:@"PI_Activity" name:@"onBackPressed" params:@[@"页面进入后台"]];
     [super viewWillDisappear:animated];
-    
 }
 
 - (void)viewDidLoad {
@@ -179,7 +176,7 @@
         NSString *documentsVersion = [NSString stringWithContentsOfFile:appversionPath encoding:NSUTF8StringEncoding error:nil];
         if (![documentsVersion isEqualToString:app_Version]) {
             [manager removeItemAtPath:[docPath stringByAppendingString:@"/assets"] error:nil];
-            [app_Version writeToFile:appversionPath atomically:NO encoding:NSUTF8StringEncoding error:nil];
+            [app_Version writeToFile:appversionPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
             self.isUpdate = [NSNumber numberWithInt:1];
         }
     }
@@ -198,7 +195,7 @@
             fullPath = [[NSBundle mainBundle] pathForResource:path ofType:nil];
             file = [NSFileHandle fileHandleForReadingAtPath:fullPath];
             if (file != nil) {
-                NSLog(@"file is read, %@", path);
+                NSLog(@"file is read, %@", fullPath);
                 data = [file readDataToEndOfFile];
                 [file closeFile];
             } else {
@@ -207,7 +204,8 @@
         }
         //path = [@"assets" stringByAppendingString:strUrl];
         NSString *utf = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        NSString *url = [@"file://" stringByAppendingString:fullPath];
+        NSString *urlPath = [[NSBundle mainBundle] pathForResource:[@"assets" stringByAppendingString:URL_PATH] ofType:nil];
+        NSString *url = [@"file://" stringByAppendingString:urlPath];
         [webview loadHTMLString:utf baseURL:[NSURL URLWithString:url]];
         //[webview loadFileURL:[NSURL URLWithString:url] allowingReadAccessToURL:[NSURL URLWithString:[@"file://" stringByAppendingString:path]]];
     }else{
@@ -288,7 +286,7 @@
         }else if([params[0] isEqualToString:@"getAppVersion"]){
             [self.intercept getAppVersion:params[1]];
         }else if([params[0] isEqualToString:@"updateApp"]){
-            [self.intercept updateApp:params[1]];
+            [self.intercept updateApp:params[2]];
         }
         //[JSIntercept safeFile:params[0] content:params[1] saveID:params[2] webView:[_ynWebView getWKWebView]];
     } else {

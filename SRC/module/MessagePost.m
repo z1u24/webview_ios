@@ -14,9 +14,9 @@
 - (void)bindAccount:(NSString *)account callJS:(CallJS)callJS{
     [CloudPushSDK bindAccount:account withCallback:^(CloudPushCallbackResult *res) {
         if(res.success){
-            callJS(Success,@[@""]);
+            callJS(Success,@[@"bind accout success"]);
         }else{
-            callJS(Fail,@[@""]);
+            callJS(Fail,@[@"bind accout fail"]);
         }
     }];
 }
@@ -25,9 +25,9 @@
 - (void)unbindAccount:(CallJS)callJS{
     [CloudPushSDK unbindAccount:^(CloudPushCallbackResult *res) {
         if(res.success){
-            callJS(Success,@[@""]);
+            callJS(Success,@[@"unbind accout success"]);
         }else{
-            callJS(Fail,@[@""]);
+            callJS(Fail,@[@"unbind accout fail"]);
         }
     }];
 }
@@ -37,9 +37,9 @@
 - (void)bindTag:(int)target withTags:(NSArray *)tags withAlias:(NSString *)alias callJS:(CallJS)callJS{
     [CloudPushSDK bindTag:target withTags:tags withAlias:alias withCallback:^(CloudPushCallbackResult *res) {
         if(res.success){
-            callJS(Success,@[@""]);
+            callJS(Success,@[@"bind tag success"]);
         }else{
-            callJS(Fail,@[@""]);
+            callJS(Fail,@[@"bind tag fail"]);
         }
     }];
     
@@ -49,9 +49,9 @@
 - (void)unbindTag:(int)target withTags:(NSArray *)tags withAlias:(NSString *)alias callJS:(CallJS)callJS{
     [CloudPushSDK unbindTag:target withTags:tags withAlias:alias withCallback:^(CloudPushCallbackResult *res) {
         if(res.success){
-            callJS(Success,@[@""]);
+            callJS(Success,@[@"unbind tag success"]);
         }else{
-            callJS(Fail,@[@""]);
+            callJS(Fail,@[@"unbind tag fail"]);
         }
     }];
 }
@@ -62,7 +62,7 @@
         if(res.success){
             callJS(Success,res.data);
         }else{
-            callJS(Fail,@[@""]);
+            callJS(Fail,@[@"list tag fail"]);
         }
     }];
 }
@@ -71,9 +71,9 @@
 - (void)addAlias:(NSString *)alias callJS:(CallJS)callJS{
     [CloudPushSDK addAlias:alias withCallback:^(CloudPushCallbackResult *res) {
         if(res.success){
-            callJS(Success,@[@""]);
+            callJS(Success,@[@"add alias success"]);
         }else{
-            callJS(Fail,@[@""]);
+            callJS(Fail,@[@"add alias fail"]);
         }
     }];
 }
@@ -82,9 +82,9 @@
 - (void)removeAlias:(NSString *)alias callJS:(CallJS)callJS{
     [CloudPushSDK removeAlias:alias withCallback:^(CloudPushCallbackResult *res) {
         if(res.success){
-            callJS(Success,@[@""]);
+            callJS(Success,@[@"remove alias success"]);
         }else{
-            callJS(Fail,@[@""]);
+            callJS(Fail,@[@"remove alias fail"]);
         }
     }];
 }
@@ -95,7 +95,7 @@
         if(res.success){
             callJS(Success,res.data);
         }else{
-            callJS(Fail,@[@""]);
+            callJS(Fail,@[@"list alias fail"]);
         }
     }];
 }

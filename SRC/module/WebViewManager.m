@@ -6,8 +6,11 @@
 //  Copyright © 2018 kuplay. All rights reserved.
 //
 #define KISIphoneX (CGSizeEqualToSize(CGSizeMake(375.f, 812.f), [UIScreen mainScreen].bounds.size) || CGSizeEqualToSize(CGSizeMake(812.f, 375.f), [UIScreen mainScreen].bounds.size))
+#define Xmodify @[@88,@68]
+#define Nmodify @[@40,@0]
 #import "WebViewManager.h"
 #import "WebViewController.h"
+#import "ynWebViewController.h"
 
 static NSMutableDictionary *webControlDic = nil;
 
@@ -16,6 +19,7 @@ static NSMutableDictionary *webControlDic = nil;
 @end
 
 @implementation WebViewManager{
+    NSString *gameName;
     WKWebView *payWebView;
 }
 
@@ -33,12 +37,30 @@ static NSMutableDictionary *webControlDic = nil;
 
 - (void)openWebView:(NSString *)webName url:(NSString *)url title:(NSString *)title injectContent:(NSString *)injectContent callJS:(CallJS)callJS{
     if ([YNWebView getIfWebViewWithWebName:webName]) {
-        callJS(Fail,@[@"The WebView Is Already Build"]);
+        ynWebViewController *webViewController = [webControlDic objectForKey:webName];
+        [[BaseObject getVc] pushViewController:webViewController animated:YES];
+        callJS(Success,@[@"open success"]);
     }else{
+        if (gameName != NULL && [YNWebView getIfWebViewWithWebName:gameName]) {
+            [YNWebView removeWebViewWithWebName:gameName];
+        }
+//        ynWebViewController *webViewController = [ynWebViewController sharedInstenceWithWebViewName:webName url:url title:title injectContent:injectContent];
         ynWebViewController *webViewController = [[ynWebViewController alloc] initWithWebViewName:webName url:url title:title injectContent:injectContent];
         [webControlDic setObject:webViewController forKey:webName];
         [[BaseObject getVc] pushViewController:webViewController animated:YES];
-        callJS(Success,@[@""]);
+        callJS(Success,@[@"open success"]);
+    }
+}
+
+- (void)minWebView:(NSString *)webName callJS:(CallJS)callJS{
+    if ([webName isEqualToString:@"default"] || ![YNWebView getIfWebViewWithWebName:webName]) {
+        callJS(Error,@[@"Can Not Find The WebView"]);
+    }else{
+//        [UIApplication sharedApplication].keyWindow.rootViewController = [webControlDic objectForKey:@"default"];
+        if([webControlDic objectForKey:webName] == [[BaseObject getVc] topViewController]){
+            [[BaseObject getVc] popViewControllerAnimated:YES];
+            callJS(Success,@[@"min success"]);
+        }
     }
 }
 
@@ -49,10 +71,12 @@ static NSMutableDictionary *webControlDic = nil;
         callJS(Fail,@[@"Can Not Find The WebView"]);
     }else{
         if([webControlDic objectForKey:webName] == [[BaseObject getVc] topViewController]){
+            ynWebViewController *webViewController = [webControlDic objectForKey:webName];
+            [webViewController removeScriptMessageHandle];
             [[BaseObject getVc] popViewControllerAnimated:YES];
             [YNWebView removeWebViewWithWebName:webName];
             [WebViewManager removeViewControllerWithWebName:webName];
-            callJS(Success,@[@""]);
+            callJS(Success,@[@"close success"]);
         }else{
             //获取需要删除的viewController
             //获取当前navigation控制器数组
@@ -63,13 +87,14 @@ static NSMutableDictionary *webControlDic = nil;
                     break;
                 }
             }
+            ynWebViewController *webViewController = [webControlDic objectForKey:webName];
+            [webViewController removeScriptMessageHandle];
             [BaseObject getVc].viewControllers = navArray;
             [webControlDic removeObjectForKey:webName];
             [YNWebView removeWebViewWithWebName:webName];
-            callJS(Success,@[@""]);
+            callJS(Success,@[@"close success"]);
         }
     }
-    
 }
 
 
@@ -123,23 +148,22 @@ static NSMutableDictionary *webControlDic = nil;
     [payWebView loadRequest:newRequest];
     payWebView.UIDelegate = self;
     payWebView.navigationDelegate = self;
-    callJS(Success,@[@"打开成功"]);
+    callJS(Success,@[@"open success"]);
 }
 
 - (void)freeView:(NSString *)webName callJS:(CallJS)callJS ynWeb:(YNWebView *)ynWeb{
     [payWebView removeFromSuperview];
     payWebView = nil;
-    callJS(Success,@[@"移除成功"]);
+    callJS(Success,@[@"free success"]);
 }
 
 //状态栏适配
 - (void)getScreenModify:(CallJS)callJS{
     if (KISIphoneX) {
-        callJS(Success,@[@88,@68]);
+        callJS(Success,Xmodify);
     }else{
-        callJS(Success,@[@40,@0]);
+        callJS(Success,Nmodify);
     }
-    
 }
 
 

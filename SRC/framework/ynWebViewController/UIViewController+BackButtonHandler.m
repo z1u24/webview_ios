@@ -20,8 +20,7 @@ static NSString *const kOriginDelegate = @"kOriginDelegate";
 
 @implementation UINavigationController (ShouldPopOnBackButton)
 
-+ (void)load
-{
++ (void)load{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         Class class = [self class];
@@ -47,8 +46,7 @@ static NSString *const kOriginDelegate = @"kOriginDelegate";
     });
 }
 
-- (void)new_viewDidLoad
-{
+- (void)new_viewDidLoad{
     [self new_viewDidLoad];
     
     objc_setAssociatedObject(self, [kOriginDelegate UTF8String], self.interactivePopGestureRecognizer.delegate, OBJC_ASSOCIATION_ASSIGN);

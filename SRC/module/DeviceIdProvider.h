@@ -14,6 +14,8 @@ typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 
 @interface DeviceIdProvider : BaseObject
 
+- (void)getChannelName:(CallJS)callJS;
+- (void)getGameName:(CallJS)callJS;
 - (void)getUUId:(CallJS)callJS;
 - (void)getSystem:(CallJS)callJS;
 - (void)getMemSize:(CallJS)callJS;

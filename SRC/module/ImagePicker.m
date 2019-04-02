@@ -52,7 +52,7 @@
 
 ///拍照、选视频图片、录像 后的回调（这种方式选择视频时，会自动压缩，但是很耗时间）
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *, id> *)info {
-    selCallJS(Success,@[@"图片已经选择了"]);
+    selCallJS(Success,@[@"this pic is already selected"]);
 }
 
 // The picker should dismiss itself; when it dismissed these handle will be called.
@@ -64,9 +64,8 @@
 // 你可以通过一个asset获得原图，通过这个方法：[[TZImageManager manager] getOriginalPhotoWithAsset:completion:]
 // photos数组里的UIImage对象，默认是828像素宽，你可以通过设置photoWidth属性的值来改变它
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingPhotos:(NSArray<UIImage *> *)photos sourceAssets:(NSArray *)assets isSelectOriginalPhoto:(BOOL)isSelectOriginalPhoto infos:(NSArray<NSDictionary *> *)infos {
-    NSLog(@"123");
     if (nil == photos || 0 == [photos count]) {
-        selCallJS(Fail,@[@"选择图片失败"]);
+        selCallJS(Fail,@[@"select pic fail"]);
     } else {
         if (onlyOne) {
             //非原图舍弃
@@ -94,7 +93,6 @@
 
 
 - (void)getContent:(NSNumber *)quality callJS:(CallJS)callJS{
-    
     NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     docPath = [docPath stringByAppendingString:@"/selectes.png"];
     UIImage *image = [UIImage imageWithContentsOfFile:docPath];
@@ -113,7 +111,7 @@
 }
 
 - (void)tz_imagePickerControllerDidCancel:(TZImagePickerController *)picker {
-    selCallJS(Fail,@[@"用户选择了取消!!"]);
+    selCallJS(Fail,@[@"user select cansel"]);
 }
 
 @end

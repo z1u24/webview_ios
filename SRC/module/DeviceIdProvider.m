@@ -17,6 +17,16 @@ struct utsname systemInfo;
 
 @implementation DeviceIdProvider
 
+- (void)getChannelName:(CallJS)callJS{
+    NSString *channelName = [self getAssetsChannelName];
+    callJS(Success,[NSArray arrayWithObjects:channelName, nil]);
+}
+
+- (void)getGameName:(CallJS)callJS{
+    NSString *gameName = [self getAssetsGameName];
+    callJS(Success,[NSArray arrayWithObjects:gameName, nil]);
+}
+
 - (void)getUUId:(CallJS)callJS {
     NSString *UUIDString = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     callJS(Success,[NSArray arrayWithObjects:UUIDString, nil]);
@@ -221,6 +231,19 @@ struct utsname systemInfo;
     if ([deviceString isEqualToString:@"x86_64"])       return @"Simulator";
     
     return deviceString;
+}
+
+
+- (NSString *)getAssetsGameName{
+    NSString *path = @"assets/gameName.txt";
+    NSString *fullPath = [[NSBundle mainBundle] pathForResource:path ofType:nil];
+    return [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil];
+}
+
+- (NSString *)getAssetsChannelName{
+    NSString *path = @"assets/channelName.txt";
+    NSString *fullPath = [[NSBundle mainBundle] pathForResource:path ofType:nil];
+    return [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil];
 }
 
 @end

@@ -14,8 +14,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ynWebViewController : UIViewController
-- (instancetype)initWithWebViewName:(NSString *)webViewName url:(NSString *)url title:(NSString *)webtitle injectContent:(NSString *)injectContent;
 
++ (instancetype)sharedInstenceWithWebViewName:(NSString *)webviewName url:(NSString *)Url title:(NSString *)webTitle injectContent:(NSString *)injectcontent;
+- (instancetype)initWithWebViewName:(NSString *)webViewName url:(NSString *)url title:(NSString *)webtitle injectContent:(NSString *)injectContent;
+- (void)removeScriptMessageHandle;
+-(void)initWeb;
 @end
 
 NS_ASSUME_NONNULL_END

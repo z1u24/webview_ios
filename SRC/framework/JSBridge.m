@@ -88,8 +88,12 @@ static NSMutableDictionary *dictionary = nil;
                 if (callJSType == Success) {
                     [weakSelf callJS:listenerID code:Success params:params];
                 }
-                else{
+                else if (callJSType == Fail){
                     [weakSelf callJS:listenerID code:Fail params:params];
+                }else if (callJSType == Callback){
+                    [weakSelf callJS:listenerID code:Callback params:params];
+                }else{
+                    [weakSelf callJSError:className funcName:funcName msg:params[0]];
                 }
             };
             NSMutableArray *mutableParams = [[NSMutableArray alloc] initWithArray:params];
@@ -105,11 +109,8 @@ static NSMutableDictionary *dictionary = nil;
     }
 }
 
-- (void)callJS:(NSNumber *)listenerID code:(CallJSType)code params:(NSArray *)params {
-    if([listenerID intValue] == 0){
-        return;
-    }
-    NSString *s = [NSString stringWithFormat:@"window['handle_Native_Message'](%@, %d,", listenerID, code];
+- (void)sendJS:(NSString *)type name:(NSString *)name params:(NSArray *)params{
+    NSString *s = [NSString stringWithFormat:@"window['handle_native_event']('%@', '%@', ", type, name];
     NSMutableArray *array = [NSMutableArray arrayWithObjects:s, nil];
     NSInteger count = [params count];
     for (int i = 0 ; i < count; ++i) {
@@ -135,8 +136,40 @@ static NSMutableDictionary *dictionary = nil;
     }];
 }
 
+
+- (void)callJS:(NSNumber *)listenerID code:(CallJSType)code params:(NSArray *)params {
+    if([listenerID intValue] == 0){
+        return;
+    }
+    NSString *s = [NSString stringWithFormat:@"window['handle_native_message'](%@, %d, ", listenerID, code];
+    NSMutableArray *array = [NSMutableArray arrayWithObjects:s, nil];
+    NSInteger count = [params count];
+    for (int i = 0 ; i < count; ++i) {
+        id obj = [params objectAtIndex:i];
+        NSString *str = nil;
+        if ([obj isKindOfClass:[NSString class]]) {
+            str = [NSString stringWithFormat:@"'%@'", (NSString *)obj];
+        } else {
+            str = [NSString stringWithFormat:@"%@", obj];
+        }
+        if (i + 1 < count) {
+            str =  [str stringByAppendingString:@", "];
+        }
+        [array addObject:str];
+    }
+    [array addObject:@")"];
+    NSString *fullCode = [array componentsJoinedByString:@""];
+    NSLog(@"%@", fullCode);
+    //NSString *ss = [ynWebView getWkWebViewName];
+    [[ynWebView getWKWebView] evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {
+        if(error != nil) {
+            NSLog(@"item = %@, error = %@", object, error);
+        }
+    }];
+}
+
 - (void)callJSError:(NSString *)arrayClassName funcName:(NSString *)funcName msg:(NSString *)msg {
-    NSString *code = [NSString stringWithFormat:@"window['handle_Native_ThrowError']('%@','%@','%@')", arrayClassName, funcName, msg];
+    NSString *code = [NSString stringWithFormat:@"window['handle_native_throwerror']('%@', '%@', '%@')", arrayClassName, funcName, msg];
     // NSLog(@"callJSError code = %@", code);
     [[ynWebView getWKWebView] evaluateJavaScript:code completionHandler:^(id object,NSError *error) {
         if(error != nil) {
