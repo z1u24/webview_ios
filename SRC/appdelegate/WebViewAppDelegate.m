@@ -22,8 +22,33 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    
+//    self.context = [[JSContext alloc] init];
+//    [self.context evaluateScript:@"var console = {}"];
+//    self.context[@"console"][@"log"] = ^(NSString *message) {
+//        NSLog(@"Javascript log: %@",message);
+//    };
+//    self.context[@"setTimeout"] = ^(JSValue *func, JSValue *timeout) {
+//        if (timeout.isNumber) {
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)([timeout toInt32] * NSEC_PER_MSEC)), dispatch_get_main_queue(), ^{
+//                [func callWithArguments:@[]];
+//            });
+//        }
+//    };
+//    NSLog(@"123");
+//    [_context evaluateScript:@"console.log('test abc');"];
+//    [_context evaluateScript:@"var timeTest = function(){console.log('timeOut test 1234'); setTimeout(timeTest,1000)}"];
+//    [_context evaluateScript:@"console.log('timeout start');setTimeout(timeTest,1000);"];
+//    [_context evaluateScript:@"var num = 5 + 5"];      //做计算
+//    [_context evaluateScript:@"var names = [\'Grace\', \'Ada\', \'Margaret\']"]; //创建变量
+//    [_context evaluateScript:@"var triple = function(value) { return value * 3 }"];  //定义方法
+//    JSValue *tripleNum = [_context evaluateScript:@"triple(num)"];
+//    NSLog(@"trileNum %@", [tripleNum toNumber]);
+    
+    
     // 设置userAgent
-    NSString *customizeUserAgent = @" YINENG_IOS/1.0";
+    NSString *customizeUserAgent = @" YINENG_IOS_GAME/1.0";
     NSString *webViewUserAgent = [[UIWebView new] stringByEvaluatingJavaScriptFromString:@"navigator.userAgent"];
     customizeUserAgent = [webViewUserAgent stringByAppendingFormat:@" %@", customizeUserAgent];
     if (customizeUserAgent) {

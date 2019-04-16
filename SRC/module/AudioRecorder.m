@@ -20,30 +20,28 @@
     NSString            *recordFilePath; //文件存放位置   temp/RRecord.wav
     CallJS              startCallJS;
     CallJS              stopCallJS;
-    BOOL                isPromission;
+    NSNumber            *isPromission;
+    CallJS              promissJS;
 }
 
 - (instancetype)init
 {
     self = [super init];
     if (self) {
-        isPromission = false;
+        if ([[NSUserDefaults standardUserDefaults] objectForKey:@"audioRecorder"] != NULL) {
+            isPromission = [[NSUserDefaults standardUserDefaults] objectForKey:@"audioRecorder"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"audioRecorder"];
+        }else{
+            isPromission = [[NSNumber alloc] initWithInt:0];
+        }
     }
     return self;
 }
 
 - (void)getPromission:(CallJS)callJS{
-    if (!isPromission) {
-        callJS(Fail,@[@"not open"]);
-        //弹出提示框是否去打开
-        if (![self canRecord]) {
-            isPromission = false;
-            [self showAlertController];
-        }else{
-            isPromission = true;
-        }
-    }else{
-        callJS(Success,@[@"ok"]);
+    promissJS = callJS;
+    if (![self canRecord]) {
+        [self showAlertController];
     }
 }
 
@@ -194,8 +192,10 @@
     if ([audioSession respondsToSelector:@selector(requestRecordPermission:)]) {
         [audioSession performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
             if (granted) {
+                self->promissJS(Success,@[@"ok"]);
                 bCanRecord = YES;
             } else {
+                self->promissJS(Fail,@[@"not open"]);
                 bCanRecord = NO;
             }
         }];

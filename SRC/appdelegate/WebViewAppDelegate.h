@@ -5,7 +5,7 @@
 //  Created by yineng on 2018/8/7.
 //  Copyright © 2018年 kupay. All rights reserved.
 //
-
+#import <JavaScriptCore/JavaScriptCore.h>
 #import <UIKit/UIKit.h>
 #import <ShareSDK/ShareSDK.h>
 #import <ShareSDKConnector/ShareSDKConnector.h>
@@ -25,5 +25,6 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,UNUserNotificationCenterDelegate>
 @property(strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) JSContext *context;
 @end
 

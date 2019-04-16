@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedInstenceWithWebViewName:(NSString *)webviewName url:(NSString *)Url title:(NSString *)webTitle injectContent:(NSString *)injectcontent;
 - (instancetype)initWithWebViewName:(NSString *)webViewName url:(NSString *)url title:(NSString *)webtitle injectContent:(NSString *)injectContent;
 - (void)removeScriptMessageHandle;
--(void)initWeb;
+- (void)initWeb;
 @end
 
 NS_ASSUME_NONNULL_END

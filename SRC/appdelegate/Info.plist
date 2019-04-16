@@ -103,6 +103,6 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>URL_PATH</key>
-	<string>/dst/boot/index.html</string>
+	<string>/wallet/app/boot/index.html</string>
 </dict>
 </plist>

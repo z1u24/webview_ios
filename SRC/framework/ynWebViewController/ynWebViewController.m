@@ -59,6 +59,7 @@ JSBridge *bridge;
 }
 
 - (WKWebView *)createWebviewWithInjectContent:(NSString *)injectContent {
+    
     WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
     config.preferences = [WKPreferences new];
     
@@ -78,11 +79,7 @@ JSBridge *bridge;
     WKUserScript *script = [[WKUserScript alloc] initWithSource:injectContent injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
     [config.userContentController addUserScript:script];
     WKWebView *webview = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:config];
-    // 获取默认User-Agent
-    [webview evaluateJavaScript:@"navigator.userAgent" completionHandler:^(id result, NSError *error) {
-        webview.customUserAgent = [result stringByAppendingString:@" YINENG_IOS_GAME/1.0"];
-    }];
-    // 确定宽、高、X、Y坐标
+//    webview.scrollView.    // 确定宽、高、X、Y坐标
     if (KISIphoneX) {
         [webview setFrame:CGRectMake(0, 44, self.view.bounds.size.width, self.view.bounds.size.height-44)];
     }else{
@@ -148,6 +145,13 @@ JSBridge *bridge;
 }
 
 
+- (void)viewWillAppear:(BOOL)animated{
+    [bridge sendJS:@"PI_Activity" name:@"onResumed" params:@[@"页面进入前台"]];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [bridge sendJS:@"PI_App" name:@"onBackPressed" params:@[@"页面进入后台"]];
+}
 
 - (void)removeScriptMessageHandle{
     [[ynWebView getWKWebView].configuration.userContentController removeScriptMessageHandlerForName:@"Native"];

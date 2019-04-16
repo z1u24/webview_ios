@@ -27,12 +27,13 @@
         }else{
             sOD = @"";
         }
+        [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
     }
     return self;
 }
 
 - (void)addTransactionObserver:(CallJS)callJS{
-    [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
+    
     callJS(Success,@[@"success"]);
 }
 
@@ -141,8 +142,10 @@
     NSURL *receiptURL = [[NSBundle mainBundle] appStoreReceiptURL];
     // 从沙盒中获取到购买凭据
     NSData *receiptData = [NSData dataWithContentsOfURL:receiptURL];
+//    transaction.transactionIdentifier
     NSString *encodeStr = [receiptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
-    [self sendJSTransation:[NSNumber numberWithInt:1] sd:sd transation:encodeStr];
+    NSString *transUTF8 = [NSString stringWithUTF8String:[encodeStr UTF8String]];
+    [self sendJSTransation:[NSNumber numberWithInt:1] sd:sd transation:transUTF8];
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
 
