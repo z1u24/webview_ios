@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04402D1B2269DC8200E1BC61 /* ZHJSVMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04402D162269DC8200E1BC61 /* ZHJSVMManager.m */; };
+		04402D1C2269DC8200E1BC61 /* jsvmTest.js in Resources */ = {isa = PBXBuildFile; fileRef = 04402D172269DC8200E1BC61 /* jsvmTest.js */; };
+		04402D1D2269DC8200E1BC61 /* AFNetWorking_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04402D182269DC8200E1BC61 /* AFNetWorking_Extension.m */; };
+		04402D1E2269DC8200E1BC61 /* ZHURLSessionDataTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 04402D1A2269DC8200E1BC61 /* ZHURLSessionDataTask.m */; };
 		1828D344215E358500AEC12F /* DeviceIdProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828D343215E358500AEC12F /* DeviceIdProvider.m */; };
 		186CC14E212D3D38004AC557 /* BaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC14D212D3D38004AC557 /* BaseObject.m */; };
 		186CC150212D3D5C004AC557 /* QRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 186CC14F212D3D5C004AC557 /* QRCode.m */; };
@@ -69,6 +73,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04402D142269DC8200E1BC61 /* AFNetWorking_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetWorking_Extension.h; sourceTree = "<group>"; };
+		04402D152269DC8200E1BC61 /* ZHURLSessionDataTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHURLSessionDataTask.h; sourceTree = "<group>"; };
+		04402D162269DC8200E1BC61 /* ZHJSVMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHJSVMManager.m; sourceTree = "<group>"; };
+		04402D172269DC8200E1BC61 /* jsvmTest.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsvmTest.js; sourceTree = "<group>"; };
+		04402D182269DC8200E1BC61 /* AFNetWorking_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetWorking_Extension.m; sourceTree = "<group>"; };
+		04402D192269DC8200E1BC61 /* ZHJSVMManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHJSVMManager.h; sourceTree = "<group>"; };
+		04402D1A2269DC8200E1BC61 /* ZHURLSessionDataTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHURLSessionDataTask.m; sourceTree = "<group>"; };
 		05E9AC1474756A21F18A3754 /* Pods_WebViewPro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WebViewPro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1172D96F2A9AD88014270C48 /* Pods-WebViewPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WebViewPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WebViewPro/Pods-WebViewPro.debug.xcconfig"; sourceTree = "<group>"; };
 		1828D342215E358500AEC12F /* DeviceIdProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceIdProvider.h; sourceTree = "<group>"; };
@@ -204,6 +215,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04402D132269DC8200E1BC61 /* jsvm */ = {
+			isa = PBXGroup;
+			children = (
+				04402D172269DC8200E1BC61 /* jsvmTest.js */,
+				04402D142269DC8200E1BC61 /* AFNetWorking_Extension.h */,
+				04402D182269DC8200E1BC61 /* AFNetWorking_Extension.m */,
+				04402D152269DC8200E1BC61 /* ZHURLSessionDataTask.h */,
+				04402D1A2269DC8200E1BC61 /* ZHURLSessionDataTask.m */,
+				04402D192269DC8200E1BC61 /* ZHJSVMManager.h */,
+				04402D162269DC8200E1BC61 /* ZHJSVMManager.m */,
+			);
+			path = jsvm;
+			sourceTree = "<group>";
+		};
 		1828D2CD215DED6700AEC12F /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -483,6 +508,7 @@
 		F354AB2A2119930300A8BEA8 /* SRC */ = {
 			isa = PBXGroup;
 			children = (
+				04402D132269DC8200E1BC61 /* jsvm */,
 				F31241BE21AE982E00819868 /* appdelegate */,
 				F31241B721AE976400819868 /* framework */,
 				F30026982140FC2400318BB7 /* assets */,
@@ -575,6 +601,7 @@
 			files = (
 				186CC181212D5B92004AC557 /* ShareSDKUI.bundle in Resources */,
 				F30026992140FC2400318BB7 /* assets in Resources */,
+				04402D1C2269DC8200E1BC61 /* jsvmTest.js in Resources */,
 				F3750F20223239FB0047B802 /* icon.png in Resources */,
 				F35D48D82223968F00711093 /* AliyunEmasServices-Info.plist in Resources */,
 				F31241B321AE6E1700819868 /* LICENSE in Resources */,
@@ -613,12 +640,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-WebViewPro/Pods-WebViewPro-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetwork/AFNetwork.framework",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/HMQRCodeScanner/HMQRCodeScanner.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetwork.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMQRCodeScanner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
@@ -649,6 +682,7 @@
 				F367FC3F21B4C63F007C278A /* UIViewController+BackButtonHandler.m in Sources */,
 				F3347FE721D70855000767AA /* CameraPicker.m in Sources */,
 				F31241B221AE6E1700819868 /* thread.c in Sources */,
+				04402D1D2269DC8200E1BC61 /* AFNetWorking_Extension.m in Sources */,
 				F354AB3B2119930400A8BEA8 /* main.m in Sources */,
 				F354AB2D2119930300A8BEA8 /* WebViewAppDelegate.m in Sources */,
 				186CC198212E5788004AC557 /* ShareToPlatforms.m in Sources */,
@@ -657,9 +691,11 @@
 				F33D934F21B109FC001E3AC8 /* globolNavigationController.m in Sources */,
 				F340DD4321DDB8B800A25D50 /* AudioRecorder.m in Sources */,
 				F33D934521AFD1C0001E3AC8 /* YNWebView.m in Sources */,
+				04402D1E2269DC8200E1BC61 /* ZHURLSessionDataTask.m in Sources */,
 				F33D935221B10E44001E3AC8 /* ynWebViewController.m in Sources */,
 				F362493A22150D5600A28ADE /* MessagePost.m in Sources */,
 				F31241AD21AE6E1700819868 /* blake2b.c in Sources */,
+				04402D1B2269DC8200E1BC61 /* ZHJSVMManager.m in Sources */,
 				1828D344215E358500AEC12F /* DeviceIdProvider.m in Sources */,
 				F33D934B21AFF3A3001E3AC8 /* WebViewManager.m in Sources */,
 				F3750F232232663B0047B802 /* LocalLanguageMgr.m in Sources */,

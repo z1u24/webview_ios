@@ -9,6 +9,7 @@
 #import "WebViewAppDelegate.h"
 #import "globolNavigationController.h"
 #import "BaseObject.h"
+#import "ZHJSVMManager.h"
 
 #define IOS10_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
 #define IOS9_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
@@ -23,7 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    
+    [[ZHJSVMManager getIntance]initContext];
 //    self.context = [[JSContext alloc] init];
 //    [self.context evaluateScript:@"var console = {}"];
 //    self.context[@"console"][@"log"] = ^(NSString *message) {
@@ -56,18 +57,18 @@
     }
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    WebViewController *viewController = [WebViewController sharedInstence];
-    globolNavigationController *navi = [[globolNavigationController alloc] initWithRootViewController:viewController];
-    self.window.rootViewController = navi;
-    [BaseObject setVc:navi];
-    [self.window makeKeyAndVisible];
-    [self initShareSDK];
-    
-    [self initAliPush];
-    [self registerAPNS:application];
-    
-    [CloudPushSDK sendNotificationAck:launchOptions];
-    NSLog(@"%@",[CloudPushSDK getDeviceId]);
+//    WebViewController *viewController = [WebViewController sharedInstence];
+//    globolNavigationController *navi = [[globolNavigationController alloc] initWithRootViewController:viewController];
+//    self.window.rootViewController = navi;
+//    [BaseObject setVc:navi];
+//    [self.window makeKeyAndVisible];
+//    [self initShareSDK];
+//
+//    [self initAliPush];
+//    [self registerAPNS:application];
+//
+//    [CloudPushSDK sendNotificationAck:launchOptions];
+//    NSLog(@"%@",[CloudPushSDK getDeviceId]);
     
     
     return YES;
