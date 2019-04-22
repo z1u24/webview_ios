@@ -1,0 +1,9 @@
+Pods
+Podfile.lock
+*.DS_Store
+*.xcuserstate
+*.lock
+
+Pods/AlicloudPush/push/CloudPushSDK.framework/CloudPushSDK
+
+Pods/AlicloudPush/push/CloudPushSDK.framework/CloudPushSDK
