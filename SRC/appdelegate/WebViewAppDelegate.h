@@ -26,5 +26,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate,UNUserNotificationCenterDelegate>
 @property(strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) JSContext *context;
+- (void)loadJSContext;
 @end
 

@@ -64,12 +64,15 @@
 		F354AB3B2119930400A8BEA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB3A2119930400A8BEA8 /* main.m */; };
 		F35D48D82223968F00711093 /* AliyunEmasServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35D48D72223968F00711093 /* AliyunEmasServices-Info.plist */; };
 		F362493A22150D5600A28ADE /* MessagePost.m in Sources */ = {isa = PBXBuildFile; fileRef = F362493922150D5600A28ADE /* MessagePost.m */; };
+		F362A36C227068DB00D398F9 /* JSValue_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F362A36A227068DB00D398F9 /* JSValue_Extension.m */; };
 		F367FC3F21B4C63F007C278A /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */; };
 		F3750F20223239FB0047B802 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F3750F1F223239FB0047B802 /* icon.png */; };
 		F3750F232232663B0047B802 /* LocalLanguageMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = F3750F222232663B0047B802 /* LocalLanguageMgr.m */; };
 		F392383821FAB23A005D2603 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392383721FAB23A005D2603 /* CoreTelephony.framework */; };
 		F3CE29AF224F47DB00F11535 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3CE29AE224F47DB00F11535 /* StoreKit.framework */; };
 		F3CE29B2224F482C00F11535 /* IAPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CE29B1224F482C00F11535 /* IAPManager.m */; };
+		F3E7302F226D62C900461972 /* JSVMBootManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F3E7302E226D62C900461972 /* JSVMBootManager.m */; };
+		F3E73031226DA62200461972 /* base64js.min.js in Resources */ = {isa = PBXBuildFile; fileRef = F3E73030226DA62200461972 /* base64js.min.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +175,8 @@
 		F35D48D72223968F00711093 /* AliyunEmasServices-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AliyunEmasServices-Info.plist"; sourceTree = "<group>"; };
 		F362493822150D5600A28ADE /* MessagePost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagePost.h; sourceTree = "<group>"; };
 		F362493922150D5600A28ADE /* MessagePost.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagePost.m; sourceTree = "<group>"; };
+		F362A36A227068DB00D398F9 /* JSValue_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSValue_Extension.m; sourceTree = "<group>"; };
+		F362A36B227068DB00D398F9 /* JSValue_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSValue_Extension.h; sourceTree = "<group>"; };
 		F367FC3D21B4C63F007C278A /* UIViewController+BackButtonHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BackButtonHandler.h"; sourceTree = "<group>"; };
 		F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BackButtonHandler.m"; sourceTree = "<group>"; };
 		F3750F1F223239FB0047B802 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -181,6 +186,9 @@
 		F3CE29AE224F47DB00F11535 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F3CE29B0224F482C00F11535 /* IAPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAPManager.h; sourceTree = "<group>"; };
 		F3CE29B1224F482C00F11535 /* IAPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IAPManager.m; sourceTree = "<group>"; };
+		F3E7302D226D62C900461972 /* JSVMBootManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSVMBootManager.h; sourceTree = "<group>"; };
+		F3E7302E226D62C900461972 /* JSVMBootManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JSVMBootManager.m; sourceTree = "<group>"; };
+		F3E73030226DA62200461972 /* base64js.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = base64js.min.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,13 +226,18 @@
 		04402D132269DC8200E1BC61 /* jsvm */ = {
 			isa = PBXGroup;
 			children = (
+				F3E73030226DA62200461972 /* base64js.min.js */,
 				04402D172269DC8200E1BC61 /* jsvmTest.js */,
 				04402D142269DC8200E1BC61 /* AFNetWorking_Extension.h */,
 				04402D182269DC8200E1BC61 /* AFNetWorking_Extension.m */,
 				04402D152269DC8200E1BC61 /* URLSessionDataTask.h */,
 				04402D1A2269DC8200E1BC61 /* URLSessionDataTask.m */,
+				F362A36B227068DB00D398F9 /* JSValue_Extension.h */,
+				F362A36A227068DB00D398F9 /* JSValue_Extension.m */,
 				04402D192269DC8200E1BC61 /* JSVMManager.h */,
 				04402D162269DC8200E1BC61 /* JSVMManager.m */,
+				F3E7302D226D62C900461972 /* JSVMBootManager.h */,
+				F3E7302E226D62C900461972 /* JSVMBootManager.m */,
 			);
 			path = jsvm;
 			sourceTree = "<group>";
@@ -605,6 +618,7 @@
 				F3750F20223239FB0047B802 /* icon.png in Resources */,
 				F35D48D82223968F00711093 /* AliyunEmasServices-Info.plist in Resources */,
 				F31241B321AE6E1700819868 /* LICENSE in Resources */,
+				F3E73031226DA62200461972 /* base64js.min.js in Resources */,
 				F354AB352119930400A8BEA8 /* Assets.xcassets in Resources */,
 				186CC17E212D5B92004AC557 /* ShareSDKConfigFile.bundle in Resources */,
 				186CC18A212D5B92004AC557 /* ShareSDK.bundle in Resources */,
@@ -686,7 +700,9 @@
 				F354AB3B2119930400A8BEA8 /* main.m in Sources */,
 				F354AB2D2119930300A8BEA8 /* WebViewAppDelegate.m in Sources */,
 				186CC198212E5788004AC557 /* ShareToPlatforms.m in Sources */,
+				F362A36C227068DB00D398F9 /* JSValue_Extension.m in Sources */,
 				F31241B021AE6E1700819868 /* argon2.c in Sources */,
+				F3E7302F226D62C900461972 /* JSVMBootManager.m in Sources */,
 				F300269C2141161D00318BB7 /* JSIntercept.m in Sources */,
 				F33D934F21B109FC001E3AC8 /* globolNavigationController.m in Sources */,
 				F340DD4321DDB8B800A25D50 /* AudioRecorder.m in Sources */,
@@ -829,6 +845,7 @@
 				CODE_SIGN_ENTITLEMENTS = WebViewPro.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = C5K4DLMYTL;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -1,6 +1,6 @@
 console.log("世界")
 //----------------------分界线HTTP请求案例----------------------
-let task = JSVM.request();
+//let task = JSVM.request();
 //task.cancel(); // 取消当前请求，会有回调走fail
 //----------------------分界线FMDB案例----------------------
 //function create(tabName) {

@@ -32,11 +32,11 @@
 {
     self = [super init];
     if (self) {
-        self.isUpdate = [NSNumber numberWithInt:0];
-        WKWebView *wbView = [self createWebview];
-        _ynWebView = [[YNWebView alloc] initWithWKWebView:wbView webName:@"default" webViewController:self];
-        _bridge = [[JSBridge alloc] initWithYnWebView:_ynWebView];
-        _intercept = [[JSIntercept alloc] initWithWebView:wbView update:self.isUpdate];
+//        self.isUpdate = [NSNumber numberWithInt:0];
+//        WKWebView *wbView = [self createWebview];
+//        _ynWebView = [[YNWebView alloc] initWithWKWebView:wbView webName:@"default" webViewController:self];
+//        _bridge = [[JSBridge alloc] initWithYnWebView:_ynWebView];
+//        _intercept = [[JSIntercept alloc] initWithWebView:wbView update:self.isUpdate];
     }
     return self;
 }
@@ -53,14 +53,14 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-    [_bridge sendJS:@"PI_Activity" name:@"onResumed" params:@[@"页面进入前台"]];
-    [super viewWillAppear:animated];
-    
-    if (self.timer) {
-        [self.timer invalidate];
-        self.timer = nil;
-    }
+//    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+//    [_bridge sendJS:@"PI_Activity" name:@"onResumed" params:@[@"页面进入前台"]];
+//    [super viewWillAppear:animated];
+//
+//    if (self.timer) {
+//        [self.timer invalidate];
+//        self.timer = nil;
+//    }
     self.view.backgroundColor = UIColor.whiteColor;
 }
 

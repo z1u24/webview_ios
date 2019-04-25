@@ -21,6 +21,8 @@
 @end
 
 @implementation AppDelegate
+globolNavigationController *navi = nil;
+NSString *userAgent = @"";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -32,16 +34,19 @@
     if (customizeUserAgent) {
         [[NSUserDefaults standardUserDefaults] registerDefaults:@{@"UserAgent": customizeUserAgent}];
     }
-    NSString *userAgent = [customizeUserAgent stringByAppendingString:@" JSVM_IOS"];
+    userAgent = [customizeUserAgent stringByAppendingString:@" JSVM_IOS"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     WebViewController *viewController = [WebViewController sharedInstence];
-    globolNavigationController *navi = [[globolNavigationController alloc] initWithRootViewController:viewController];
+    navi = [[globolNavigationController alloc] initWithRootViewController:viewController];
     self.window.rootViewController = navi;
     [BaseObject setVc:navi];
     [self.window makeKeyAndVisible];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadJSContext) name:@"restartJSVM" object:@"restart"];
     
-    self.context = [[JSVMManager getIntance] shareInstanceWithUserAgent:userAgent withNavigationController:navi];
+    [self loadJSContext];
+    
     
     [self initShareSDK];
     [self initAliPush];
@@ -49,6 +54,13 @@
     [CloudPushSDK sendNotificationAck:launchOptions];
     
     return YES;
+}
+
+- (void)loadJSContext{
+    if (self.context != nil) {
+        self.context = nil;
+    }
+    self.context = [[JSVMManager getIntance] shareInstanceWithUserAgent:userAgent withNavigationController:navi];
 }
 
 /**

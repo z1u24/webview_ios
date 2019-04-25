@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <JavaScriptCore/JavaScriptCore.h>
+#import "JSValue_Extension.h"
 #import "globolNavigationController.h"
 @interface JSVMManager : NSObject
 

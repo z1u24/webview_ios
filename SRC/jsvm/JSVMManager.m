@@ -11,6 +11,7 @@
 #import "AFNetwork.h"
 #import "AFNetWorking_Extension.h"
 #import <JavaScriptCore/JavaScriptCore.h>
+#import "JSVMBootManager.h"
 
 @implementation JSVMManager
 NSString *const CREATE_TABLE_SQL =
@@ -36,6 +37,8 @@ NSString *const DELETE_ITEMS_SQL = @"DELETE from %@ where id in ( %@ )";
 NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id like ? ";
 
 static JSVMManager *_manager = nil;
+
+JSVMBootManager *boot = nil;
 
 + (JSVMManager *)getIntance {
     if (_manager == nil) {
@@ -72,28 +75,79 @@ AFHTTPSessionManager *_afManager;
 - (JSContext *)shareInstanceWithUserAgent:(NSString *)userAgent withNavigationController:(globolNavigationController *)navi{
     // 初始化JSVM
     JSContext * context = [[JSContext alloc] init];
-    [context evaluateScript:@"var console = {}"];
-    [context evaluateScript:@"var navigator = {}"];
-    [context evaluateScript:@"var JSVM = {}"];
-    [context evaluateScript:@"JSVM.store = {}"];
-    
+    [context evaluateScript:@"var console = {};"];
+    [context evaluateScript:@"var navigator = {};"];
+    [context evaluateScript:@"var JSVM = {};"];
+    [context evaluateScript:@"JSVM.store = {};"];
+    [context evaluateScript:@"JSVM.module = {};"];
+    [context evaluateScript:@"JSVM.Boot = {};"];
+    [context evaluateScript:@"var self= {};"];
     //添加打印方法
-    context[@"console"][@"log"] = ^(NSString *message) {
-        NSLog(@"Javascript log: %@",message);
+    context[@"console"][@"log"] =   ^(JSValue *one,JSValue*two,JSValue *three,JSValue *four) {
+        NSArray * arr = @[one,two,three,four];
+        NSString *result = @"";
+        for (JSValue * i in arr) {
+            if ([i.toString isEqualToString:@"undefined"]) {
+            }else {
+                result = [NSString stringWithFormat:@"%@%@",result,i];
+            }
+        }
+        NSLog(@"%@",result);
+    };
+    
+    context[@"JSVM"][@"module"][@"loadJS"] = ^(JSValue *base64){
+        NSData *data = [[NSData alloc] initWithBase64EncodedString:base64.toString options:0];
+        NSString *value = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        [[JSContext currentContext]  evaluateScript:value];
     };
     
     //添加浏览器环境字段
     context[@"navigator"][@"userAgent"] = userAgent;
     
+    //沙盒路径
+    context[@"JSVM"][@"sandBox"] = ^(){
+        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        return docPath;
+    };
+    
+    //添加读取文件方法
+    context[@"JSVM"][@"fileRead"] = ^(JSValue *filePath){
+        NSString *value = [[NSString alloc] initWithContentsOfFile:filePath.toString encoding:NSUTF8StringEncoding error:nil];
+        return value;
+    };
+    
+    //base64
+    NSString *base64path = [[NSBundle mainBundle] pathForResource:@"base64js.min.js" ofType:nil];
+    NSString *base64js = [NSString stringWithContentsOfFile:base64path encoding:NSUTF8StringEncoding error:nil];
+    [context evaluateScript:base64js];
+    //加载js方法
+    context[@"JSVM"][@"loadJS"] = ^(JSValue *path, JSValue *url, JSValue *errFunc, JSValue *errText){
+        NSString *docPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingString:@"/assets/JSVM"];
+        NSString *fillPath = [docPath stringByAppendingString:url.toString];
+        NSString *value = [[NSString alloc] initWithContentsOfFile:fillPath encoding:NSUTF8StringEncoding error:nil];
+        if (!value){
+            value = [[NSString alloc] initWithContentsOfFile:[path.toString stringByAppendingString:url.toString] encoding:NSUTF8StringEncoding error:nil];
+            if (!value){
+                [errFunc callWithArgumentsNoNil:@[errText]];
+            }else{
+                [context evaluateScript:value];
+            }
+        }else{
+            [[JSContext currentContext]  evaluateScript:value];
+        }
+    };
+    
     //注入alert方法
     context[@"alert"] = ^(JSValue *message){
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:[message toString] message:@"" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
         }];
         [alert addAction:okAction];
         [navi.topViewController presentViewController:alert animated:YES completion:nil];
     };
+    
+    [context evaluateScript:@"var location = {};"];
     
     //注入时间函数
     [self timerAddToJSC:context];
@@ -102,9 +156,17 @@ AFHTTPSessionManager *_afManager;
     // 注入HTTP请求函数
     [self HTTPAddToJSC:context];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"jsvmTest" ofType:@"js"];
-    NSString *str = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    [context evaluateScript:str];
+    //注入Boot
+    boot = [[JSVMBootManager alloc] initWithContext:context];
+//
+    NSString *path = [@"assets/JSVM" stringByAppendingString:@"/dst/boot/jsvm.js"];
+    NSString *fullPath = [[NSBundle mainBundle] pathForResource:path ofType:nil];
+    context[@"location"][@"href"] = fullPath;
+//    NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"jsvmTest.js" ofType:nil];
+    NSString *main = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil];
+    
+    [context evaluateScript:main];
+    
     
     return context;
 };
@@ -115,6 +177,7 @@ AFHTTPSessionManager *_afManager;
         NSDictionary *header = inputHeader.toDictionary;
         NSString *method = inputType.toString;
         NSString * url = inputUrl.toString;
+//        NSString *url = @"www.baidu.com";
         //  尝试使用唯一对象，不行再打开注释新建
         //    AFHTTPSessionManager * _afManager = [[AFHTTPSessionManager alloc]init];
         _afManager.requestSerializer = [AFJSONRequestSerializer serializer];
@@ -125,27 +188,28 @@ AFHTTPSessionManager *_afManager;
             [_afManager.requestSerializer setValue:value forHTTPHeaderField:key]; // 添加请求头
         }
         NSData *body = nil;
-        if([inputReqType.toString isEqualToString:@"bin"]){
-            body = [[NSData alloc] initWithBase64EncodedString:inputReqData.toString options:0];
-        }else if([inputReqType.toString isEqualToString:@"json"]){
-            body = [NSJSONSerialization dataWithJSONObject:inputReqData options:NSJSONWritingPrettyPrinted error:nil];
-        }else{
-            NSString *jsonString = [NSString stringWithFormat:@"%@", inputReqData];
-            body = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+        if ([method isEqualToString:@"POST"]) {
+            if([inputReqType.toString isEqualToString:@"bin"]){
+                body = [[NSData alloc] initWithBase64EncodedString:inputReqData.toString options:0];
+            }else if([inputReqType.toString isEqualToString:@"json"]){
+                body = [NSJSONSerialization dataWithJSONObject:inputReqData options:NSJSONWritingPrettyPrinted error:nil];
+            }else{
+                NSString *jsonString = [NSString stringWithFormat:@"%@", inputReqData];
+                body = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+            }
         }
-        
         NSURLSessionTask * task = [_afManager zhHttpRequestWithUrl:url method:method parameters:@{} httpBody:body progress:^(NSProgress * p) {
             NSNumber * complete = [[NSNumber alloc]initWithLong:p.completedUnitCount];
             NSNumber * total = [[NSNumber alloc]initWithLong:p.totalUnitCount];
             NSLog(@"完成进度=%@，总进度=%@",complete,total);
-            [progress callWithArguments:@[complete,total]];
+            [progress callWithArgumentsNoNil:@[complete,total]];
         } success:^(NSURLSessionDataTask * task, id data) {
             id request = nil;
-            if ([inputReqType.toString isEqualToString:@"json"]) {
+            if ([inputRespType.toString isEqualToString:@"json"]) {
                 NSDictionary *dicJson=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
                 request = dicJson;
                 NSLog(@"请求成功字典=%@",dicJson);
-            }else if ([inputReqType.toString isEqualToString:@"bin"]){
+            }else if ([inputRespType.toString isEqualToString:@"bin"]){
                 NSData *base64Data = [data base64EncodedDataWithOptions:0];
                 NSString *baseString = [[NSString alloc]initWithData:base64Data encoding:NSUTF8StringEncoding];
                 request = baseString;
@@ -155,10 +219,10 @@ AFHTTPSessionManager *_afManager;
                 request = jsonStr;
                 NSLog(@"请求成功字符串=%@",jsonStr);
             }
-            [success callWithArguments:@[request]];
+            [success callWithArgumentsNoNil:@[request]];
         } failure:^(NSURLSessionDataTask * task, NSError * error) {
             NSLog(@"请求失败%@",error.description);
-            [fail callWithArguments:@[error.description]];
+            [fail callWithArgumentsNoNil:@[error.description]];
         }];
         URLSessionDataTask *obj = [[URLSessionDataTask alloc] initWithTask:task];
         return obj;
@@ -166,8 +230,8 @@ AFHTTPSessionManager *_afManager;
 }
 //MARK:回调到jsc
 -(void) callToJSC:(JSValue *)target WithArguments:(NSArray *)arguments WithComplete:(JSValue *)complete {
-    [target callWithArguments:arguments];
-    [complete callWithArguments:@[]];
+        [target callWithArgumentsNoNil:arguments];
+        [complete callWithArgumentsNoNil:@[]];
 }
 
 // MARK:检查表名是否符合格式
@@ -179,7 +243,7 @@ AFHTTPSessionManager *_afManager;
     return YES;
 }
 //MARK: FMDB注入
--(void) FMDBAddToJSC:(JSContext *)context{
+- (void)FMDBAddToJSC:(JSContext *)context{
     NSString *g = NSHomeDirectory();
     NSLog(@"%@",g);
     /// 创建
@@ -342,7 +406,7 @@ AFHTTPSessionManager *_afManager;
         if (timeout.isNumber) {
             _timerKey += 1;
             NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:[timeout toDouble]/1000.0 repeats:NO block:^(NSTimer * _Nonnull timer) {
-                [func callWithArguments:@[]];
+                [func callWithArgumentsNoNil:@[]];
                 [self removeFrom:_dic withObject:timer];
                 [timer invalidate];
                 timer = nil;
@@ -365,7 +429,7 @@ AFHTTPSessionManager *_afManager;
         if (timeout.isNumber) {
             _timerKey += 1;
             NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:[timeout toDouble]/1000.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
-                [func callWithArguments:@[]];
+                [func callWithArgumentsNoNil:@[]];
                 [self removeFrom:_dic withObject:timer];
                 [timer invalidate];
                 timer = nil;
