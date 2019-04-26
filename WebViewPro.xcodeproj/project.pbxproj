@@ -58,6 +58,7 @@
 		F33D934F21B109FC001E3AC8 /* globolNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D934D21B109FC001E3AC8 /* globolNavigationController.m */; };
 		F33D935221B10E44001E3AC8 /* ynWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D935121B10E44001E3AC8 /* ynWebViewController.m */; };
 		F340DD4321DDB8B800A25D50 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = F340DD4221DDB8B800A25D50 /* AudioRecorder.m */; };
+		F34A37EF2272A4EB006642BF /* WebSocketManger.m in Sources */ = {isa = PBXBuildFile; fileRef = F34A37EE2272A4EA006642BF /* WebSocketManger.m */; };
 		F354AB2D2119930300A8BEA8 /* WebViewAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB2C2119930300A8BEA8 /* WebViewAppDelegate.m */; };
 		F354AB302119930300A8BEA8 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB2F2119930300A8BEA8 /* WebViewController.m */; };
 		F354AB352119930400A8BEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F354AB342119930400A8BEA8 /* Assets.xcassets */; };
@@ -164,6 +165,8 @@
 		F340DD4121DDB8B800A25D50 /* AudioRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
 		F340DD4221DDB8B800A25D50 /* AudioRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioRecorder.m; sourceTree = "<group>"; };
 		F3439882221E98720012CF15 /* WebViewPro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebViewPro.entitlements; sourceTree = "<group>"; };
+		F34A37ED2272A4EA006642BF /* WebSocketManger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebSocketManger.h; sourceTree = "<group>"; };
+		F34A37EE2272A4EA006642BF /* WebSocketManger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebSocketManger.m; sourceTree = "<group>"; };
 		F354AB282119930300A8BEA8 /* WebViewPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebViewPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F354AB2B2119930300A8BEA8 /* WebViewAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewAppDelegate.h; sourceTree = "<group>"; };
 		F354AB2C2119930300A8BEA8 /* WebViewAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewAppDelegate.m; sourceTree = "<group>"; };
@@ -234,6 +237,8 @@
 				04402D1A2269DC8200E1BC61 /* URLSessionDataTask.m */,
 				F362A36B227068DB00D398F9 /* JSValue_Extension.h */,
 				F362A36A227068DB00D398F9 /* JSValue_Extension.m */,
+				F34A37ED2272A4EA006642BF /* WebSocketManger.h */,
+				F34A37EE2272A4EA006642BF /* WebSocketManger.m */,
 				04402D192269DC8200E1BC61 /* JSVMManager.h */,
 				04402D162269DC8200E1BC61 /* JSVMManager.m */,
 				F3E7302D226D62C900461972 /* JSVMBootManager.h */,
@@ -659,6 +664,7 @@
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/HMQRCodeScanner/HMQRCodeScanner.framework",
 				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
 				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -668,6 +674,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HMQRCodeScanner.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,6 +709,7 @@
 				186CC198212E5788004AC557 /* ShareToPlatforms.m in Sources */,
 				F362A36C227068DB00D398F9 /* JSValue_Extension.m in Sources */,
 				F31241B021AE6E1700819868 /* argon2.c in Sources */,
+				F34A37EF2272A4EB006642BF /* WebSocketManger.m in Sources */,
 				F3E7302F226D62C900461972 /* JSVMBootManager.m in Sources */,
 				F300269C2141161D00318BB7 /* JSIntercept.m in Sources */,
 				F33D934F21B109FC001E3AC8 /* globolNavigationController.m in Sources */,

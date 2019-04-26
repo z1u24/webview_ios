@@ -23,4 +23,6 @@ pod 'FMDB', '~> 2.7.5'
 
 pod 'AFNetwork', '~> 0.1.0'
 
+pod 'SocketRocket', '~> 0.5.1'
+
 end

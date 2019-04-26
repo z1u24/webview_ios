@@ -12,6 +12,8 @@
 #import "AFNetWorking_Extension.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "JSVMBootManager.h"
+#import "WebSocketManger.h"
+#import "YNWebView.h"
 
 @implementation JSVMManager
 NSString *const CREATE_TABLE_SQL =
@@ -74,7 +76,7 @@ AFHTTPSessionManager *_afManager;
 
 - (JSContext *)shareInstanceWithUserAgent:(NSString *)userAgent withNavigationController:(globolNavigationController *)navi{
     // 初始化JSVM
-    JSContext * context = [[JSContext alloc] init];
+    JSContext *context = [[JSContext alloc] init];
     [context evaluateScript:@"var console = {};"];
     [context evaluateScript:@"var navigator = {};"];
     [context evaluateScript:@"var JSVM = {};"];
@@ -93,6 +95,25 @@ AFHTTPSessionManager *_afManager;
             }
         }
         NSLog(@"%@",result);
+    };
+    
+    context[@"JSVM"][@"postMessage"] = ^(JSValue *webName, JSValue *Message){
+        //如果webName = undefined 说明是一个广播事件
+        if ([webName.toString isEqualToString:@"undefined"]) {
+            
+            
+        }else if ([YNWebView getIfWebViewWithWebName:webName.toString]) {
+            NSString *fullCode = [NSString stringWithFormat:@"window['onWebViewPostMessage']('%@', '%@')",@"JSVM",Message.toString];
+            [[[YNWebView getYNWebViewInWebName:webName.toString] getWKWebView] evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {
+                if(error != nil) {
+                    NSLog(@"item = %@, error = %@", object, error);
+                }
+            }];
+        }
+    };
+    
+    context[@"JSVM"][@"getMessage"] = ^(JSValue *webName, JSValue *Message){
+        NSLog(@"%@%@",webName.toString,Message.toString);
     };
     
     context[@"JSVM"][@"module"][@"loadJS"] = ^(JSValue *base64){
@@ -130,7 +151,7 @@ AFHTTPSessionManager *_afManager;
             if (!value){
                 [errFunc callWithArgumentsNoNil:@[errText]];
             }else{
-                [context evaluateScript:value];
+                [[JSContext currentContext] evaluateScript:value];
             }
         }else{
             [[JSContext currentContext]  evaluateScript:value];
@@ -149,6 +170,8 @@ AFHTTPSessionManager *_afManager;
     
     [context evaluateScript:@"var location = {};"];
     
+    context[@"WebSocketManger"] = [WebSocketManger class];
+    
     //注入时间函数
     [self timerAddToJSC:context];
     // 注入数据库函数
@@ -160,10 +183,14 @@ AFHTTPSessionManager *_afManager;
     boot = [[JSVMBootManager alloc] initWithContext:context];
 //
     NSString *path = [@"assets/JSVM" stringByAppendingString:@"/dst/boot/jsvm.js"];
-    NSString *fullPath = [[NSBundle mainBundle] pathForResource:path ofType:nil];
-    context[@"location"][@"href"] = fullPath;
-//    NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"jsvmTest.js" ofType:nil];
+    NSString *fullPath = [[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingString:@"/"] stringByAppendingString:path];
     NSString *main = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil];
+    if (main == nil) {
+        fullPath = [[NSBundle mainBundle] pathForResource:path ofType:nil];
+        //    NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"jsvmTest.js" ofType:nil];
+        main = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil];
+    }
+    context[@"location"][@"href"] = fullPath;
     
     [context evaluateScript:main];
     

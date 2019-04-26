@@ -11,6 +11,7 @@
 #import "WebViewManager.h"
 #import "WebViewController.h"
 #import "ynWebViewController.h"
+#import "WebViewAppDelegate.h"
 
 static NSMutableDictionary *webControlDic = nil;
 
@@ -21,6 +22,10 @@ static NSMutableDictionary *webControlDic = nil;
 @implementation WebViewManager{
     NSString *gameName;
     WKWebView *payWebView;
+}
+
++ (NSDictionary *)getWebDic{
+    return webControlDic;
 }
 
 - (instancetype)init
@@ -106,7 +111,11 @@ static NSMutableDictionary *webControlDic = nil;
     }else{
         [wb stopTimer];
     }
-    if ([YNWebView getIfWebViewWithWebName:webName]) {
+    if ([webName isEqualToString:@"JSVM"]){
+        __weak AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        NSString *value = [NSString stringWithFormat:@"JSVM.getMessage('%@','%@');",webName,message];
+        [app.context evaluateScript:value];
+    }else if ([YNWebView getIfWebViewWithWebName:webName]) {
         NSString *fullCode = [NSString stringWithFormat:@"window['onWebViewPostMessage']('%@', '%@')",[ynwebView getWkWebViewName],message];
         [[[YNWebView getYNWebViewInWebName:webName] getWKWebView] evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {
             if(error != nil) {

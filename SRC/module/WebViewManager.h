@@ -18,6 +18,7 @@ typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 
 @interface WebViewManager : BaseObject
 
++ (NSDictionary *)getWebDic;
 /*
     创建一个新的webView并打开
 */
