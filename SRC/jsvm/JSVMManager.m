@@ -84,8 +84,9 @@ AFHTTPSessionManager *_afManager;
     [context evaluateScript:@"JSVM.module = {};"];
     [context evaluateScript:@"JSVM.Boot = {};"];
     [context evaluateScript:@"var self= {};"];
+    [context evaluateScript:@"var isConsole = false;"];
     //添加打印方法
-    context[@"console"][@"log"] =   ^(JSValue *one,JSValue*two,JSValue *three,JSValue *four) {
+    context[@"console"][@"print"] =   ^(JSValue *one,JSValue*two,JSValue *three,JSValue *four) {
         NSArray * arr = @[one,two,three,four];
         NSString *result = @"";
         for (JSValue * i in arr) {
@@ -96,6 +97,10 @@ AFHTTPSessionManager *_afManager;
         }
         NSLog(@"%@",result);
     };
+    
+    NSString *consolePath = [[NSBundle mainBundle] pathForResource:@"console.js" ofType:nil];
+    NSString *consoleJS = [NSString stringWithContentsOfFile:consolePath encoding:NSUTF8StringEncoding error:nil];
+    [context evaluateScript:consoleJS];
     
     context[@"JSVM"][@"postMessage"] = ^(JSValue *webName, JSValue *Message){
         //如果webName = undefined 说明是一个广播事件
@@ -114,6 +119,8 @@ AFHTTPSessionManager *_afManager;
     
     context[@"JSVM"][@"getMessage"] = ^(JSValue *webName, JSValue *Message){
         NSLog(@"%@%@",webName.toString,Message.toString);
+        NSString *str = [NSString stringWithFormat:@"JSVM.postMessage('%@','%@');",@"default",Message.toString];
+        [[JSContext currentContext] evaluateScript:str];
     };
     
     context[@"JSVM"][@"module"][@"loadJS"] = ^(JSValue *base64){
@@ -181,7 +188,10 @@ AFHTTPSessionManager *_afManager;
     
     //注入Boot
     boot = [[JSVMBootManager alloc] initWithContext:context];
-//
+    
+    
+    
+    
     NSString *path = [@"assets/JSVM" stringByAppendingString:@"/dst/boot/jsvm.js"];
     NSString *fullPath = [[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingString:@"/"] stringByAppendingString:path];
     NSString *main = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil];
@@ -191,7 +201,6 @@ AFHTTPSessionManager *_afManager;
         main = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil];
     }
     context[@"location"][@"href"] = fullPath;
-    
     [context evaluateScript:main];
     
     

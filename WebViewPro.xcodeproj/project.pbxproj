@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04402D1B2269DC8200E1BC61 /* JSVMManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 04402D162269DC8200E1BC61 /* JSVMManager.m */; };
-		04402D1C2269DC8200E1BC61 /* jsvmTest.js in Resources */ = {isa = PBXBuildFile; fileRef = 04402D172269DC8200E1BC61 /* jsvmTest.js */; };
+		04402D1C2269DC8200E1BC61 /* console.js in Resources */ = {isa = PBXBuildFile; fileRef = 04402D172269DC8200E1BC61 /* console.js */; };
 		04402D1D2269DC8200E1BC61 /* AFNetWorking_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 04402D182269DC8200E1BC61 /* AFNetWorking_Extension.m */; };
 		04402D1E2269DC8200E1BC61 /* URLSessionDataTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 04402D1A2269DC8200E1BC61 /* URLSessionDataTask.m */; };
 		1828D344215E358500AEC12F /* DeviceIdProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828D343215E358500AEC12F /* DeviceIdProvider.m */; };
@@ -80,7 +80,7 @@
 		04402D142269DC8200E1BC61 /* AFNetWorking_Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetWorking_Extension.h; sourceTree = "<group>"; };
 		04402D152269DC8200E1BC61 /* URLSessionDataTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URLSessionDataTask.h; sourceTree = "<group>"; };
 		04402D162269DC8200E1BC61 /* JSVMManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSVMManager.m; sourceTree = "<group>"; };
-		04402D172269DC8200E1BC61 /* jsvmTest.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jsvmTest.js; sourceTree = "<group>"; };
+		04402D172269DC8200E1BC61 /* console.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = console.js; sourceTree = "<group>"; };
 		04402D182269DC8200E1BC61 /* AFNetWorking_Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetWorking_Extension.m; sourceTree = "<group>"; };
 		04402D192269DC8200E1BC61 /* JSVMManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSVMManager.h; sourceTree = "<group>"; };
 		04402D1A2269DC8200E1BC61 /* URLSessionDataTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = URLSessionDataTask.m; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				F3E73030226DA62200461972 /* base64js.min.js */,
-				04402D172269DC8200E1BC61 /* jsvmTest.js */,
+				04402D172269DC8200E1BC61 /* console.js */,
 				04402D142269DC8200E1BC61 /* AFNetWorking_Extension.h */,
 				04402D182269DC8200E1BC61 /* AFNetWorking_Extension.m */,
 				04402D152269DC8200E1BC61 /* URLSessionDataTask.h */,
@@ -619,7 +619,7 @@
 			files = (
 				186CC181212D5B92004AC557 /* ShareSDKUI.bundle in Resources */,
 				F30026992140FC2400318BB7 /* assets in Resources */,
-				04402D1C2269DC8200E1BC61 /* jsvmTest.js in Resources */,
+				04402D1C2269DC8200E1BC61 /* console.js in Resources */,
 				F3750F20223239FB0047B802 /* icon.png in Resources */,
 				F35D48D82223968F00711093 /* AliyunEmasServices-Info.plist in Resources */,
 				F31241B321AE6E1700819868 /* LICENSE in Resources */,
