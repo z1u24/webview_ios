@@ -33,7 +33,6 @@
 }
 
 - (void)addTransactionObserver:(CallJS)callJS{
-    
     callJS(Success,@[@"success"]);
 }
 

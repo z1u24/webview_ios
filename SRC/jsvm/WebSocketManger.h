@@ -11,7 +11,7 @@
 #import "SocketRocket.h"
 
 @class WebSocketManger;
-@protocol ZHWebSocketExports <JSExport, NSObject>
+@protocol WebSocketExports <JSExport, NSObject>
 + (WebSocketManger *) getWebSocket:(NSString *)str;
 -(void) send:(JSValue *)str WithType:(JSValue *)type;
 -(void) close;
@@ -22,6 +22,6 @@
 - (instancetype)initWithUrl:(NSString *)str;
 @end
 
-@interface WebSocketManger : NSObject<ZHWebSocketExports,SRWebSocketDelegate>
+@interface WebSocketManger : NSObject<WebSocketExports,SRWebSocketDelegate>
 @property(strong, nonatomic) SRWebSocket * webSocket;
 @end

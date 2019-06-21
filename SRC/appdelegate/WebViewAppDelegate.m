@@ -49,9 +49,9 @@ NSString *userAgent = @"";
     
     
     [self initShareSDK];
-    [self initAliPush];
-    [self registerAPNS:application];
-    [CloudPushSDK sendNotificationAck:launchOptions];
+//    [self initAliPush];
+//    [self registerAPNS:application];
+//    [CloudPushSDK sendNotificationAck:launchOptions];
     
     return YES;
 }

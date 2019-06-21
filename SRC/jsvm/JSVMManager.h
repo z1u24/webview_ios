@@ -10,9 +10,7 @@
 #import "JSValue_Extension.h"
 #import "globolNavigationController.h"
 @interface JSVMManager : NSObject
-
 + (JSVMManager *)getIntance;
-
 - (JSContext *)shareInstanceWithUserAgent:(NSString *)userAgent withNavigationController:(globolNavigationController *)navi;
 
 @end

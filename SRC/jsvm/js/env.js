@@ -8,10 +8,9 @@ console.log = function(one,two,three,four){
 
 class WebSocket{
     constructor(url) {
-        console.log(url);
         this.ws = WebSocketManger.getWebSocket(url);
     }
-    
+
     send(sendData){
         if( typeof(sendData) == "string" ){
             this.ws.sendWithType(sendData,'string');
@@ -23,7 +22,7 @@ class WebSocket{
     close(){
         this.ws.close();
     }
-
+    
     set onopen(cb){
         this.ws.onopen = cb;
     }
@@ -41,7 +40,7 @@ class WebSocket{
             if( typeof(type) == "string" ){
                 cb(dic);
             }else{
-                dic.data = self.base64js.toByteArray(dic.data);
+                dic.data = base64js.toByteArray(dic.data);
                 cb(dic);
             }
         }
@@ -49,4 +48,3 @@ class WebSocket{
     }
 
 }
-

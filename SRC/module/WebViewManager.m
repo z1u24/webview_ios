@@ -113,7 +113,7 @@ static NSMutableDictionary *webControlDic = nil;
     }
     if ([webName isEqualToString:@"JSVM"]){
         __weak AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        NSString *value = [NSString stringWithFormat:@"JSVM.getMessage('%@','%@');",webName,message];
+        NSString *value = [NSString stringWithFormat:@"JSVM.getMessage('%@','%@');",[ynwebView getWkWebViewName],message];
         [app.context evaluateScript:value];
     }else if ([YNWebView getIfWebViewWithWebName:webName]) {
         NSString *fullCode = [NSString stringWithFormat:@"window['onWebViewPostMessage']('%@', '%@')",[ynwebView getWkWebViewName],message];

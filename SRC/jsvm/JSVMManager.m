@@ -40,6 +40,8 @@ NSString *const DELETE_ITEMS_WITH_PREFIX_SQL = @"DELETE from %@ where id like ? 
 
 static JSVMManager *_manager = nil;
 
+JSContext *ct = nil;
+
 JSVMBootManager *boot = nil;
 
 + (JSVMManager *)getIntance {
@@ -74,17 +76,32 @@ AFHTTPSessionManager *_afManager;
     return self;
 }
 
+//获取当前时间戳
+- (NSString *)currentTimeStr{
+    NSDate* date = [NSDate dateWithTimeIntervalSinceNow:0];//获取当前时间0秒后的时间
+    NSTimeInterval time=[date timeIntervalSince1970]*1000;// *1000 是精确到毫秒，不乘就是精确到秒
+    NSString *timeString = [NSString stringWithFormat:@"%.0f", time];
+    return timeString;
+}
+
+//加载bundlejs文件
+- (void)loadJSFromBundle:(NSString *)fileName context:(JSContext *)ctx{
+    NSString *fileNamePath = [[NSBundle mainBundle] pathForResource:fileName ofType:nil];
+    NSString *fileStr = [NSString stringWithContentsOfFile:fileNamePath encoding:NSUTF8StringEncoding error:nil];
+    [ctx evaluateScript:fileStr withSourceURL:[NSURL URLWithString:fileName]];
+}
+
 - (JSContext *)shareInstanceWithUserAgent:(NSString *)userAgent withNavigationController:(globolNavigationController *)navi{
     // 初始化JSVM
     JSContext *context = [[JSContext alloc] init];
-    [context evaluateScript:@"var console = {};"];
-    [context evaluateScript:@"var navigator = {};"];
-    [context evaluateScript:@"var JSVM = {};"];
-    [context evaluateScript:@"JSVM.store = {};"];
-    [context evaluateScript:@"JSVM.module = {};"];
-    [context evaluateScript:@"JSVM.Boot = {};"];
-    [context evaluateScript:@"var self= {};"];
-    [context evaluateScript:@"var isConsole = false;"];
+    context[@"window"] = context.globalObject;
+    context[@"self"] = context.globalObject;
+    [context evaluateScript:@"var document = {};"];
+    [context evaluateScript:@"document.body = {};"];
+    [context evaluateScript:@"document.body.style = undefined;"];
+    [self loadJSFromBundle:@"globalValue.js" context:context];
+    context[@"WebSocketManger"] = [WebSocketManger class];
+    [context evaluateScript:@"var isConsole = true;" withSourceURL:[NSURL URLWithString:@"isConsole.js"]];
     //添加打印方法
     context[@"console"][@"print"] =   ^(JSValue *one,JSValue*two,JSValue *three,JSValue *four) {
         NSArray * arr = @[one,two,three,four];
@@ -98,14 +115,12 @@ AFHTTPSessionManager *_afManager;
         NSLog(@"%@",result);
     };
     
-    NSString *consolePath = [[NSBundle mainBundle] pathForResource:@"console.js" ofType:nil];
-    NSString *consoleJS = [NSString stringWithContentsOfFile:consolePath encoding:NSUTF8StringEncoding error:nil];
-    [context evaluateScript:consoleJS];
+    
+    [self loadJSFromBundle:@"env.js" context:context];
     
     context[@"JSVM"][@"postMessage"] = ^(JSValue *webName, JSValue *Message){
         //如果webName = undefined 说明是一个广播事件
         if ([webName.toString isEqualToString:@"undefined"]) {
-            
             
         }else if ([YNWebView getIfWebViewWithWebName:webName.toString]) {
             NSString *fullCode = [NSString stringWithFormat:@"window['onWebViewPostMessage']('%@', '%@')",@"JSVM",Message.toString];
@@ -123,11 +138,14 @@ AFHTTPSessionManager *_afManager;
         [[JSContext currentContext] evaluateScript:str];
     };
     
-    context[@"JSVM"][@"module"][@"loadJS"] = ^(JSValue *base64){
+    context[@"JSVM"][@"module"][@"loadJS"] = ^(JSValue *path,JSValue *base64){
+        NSLog(@"load files......");
         NSData *data = [[NSData alloc] initWithBase64EncodedString:base64.toString options:0];
         NSString *value = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        [[JSContext currentContext]  evaluateScript:value];
+        [[JSContext currentContext] evaluateScript:value withSourceURL:[NSURL URLWithString:path.toString]];
     };
+    
+    
     
     //添加浏览器环境字段
     context[@"navigator"][@"userAgent"] = userAgent;
@@ -144,10 +162,20 @@ AFHTTPSessionManager *_afManager;
         return value;
     };
     
+    context[@"JSVM"][@"getDownRead"] = ^(JSValue *filePath, JSValue *okCB, JSValue *errCB){
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSData *base64Data = [NSData dataWithContentsOfFile:filePath.toString];
+            NSString *value = [base64Data base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+            if (value == nil) {
+                [errCB callWithArgumentsNoNil:@[@"can not find"]];
+            }else{
+                [okCB callWithArgumentsNoNil:@[value]];
+            }
+        });
+    };
+    
     //base64
-    NSString *base64path = [[NSBundle mainBundle] pathForResource:@"base64js.min.js" ofType:nil];
-    NSString *base64js = [NSString stringWithContentsOfFile:base64path encoding:NSUTF8StringEncoding error:nil];
-    [context evaluateScript:base64js];
+    [self loadJSFromBundle:@"base64js.min.js" context:context];
     //加载js方法
     context[@"JSVM"][@"loadJS"] = ^(JSValue *path, JSValue *url, JSValue *errFunc, JSValue *errText){
         NSString *docPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingString:@"/assets/JSVM"];
@@ -158,26 +186,17 @@ AFHTTPSessionManager *_afManager;
             if (!value){
                 [errFunc callWithArgumentsNoNil:@[errText]];
             }else{
-                [[JSContext currentContext] evaluateScript:value];
+                [[JSContext currentContext] evaluateScript:value withSourceURL:[NSURL URLWithString:url.toString]];
             }
         }else{
-            [[JSContext currentContext]  evaluateScript:value];
+            [[JSContext currentContext]  evaluateScript:value withSourceURL:[NSURL URLWithString:url.toString]];
         }
     };
     
     //注入alert方法
     context[@"alert"] = ^(JSValue *message){
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:[message toString] message:@"" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            
-        }];
-        [alert addAction:okAction];
-        [navi.topViewController presentViewController:alert animated:YES completion:nil];
+        NSLog(@"%@",message.toString);
     };
-    
-    [context evaluateScript:@"var location = {};"];
-    
-    context[@"WebSocketManger"] = [WebSocketManger class];
     
     //注入时间函数
     [self timerAddToJSC:context];
@@ -189,10 +208,11 @@ AFHTTPSessionManager *_afManager;
     //注入Boot
     boot = [[JSVMBootManager alloc] initWithContext:context];
     
-    
+    //注入第三方JS
     
     
     NSString *path = [@"assets/JSVM" stringByAppendingString:@"/dst/boot/jsvm.js"];
+//    NSString *path = @"test.js";
     NSString *fullPath = [[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingString:@"/"] stringByAppendingString:path];
     NSString *main = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil];
     if (main == nil) {
@@ -201,11 +221,13 @@ AFHTTPSessionManager *_afManager;
         main = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil];
     }
     context[@"location"][@"href"] = fullPath;
-    [context evaluateScript:main];
+    [context evaluateScript:main withSourceURL:[NSURL URLWithString:@"jsvm.js"]];
     
+    ct = context;
     
     return context;
 };
+
 // MARK:HTTP注入
 -(void) HTTPAddToJSC:(JSContext *)context{
     context[@"JSVM"][@"request"] = ^(JSValue *inputType, JSValue *inputUrl, JSValue *inputHeader, JSValue *inputReqData, JSValue *inputReqType, JSValue *inputRespType, JSValue *success, JSValue *fail, JSValue *progress) {
@@ -441,12 +463,16 @@ AFHTTPSessionManager *_afManager;
     context[@"setTimeout"] = ^(JSValue *func, JSValue *timeout) {
         if (timeout.isNumber) {
             _timerKey += 1;
-            NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:[timeout toDouble]/1000.0 repeats:NO block:^(NSTimer * _Nonnull timer) {
+            double times = timeout.toDouble;
+            double interval = times/1000.0;
+            __weak typeof(self) weakSelf = self;
+            NSTimer *timer = [NSTimer timerWithTimeInterval:interval repeats:NO block:^(NSTimer * _Nonnull timer) {
                 [func callWithArgumentsNoNil:@[]];
-                [self removeFrom:_dic withObject:timer];
+                [weakSelf removeFrom:_dic withObject:timer];
                 [timer invalidate];
                 timer = nil;
             }];
+            [NSRunLoop.mainRunLoop addTimer:timer forMode:NSRunLoopCommonModes];
             NSString *key = [NSString stringWithFormat:@"%d",_timerKey];
             [_dic setObject:timer forKey:key];
             return _timerKey;
@@ -464,12 +490,17 @@ AFHTTPSessionManager *_afManager;
     context[@"setInterval"] = ^(JSValue *func, JSValue *timeout) {
         if (timeout.isNumber) {
             _timerKey += 1;
-            NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:[timeout toDouble]/1000.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            double times = timeout.toDouble;
+            double interval = times/1000.0;
+            __weak typeof(self) weakSelf = self;
+            NSTimer *timer = [NSTimer timerWithTimeInterval:interval repeats:YES block:^(NSTimer * _Nonnull timer) {
                 [func callWithArgumentsNoNil:@[]];
-                [self removeFrom:_dic withObject:timer];
+                [weakSelf removeFrom:_dic withObject:timer];
                 [timer invalidate];
                 timer = nil;
             }];
+            [NSRunLoop.mainRunLoop addTimer:timer forMode:NSRunLoopCommonModes];
+            
             NSString *key = [NSString stringWithFormat:@"%d",_timerKey];
             [_dic setObject:timer forKey:key];
             return _timerKey;
