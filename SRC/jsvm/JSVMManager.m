@@ -97,16 +97,11 @@ AFHTTPSessionManager *_afManager;
     context[@"window"] = context.globalObject;
     context[@"self"] = context.globalObject;
     [context evaluateScript:@"var document = {};"];
-    [context evaluateScript:@"var cryto= {};"];
     [context evaluateScript:@"document.body = {};"];
     [context evaluateScript:@"document.body.style = undefined;"];
     [self loadJSFromBundle:@"globalValue.js" context:context];
     context[@"WebSocketManger"] = [WebSocketManger class];
     [context evaluateScript:@"var isConsole = true;" withSourceURL:[NSURL URLWithString:@"isConsole.js"]];
-    
-    context[@"cryto"][@"getRandomValues"] = ^(JSValue *test){
-        
-    };
     //添加打印方法
     context[@"console"][@"print"] =   ^(JSValue *one,JSValue*two,JSValue *three,JSValue *four) {
         NSArray * arr = @[one,two,three,four];
@@ -137,11 +132,15 @@ AFHTTPSessionManager *_afManager;
         }
     };
     
-//    context[@"JSVM"][@"getMessage"] = ^(JSValue *webName, JSValue *Message){
-//        NSLog(@"%@%@",webName.toString,Message.toString);
-//        NSString *str = [NSString stringWithFormat:@"JSVM.postMessage('%@','%@');",@"default",Message.toString];
-//        [[JSContext currentContext] evaluateScript:str];
-//    };
+    context[@"JSVM"][@"getRandomValues"] = ^(){
+        UInt32 randomResult = 0;
+        int result = SecRandomCopyBytes(kSecRandomDefault, sizeof(int), (uint8_t*)&randomResult);
+        if (result != 0) randomResult = arc4random();
+        printf("%u\n",randomResult);
+        return randomResult;
+    };
+    
+    [self loadJSFromBundle:@"crypto.js" context:context];
     
     context[@"JSVM"][@"module"][@"loadJS"] = ^(JSValue *path,JSValue *base64){
         NSLog(@"load files......");
@@ -149,8 +148,6 @@ AFHTTPSessionManager *_afManager;
         NSString *value = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         [[JSContext currentContext] evaluateScript:value withSourceURL:[NSURL URLWithString:path.toString]];
     };
-    
-    
     
     //添加浏览器环境字段
     context[@"navigator"][@"userAgent"] = userAgent;
@@ -226,7 +223,9 @@ AFHTTPSessionManager *_afManager;
         main = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil];
     }
     context[@"location"][@"href"] = fullPath;
-    [context evaluateScript:main withSourceURL:[NSURL URLWithString:@"jsvm.js"]];
+    if(main != nil){
+        [context evaluateScript:main withSourceURL:[NSURL URLWithString:@"jsvm.js"]];
+    }
     
     ct = context;
     
