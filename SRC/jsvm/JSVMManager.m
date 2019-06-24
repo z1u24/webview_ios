@@ -97,11 +97,16 @@ AFHTTPSessionManager *_afManager;
     context[@"window"] = context.globalObject;
     context[@"self"] = context.globalObject;
     [context evaluateScript:@"var document = {};"];
+    [context evaluateScript:@"var cryto= {};"];
     [context evaluateScript:@"document.body = {};"];
     [context evaluateScript:@"document.body.style = undefined;"];
     [self loadJSFromBundle:@"globalValue.js" context:context];
     context[@"WebSocketManger"] = [WebSocketManger class];
     [context evaluateScript:@"var isConsole = true;" withSourceURL:[NSURL URLWithString:@"isConsole.js"]];
+    
+    context[@"cryto"][@"getRandomValue"] = ^(JSValue *test){
+        
+    };
     //添加打印方法
     context[@"console"][@"print"] =   ^(JSValue *one,JSValue*two,JSValue *three,JSValue *four) {
         NSArray * arr = @[one,two,three,four];
