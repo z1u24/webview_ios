@@ -104,7 +104,7 @@ AFHTTPSessionManager *_afManager;
     context[@"WebSocketManger"] = [WebSocketManger class];
     [context evaluateScript:@"var isConsole = true;" withSourceURL:[NSURL URLWithString:@"isConsole.js"]];
     
-    context[@"cryto"][@"getRandomValue"] = ^(JSValue *test){
+    context[@"cryto"][@"getRandomValues"] = ^(JSValue *test){
         
     };
     //添加打印方法
