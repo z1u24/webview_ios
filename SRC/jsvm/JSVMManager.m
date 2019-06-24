@@ -132,11 +132,11 @@ AFHTTPSessionManager *_afManager;
         }
     };
     
-    context[@"JSVM"][@"getMessage"] = ^(JSValue *webName, JSValue *Message){
-        NSLog(@"%@%@",webName.toString,Message.toString);
-        NSString *str = [NSString stringWithFormat:@"JSVM.postMessage('%@','%@');",@"default",Message.toString];
-        [[JSContext currentContext] evaluateScript:str];
-    };
+//    context[@"JSVM"][@"getMessage"] = ^(JSValue *webName, JSValue *Message){
+//        NSLog(@"%@%@",webName.toString,Message.toString);
+//        NSString *str = [NSString stringWithFormat:@"JSVM.postMessage('%@','%@');",@"default",Message.toString];
+//        [[JSContext currentContext] evaluateScript:str];
+//    };
     
     context[@"JSVM"][@"module"][@"loadJS"] = ^(JSValue *path,JSValue *base64){
         NSLog(@"load files......");
@@ -211,7 +211,7 @@ AFHTTPSessionManager *_afManager;
     //注入第三方JS
     
     
-    NSString *path = [@"assets/JSVM" stringByAppendingString:@"/dst/boot/jsvm.js"];
+    NSString *path = [@"assets/JSVM" stringByAppendingString:@"/vm/boot/jsvm.js"];
 //    NSString *path = @"test.js";
     NSString *fullPath = [[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingString:@"/"] stringByAppendingString:path];
     NSString *main = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil];

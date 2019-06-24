@@ -892,7 +892,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = C5K4DLMYTL;
+				DEVELOPMENT_TEAM = 5N846TM2N4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDK/Required",
@@ -926,7 +926,7 @@
 					"\"TZImagePickerController\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.highapp.xzxd;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.highapp.highapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -943,7 +943,7 @@
 				CODE_SIGN_ENTITLEMENTS = WebViewPro.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C5K4DLMYTL;
+				DEVELOPMENT_TEAM = 5N846TM2N4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDK/Required",
@@ -977,7 +977,7 @@
 					"\"TZImagePickerController\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.highapp.xzxd;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.highapp.highapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
