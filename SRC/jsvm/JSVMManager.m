@@ -14,6 +14,7 @@
 #import "JSVMBootManager.h"
 #import "WebSocketManger.h"
 #import "YNWebView.h"
+#import "VMBridge.h"
 
 @implementation JSVMManager
 NSString *const CREATE_TABLE_SQL =
@@ -43,6 +44,8 @@ static JSVMManager *_manager = nil;
 JSContext *ct = nil;
 
 JSVMBootManager *boot = nil;
+
+VMBridge *vmb = nil;
 
 + (JSVMManager *)getIntance {
     if (_manager == nil) {
@@ -94,6 +97,7 @@ AFHTTPSessionManager *_afManager;
 - (JSContext *)shareInstanceWithUserAgent:(NSString *)userAgent withNavigationController:(globolNavigationController *)navi{
     // 初始化JSVM
     JSContext *context = [[JSContext alloc] init];
+    vmb = [[VMBridge alloc] initWithContext:context];
     context[@"window"] = context.globalObject;
     context[@"self"] = context.globalObject;
     [context evaluateScript:@"var document = {};"];
@@ -116,6 +120,7 @@ AFHTTPSessionManager *_afManager;
     };
     
     
+    
     [self loadJSFromBundle:@"env.js" context:context];
     
     context[@"JSVM"][@"postMessage"] = ^(JSValue *webName, JSValue *Message){
@@ -124,11 +129,15 @@ AFHTTPSessionManager *_afManager;
             
         }else if ([YNWebView getIfWebViewWithWebName:webName.toString]) {
             NSString *fullCode = [NSString stringWithFormat:@"window['onWebViewPostMessage']('%@', '%@')",@"JSVM",Message.toString];
-            [[[YNWebView getYNWebViewInWebName:webName.toString] getWKWebView] evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {
-                if(error != nil) {
-                    NSLog(@"item = %@, error = %@", object, error);
-                }
-            }];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[[YNWebView getYNWebViewInWebName:webName.toString] getWKWebView] evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {
+                    if(error != nil) {
+                        NSLog(@"item = %@, error = %@", object, error);
+                    }
+                }];
+            });
+            
+            
         }
     };
     
@@ -136,7 +145,6 @@ AFHTTPSessionManager *_afManager;
         UInt32 randomResult = 0;
         int result = SecRandomCopyBytes(kSecRandomDefault, sizeof(int), (uint8_t*)&randomResult);
         if (result != 0) randomResult = arc4random();
-        printf("%u\n",randomResult);
         return randomResult;
     };
     
@@ -178,6 +186,13 @@ AFHTTPSessionManager *_afManager;
     
     //base64
     [self loadJSFromBundle:@"base64js.min.js" context:context];
+    
+    
+    context[@"JSVM"][@"messageReciver"] = ^(JSValue *message){
+        [vmb postMessage:message.toArray];
+    };
+    
+    
     //加载js方法
     context[@"JSVM"][@"loadJS"] = ^(JSValue *path, JSValue *url, JSValue *errFunc, JSValue *errText){
         NSString *docPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingString:@"/assets/JSVM"];

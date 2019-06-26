@@ -32,11 +32,11 @@
 {
     self = [super init];
     if (self) {
-//        self.isUpdate = [NSNumber numberWithInt:0];
-//        WKWebView *wbView = [self createWebview];
-//        _ynWebView = [[YNWebView alloc] initWithWKWebView:wbView webName:@"default" webViewController:self];
-//        _bridge = [[JSBridge alloc] initWithYnWebView:_ynWebView];
-//        _intercept = [[JSIntercept alloc] initWithWebView:wbView update:self.isUpdate];
+        self.isUpdate = [NSNumber numberWithInt:0];
+        WKWebView *wbView = [self createWebview];
+        _ynWebView = [[YNWebView alloc] initWithWKWebView:wbView webName:@"default" webViewController:self];
+        _bridge = [[JSBridge alloc] initWithYnWebView:_ynWebView];
+        _intercept = [[JSIntercept alloc] initWithWebView:wbView update:self.isUpdate];
     }
     return self;
 }

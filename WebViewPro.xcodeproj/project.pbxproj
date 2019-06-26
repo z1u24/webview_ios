@@ -71,6 +71,7 @@
 		F3750F20223239FB0047B802 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F3750F1F223239FB0047B802 /* icon.png */; };
 		F3750F232232663B0047B802 /* LocalLanguageMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = F3750F222232663B0047B802 /* LocalLanguageMgr.m */; };
 		F392383821FAB23A005D2603 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392383721FAB23A005D2603 /* CoreTelephony.framework */; };
+		F3B64B8722C3496C00C099DB /* VMBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B64B8622C3496C00C099DB /* VMBridge.m */; };
 		F3C27E0422768B2C001396CF /* payView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C27E0322768B2C001396CF /* payView.m */; };
 		F3C27E0722768B3B001396CF /* shareView.m in Sources */ = {isa = PBXBuildFile; fileRef = F3C27E0622768B3B001396CF /* shareView.m */; };
 		F3C27E0A227698F0001396CF /* env.js in Resources */ = {isa = PBXBuildFile; fileRef = F3C27E08227698EF001396CF /* env.js */; };
@@ -193,6 +194,8 @@
 		F3750F212232663B0047B802 /* LocalLanguageMgr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalLanguageMgr.h; sourceTree = "<group>"; };
 		F3750F222232663B0047B802 /* LocalLanguageMgr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalLanguageMgr.m; sourceTree = "<group>"; };
 		F392383721FAB23A005D2603 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F3B64B8522C3496C00C099DB /* VMBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMBridge.h; sourceTree = "<group>"; };
+		F3B64B8622C3496C00C099DB /* VMBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMBridge.m; sourceTree = "<group>"; };
 		F3C27E0222768B2C001396CF /* payView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = payView.h; sourceTree = "<group>"; };
 		F3C27E0322768B2C001396CF /* payView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = payView.m; sourceTree = "<group>"; };
 		F3C27E0522768B3B001396CF /* shareView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shareView.h; sourceTree = "<group>"; };
@@ -245,6 +248,8 @@
 				F3C27E0C227698F9001396CF /* js */,
 				04402D142269DC8200E1BC61 /* AFNetWorking_Extension.h */,
 				04402D182269DC8200E1BC61 /* AFNetWorking_Extension.m */,
+				F3B64B8522C3496C00C099DB /* VMBridge.h */,
+				F3B64B8622C3496C00C099DB /* VMBridge.m */,
 				04402D152269DC8200E1BC61 /* URLSessionDataTask.h */,
 				04402D1A2269DC8200E1BC61 /* URLSessionDataTask.m */,
 				F362A36B227068DB00D398F9 /* JSValue_Extension.h */,
@@ -732,6 +737,7 @@
 				F3C27E0422768B2C001396CF /* payView.m in Sources */,
 				F31241AE21AE6E1700819868 /* ref.c in Sources */,
 				186CC156212D40FE004AC557 /* ImageUtils.m in Sources */,
+				F3B64B8722C3496C00C099DB /* VMBridge.m in Sources */,
 				186CC150212D3D5C004AC557 /* QRCode.m in Sources */,
 				F31241B421AE6E1700819868 /* core.c in Sources */,
 				F3CE29B2224F482C00F11535 /* IAPManager.m in Sources */,
