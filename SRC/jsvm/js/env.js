@@ -5,7 +5,6 @@ console.log = function(one,two,three,four){
     }
 };
 
-
 class WebSocket{
     constructor(url) {
         this.ws = WebSocketManger.getWebSocket(url);

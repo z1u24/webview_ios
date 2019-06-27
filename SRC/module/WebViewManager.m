@@ -114,8 +114,8 @@ static NSMutableDictionary *webControlDic = nil;
     if ([webName isEqualToString:@"JSVM"]){
         __weak AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
         NSString *fullCode = [NSString stringWithFormat:@"window['onWebViewPostMessage']('%@', '%@')",[ynwebView getWkWebViewName],message];
-//        [fullCode stringByReplacingOccurrencesOfString:@"\\\\" withString:@"\\\\\\\\"];
-        [app.context evaluateScript:fullCode];
+        NSString *x = [fullCode stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
+        [app.context evaluateScript:x];
     }else if ([YNWebView getIfWebViewWithWebName:webName]) {
         NSString *fullCode = [NSString stringWithFormat:@"window['onWebViewPostMessage']('%@', '%@')",[ynwebView getWkWebViewName],message];
         [[[YNWebView getYNWebViewInWebName:webName] getWKWebView] evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {

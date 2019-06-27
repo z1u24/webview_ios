@@ -243,7 +243,6 @@ AFHTTPSessionManager *_afManager;
     }
     
     ct = context;
-    
     return context;
 };
 
