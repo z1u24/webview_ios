@@ -74,7 +74,7 @@ const static int SHARE_TYPE_TEXT = 2;//分享的类型文本
                 //分享失败
             case SSDKResponseStateFail:
                 NSLog(@"%@", error);
-                self->selcallJS(Fail,@[@"分享失败"]);
+                self->selcallJS(Fail,@[error.userInfo[@"error_message"]]);
                 break;
                 //分享取消
             case SSDKResponseStateCancel:

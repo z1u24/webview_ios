@@ -25,4 +25,6 @@ pod 'AFNetwork', '~> 0.1.0'
 
 pod 'SocketRocket', '~> 0.5.1'
 
+pod 'Masonry', '~> 1.1.0'
+
 end

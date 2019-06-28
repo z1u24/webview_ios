@@ -15,6 +15,14 @@
 #import "WebSocketManger.h"
 #import "YNWebView.h"
 #import "VMBridge.h"
+#import "shareView.h"
+#import "ShareToPlatforms.h"
+#import "toastUtil.h"
+
+@interface JSVMManager () <shareDelegate>
+
+
+@end
 
 @implementation JSVMManager
 NSString *const CREATE_TABLE_SQL =
@@ -46,6 +54,8 @@ JSContext *ct = nil;
 JSVMBootManager *boot = nil;
 
 VMBridge *vmb = nil;
+
+JSValue* shareCallBack = nil;
 
 + (JSVMManager *)getIntance {
     if (_manager == nil) {
@@ -129,8 +139,9 @@ AFHTTPSessionManager *_afManager;
             
         }else if ([YNWebView getIfWebViewWithWebName:webName.toString]) {
             NSString *fullCode = [NSString stringWithFormat:@"window['onWebViewPostMessage']('%@', '%@')",@"JSVM",Message.toString];
+            NSString *fuco = [fullCode stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [[[YNWebView getYNWebViewInWebName:webName.toString] getWKWebView] evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {
+                [[[YNWebView getYNWebViewInWebName:webName.toString] getWKWebView] evaluateJavaScript:fuco completionHandler:^(id object,NSError *error) {
                     if(error != nil) {
                         NSLog(@"item = %@, error = %@", object, error);
                     }
@@ -140,6 +151,8 @@ AFHTTPSessionManager *_afManager;
             
         }
     };
+    
+   
     
     context[@"JSVM"][@"getRandomValues"] = ^(){
         UInt32 randomResult = 0;
@@ -192,6 +205,19 @@ AFHTTPSessionManager *_afManager;
         [vmb postMessage:message.toArray];
     };
     
+    
+    
+    context[@"JSVM"][@"goShare"] = ^(JSValue* imageName, JSValue* userName, JSValue* shareCode, JSValue* shareUrl, JSValue* callBack){
+        shareCallBack = callBack;
+        UIViewController *vm = navi.topViewController;
+        shareView *share = [[shareView alloc] initWithFrame:vm.view.bounds ImageName:imageName.toString UserName:userName.toString ShareCode:shareCode.toString ShareUrl:shareUrl.toString];
+        share.delegate = self;
+        [vm.view addSubview:share];
+    };
+    
+    context[@"window"][@"onWebViewPostMessage"] = ^(JSValue *name, JSValue *message){
+        [[JSContext currentContext] evaluateScript:@"window.JSVM.goShare('wallet','test123','aighriaigag','http://www.niuroubao.cn', (isSuccess)=>{console.log('share success')})"];
+    };
     
     //加载js方法
     context[@"JSVM"][@"loadJS"] = ^(JSValue *path, JSValue *url, JSValue *errFunc, JSValue *errText){
@@ -535,6 +561,37 @@ AFHTTPSessionManager *_afManager;
     };
 }
 
+
+-(void)goShareBack:(UIView *)view{
+    if (shareCallBack != nil) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [shareCallBack callWithArguments:@[@"fail"]];
+            shareCallBack = nil;
+        });
+    }
+    [view removeFromSuperview];
+}
+
+-(void)goShare:(NSNumber *)way{
+    ShareToPlatforms *stp = [[ShareToPlatforms alloc] init];
+    toastUtil *toast = [toastUtil shareInstance];
+    [stp getScreenShot:^(CallJSType callJSType, NSArray *params) {
+        if (callJSType == Success) {
+            [stp shareScreen:way callJS:^(CallJSType callJSType, NSArray *params) {
+                if (callJSType == Success) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [shareCallBack callWithArguments:@[@"success"]];
+                    });
+                }else{
+                    [toast makeToast:params[0] duration:1.0];
+                }
+            }];
+        }else{
+            [toast makeToast:@"截图失败" duration:1.0];
+        }
+    }];
+    
+}
 
 
 @end

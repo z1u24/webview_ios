@@ -11,13 +11,7 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 NS_ASSUME_NONNULL_BEGIN
 
-typedef enum {
-    Error = -1,
-    Success  = 0,
-    Fail = 1,
-    Callback = 2
-    
-} CallJSType;
+
 
 @interface VMBridge : NSObject
 

@@ -111,14 +111,13 @@ static NSMutableDictionary *webControlDic = nil;
     }else{
         [wb stopTimer];
     }
+    NSString *fullCode = [NSString stringWithFormat:@"window['onWebViewPostMessage']('%@', '%@')",[ynwebView getWkWebViewName],message];
+    NSString *fuco = [fullCode stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
     if ([webName isEqualToString:@"JSVM"]){
         __weak AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        NSString *fullCode = [NSString stringWithFormat:@"window['onWebViewPostMessage']('%@', '%@')",[ynwebView getWkWebViewName],message];
-        NSString *x = [fullCode stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
-        [app.context evaluateScript:x];
+        [app.context evaluateScript:fuco];
     }else if ([YNWebView getIfWebViewWithWebName:webName]) {
-        NSString *fullCode = [NSString stringWithFormat:@"window['onWebViewPostMessage']('%@', '%@')",[ynwebView getWkWebViewName],message];
-        [[[YNWebView getYNWebViewInWebName:webName] getWKWebView] evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {
+        [[[YNWebView getYNWebViewInWebName:webName] getWKWebView] evaluateJavaScript:fuco completionHandler:^(id object,NSError *error) {
             if(error != nil) {
                 NSLog(@"item = %@, error = %@", object, error);
             }

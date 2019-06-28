@@ -11,6 +11,14 @@
 #import <objc/runtime.h>
 #import "YNWebView.h"
 
+typedef enum {
+    Error = -1,
+    Success  = 0,
+    Fail = 1,
+    Callback = 2
+    
+} CallJSType;
+
 static int identity = 0;
 // <int, id>
 static NSMutableDictionary *dictionary = nil;
