@@ -12,6 +12,7 @@
 #import "WebViewController.h"
 #import "ynWebViewController.h"
 #import "WebViewAppDelegate.h"
+#import "StageUtils.h"
 
 static NSMutableDictionary *webControlDic = nil;
 
@@ -65,6 +66,23 @@ static NSMutableDictionary *webControlDic = nil;
         if([webControlDic objectForKey:webName] == [[BaseObject getVc] topViewController]){
             [[BaseObject getVc] popViewControllerAnimated:YES];
             callJS(Success,@[@"min success"]);
+        }
+    }
+}
+
+- (void)getReady:(NSString *)stage callJS:(CallJS)callJS ynwebView:(YNWebView *)ynwebView{
+    if ([[ynwebView getWkWebViewName] isEqualToString:@"default"]) {
+        StageUtils *stageUtil = [StageUtils sharedInstence];
+        BOOL b = [stageUtil makeStages:stage mod:@"default"];
+        if (b) {
+            NSString *fullCode = [NSString stringWithFormat:@"window['onLoadTranslation']('%@')",stage];
+            __weak AppDelegate *app = (AppDelegate *)[UIApplication sharedApplication].delegate;
+            [app.context evaluateScript:fullCode];
+            [[ynwebView getWKWebView] evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {
+                if(error != nil) {
+                    NSLog(@"item = %@, error = %@", object, error);
+                }
+            }];
         }
     }
 }

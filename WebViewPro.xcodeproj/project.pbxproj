@@ -64,6 +64,7 @@
 		F354AB302119930300A8BEA8 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB2F2119930300A8BEA8 /* WebViewController.m */; };
 		F354AB352119930400A8BEA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F354AB342119930400A8BEA8 /* Assets.xcassets */; };
 		F354AB3B2119930400A8BEA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F354AB3A2119930400A8BEA8 /* main.m */; };
+		F35D2AB522C60C86001B149A /* StageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = F35D2AB422C60C86001B149A /* StageUtils.m */; };
 		F35D48D82223968F00711093 /* AliyunEmasServices-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35D48D72223968F00711093 /* AliyunEmasServices-Info.plist */; };
 		F362493A22150D5600A28ADE /* MessagePost.m in Sources */ = {isa = PBXBuildFile; fileRef = F362493922150D5600A28ADE /* MessagePost.m */; };
 		F362A36C227068DB00D398F9 /* JSValue_Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = F362A36A227068DB00D398F9 /* JSValue_Extension.m */; };
@@ -198,6 +199,8 @@
 		F354AB342119930400A8BEA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F354AB392119930400A8BEA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F354AB3A2119930400A8BEA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F35D2AB322C60C86001B149A /* StageUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StageUtils.h; sourceTree = "<group>"; };
+		F35D2AB422C60C86001B149A /* StageUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StageUtils.m; sourceTree = "<group>"; };
 		F35D48D72223968F00711093 /* AliyunEmasServices-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AliyunEmasServices-Info.plist"; sourceTree = "<group>"; };
 		F362493822150D5600A28ADE /* MessagePost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessagePost.h; sourceTree = "<group>"; };
 		F362493922150D5600A28ADE /* MessagePost.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessagePost.m; sourceTree = "<group>"; };
@@ -340,6 +343,8 @@
 		186CC154212D40DD004AC557 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				F35D2AB322C60C86001B149A /* StageUtils.h */,
+				F35D2AB422C60C86001B149A /* StageUtils.m */,
 				F38F56F522C5A85C0023CAA1 /* ui */,
 				186CC155212D40FE004AC557 /* ImageUtils.m */,
 				186CC157212D4110004AC557 /* ImageUtils.h */,
@@ -829,6 +834,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F35D2AB522C60C86001B149A /* StageUtils.m in Sources */,
 				186CC14E212D3D38004AC557 /* BaseObject.m in Sources */,
 				F31241AE21AE6E1700819868 /* ref.c in Sources */,
 				186CC156212D40FE004AC557 /* ImageUtils.m in Sources */,

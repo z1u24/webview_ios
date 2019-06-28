@@ -48,6 +48,8 @@ typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 - (void)getScreenModify:(CallJS)callJS;
 
 
+- (void)getReady:(NSString *)stage callJS:(CallJS)callJS ynwebView:(YNWebView *)ynwebView;
+
 
 @end
 

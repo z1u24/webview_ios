@@ -18,6 +18,7 @@
 #import "shareView.h"
 #import "ShareToPlatforms.h"
 #import "toastUtil.h"
+#import "StageUtils.h"
 
 @interface JSVMManager () <shareDelegate>
 
@@ -152,6 +153,21 @@ AFHTTPSessionManager *_afManager;
         }
     };
     
+    context[@"JSVM"][@"getReady"] = ^(JSValue *stage){
+        StageUtils *stageUtil = [StageUtils sharedInstence];
+        BOOL b = [stageUtil makeStages:stage.toString mod:@"JSVM"];
+        if (b) {
+            NSString *fullCode = [NSString stringWithFormat:@"window['onLoadTranslation']('%@')",stage];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[[YNWebView getYNWebViewInWebName:@"default"] getWKWebView] evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {
+                    if(error != nil) {
+                        NSLog(@"item = %@, error = %@", object, error);
+                    }
+                }];
+            });
+            [[JSContext currentContext] evaluateScript:fullCode];
+        }
+    };
    
     
     context[@"JSVM"][@"getRandomValues"] = ^(){
