@@ -40,7 +40,7 @@ class WebSocket{
             if( typeof(type) == "string" ){
                 cb(dic);
             }else{
-                dic.data = base64js.toByteArray(dic.data);
+                dic.data = base64js.toByteArray(dic.data).buffer;
                 cb(dic);
             }
         }
