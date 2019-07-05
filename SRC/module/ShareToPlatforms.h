@@ -20,7 +20,7 @@ typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 /**
  * 分享链接
  */
-- (void)shareLink:(NSString *)url title:(NSString *)title content:(NSString *)content platform:(NSNumber *)platform callJS:(CallJS)callJS;
+- (void)shareLink:(NSString *)url title:(NSString *)title content:(NSString *)content comment:(NSString *)comment platform:(NSNumber *)platform callJS:(CallJS)callJS;
 
 /**
  * 分享内容

@@ -21,7 +21,7 @@ const static int SHARE_TYPE_TEXT = 2;//分享的类型文本
 }
 
 //分享链接
-- (void)shareLink:(NSString *)url title:(NSString *)title content:(NSString *)content platform:(NSNumber *)platform callJS:(CallJS)callJS{
+- (void)shareLink:(NSString *)url title:(NSString *)title content:(NSString *)content comment:(NSString *)comment platform:(NSNumber *)platform callJS:(CallJS)callJS{
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     [shareParams SSDKSetupShareParamsByText:content
                                      images:[[NSBundle mainBundle] pathForResource:@"icon" ofType:@"png"]
