@@ -37,7 +37,7 @@ class WebSocket{
 
     set onmessage(cb){
         var om = function (dic, type){
-            if( typeof(type) == "string" ){
+            if( type == "string" ){
                 cb(dic);
             }else{
                 dic.data = base64js.toByteArray(dic.data).buffer;

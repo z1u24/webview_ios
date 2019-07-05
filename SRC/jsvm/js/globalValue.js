@@ -8,8 +8,6 @@ JSVM.module = {};
 JSVM.Boot = {};
 var location = {};
 
-//获取crypto
-
 
 //获取对象类型
 function getType(obj) {

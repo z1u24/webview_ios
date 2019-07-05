@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)addTransactionObserver:(CallJS)callJS;
 - (void)removeTransactionObserver:(CallJS)callJS;
 - (void)IAPurchase:(NSString *)sm sd:(NSString *)sd callJS:(CallJS)callJS;
-- (void)sendJSTransation:(NSNumber *)issuccess sd:(NSString *)sd transation:(NSString *)transation;
+//- (void)sendJSTransation:(NSNumber *)issuccess sd:(NSString *)sd transation:(NSString *)transation;
 @end
 
 NS_ASSUME_NONNULL_END

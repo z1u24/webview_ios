@@ -16,11 +16,13 @@
 #import "YNWebView.h"
 #import "VMBridge.h"
 #import "shareView.h"
+#import "payView.h"
+#import "IAPManager.h"
 #import "ShareToPlatforms.h"
 #import "toastUtil.h"
 #import "StageUtils.h"
 
-@interface JSVMManager () <shareDelegate>
+@interface JSVMManager () <shareDelegate,payDelegate>
 
 
 @end
@@ -52,11 +54,16 @@ static JSVMManager *_manager = nil;
 
 JSContext *ct = nil;
 
+payView *pv = nil;
+
+IAPManager *iapm = nil;
+
 JSVMBootManager *boot = nil;
 
 VMBridge *vmb = nil;
 
 JSValue* shareCallBack = nil;
+JSValue* payCallBack = nil;
 
 + (JSVMManager *)getIntance {
     if (_manager == nil) {
@@ -76,6 +83,8 @@ AFHTTPSessionManager *_afManager;
 
 -(instancetype) initManger {
     self = [super init];
+    //初始化支付模块
+    iapm = [[IAPManager alloc] init];
     // 实例化timer字典
     _dic = [NSMutableDictionary dictionary];
     // 实例化FMDataBase对象
@@ -111,6 +120,8 @@ AFHTTPSessionManager *_afManager;
     vmb = [[VMBridge alloc] initWithContext:context];
     context[@"window"] = context.globalObject;
     context[@"self"] = context.globalObject;
+    //base64
+    [self loadJSFromBundle:@"base64js.min.js" context:context];
     [context evaluateScript:@"var document = {};"];
     [context evaluateScript:@"document.body = {};"];
     [context evaluateScript:@"document.body.style = undefined;"];
@@ -213,8 +224,7 @@ AFHTTPSessionManager *_afManager;
         });
     };
     
-    //base64
-    [self loadJSFromBundle:@"base64js.min.js" context:context];
+    
     
     
     context[@"JSVM"][@"messageReciver"] = ^(JSValue *message){
@@ -231,9 +241,41 @@ AFHTTPSessionManager *_afManager;
         [vm.view addSubview:share];
     };
     
-    context[@"window"][@"onWebViewPostMessage"] = ^(JSValue *name, JSValue *message){
-        [[JSContext currentContext] evaluateScript:@"window.JSVM.goShare('wallet','test123','aighriaigag','http://www.niuroubao.cn', (isSuccess)=>{console.log('share success')})"];
+    context[@"JSVM"][@"goPay"] = ^(JSValue* slv, JSValue* defInt, JSValue* callBack){
+        payCallBack = callBack;
+        UIViewController *vm = navi.topViewController;
+        pv = [[payView alloc] initWithFrame:vm.view.bounds withRest:slv.toDouble withDefault:defInt.toInt32];
+        pv.delegate = self;
+        [vm.view addSubview:pv];
     };
+    
+    context[@"JSVM"][@"closePayView"] = ^(){
+        if (pv != nil) {
+            [pv removeFromSuperview];
+            pv = nil;
+        }
+    };
+    
+    context[@"JSVM"][@"goiosPay"] = ^(JSValue *sID, JSValue *sMD, JSValue *successCallBack, JSValue *failCallBack){
+        __weak typeof(iapm) weakIapm = iapm;
+        [iapm addTransactionObserver:^(CallJSType callJSType, NSArray *params) {
+            if (callJSType == Success) {
+                [weakIapm IAPurchase:sMD.toString sd:sID.toString callJS:^(CallJSType callJSType, NSArray *params) {
+                    if (callJSType == Success) {
+                        [successCallBack callWithArguments:params];
+                    }else{
+                        [failCallBack callWithArguments:@[@"支付失败"]];
+                    }
+                    //关闭蒙版,关闭监听
+                    [weakIapm removeTransactionObserver:^(CallJSType callJSType, NSArray *params) {
+                        
+                    }];
+                    [pv closeMenView];
+                }];
+            }
+        }];
+    };
+    
     
     //加载js方法
     context[@"JSVM"][@"loadJS"] = ^(JSValue *path, JSValue *url, JSValue *errFunc, JSValue *errText){
@@ -339,8 +381,9 @@ AFHTTPSessionManager *_afManager;
             }
             [success callWithArgumentsNoNil:@[request]];
         } failure:^(NSURLSessionDataTask * task, NSError * error) {
+            NSString *dispretion = [NSString stringWithFormat:@"请求失败%@",error.description];
             NSLog(@"请求失败%@",error.description);
-            [fail callWithArgumentsNoNil:@[error.description]];
+            [fail callWithArgumentsNoNil:@[dispretion]];
         }];
         URLSessionDataTask *obj = [[URLSessionDataTask alloc] initWithTask:task];
         return obj;
@@ -609,5 +652,24 @@ AFHTTPSessionManager *_afManager;
     
 }
 
+
+- (void)goPay:(NSNumber *)sID sMD:(NSString *)sMD{
+    if (payCallBack != nil) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [payCallBack callWithArguments:@[@"success",sID,sMD,@"apple_pay"]];
+            payCallBack = nil;
+        });
+    }
+}
+
+- (void)goPayBack:(UIView *)view{
+    if (payCallBack != nil) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [payCallBack callWithArguments:@[@"fail",@0,@"x",@"apple_pay"]];
+            payCallBack = nil;
+        });
+    }
+    [view removeFromSuperview];
+}
 
 @end

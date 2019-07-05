@@ -9,8 +9,9 @@
 #import "payView.h"
 #import "Masonry.h"
 #import "viewSizeUtil.h"
-
+#import "XDColorCircle.h"
 @interface payView ()
+@property(nonatomic, strong)UIView *menView;
 @property(nonatomic, strong)viewSizeUtil *sizeUtil;
 @property(nonatomic, strong)UIButton *backButton;
 @property(nonatomic, strong)UILabel *silverLabel;
@@ -27,7 +28,7 @@
 
 
 
-- (instancetype)initWithFrame:(CGRect)frame withRest:(double)slv
+- (instancetype)initWithFrame:(CGRect)frame withRest:(double)slv withDefault:(int)defaultTag
 {
     self = [super initWithFrame:frame];
     if (self) {
@@ -44,7 +45,15 @@
         [self initOverLookView];
         [self initPayButton];
         //默认选中第一个
-        self.selectTag = 6;
+        for (int i = 0; i< _muchArr.count; i++) {
+            NSString *str = _muchArr[i];
+            int x = [str intValue];
+            if (x >= defaultTag) {
+                self.selectTag = x;
+                break;
+            }
+        }
+        
         [self didselect:[self.muchDic objectForKey:[NSString stringWithFormat:@"%ld",(long)self.selectTag]] withTag:self.selectTag];
     }
     return self;
@@ -300,12 +309,53 @@
 }
 
 -(void)backAction{
-    [self.delegate goPayBack];
+    [self.delegate goPayBack:self];
+}
+
+
+-(void)closeMenView{
+    if (_menView != nil) {
+        [_menView removeFromSuperview];
+        _menView = nil;
+    }
 }
 
 -(void)payAction{
+    //打开蒙版
+    _menView = [[UIView alloc] initWithFrame:self.bounds];
+    _menView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.4];
+    [self addSubview:_menView];
+    UIView *men2View = [[UIView alloc] initWithFrame:[self.sizeUtil makeFrame:CGRectMake(137.5,283.5,100,100)]];
+    men2View.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.6];
+    men2View.layer.cornerRadius = 3*[self.sizeUtil getWidthSize];
+    
+    UILabel *label = [[UILabel alloc] init];
+    label.numberOfLines = 0;
+    [men2View addSubview:label];
+    __weak typeof(self) weakSelf = self;
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(men2View);
+        make.bottom.equalTo(men2View.mas_bottom).offset(-10*[weakSelf.sizeUtil getHeightSize]);
+    }];
+    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"支付中"attributes: @{NSFontAttributeName: [UIFont fontWithName:@"PingFangSC-Regular" size: 16],NSForegroundColorAttributeName: [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0]}];
+    label.attributedText = string;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.alpha = 1.0;
+    
+    XDColorCircle *circle=[[XDColorCircle alloc] initWithFrame:[self.sizeUtil makeBackFrame:CGRectMake(0,0,60,60)]];
+    [men2View addSubview:circle];
+    [circle mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(men2View.mas_left).offset(20*[weakSelf.sizeUtil getWidthSize]);
+        make.top.equalTo(men2View.mas_top).offset(10*[weakSelf.sizeUtil getHeightSize]);
+        make.bottom.equalTo(men2View.mas_bottom).offset(-30*[weakSelf.sizeUtil getHeightSize]);
+    }];
+    
+    
+    
+    [_menView addSubview:men2View];
     NSString *sID = [NSString stringWithFormat:@"high_xzxd_%ld",(long)self.selectTag];
-    [self.delegate goPay:sID];
+    NSNumber *sp = [[NSNumber alloc] initWithInt:self.selectTag*100];
+    [self.delegate goPay:sp sMD:sID];
 }
 
 @end

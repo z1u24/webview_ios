@@ -12,15 +12,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol payDelegate <NSObject>
 
--(void)goPayBack;
+-(void)goPayBack:(UIView *)view;
 
--(void)goPay:(NSString *)sID;
+-(void)goPay:(NSNumber *)sID sMD:(NSString *)sMD;
 
 @end
 
 @interface payView : UIView
-- (instancetype)initWithFrame:(CGRect)frame withRest:(double)slv;
-
+- (instancetype)initWithFrame:(CGRect)frame withRest:(double)slv withDefault:(int)defaultTag;
+- (void)closeMenView;
 @property(nonatomic, strong)id<payDelegate> delegate;
 
 @end

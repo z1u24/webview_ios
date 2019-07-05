@@ -108,9 +108,6 @@
                 [self completeTransaction:tran sd:sOD];
                 [transDic removeObjectForKey:sOD];
                 [[NSUserDefaults standardUserDefaults] setObject:transDic forKey:@"trans"];
-                if (selCallJS != NULL) {
-                    selCallJS(Success,@[@"交易完成"]);
-                }
                 NSLog(@"交易完成");
                 break;
             case SKPaymentTransactionStatePurchasing:
@@ -144,14 +141,17 @@
 //    transaction.transactionIdentifier
     NSString *encodeStr = [receiptData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
     NSString *transUTF8 = [NSString stringWithUTF8String:[encodeStr UTF8String]];
-    [self sendJSTransation:[NSNumber numberWithInt:1] sd:sd transation:transUTF8];
+//    [self sendJSTransation:[NSNumber numberWithInt:1] sd:sd transation:transUTF8];
+    if (selCallJS != NULL) {
+        selCallJS(Success,@[sd,transUTF8]);
+    }
     [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
 
-- (void)sendJSTransation:(NSNumber *)issuccess sd:(NSString *)sd transation:(NSString *)transation{
-    WebViewController *wb = [WebViewController sharedInstence];
-    [wb.bridge sendJS:@"iap_manager" name:@"transation" params:@[issuccess,sd,transation]];
-}
+//- (void)sendJSTransation:(NSNumber *)issuccess sd:(NSString *)sd transation:(NSString *)transation{
+//    WebViewController *wb = [WebViewController sharedInstence];
+//    [wb.bridge sendJS:@"iap_manager" name:@"transation" params:@[issuccess,]];
+//}
 
 
 @end
