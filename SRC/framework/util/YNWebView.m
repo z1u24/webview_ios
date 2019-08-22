@@ -24,12 +24,8 @@ static NSMutableDictionary *webViewDic = nil;
         if (webViewDic == nil) {
             webViewDic = [[NSMutableDictionary alloc] initWithCapacity:0];
         }
-//        if (yinengwebViewArray == nil){
-//            yinengwebViewArray = [[NSMutableArray alloc] initWithCapacity:0];
-//        }
         vc = webViewController;
         [self setWKWebView:wkwebView webName:webName];
-//        [yinengwebViewArray addObject:self];
     }
     return self;
 }

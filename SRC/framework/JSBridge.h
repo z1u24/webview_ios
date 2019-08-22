@@ -12,15 +12,6 @@
 #import "YNWebView.h"
 
 //MARK: callJS的状态
-typedef enum {
-    Error = -1,
-    Success  = 0,
-    Fail = 1,
-    Callback = 2
-    
-} CallJSType;
-
-typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -6,13 +6,15 @@
 //  Copyright © 2019 kuplay. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "JSValue_Extension.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface JSVMBootManager : NSObject
 - (instancetype)initWithContext:(JSContext *)context;
+-(NSString *)getLocationHref;
+-(NSString *)getIndexJS;
 @end
 
 NS_ASSUME_NONNULL_END

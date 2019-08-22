@@ -16,7 +16,11 @@
 
 @end
 
-@implementation WebViewController
+@implementation WebViewController{
+    BOOL isVisibel;
+}
+
+BOOL webViewKilled = YES;
 
 + (instancetype)sharedInstence{
     static WebViewController *singleton = nil;
@@ -32,6 +36,7 @@
 {
     self = [super init];
     if (self) {
+        isVisibel = NO;
         self.isUpdate = [NSNumber numberWithInt:0];
         WKWebView *wbView = [self createWebview];
         _ynWebView = [[YNWebView alloc] initWithWKWebView:wbView webName:@"default" webViewController:self];
@@ -53,18 +58,16 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-//    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
-//    [_bridge sendJS:@"PI_Activity" name:@"onResumed" params:@[@"页面进入前台"]];
-//    [super viewWillAppear:animated];
-//
-//    if (self.timer) {
-//        [self.timer invalidate];
-//        self.timer = nil;
-//    }
+    webViewKilled = NO;
     self.view.backgroundColor = UIColor.whiteColor;
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    isVisibel = YES;
+}
+
 - (void)viewWillDisappear:(BOOL)animated{
+    isVisibel = NO;
     [_bridge sendJS:@"PI_Activity" name:@"onBackPressed" params:@[@"页面进入后台"]];
     [super viewWillDisappear:animated];
 }
@@ -137,6 +140,7 @@
 //        webview.customUserAgent = [result stringByAppendingString:@" YINENG_IOS/1.0"];
 //    }];
     // 确定宽、高、X、Y坐标
+    webview.scrollView.bounces = NO;
     if(KISIphoneX){
         [webview setFrame:CGRectMake(0, -44, self.view.bounds.size.width, self.view.bounds.size.height+10)];
     }else{
@@ -207,10 +211,12 @@
         NSString *urlPath = [[NSBundle mainBundle] pathForResource:[@"assets" stringByAppendingString:URL_PATH] ofType:nil];
         NSString *url = [@"file://" stringByAppendingString:urlPath];
         [webview loadHTMLString:utf baseURL:[NSURL URLWithString:url]];
+        webViewKilled = NO;
         //[webview loadFileURL:[NSURL URLWithString:url] allowingReadAccessToURL:[NSURL URLWithString:[@"file://" stringByAppendingString:path]]];
     }else{
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:URL_PATH]];
         [webview loadRequest:request];
+        webViewKilled = NO;
     }
     webview.backgroundColor = [UIColor whiteColor];
     //webview.scrollView.bounces = false;
@@ -226,8 +232,18 @@
         [self.timer invalidate];
         self.timer = nil;
     }
+    //webView被杀死
+    webViewKilled = YES;
     //[webView reload];
     //self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(keepTimer:) userInfo:nil repeats:YES];
+}
+
+-(void)setWebViewKilled:(BOOL)ki{
+    webViewKilled = ki;
+}
+
+-(BOOL)isWebViewKilled{
+    return webViewKilled;
 }
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
@@ -248,31 +264,42 @@
 
 
 - (void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))completionHandler {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
+    if (!isVisibel) {
+        NSLog(@"%@",message);
         completionHandler();
-    }];
-    [alert addAction:okAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    }else{
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
+            completionHandler();
+        }];
+        [alert addAction:okAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
+    
 }
 
 - (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
+    if (!isVisibel) {
+        NSLog(@"%@",message);
         completionHandler(YES);
-    }];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
-        completionHandler(NO);
-    }];
-    [alert addAction:okAction];
-    [alert addAction:cancelAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    }else{
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:message message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
+            completionHandler(YES);
+        }];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action) {
+            completionHandler(NO);
+        }];
+        [alert addAction:okAction];
+        [alert addAction:cancelAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 // 消息分发
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     // 判断是否是调用原生的
-    NSLog(@"%@ %@",message.name,message.body);
+//    NSLog(@"%@ %@",message.name,message.body);
     if ([message.name isEqualToString:@"Native"]) {
         [_bridge postMessage:message.body];
     } else if ([message.name isEqualToString:@"JSIntercept"]) {

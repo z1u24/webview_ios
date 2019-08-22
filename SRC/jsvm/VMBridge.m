@@ -168,7 +168,7 @@ static NSMutableDictionary *dictionary = nil;
     }
     [array addObject:@")"];
     NSString *fullCode = [array componentsJoinedByString:@""];
-    NSLog(@"%@", fullCode);
+//    NSLog(@"%@", fullCode);
     //NSString *ss = [ynWebView getWkWebViewName];
     [jsc evaluateScript:fullCode];
 }

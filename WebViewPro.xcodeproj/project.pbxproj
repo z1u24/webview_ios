@@ -52,12 +52,13 @@
 		F330722521C0E98D00E0B9C2 /* JSBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F330722421C0E98D00E0B9C2 /* JSBridge.m */; };
 		F3329E8E21BE899900194F23 /* libmp3lame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3329E8D21BE899900194F23 /* libmp3lame.a */; };
 		F3347FE721D70855000767AA /* CameraPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = F3347FE621D70855000767AA /* CameraPicker.m */; };
-		F337A9C62275B5DF00625B72 /* NtWebSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F337A9C52275B5DF00625B72 /* NtWebSocketManager.m */; };
 		F33D934521AFD1C0001E3AC8 /* YNWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D934421AFD1C0001E3AC8 /* YNWebView.m */; };
 		F33D934B21AFF3A3001E3AC8 /* WebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D934A21AFF3A3001E3AC8 /* WebViewManager.m */; };
 		F33D934F21B109FC001E3AC8 /* globolNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D934D21B109FC001E3AC8 /* globolNavigationController.m */; };
 		F33D935221B10E44001E3AC8 /* ynWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F33D935121B10E44001E3AC8 /* ynWebViewController.m */; };
 		F340DD4321DDB8B800A25D50 /* AudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = F340DD4221DDB8B800A25D50 /* AudioRecorder.m */; };
+		F3412DC922E714F40039556D /* PIEth.m in Sources */ = {isa = PBXBuildFile; fileRef = F3412DC822E714F40039556D /* PIEth.m */; };
+		F3412DCC22E71BC00039556D /* PICoreApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F3412DCB22E71BC00039556D /* PICoreApi.m */; };
 		F341720922CC4C2500F6B054 /* XDColorCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = F341720822CC4C2500F6B054 /* XDColorCircle.m */; };
 		F344378E22C07D3A004B906D /* crypto.js in Resources */ = {isa = PBXBuildFile; fileRef = F344378D22C07D3A004B906D /* crypto.js */; };
 		F34A37EF2272A4EB006642BF /* WebSocketManger.m in Sources */ = {isa = PBXBuildFile; fileRef = F34A37EE2272A4EA006642BF /* WebSocketManger.m */; };
@@ -72,6 +73,8 @@
 		F367FC3F21B4C63F007C278A /* UIViewController+BackButtonHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F367FC3E21B4C63F007C278A /* UIViewController+BackButtonHandler.m */; };
 		F3750F20223239FB0047B802 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F3750F1F223239FB0047B802 /* icon.png */; };
 		F3750F232232663B0047B802 /* LocalLanguageMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = F3750F222232663B0047B802 /* LocalLanguageMgr.m */; };
+		F379A80F22F27F4600C1CE77 /* libethbtcwrapper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F379A80E22F27F4500C1CE77 /* libethbtcwrapper.a */; };
+		F379A81122F2BBC500C1CE77 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F379A81022F2BBC500C1CE77 /* Photos.framework */; };
 		F38F570F22C5A85C0023CAA1 /* viewSizeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F38F56F922C5A85C0023CAA1 /* viewSizeUtil.m */; };
 		F38F571022C5A85C0023CAA1 /* toastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F38F56FA22C5A85C0023CAA1 /* toastUtil.m */; };
 		F38F571122C5A85C0023CAA1 /* payView.m in Sources */ = {isa = PBXBuildFile; fileRef = F38F56FD22C5A85C0023CAA1 /* payView.m */; };
@@ -90,6 +93,24 @@
 		F38F571E22C5A85C0023CAA1 /* wechat.png in Resources */ = {isa = PBXBuildFile; fileRef = F38F570C22C5A85C0023CAA1 /* wechat.png */; };
 		F38F571F22C5A85C0023CAA1 /* siliver.png in Resources */ = {isa = PBXBuildFile; fileRef = F38F570D22C5A85C0023CAA1 /* siliver.png */; };
 		F392383821FAB23A005D2603 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F392383721FAB23A005D2603 /* CoreTelephony.framework */; };
+		F394C85322DDA67300F60A3D /* PIDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = F394C85222DDA67300F60A3D /* PIDataBase.m */; };
+		F394C85622DDB81100F60A3D /* PITimer.m in Sources */ = {isa = PBXBuildFile; fileRef = F394C85522DDB81100F60A3D /* PITimer.m */; };
+		F394C85A22DDC5CC00F60A3D /* PIAjax.m in Sources */ = {isa = PBXBuildFile; fileRef = F394C85922DDC5CC00F60A3D /* PIAjax.m */; };
+		F394C85E22DDD27000F60A3D /* PIBootManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F394C85D22DDD27000F60A3D /* PIBootManager.m */; };
+		F39FE37122F01334000DD101 /* BUAdSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F39FE36F22F01334000DD101 /* BUAdSDK.bundle */; };
+		F39FE37222F01334000DD101 /* BUAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FE37022F01334000DD101 /* BUAdSDK.framework */; };
+		F39FE37422F013E3000DD101 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FE37322F013E3000DD101 /* MobileCoreServices.framework */; };
+		F39FE37622F013F7000DD101 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FE37522F013F6000DD101 /* WebKit.framework */; };
+		F39FE37822F0140F000DD101 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FE37722F0140F000DD101 /* MediaPlayer.framework */; };
+		F39FE37A22F0141A000DD101 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FE37922F0141A000DD101 /* CoreMedia.framework */; };
+		F39FE37C22F01428000DD101 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FE37B22F01428000DD101 /* AVFoundation.framework */; };
+		F39FE37E22F01442000DD101 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FE37D22F01442000DD101 /* SystemConfiguration.framework */; };
+		F39FE38022F0144F000DD101 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FE37F22F0144F000DD101 /* AdSupport.framework */; };
+		F39FE38222F0145F000DD101 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FE38122F0145F000DD101 /* CoreMotion.framework */; };
+		F39FE38422F0147B000DD101 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FE38322F0147B000DD101 /* libresolv.9.tbd */; };
+		F39FE38622F0148F000DD101 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F39FE38522F0148F000DD101 /* libc++.tbd */; };
+		F39FE38922F01A46000DD101 /* ADUnion.m in Sources */ = {isa = PBXBuildFile; fileRef = F39FE38822F01A46000DD101 /* ADUnion.m */; };
+		F3B04DA622DC666E00B40B75 /* DataHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B04DA522DC666E00B40B75 /* DataHandle.m */; };
 		F3B64B8722C3496C00C099DB /* VMBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = F3B64B8622C3496C00C099DB /* VMBridge.m */; };
 		F3C27E0A227698F0001396CF /* env.js in Resources */ = {isa = PBXBuildFile; fileRef = F3C27E08227698EF001396CF /* env.js */; };
 		F3C27E0B227698F0001396CF /* globalValue.js in Resources */ = {isa = PBXBuildFile; fileRef = F3C27E09227698F0001396CF /* globalValue.js */; };
@@ -176,8 +197,6 @@
 		F3329E9221BF564800194F23 /* NSObject+extend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+extend.h"; sourceTree = "<group>"; };
 		F3347FE521D70855000767AA /* CameraPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraPicker.h; sourceTree = "<group>"; };
 		F3347FE621D70855000767AA /* CameraPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CameraPicker.m; sourceTree = "<group>"; };
-		F337A9C42275B5DF00625B72 /* NtWebSocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NtWebSocketManager.h; sourceTree = "<group>"; };
-		F337A9C52275B5DF00625B72 /* NtWebSocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NtWebSocketManager.m; sourceTree = "<group>"; };
 		F33D934321AFD1C0001E3AC8 /* YNWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNWebView.h; sourceTree = "<group>"; };
 		F33D934421AFD1C0001E3AC8 /* YNWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YNWebView.m; sourceTree = "<group>"; };
 		F33D934921AFF3A3001E3AC8 /* WebViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewManager.h; sourceTree = "<group>"; };
@@ -186,8 +205,13 @@
 		F33D934E21B109FC001E3AC8 /* globolNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = globolNavigationController.h; sourceTree = "<group>"; };
 		F33D935021B10E44001E3AC8 /* ynWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ynWebViewController.h; sourceTree = "<group>"; };
 		F33D935121B10E44001E3AC8 /* ynWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ynWebViewController.m; sourceTree = "<group>"; };
+		F33E9C8022EEE346007810F4 /* wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wrapper.h; sourceTree = "<group>"; };
 		F340DD4121DDB8B800A25D50 /* AudioRecorder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioRecorder.h; sourceTree = "<group>"; };
 		F340DD4221DDB8B800A25D50 /* AudioRecorder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioRecorder.m; sourceTree = "<group>"; };
+		F3412DC722E714F40039556D /* PIEth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIEth.h; sourceTree = "<group>"; };
+		F3412DC822E714F40039556D /* PIEth.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIEth.m; sourceTree = "<group>"; };
+		F3412DCA22E71BC00039556D /* PICoreApi.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PICoreApi.h; sourceTree = "<group>"; };
+		F3412DCB22E71BC00039556D /* PICoreApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PICoreApi.m; sourceTree = "<group>"; };
 		F341720722CC4C2500F6B054 /* XDColorCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDColorCircle.h; sourceTree = "<group>"; };
 		F341720822CC4C2500F6B054 /* XDColorCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDColorCircle.m; sourceTree = "<group>"; };
 		F3439882221E98720012CF15 /* WebViewPro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebViewPro.entitlements; sourceTree = "<group>"; };
@@ -214,6 +238,8 @@
 		F3750F1F223239FB0047B802 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		F3750F212232663B0047B802 /* LocalLanguageMgr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalLanguageMgr.h; sourceTree = "<group>"; };
 		F3750F222232663B0047B802 /* LocalLanguageMgr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalLanguageMgr.m; sourceTree = "<group>"; };
+		F379A80E22F27F4500C1CE77 /* libethbtcwrapper.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libethbtcwrapper.a; sourceTree = "<group>"; };
+		F379A81022F2BBC500C1CE77 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		F38F56F722C5A85C0023CAA1 /* viewSizeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = viewSizeUtil.h; sourceTree = "<group>"; };
 		F38F56F822C5A85C0023CAA1 /* toastUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = toastUtil.h; sourceTree = "<group>"; };
 		F38F56F922C5A85C0023CAA1 /* viewSizeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = viewSizeUtil.m; sourceTree = "<group>"; };
@@ -236,6 +262,31 @@
 		F38F570D22C5A85C0023CAA1 /* siliver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = siliver.png; sourceTree = "<group>"; };
 		F38F570E22C5A85C0023CAA1 /* shareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shareView.h; sourceTree = "<group>"; };
 		F392383721FAB23A005D2603 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		F394C85122DDA67300F60A3D /* PIDataBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIDataBase.h; sourceTree = "<group>"; };
+		F394C85222DDA67300F60A3D /* PIDataBase.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIDataBase.m; sourceTree = "<group>"; };
+		F394C85422DDB81100F60A3D /* PITimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PITimer.h; sourceTree = "<group>"; };
+		F394C85522DDB81100F60A3D /* PITimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PITimer.m; sourceTree = "<group>"; };
+		F394C85722DDBDEE00F60A3D /* callBack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = callBack.h; sourceTree = "<group>"; };
+		F394C85822DDC5CC00F60A3D /* PIAjax.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIAjax.h; sourceTree = "<group>"; };
+		F394C85922DDC5CC00F60A3D /* PIAjax.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIAjax.m; sourceTree = "<group>"; };
+		F394C85C22DDD27000F60A3D /* PIBootManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIBootManager.h; sourceTree = "<group>"; };
+		F394C85D22DDD27000F60A3D /* PIBootManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PIBootManager.m; sourceTree = "<group>"; };
+		F39FE36F22F01334000DD101 /* BUAdSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = BUAdSDK.bundle; sourceTree = "<group>"; };
+		F39FE37022F01334000DD101 /* BUAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BUAdSDK.framework; sourceTree = "<group>"; };
+		F39FE37322F013E3000DD101 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F39FE37522F013F6000DD101 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		F39FE37722F0140F000DD101 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		F39FE37922F0141A000DD101 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		F39FE37B22F01428000DD101 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F39FE37D22F01442000DD101 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F39FE37F22F0144F000DD101 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		F39FE38122F0145F000DD101 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		F39FE38322F0147B000DD101 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		F39FE38522F0148F000DD101 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		F39FE38722F01A46000DD101 /* ADUnion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ADUnion.h; sourceTree = "<group>"; };
+		F39FE38822F01A46000DD101 /* ADUnion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ADUnion.m; sourceTree = "<group>"; };
+		F3B04DA422DC666D00B40B75 /* DataHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHandle.h; sourceTree = "<group>"; };
+		F3B04DA522DC666E00B40B75 /* DataHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHandle.m; sourceTree = "<group>"; };
 		F3B64B8522C3496C00C099DB /* VMBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMBridge.h; sourceTree = "<group>"; };
 		F3B64B8622C3496C00C099DB /* VMBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMBridge.m; sourceTree = "<group>"; };
 		F3C27E08227698EF001396CF /* env.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = env.js; sourceTree = "<group>"; };
@@ -253,11 +304,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F379A81122F2BBC500C1CE77 /* Photos.framework in Frameworks */,
+				F39FE38622F0148F000DD101 /* libc++.tbd in Frameworks */,
+				F39FE38422F0147B000DD101 /* libresolv.9.tbd in Frameworks */,
+				F39FE38222F0145F000DD101 /* CoreMotion.framework in Frameworks */,
+				F39FE38022F0144F000DD101 /* AdSupport.framework in Frameworks */,
+				F39FE37E22F01442000DD101 /* SystemConfiguration.framework in Frameworks */,
+				F39FE37C22F01428000DD101 /* AVFoundation.framework in Frameworks */,
+				F39FE37A22F0141A000DD101 /* CoreMedia.framework in Frameworks */,
+				F39FE37822F0140F000DD101 /* MediaPlayer.framework in Frameworks */,
+				F39FE37622F013F7000DD101 /* WebKit.framework in Frameworks */,
+				F39FE37422F013E3000DD101 /* MobileCoreServices.framework in Frameworks */,
 				F3CE29AF224F47DB00F11535 /* StoreKit.framework in Frameworks */,
 				F392383821FAB23A005D2603 /* CoreTelephony.framework in Frameworks */,
 				186CC195212E5756004AC557 /* libsqlite3.tbd in Frameworks */,
 				186CC193212E573E004AC557 /* JavaScriptCore.framework in Frameworks */,
 				186CC191212E5732004AC557 /* libstdc++.tbd in Frameworks */,
+				F39FE37222F01334000DD101 /* BUAdSDK.framework in Frameworks */,
 				186CC18F212E5718004AC557 /* libz.tbd in Frameworks */,
 				186CC18D212E570B004AC557 /* libicucore.tbd in Frameworks */,
 				186CC17D212D5B92004AC557 /* ShareSDK.framework in Frameworks */,
@@ -265,6 +328,7 @@
 				186CC188212D5B92004AC557 /* libWeChatSDK.a in Frameworks */,
 				186CC182212D5B92004AC557 /* ShareSDKUI.framework in Frameworks */,
 				186CC17C212D5B92004AC557 /* MOBFoundation.framework in Frameworks */,
+				F379A80F22F27F4600C1CE77 /* libethbtcwrapper.a in Frameworks */,
 				186CC185212D5B92004AC557 /* WechatConnector.framework in Frameworks */,
 				186CC186212D5B92004AC557 /* LineSDK.framework in Frameworks */,
 				186CC180212D5B92004AC557 /* ShareSDKExtension.framework in Frameworks */,
@@ -283,17 +347,11 @@
 		04402D132269DC8200E1BC61 /* jsvm */ = {
 			isa = PBXGroup;
 			children = (
+				F394C85022DDA61600F60A3D /* tools */,
+				F3B04DA722DC669600B40B75 /* util */,
 				F3C27E0C227698F9001396CF /* js */,
-				04402D142269DC8200E1BC61 /* AFNetWorking_Extension.h */,
-				04402D182269DC8200E1BC61 /* AFNetWorking_Extension.m */,
 				F3B64B8522C3496C00C099DB /* VMBridge.h */,
 				F3B64B8622C3496C00C099DB /* VMBridge.m */,
-				04402D152269DC8200E1BC61 /* URLSessionDataTask.h */,
-				04402D1A2269DC8200E1BC61 /* URLSessionDataTask.m */,
-				F362A36B227068DB00D398F9 /* JSValue_Extension.h */,
-				F362A36A227068DB00D398F9 /* JSValue_Extension.m */,
-				F34A37ED2272A4EA006642BF /* WebSocketManger.h */,
-				F34A37EE2272A4EA006642BF /* WebSocketManger.m */,
 				04402D192269DC8200E1BC61 /* JSVMManager.h */,
 				04402D162269DC8200E1BC61 /* JSVMManager.m */,
 				F3E7302D226D62C900461972 /* JSVMBootManager.h */,
@@ -337,8 +395,8 @@
 				F3750F222232663B0047B802 /* LocalLanguageMgr.m */,
 				F3CE29B0224F482C00F11535 /* IAPManager.h */,
 				F3CE29B1224F482C00F11535 /* IAPManager.m */,
-				F337A9C42275B5DF00625B72 /* NtWebSocketManager.h */,
-				F337A9C52275B5DF00625B72 /* NtWebSocketManager.m */,
+				F39FE38722F01A46000DD101 /* ADUnion.h */,
+				F39FE38822F01A46000DD101 /* ADUnion.m */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -346,11 +404,11 @@
 		186CC154212D40DD004AC557 /* util */ = {
 			isa = PBXGroup;
 			children = (
+				F38F56F522C5A85C0023CAA1 /* ui */,
 				F35D2AB322C60C86001B149A /* StageUtils.h */,
 				F35D2AB422C60C86001B149A /* StageUtils.m */,
-				F38F56F522C5A85C0023CAA1 /* ui */,
-				186CC155212D40FE004AC557 /* ImageUtils.m */,
 				186CC157212D4110004AC557 /* ImageUtils.h */,
+				186CC155212D40FE004AC557 /* ImageUtils.m */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -358,6 +416,8 @@
 		186CC15E212D5B92004AC557 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
+				F39FE36E22F012EA000DD101 /* AD */,
+				F3412DC322E714040039556D /* ethBtc */,
 				F35D48D72223968F00711093 /* AliyunEmasServices-Info.plist */,
 				F3329E8B21BE898700194F23 /* Lame */,
 				186CC19B212E5E42004AC557 /* Argon2 */,
@@ -528,6 +588,17 @@
 		F31811A521217D5F0094EF5E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F379A81022F2BBC500C1CE77 /* Photos.framework */,
+				F39FE38522F0148F000DD101 /* libc++.tbd */,
+				F39FE38322F0147B000DD101 /* libresolv.9.tbd */,
+				F39FE38122F0145F000DD101 /* CoreMotion.framework */,
+				F39FE37F22F0144F000DD101 /* AdSupport.framework */,
+				F39FE37D22F01442000DD101 /* SystemConfiguration.framework */,
+				F39FE37B22F01428000DD101 /* AVFoundation.framework */,
+				F39FE37922F0141A000DD101 /* CoreMedia.framework */,
+				F39FE37722F0140F000DD101 /* MediaPlayer.framework */,
+				F39FE37522F013F6000DD101 /* WebKit.framework */,
+				F39FE37322F013E3000DD101 /* MobileCoreServices.framework */,
 				F3CE29AE224F47DB00F11535 /* StoreKit.framework */,
 				F392383721FAB23A005D2603 /* CoreTelephony.framework */,
 				186CC194212E5755004AC557 /* libsqlite3.tbd */,
@@ -560,6 +631,15 @@
 				F33D935121B10E44001E3AC8 /* ynWebViewController.m */,
 			);
 			path = ynWebViewController;
+			sourceTree = "<group>";
+		};
+		F3412DC322E714040039556D /* ethBtc */ = {
+			isa = PBXGroup;
+			children = (
+				F379A80E22F27F4500C1CE77 /* libethbtcwrapper.a */,
+				F33E9C8022EEE346007810F4 /* wrapper.h */,
+			);
+			path = ethBtc;
 			sourceTree = "<group>";
 		};
 		F354AB1F2119930300A8BEA8 = {
@@ -657,6 +737,52 @@
 				F38F570D22C5A85C0023CAA1 /* siliver.png */,
 			);
 			path = image;
+			sourceTree = "<group>";
+		};
+		F394C85022DDA61600F60A3D /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				F394C85722DDBDEE00F60A3D /* callBack.h */,
+				F394C85122DDA67300F60A3D /* PIDataBase.h */,
+				F394C85222DDA67300F60A3D /* PIDataBase.m */,
+				F394C85422DDB81100F60A3D /* PITimer.h */,
+				F394C85522DDB81100F60A3D /* PITimer.m */,
+				F394C85822DDC5CC00F60A3D /* PIAjax.h */,
+				F394C85922DDC5CC00F60A3D /* PIAjax.m */,
+				F394C85C22DDD27000F60A3D /* PIBootManager.h */,
+				F394C85D22DDD27000F60A3D /* PIBootManager.m */,
+				F3412DC722E714F40039556D /* PIEth.h */,
+				F3412DC822E714F40039556D /* PIEth.m */,
+				F3412DCA22E71BC00039556D /* PICoreApi.h */,
+				F3412DCB22E71BC00039556D /* PICoreApi.m */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		F39FE36E22F012EA000DD101 /* AD */ = {
+			isa = PBXGroup;
+			children = (
+				F39FE36F22F01334000DD101 /* BUAdSDK.bundle */,
+				F39FE37022F01334000DD101 /* BUAdSDK.framework */,
+			);
+			path = AD;
+			sourceTree = "<group>";
+		};
+		F3B04DA722DC669600B40B75 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				F3B04DA422DC666D00B40B75 /* DataHandle.h */,
+				F3B04DA522DC666E00B40B75 /* DataHandle.m */,
+				04402D142269DC8200E1BC61 /* AFNetWorking_Extension.h */,
+				04402D182269DC8200E1BC61 /* AFNetWorking_Extension.m */,
+				04402D152269DC8200E1BC61 /* URLSessionDataTask.h */,
+				04402D1A2269DC8200E1BC61 /* URLSessionDataTask.m */,
+				F362A36B227068DB00D398F9 /* JSValue_Extension.h */,
+				F362A36A227068DB00D398F9 /* JSValue_Extension.m */,
+				F34A37ED2272A4EA006642BF /* WebSocketManger.h */,
+				F34A37EE2272A4EA006642BF /* WebSocketManger.m */,
+			);
+			path = util;
 			sourceTree = "<group>";
 		};
 		F3C27E0C227698F9001396CF /* js */ = {
@@ -769,6 +895,7 @@
 				F38F571D22C5A85C0023CAA1 /* goad.png in Resources */,
 				F354AB352119930400A8BEA8 /* Assets.xcassets in Resources */,
 				F38F571822C5A85C0023CAA1 /* invite.png in Resources */,
+				F39FE37122F01334000DD101 /* BUAdSDK.bundle in Resources */,
 				F38F571522C5A85C0023CAA1 /* qrcode.png in Resources */,
 				F344378E22C07D3A004B906D /* crypto.js in Resources */,
 				186CC17E212D5B92004AC557 /* ShareSDKConfigFile.bundle in Resources */,
@@ -839,7 +966,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F394C85A22DDC5CC00F60A3D /* PIAjax.m in Sources */,
 				F35D2AB522C60C86001B149A /* StageUtils.m in Sources */,
+				F3412DCC22E71BC00039556D /* PICoreApi.m in Sources */,
 				186CC14E212D3D38004AC557 /* BaseObject.m in Sources */,
 				F31241AE21AE6E1700819868 /* ref.c in Sources */,
 				186CC156212D40FE004AC557 /* ImageUtils.m in Sources */,
@@ -848,17 +977,20 @@
 				F31241B421AE6E1700819868 /* core.c in Sources */,
 				F3CE29B2224F482C00F11535 /* IAPManager.m in Sources */,
 				F31241B121AE6E1700819868 /* encoding.c in Sources */,
+				F3B04DA622DC666E00B40B75 /* DataHandle.m in Sources */,
 				186CC1B6212E5F12004AC557 /* Argon2Hash.m in Sources */,
+				F3412DC922E714F40039556D /* PIEth.m in Sources */,
 				F330722521C0E98D00E0B9C2 /* JSBridge.m in Sources */,
 				F354AB302119930300A8BEA8 /* WebViewController.m in Sources */,
 				F31241AF21AE6E1700819868 /* ahash.c in Sources */,
 				F367FC3F21B4C63F007C278A /* UIViewController+BackButtonHandler.m in Sources */,
+				F394C85E22DDD27000F60A3D /* PIBootManager.m in Sources */,
 				F38F571022C5A85C0023CAA1 /* toastUtil.m in Sources */,
 				F3347FE721D70855000767AA /* CameraPicker.m in Sources */,
+				F394C85322DDA67300F60A3D /* PIDataBase.m in Sources */,
 				F31241B221AE6E1700819868 /* thread.c in Sources */,
 				04402D1D2269DC8200E1BC61 /* AFNetWorking_Extension.m in Sources */,
 				F38F571122C5A85C0023CAA1 /* payView.m in Sources */,
-				F337A9C62275B5DF00625B72 /* NtWebSocketManager.m in Sources */,
 				F354AB3B2119930400A8BEA8 /* main.m in Sources */,
 				F354AB2D2119930300A8BEA8 /* WebViewAppDelegate.m in Sources */,
 				F38F570F22C5A85C0023CAA1 /* viewSizeUtil.m in Sources */,
@@ -874,7 +1006,9 @@
 				F33D934521AFD1C0001E3AC8 /* YNWebView.m in Sources */,
 				04402D1E2269DC8200E1BC61 /* URLSessionDataTask.m in Sources */,
 				F33D935221B10E44001E3AC8 /* ynWebViewController.m in Sources */,
+				F39FE38922F01A46000DD101 /* ADUnion.m in Sources */,
 				F38F571222C5A85C0023CAA1 /* shareView.m in Sources */,
+				F394C85622DDB81100F60A3D /* PITimer.m in Sources */,
 				F362493A22150D5600A28ADE /* MessagePost.m in Sources */,
 				F31241AD21AE6E1700819868 /* blake2b.c in Sources */,
 				04402D1B2269DC8200E1BC61 /* JSVMManager.m in Sources */,
@@ -1013,6 +1147,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5N846TM2N4;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDK/Required",
@@ -1022,6 +1157,7 @@
 					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/LineSDK",
 					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/SDK/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/SDK/AD",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = SRC/appdelegate/Info.plist;
@@ -1035,6 +1171,8 @@
 					"$(PROJECT_DIR)/test",
 					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/SDK/Lame",
+					"$(PROJECT_DIR)/SDK/eth",
+					"$(PROJECT_DIR)/SDK/ethBtc",
 				);
 				LLVM_LTO = YES_THIN;
 				OTHER_CODE_SIGN_FLAGS = "";
@@ -1064,6 +1202,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5N846TM2N4;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SDK/Required",
@@ -1073,6 +1212,7 @@
 					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/LineSDK",
 					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/SDK/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/SDK/AD",
 				);
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = SRC/appdelegate/Info.plist;
@@ -1086,6 +1226,8 @@
 					"$(PROJECT_DIR)/test",
 					"$(PROJECT_DIR)/SDK/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/SDK/Lame",
+					"$(PROJECT_DIR)/SDK/eth",
+					"$(PROJECT_DIR)/SDK/ethBtc",
 				);
 				LLVM_LTO = YES_THIN;
 				OTHER_CODE_SIGN_FLAGS = "";

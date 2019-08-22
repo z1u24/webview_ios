@@ -10,11 +10,7 @@
 #import "globolNavigationController.h"
 #import "BaseObject.h"
 #import "JSVMManager.h"
-
-#define IOS10_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
-#define IOS9_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
-#define IOS8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
-#define IOS7_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+#import <BUAdSDK/BUAdSDKManager.h>
 
 @interface AppDelegate ()
 
@@ -25,7 +21,6 @@ globolNavigationController *navi = nil;
 NSString *userAgent = @"";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     
     // 设置userAgent
     NSString *customizeUserAgent = @" YINENG_IOS_GAME/1.0";
@@ -46,12 +41,12 @@ NSString *userAgent = @"";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadJSContext) name:@"restartJSVM" object:@"restart"];
     
     [self loadJSContext];
-    
-    
+
+    [self initByteDanceAD];
     [self initShareSDK];
-//    [self initAliPush];
-//    [self registerAPNS:application];
-//    [CloudPushSDK sendNotificationAck:launchOptions];
+    [self initAliPush];
+    [self registerAPNS:application];
+    [CloudPushSDK sendNotificationAck:launchOptions];
     
     return YES;
 }
@@ -68,42 +63,35 @@ NSString *userAgent = @"";
  *
  */
 - (void)registerAPNS:(UIApplication *)application {
-    if (IOS10_OR_LATER) {
-        //iOS 10 later
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        //必须写代理，不然无法监听通知的接收与点击事件
-        center.delegate = self;
-        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {
-            if (!error && granted) {
-                //用户点击允许
-                NSLog(@"注册成功");
-            }else{
-                //用户点击不允许
-                NSLog(@"注册失败");
-            }
-        }];
-        
-        // 可以通过 getNotificationSettingsWithCompletionHandler 获取权限设置
-        //之前注册推送服务，用户点击了同意还是不同意，以及用户之后又做了怎样的更改我们都无从得知，现在 apple 开放了这个 API，我们可以直接获取到用户的设定信息了。注意UNNotificationSettings是只读对象哦，不能直接修改！
-        [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-            NSLog(@"========%@",settings);
-        }];
-    }else if (IOS8_OR_LATER){
-        //iOS 8 - iOS 10系统
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
-        [application registerUserNotificationSettings:settings];
-    }else{
-        //iOS 8.0系统以下
-        [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
-    }
-    
+    //iOS 10 later
+    UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+    //必须写代理，不然无法监听通知的接收与点击事件
+    center.delegate = self;
+    [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        if (!error && granted) {
+            //用户点击允许
+            NSLog(@"注册成功");
+        }else{
+            //用户点击不允许
+            NSLog(@"注册失败");
+        }
+    }];
+    // 可以通过 getNotificationSettingsWithCompletionHandler 获取权限设置
+    //之前注册推送服务，用户点击了同意还是不同意，以及用户之后又做了怎样的更改我们都无从得知，现在 apple 开放了这个 API，我们可以直接获取到用户的设定信息了。注意UNNotificationSettings是只读对象哦，不能直接修改！
+    [center getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+        NSLog(@"========%@",settings);
+    }];
     //注册远端消息通知获取device token
     [application registerForRemoteNotifications];
 }
 
 
+- (void)initByteDanceAD{
+    [BUAdSDKManager setAppID:@"5025750"];
+}
+
+
 - (void)initAliPush{
-    
     // SDK初始化
     [CloudPushSDK asyncInit:@"25698602" appSecret:@"8fd1ad1ac2991c16e79d7168e798a05e" callback:^(CloudPushCallbackResult *res) {
         if (res.success) {

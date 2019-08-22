@@ -6,7 +6,7 @@
 //  Copyright © 2019 kuplay. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "JSValue_Extension.h"
 #import "globolNavigationController.h"
 @interface JSVMManager : NSObject

@@ -16,8 +16,9 @@
 #import "ImageUtils.h"
 
 
-
 @interface ImagePicker : BaseObject
+
+- (void)saveImageToAlbum:(NSString *)imgName saveImg:(NSString *)saveImg callBack:(CallJS)callback;
 
 - (void)chooseImage:(NSNumber *)useCamera single:(NSNumber *)single max:(NSNumber *)max callJS:(CallJS)callJS;
 

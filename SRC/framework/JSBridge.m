@@ -10,6 +10,14 @@
 #import <objc/message.h>
 #import <objc/runtime.h>
 
+typedef enum {
+    Error = -1,
+    Success  = 0,
+    Fail = 1,
+    Callback = 2
+    
+} CallJSType;
+
 static int identity = 0;
 // <int, id>
 static NSMutableDictionary *dictionary = nil;
@@ -159,7 +167,7 @@ static NSMutableDictionary *dictionary = nil;
     }
     [array addObject:@")"];
     NSString *fullCode = [array componentsJoinedByString:@""];
-    NSLog(@"%@", fullCode);
+//    NSLog(@"%@", fullCode);
     //NSString *ss = [ynWebView getWkWebViewName];
     [[ynWebView getWKWebView] evaluateJavaScript:fullCode completionHandler:^(id object,NSError *error) {
         if(error != nil) {

@@ -10,7 +10,6 @@
 #import <sys/utsname.h>
 #import "BaseObject.h"
 
-typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 
 @interface DeviceIdProvider : BaseObject
 

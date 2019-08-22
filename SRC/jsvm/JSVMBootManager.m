@@ -8,165 +8,133 @@
 
 #import "JSVMBootManager.h"
 #import "WebViewAppDelegate.h"
-
-@implementation JSVMBootManager
-
-NSNumber *update = 0;
-NSString *app_Version = nil;
-NSString *appversionPath = nil;
-NSMutableDictionary *mJSBootFilePathDic = nil;
+#import "PIBootManager.h"
+#import "PIAjax.h"
+#import "DataHandle.h"
+@implementation JSVMBootManager{
+    PIBootManager *piBoot;
+}
 
 - (instancetype)initWithContext:(JSContext *)context {
     self = [super init];
     if (self) {
-        update = [NSNumber numberWithInt:0];
-        [self getMobilBootFiles];
-        [self getDocumentsAppVersion];
+        piBoot = [PIBootManager sharedInstance];
         [self initManager:context];
     }
     return self;
 }
 
+-(NSString *)getLocationHref{
+    return piBoot.fullVMPath;
+}
+
+-(NSString *)getIndexJS{
+    return piBoot.loadVMBase;
+}
+
 - (void)initManager:(JSContext *)context {
+    
+    context[@"JSVM"][@"Boot"][@"loadJS"] = ^(JSValue *defaultDomain, JSValue *path){
+        NSString *paths = [defaultDomain.toString stringByAppendingString:path.toString];
+        NSString *content = [NSString stringWithContentsOfFile:paths encoding:NSUTF8StringEncoding error:nil];
+        DataHandle *dh = [[DataHandle alloc] init];
+        [dh setContent:content file:path.toString];
+        return dh;
+    };
+    
     context[@"JSVM"][@"Boot"][@"updateApp"] = ^(JSValue *url){
+        [self->piBoot loadVM];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url.toString] options:@{} completionHandler:nil];
     };
     
     context[@"JSVM"][@"Boot"][@"getAppVersion"] = ^(JSValue *cb){
-        [cb callWithArgumentsNoNil:@[@TRUE,app_Version,update]];
-    };
-    
-    context[@"JSVM"][@"Boot"][@"updateFinish"] = ^(JSValue *cb){
-        //更改底层app文件版本号
-        [app_Version writeToFile:appversionPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
-        [cb callWithArgumentsNoNil:@[]];
+        [cb callWithArgumentsNoNil:@[@TRUE,self->piBoot.app_version,self->piBoot.update]];
     };
     
     context[@"JSVM"][@"Boot"][@"getMobileBootFiles"] = ^(JSValue *cb){
-
-        [cb callWithArgumentsNoNil:@[mJSBootFilePathDic]];
+        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+        NSMutableDictionary *dic = self->piBoot.mVMBootFileDic;
+        for (NSString *fileName in dic.allKeys) {
+            NSString *rootPath = [dic objectForKey:fileName];
+            NSString *fullPath = [docPath stringByAppendingString:rootPath];
+            NSString *content = [NSString stringWithContentsOfFile:fullPath encoding:NSUTF8StringEncoding error:nil];
+            DataHandle *dh = [[DataHandle alloc] init];
+            [dh setContent:content file:fileName];
+            [dic setObject:dh forKey:fileName];
+        }
+        [cb callWithArgumentsNoNil:@[dic]];
     };
     
     context[@"JSVM"][@"Boot"][@"restartJSVM"] = ^(){
         [[NSNotificationCenter defaultCenter] postNotificationName:@"restartJSVM" object:@"restart"];
     };
     
-    context[@"JSVM"][@"Boot"][@"saveFile"] = ^(JSValue *path, JSValue *content, JSValue *cb){
-        //如果path中包含.depend改为depend
-        // 获取Document目录
-        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString *assetsPath = [@"/assets/JSVM/" stringByAppendingString:path.toString];
-        if([assetsPath containsString:@".depend"]){
-            assetsPath = [assetsPath stringByReplacingOccurrencesOfString:@".depend" withString:@"depend"];
-        }
-        NSString *fullPath = [docPath stringByAppendingString:assetsPath];
-        NSFileManager *manager = [NSFileManager defaultManager];
-        NSString *dirPath = [fullPath substringToIndex:[fullPath rangeOfString:@"/" options:NSBackwardsSearch].location];
-        //判断文件夹是否存在  不存在就创建
-        BOOL filePathExist = [manager fileExistsAtPath:dirPath isDirectory:false];
-        if (!filePathExist) {
-            NSError *err = nil;
-            BOOL ok = [manager createDirectoryAtPath:dirPath withIntermediateDirectories:YES attributes:nil error:&err];
-            if (ok == NO) {
-                NSLog(@"JSVM, file = %@, isCreate = %d", dirPath, ok);
-                return;
-            }
-        }
-        NSData *data = [[NSData alloc] initWithBase64EncodedString:content.toString options:0];
-        BOOL isExist = [manager fileExistsAtPath:fullPath];
-        NSLog(@"JSVM, file = %@, isExist = %d", fullPath, isExist);
-        if (isExist) {
-            [manager removeItemAtPath:fullPath error:nil];
-        }
-        if(data == nil){
-            [content.toString writeToFile:fullPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
-        }else{
-            BOOL sucess = [manager createFileAtPath:fullPath contents:data attributes:nil];
-            if (!sucess) {
-                NSLog(@"JSVM createFile failed, file = %@", fullPath);
-            }
-        }
-        //判断
-        NSString *mBootFilePath = [docPath stringByAppendingString:@"/apkback/JSVMBootFilePaths.plist"];
-        NSString *apkPath = [mBootFilePath substringToIndex:[fullPath rangeOfString:@"/" options:NSBackwardsSearch].location];
-        //判断文件夹是否存在  不存在就创建
-        BOOL isDirectory = YES;
-        BOOL apkPathExist = [manager fileExistsAtPath:apkPath isDirectory:&isDirectory];
-        if (!apkPathExist) {
-            NSError *err = nil;
-            BOOL ok = [manager createDirectoryAtPath:apkPath withIntermediateDirectories:YES attributes:nil error:&err];
-            if (ok == NO) {
-                NSLog(@"JSVM, file = %@, isCreate = %d", dirPath, ok);
-                return;
-            }
-        }
-        BOOL isMBootFileExist = [manager fileExistsAtPath:fullPath];
-        if (!isMBootFileExist) {
-            BOOL sucess = [manager createFileAtPath:mBootFilePath contents:nil attributes:nil];
-            if (!sucess) {
-                NSLog(@"JSVM createFile failed, file = %@", fullPath);
-            }
-        }
-        //获取文件名称
-        NSString *fileName = [assetsPath containsString:@"/"]?[assetsPath substringFromIndex:[assetsPath rangeOfString:@"/" options:NSBackwardsSearch].location + 1] : assetsPath;
-        [mJSBootFilePathDic setObject:assetsPath forKey:fileName];
-        [mJSBootFilePathDic writeToFile:mBootFilePath atomically:YES];
-        [cb callWithArgumentsNoNil:@[@TRUE]];
+    context[@"JSVM"][@"Boot"][@"updateFinish"] = ^(){
+        [self->piBoot setAppVerison];
     };
+    
+    context[@"JSVM"][@"Boot"][@"updateDownload"] = ^(JSValue *domains, JSValue *url, JSValue *files, JSValue *success, JSValue *fail, JSValue *progress){
+        PIAjax *ajax = [[PIAjax alloc] init];
+        [self goDownload:ajax domians:domains.toArray url:url.toString files:files.toArray success:^(NSArray *array) {
+            [success callWithArgumentsNoNil:array];
+        } fail:^(NSArray *array) {
+            [fail callWithArgumentsNoNil:array];
+        } progress:^(NSArray *array) {
+            [progress callWithArgumentsNoNil:array];
+        } retry:0];
+    };
+    
+    context[@"JSVM"][@"Boot"][@"saveDepend"] = ^(JSValue *content){
+        [self->piBoot saveVMFile:@".depend" content:content.toString cb:^(NSArray *array) {
+            
+        }];
+    };
+    
+    context[@"JSVM"][@"Boot"][@"saveIndexJS"] = ^(JSValue *content){
+        [self->piBoot saveVMFile:@"boot/jsindex.js" content:content.toString cb:^(NSArray *array) {
+            
+        }];
+    };
+    
     
 }
 
-- (void)getMobilBootFiles{
-    if (mJSBootFilePathDic == nil) {
-        //文件中读取
-        NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString *apkPath = [docPath stringByAppendingString:@"/apkback/"];
-        NSString *mBootFilePath = [apkPath stringByAppendingString:@"JSVMBootFilePaths.plist"];
-        NSFileManager *manager = [NSFileManager defaultManager];
-        BOOL isMBootFileExist = [manager fileExistsAtPath:mBootFilePath];
-        if (!isMBootFileExist) {
-            mJSBootFilePathDic = [[NSMutableDictionary alloc] initWithCapacity:0];
-        }else{
-            mJSBootFilePathDic = [[NSMutableDictionary alloc] initWithContentsOfFile:mBootFilePath];
-        }
+-(void)goDownload:(PIAjax *)ajax domians:(NSArray *)domains url:(NSString *)url files:(NSArray *)files success:(callBack)success fail:(callBack)fail progress:(callBack)progress retry:(int)retry{
+    if (retry >= domains.count) {
+        fail(@[]);
+        return;
     }
-}
-
-- (void)getDocumentsAppVersion{
-    //获取当前app版本
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
-    //获取底层app文件版本号
-    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *apkPath = [docPath stringByAppendingString:@"/apkback"];
-    appversionPath = [apkPath stringByAppendingString:@"/appversion.txt"];
-    NSFileManager *manager = [NSFileManager defaultManager];
-    BOOL isDirectory = YES;
-    //判断文件夹是否存在  不存在就创建
-    BOOL apkPathExist = [manager fileExistsAtPath:apkPath isDirectory:&isDirectory];
-    if (!apkPathExist) {
-        NSError *err = nil;
-        BOOL ok = [manager createDirectoryAtPath:apkPath withIntermediateDirectories:NO attributes:nil error:&err];
-        if (ok == NO) {
-            NSLog(@"JSInterceptor, file = %@, isCreate = %d", apkPath, ok);
+    NSString *fullUrl = [domains[retry] stringByAppendingString:url];
+    [ajax request:@"GET" inputUrl:fullUrl header:nil reqData:nil reqType:nil success:^(NSArray *array) {
+        //开始下载
+        NSData *data = [array firstObject];
+        int start = 0;
+        int end = 0;
+        for(int i = 0; i < files.count; i++){
+            NSDictionary *file = files[i];
+            start = start + end;
+            end = [[file objectForKey:@"size"] intValue];
+            NSString *name = [file objectForKey:@"path"];
+            NSData *codeData = [data subdataWithRange:NSMakeRange(start, end)];
+            NSString *content = [[NSString alloc] initWithData:codeData encoding:NSUTF8StringEncoding];
+            //存docments
+            DataHandle *dh = [[DataHandle alloc] init];
+            [dh setContent:content file:name];
+            success(@[file, dh]);
+            if([name containsString:@"boot"]){
+                [self->piBoot saveVMFile:name content:content cb:^(NSArray *array) {
+                    
+                }];
+            }
+            
         }
-    }
-    BOOL isAppVersionExist = [manager fileExistsAtPath:appversionPath];
-    if (!isAppVersionExist) {
-        BOOL sucess = [manager createFileAtPath:appversionPath contents:nil attributes:nil];
-        if (!sucess) {
-            NSLog(@"JSInterceptor createFile failed, file = %@", appversionPath);
-        }else{
-            [app_Version writeToFile:appversionPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
-        }
-    }else{
-        NSString *documentsVersion = [NSString stringWithContentsOfFile:appversionPath encoding:NSUTF8StringEncoding error:nil];
-        if (![documentsVersion isEqualToString:app_Version]) {
-            [manager removeItemAtPath:[docPath stringByAppendingString:@"/assets"] error:nil];
-            [app_Version writeToFile:appversionPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
-            update = [NSNumber numberWithInt:1];
-        }
-    }
+        //结束
+        
+    } fail:^(NSArray *array) {
+        [self goDownload:ajax domians:domains url:url files:files success:success fail:fail progress:progress retry:retry+1];
+    } progress:^(NSArray *array) {
+        progress(array);
+    }];
 }
 
 

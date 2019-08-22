@@ -6,7 +6,7 @@
 //  Copyright © 2019 kuplay. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "NSObject+extend.h"
 #import <JavaScriptCore/JavaScriptCore.h>
 NS_ASSUME_NONNULL_BEGIN

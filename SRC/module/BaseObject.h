@@ -10,9 +10,18 @@
 #ifndef BaseObject_h
 #define BaseObject_h
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "NSObject+extend.h"
-#import "JSBridge.h"
+
+typedef enum {
+    Error = -1,
+    Success  = 0,
+    Fail = 1,
+    Callback = 2
+    
+} CallJSType;
+
+typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 
 @interface BaseObject : NSObject
 

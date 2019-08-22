@@ -6,6 +6,7 @@
 //  Copyright © 2018年 kupay. All rights reserved.
 //
 #import "ImagePicker.h"
+#import <Photos/PHPhotoLibrary.h>
 
 @interface ImagePicker () <TZImagePickerControllerDelegate>
 
@@ -13,6 +14,7 @@
 
 @implementation ImagePicker{
     CallJS selCallJS;
+    CallJS saveCallJS;
     bool onlyOne;
 }
 
@@ -23,6 +25,36 @@
         onlyOne = false;
     }
     return self;
+}
+
+
+- (void)saveImageToAlbum:(NSString *)imgName saveImg:(NSString *)saveImg callBack:(CallJS)callback{
+    saveCallJS = callback;
+    PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+    if (status == PHAuthorizationStatusRestricted || status == PHAuthorizationStatusDenied)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+        });
+        callback(Fail,@[@"没有权限"]);
+    }else{
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:saveImg]];
+        UIImage *image = [UIImage imageWithData:data];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), (__bridge void *)self);
+        });
+        
+    }
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    NSLog(@"image = %@, error = %@, contextInfo = %@", image, error, contextInfo);
+    if (error) {
+        saveCallJS(Fail,@[@"fail"]);
+    }else{
+        saveCallJS(Success,@[@"success"]);
+    }
 }
 
 - (void)chooseImage:(NSNumber *)useCamera single:(NSNumber *)single max:(NSNumber *)max callJS:(CallJS)callJS{
@@ -97,7 +129,9 @@
     docPath = [docPath stringByAppendingString:@"/selectes.png"];
     UIImage *image = [UIImage imageWithContentsOfFile:docPath];
     NSData *dataImage = UIImageJPEGRepresentation(image, quality.floatValue/100.00);
-    NSString *base64 = [dataImage base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
+    UIImage *imgJPEG = [UIImage imageWithData:dataImage];
+    NSData *pngData = UIImagePNGRepresentation(imgJPEG);
+    NSString *base64 = [pngData base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed];
     callJS(Success,@[base64]);
 }
 

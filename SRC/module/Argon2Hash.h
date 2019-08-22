@@ -8,7 +8,6 @@
 #include "BaseObject.h"
 #include "argon2.h"
 
-typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 
 @interface ArgonHash : BaseObject
 

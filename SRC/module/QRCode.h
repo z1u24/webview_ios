@@ -13,7 +13,6 @@
 #import "HMScannerController.h"
 #import "BaseObject.h"
 
-typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 
 @interface QRCode : BaseObject
 

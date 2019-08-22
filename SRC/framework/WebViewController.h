@@ -23,5 +23,7 @@
 + (NSString *)getURLFromInfo;
 - (void)stopTimer;
 - (void)startTimer;
+- (BOOL)isWebViewKilled;
+-(void)setWebViewKilled:(BOOL)ki;
 @end
 

@@ -122,7 +122,7 @@ JSBridge *bridge;
 // 消息分发
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     // 判断是否是调用原生的
-    NSLog(@"%@ %@",message.name,message.body);
+//    NSLog(@"%@ %@",message.name,message.body);
     if ([message.name isEqualToString:@"Native"]) {
         [bridge postMessage:message.body];
     } else if ([message.name isEqualToString:@"JSIntercept"]) {

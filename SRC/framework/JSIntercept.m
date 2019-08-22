@@ -4,11 +4,12 @@
 
 
 
-@implementation JSIntercept
+@implementation JSIntercept{
+    NSNumber *isUpdate;
+    NSMutableDictionary *mBootFilePathDic;
+    WKWebView *webView;
+}
 
-NSNumber *isUpdate = 0;
-NSMutableDictionary *mBootFilePathDic = nil;
-WKWebView *webView = nil;
 
 - (instancetype)initWithWebView:(WKWebView *)webview update:(NSNumber *)update
 {
@@ -31,6 +32,10 @@ WKWebView *webView = nil;
         webView = webview;
     }
     return self;
+}
+
+- (void)updateFinish{
+
 }
 
 - (void)saveFile:(NSString *)path content:(NSString *)base64Str listenID:(NSNumber *)listenID;{
@@ -64,11 +69,6 @@ WKWebView *webView = nil;
     if (isExist) {
         [manager removeItemAtPath:fullPath error:nil];
     }
-//        NSFileHandle *file = [NSFileHandle fileHandleForUpdatingAtPath:fullPath];
-//        if (file != nil) {
-//            [file writeData:data];
-//            [file closeFile];
-//        }
     BOOL sucess = [manager createFileAtPath:fullPath contents:data attributes:nil];
     if (!sucess) {
         NSLog(@"JSInterceptor createFile failed, file = %@", fullPath);
@@ -170,7 +170,7 @@ WKWebView *webView = nil;
     NSString *app_Version = [infoDictionary objectForKey:@"CFBundleShortVersionString"];
     NSString *fullCode = [NSString stringWithFormat:@"window.handle_jsintercept_callback(%d, true, '%@',%d)", [listenID intValue],app_Version,[isUpdate intValue]];
     [webView evaluateJavaScript:fullCode completionHandler:^(id object, NSError *error) {
-        isUpdate = [NSNumber numberWithInt:0];
+        self->isUpdate = [NSNumber numberWithInt:0];
         if (error != nil) {
             NSLog(@"item = %@, error = %@", object, error);
         }

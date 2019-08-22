@@ -26,6 +26,7 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate,UNUserNotificationCenterDelegate>
 @property(strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) JSContext *context;
+//@property (strong, nonatomic) dispatch_queue_t contextQueue;
 - (void)loadJSContext;
 @end
 

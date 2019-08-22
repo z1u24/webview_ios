@@ -14,7 +14,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 
 @interface WebViewManager : BaseObject
 
@@ -35,12 +34,12 @@ typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 - (void)postWebViewMessage:(NSString *)webName message:(NSString *)message callJS:(CallJS)callJS ynwebView:(YNWebView *)ynwebView;
 
 
-
 //删除ViewController
 + (void)removeViewControllerWithWebName:(NSString *)webName;
 
 //微信支付接口
 - (void)newView:(NSString *)webName url:(NSString *)url headers:(NSString *)headers callJS:(CallJS)callJS ynWeb:(YNWebView *)ynWeb;
+
 
 - (void)freeView:(NSString *)webName callJS:(CallJS)callJS ynWeb:(YNWebView *)ynWeb;
 
@@ -49,6 +48,12 @@ typedef void (^CallJS)(CallJSType callJSType, NSArray *params);
 
 
 - (void)getReady:(NSString *)stage callJS:(CallJS)callJS ynwebView:(YNWebView *)ynwebView;
+
+
+-(void)isDefaultKilled:(CallJS)callJS;
+
+
+-(void)reloadDefault:(CallJS)callJS;
 
 
 @end

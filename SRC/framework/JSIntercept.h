@@ -16,5 +16,6 @@
 
 - (void)updateApp:(NSString *)url;
 
+- (void)updateFinish;
 
 @end

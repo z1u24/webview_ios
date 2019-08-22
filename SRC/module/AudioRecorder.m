@@ -42,6 +42,8 @@
     promissJS = callJS;
     if (![self canRecord]) {
         [self showAlertController];
+    }else{
+        callJS(Success,@[@"ok"]);
     }
 }
 
@@ -74,7 +76,10 @@
         recorder.meteringEnabled = YES;
         [recorder prepareToRecord];
         [recorder record];
-        callJS(Success,@[@"recorder start"]);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            callJS(Success,@[@"recorder start"]);
+        });
+        
     }
 }
 
@@ -94,7 +99,10 @@
     if ([recorder isRecording]) {
         [recorder stop];
     }
-    callJS(Success,@[@"drop the recorder success"]);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        callJS(Success,@[@"drop the recorder success"]);
+    });
+    
 }
 
 
@@ -148,7 +156,9 @@
         //文件转base64
         NSData *mp3Data = [NSData dataWithContentsOfFile:[NSTemporaryDirectory() stringByAppendingPathComponent:@"resave.mp3"]];
         NSString *base64 = [mp3Data base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-        stopCallJS(Success, @[[self removeSpaceAndNewline:base64]]);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self->stopCallJS(Success, @[[self removeSpaceAndNewline:base64]]);
+        });
     }
 }
 
@@ -192,10 +202,15 @@
     if ([audioSession respondsToSelector:@selector(requestRecordPermission:)]) {
         [audioSession performSelector:@selector(requestRecordPermission:) withObject:^(BOOL granted) {
             if (granted) {
-                self->promissJS(Success,@[@"ok"]);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self->promissJS(Success,@[@"ok"]);
+                });
+                
                 bCanRecord = YES;
             } else {
-                self->promissJS(Fail,@[@"not open"]);
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self->promissJS(Fail,@[@"not open"]);
+                });
                 bCanRecord = NO;
             }
         }];

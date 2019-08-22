@@ -87,6 +87,51 @@ static NSMutableDictionary *webControlDic = nil;
     }
 }
 
+//default是否被杀死
+-(void)isDefaultKilled:(CallJS)callJS{
+    __weak WebViewController *wb = [WebViewController sharedInstence];
+    BOOL wbk = [wb isWebViewKilled];
+    NSNumber *s = wbk?@TRUE:@FALSE;
+    callJS(Success,@[s]);
+}
+
+-(void)reloadDefault:(CallJS)callJS{
+    __weak WebViewController *wb = [WebViewController sharedInstence];
+    WKWebView *webView = [[YNWebView getYNWebViewInWebName:@"default"] getWKWebView];
+    
+    NSString *URL_PATH = [WebViewController getURLFromInfo];
+    
+    NSString *docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSLog(@"%@",docPath);
+    NSString *path = [docPath stringByAppendingString:@"/assets"];
+    NSString *fullPath = [path stringByAppendingString:URL_PATH];
+    NSFileHandle *file = [NSFileHandle fileHandleForReadingAtPath:fullPath];
+    NSData *data = nil;
+    if (file != nil) {
+        data = [file readDataToEndOfFile];
+        [file closeFile];
+    }
+    if (data == nil) {
+        path = [@"assets" stringByAppendingString:URL_PATH];
+        fullPath = [[NSBundle mainBundle] pathForResource:path ofType:nil];
+        file = [NSFileHandle fileHandleForReadingAtPath:fullPath];
+        if (file != nil) {
+            NSLog(@"file is read, %@", path);
+            data = [file readDataToEndOfFile];
+            [file closeFile];
+        } else {
+            NSLog(@"file isn't found: %@", path);
+        }
+    }
+    //path = [@"assets" stringByAppendingString:strUrl];
+    NSString *utf = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSString *urlPath = [[NSBundle mainBundle] pathForResource:[@"assets" stringByAppendingString:URL_PATH] ofType:nil];
+    NSString *url = [@"file://" stringByAppendingString:urlPath];
+    [webView loadHTMLString:utf baseURL:[NSURL URLWithString:url]];
+    [wb setWebViewKilled:NO];
+}
+
+
 - (void)closeWebView:(NSString *)webName callJS:(CallJS)callJS{
     //如果窗口名称为default，或者是不在hash表中时，抛出异常
     //关闭窗口时，判断窗口是否为当前窗口，如果是当前窗口就直接nav中pop到上级页面，如果不是当前窗口，如果窗口在nav中，则移除
@@ -123,7 +168,7 @@ static NSMutableDictionary *webControlDic = nil;
 
 
 - (void)postWebViewMessage:(NSString *)webName message:(NSString *)message callJS:(CallJS)callJS ynwebView:(YNWebView *)ynwebView{
-    WebViewController *wb = [WebViewController sharedInstence];
+    __weak WebViewController *wb = [WebViewController sharedInstence];
     if ([webName isEqualToString:@"default"]) {
         [wb startTimer];
     }else{
